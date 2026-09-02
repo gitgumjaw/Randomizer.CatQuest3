@@ -10,6 +10,15 @@ namespace Randomizer.CatQuest3
             EquipmentItemData __result,
             ChestID ___chestID)
         {
+            if (__result != null && ___chestID == null)
+            {
+                Plugin.Log.LogInfo(
+                    $"SpawnItemLoot with NO ChestID | " +
+                    $"Item: {__result.itemName} | " +
+                    $"Guid: {__result.Guid}"
+                );
+            }
+
             if (__result == null || ___chestID == null)
             {
                 return;
@@ -34,11 +43,7 @@ namespace Randomizer.CatQuest3
                 )
             );
 
-            Plugin.Log.LogInfo(
-                $"Location: {location.Key} | " +
-                $"Vanilla Reward: {location.VanillaReward.Type} " +
-                $"{location.VanillaReward.Id}"
-            );
+            RewardRegistry.Register(location);
         }
     }
 }

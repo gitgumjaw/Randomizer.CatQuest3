@@ -15,11 +15,7 @@ namespace Randomizer.CatQuest3
                 )
             );
 
-            Plugin.Log.LogInfo(
-                $"Location: {location.Key} | " +
-                $"Vanilla Reward: {location.VanillaReward.Type} " +
-                $"{location.VanillaReward.Id}"
-            );
+            RewardRegistry.Register(location);
         }
     }
 }

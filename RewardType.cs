@@ -7,6 +7,7 @@
         Spell,
         QuestItem,
         KeyItem,
-        ManaCrystal
+        ManaCrystal,
+        Collectible
     }
 }

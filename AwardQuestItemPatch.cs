@@ -5,6 +5,9 @@ namespace Randomizer.CatQuest3
     [HarmonyPatch(typeof(AwardQuestItem), "OnEnter")]
     public static class AwardQuestItemPatch
     {
+        private const string StarRuneGuid =
+            "fd36ba1341aa4d24692cc3eedea20405";
+
         public static void Prefix(AwardQuestItem __instance)
         {
             if (__instance.questItem == null)
@@ -20,11 +23,16 @@ namespace Randomizer.CatQuest3
                 )
             );
 
-            Plugin.Log.LogInfo(
-                $"Location: {location.Key} | " +
-                $"Vanilla Reward: {location.VanillaReward.Type} " +
-                $"{location.VanillaReward.Id}"
-            );
+            RewardRegistry.Register(location);
+
+            if (__instance.questItem.Guid == StarRuneGuid)
+            {
+                Contexts.sharedInstance.game.isFloatBlocked = false;
+
+                Plugin.Log.LogInfo(
+                    "Float enabled early with Star Rune."
+                );
+            }
         }
     }
 }

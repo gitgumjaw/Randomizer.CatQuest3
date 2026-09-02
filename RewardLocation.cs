@@ -1,14 +1,34 @@
-﻿namespace Randomizer.CatQuest3
+﻿using System.Collections.Generic;
+
+namespace Randomizer.CatQuest3
 {
     public class RewardLocation
     {
         public string Key { get; }
-        public Reward VanillaReward { get; }
 
-        public RewardLocation(string key, Reward vanillaReward)
+        public List<Reward> VanillaRewards { get; }
+        public List<Reward> RandomizedRewards { get; set; }
+
+        public RewardLocation(
+            string key,
+            IEnumerable<Reward> vanillaRewards)
         {
             Key = key;
-            VanillaReward = vanillaReward;
+
+            VanillaRewards =
+                new List<Reward>(vanillaRewards);
+
+            RandomizedRewards =
+                new List<Reward>(VanillaRewards);
+        }
+
+        public RewardLocation(
+            string key,
+            Reward vanillaReward)
+            : this(
+                key,
+                new[] { vanillaReward })
+        {
         }
     }
 }
