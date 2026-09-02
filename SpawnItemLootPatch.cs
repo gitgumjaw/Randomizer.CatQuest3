@@ -1,67 +1,43 @@
 ﻿using HarmonyLib;
 using ProjectStar.Data;
-using System;
-using System.Collections.Generic;
 
 namespace Randomizer.CatQuest3
 {
     [HarmonyPatch(typeof(ChestBehaviour), "SpawnItemLoot")]
     public static class SpawnItemLootPatch
     {
-        private const int Seed = 12345;
-
-        private static int StableHash(string text)
-        {
-            unchecked
-            {
-                uint hash = 2166136261;
-
-                foreach (char c in text)
-                {
-                    hash ^= c;
-                    hash *= 16777619;
-                }
-
-                return (int)hash;
-            }
-        }
-
         public static void Postfix(
-            ref EquipmentItemData __result,
-            EquipmentLootTableItem[] ___itemsDrops,
+            EquipmentItemData __result,
             ChestID ___chestID)
         {
-            if (___chestID != null)
-            {
-                Plugin.Log.LogInfo($"Chest GUID: {___chestID.Guid}");
-            }
-
-            List<EquipmentLootTableItem> validEntries =
-                new List<EquipmentLootTableItem>();
-
-            foreach (EquipmentLootTableItem entry in ___itemsDrops)
-            {
-                if (entry.item != null)
-                {
-                    validEntries.Add(entry);
-                }
-            }
-
-            if (validEntries.Count == 0 || ___chestID == null)
+            if (__result == null || ___chestID == null)
             {
                 return;
             }
 
-            int chestSeed = Seed ^ StableHash(___chestID.Guid);
+            RewardType rewardType;
 
-            Random random = new Random(chestSeed);
+            if (__result is ShipBlueprintItemData)
+            {
+                rewardType = RewardType.Blueprint;
+            }
+            else
+            {
+                rewardType = RewardType.Equipment;
+            }
 
-            int index = random.Next(validEntries.Count);
-
-            __result = validEntries[index].item;
+            RewardLocation location = new RewardLocation(
+                ___chestID.Guid,
+                new Reward(
+                    rewardType,
+                    __result.Guid
+                )
+            );
 
             Plugin.Log.LogInfo(
-                $"SpawnItemLoot randomized to: {__result.itemName}"
+                $"Location: {location.Key} | " +
+                $"Vanilla Reward: {location.VanillaReward.Type} " +
+                $"{location.VanillaReward.Id}"
             );
         }
     }
