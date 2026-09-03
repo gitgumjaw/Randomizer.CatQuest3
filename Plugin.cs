@@ -18,6 +18,7 @@ namespace Randomizer.CatQuest3
             harmony.PatchAll();
 
             Logger.LogInfo("Harmony patches applied.");
+
         }
     }
 }

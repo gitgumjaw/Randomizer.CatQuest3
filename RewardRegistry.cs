@@ -60,5 +60,59 @@ namespace Randomizer.CatQuest3
                 return locations.Count;
             }
         }
+
+        public static List<RewardLocation> GetEligibleLocations(
+    RandomizerSettings settings)
+        {
+            List<RewardLocation> eligibleLocations =
+                new List<RewardLocation>();
+
+            foreach (RewardLocation location in locations.Values)
+            {
+                bool hasEligibleReward = false;
+
+                foreach (Reward reward in location.VanillaRewards)
+                {
+                    if (RandomizerEligibility.IsEnabled(reward, settings))
+                    {
+                        hasEligibleReward = true;
+                        break;
+                    }
+                }
+
+                if (hasEligibleReward)
+                {
+                    eligibleLocations.Add(location);
+                }
+            }
+
+            return eligibleLocations;
+        }
+
+        public static List<RewardSlot> GetEligibleSlots(
+    RandomizerSettings settings)
+        {
+            List<RewardSlot> eligibleSlots =
+                new List<RewardSlot>();
+
+            foreach (RewardLocation location in locations.Values)
+            {
+                for (int i = 0; i < location.VanillaRewards.Count; i++)
+                {
+                    RewardSlot slot =
+                        new RewardSlot(
+                            location,
+                            i
+                        );
+
+                    if (RandomizerEligibility.IsEnabled(slot, settings))
+                    {
+                        eligibleSlots.Add(slot);
+                    }
+                }
+            }
+
+            return eligibleSlots;
+        }
     }
 }
