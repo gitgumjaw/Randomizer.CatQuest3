@@ -6,6 +6,14 @@ namespace Randomizer.CatQuest3
     [HarmonyPatch(typeof(SpawnLootTable), "OnEnter")]
     public static class ScriptedLootTablePatch
     {
+        // Prevent the same PlayMaker action from adding its catalog
+        // slots again if the state executes repeatedly.
+        //
+        // Different SpawnLootTable actions in the same state are still
+        // treated separately, even if they award identical collectibles.
+        private static readonly HashSet<SpawnLootTable> catalogedActions =
+            new HashSet<SpawnLootTable>();
+
         public static void Prefix(SpawnLootTable __instance)
         {
             LootTable lootTable;
@@ -52,7 +60,7 @@ namespace Randomizer.CatQuest3
                 }
 
                 int quantityMultiplier =
-    __instance.quantityMultiplier;
+                    __instance.quantityMultiplier;
 
                 int valueMultiplier =
                     __instance.overrideMultipliers
@@ -103,12 +111,67 @@ namespace Randomizer.CatQuest3
             string locationKey =
                 PlayMakerLocation.GetKey(__instance.Fsm);
 
+            // Existing runtime discovery behavior.
             RewardRegistry.Register(
                 new RewardLocation(
                     locationKey,
                     rewards
                 )
             );
+
+            // Catalog-building behavior.
+            //
+            // We only catalog this particular SpawnLootTable action once.
+            // If its PlayMaker state runs again, RewardRegistry can still
+            // observe it normally, but we won't duplicate catalog slots.
+            if (!catalogedActions.Add(__instance))
+            {
+                return;
+            }
+
+            CatalogRewardLocation catalogLocation =
+                CatalogScanResults.GetOrCreate(locationKey);
+
+            foreach (Reward reward in rewards)
+            {
+                catalogLocation.AddSlot(
+                    new WeightedRewardSlot(
+                        new[]
+                        {
+                            new WeightedRewardOption(
+                                reward,
+                                1
+                            )
+                        }
+                    )
+                );
+            }
+
+            Plugin.Log.LogInfo(
+                $"Cataloged scripted location: {locationKey} | " +
+                $"Added Slots: {rewards.Count} | " +
+                $"Total Slots: {catalogLocation.RewardSlots.Count}"
+            );
+
+            for (int i = 0; i < catalogLocation.RewardSlots.Count; i++)
+            {
+                WeightedRewardSlot slot =
+                    catalogLocation.RewardSlots[i];
+
+                Plugin.Log.LogInfo(
+                    $"  Scripted Slot {i}: " +
+                    $"{slot.Options.Count} option(s)"
+                );
+
+                foreach (WeightedRewardOption option in slot.Options)
+                {
+                    Plugin.Log.LogInfo(
+                        $"    {option.Reward.Type} " +
+                        $"{option.Reward.Id} | " +
+                        $"Weight: {option.Weight}"
+                    );
+                }
+            }
         }
     }
 }
