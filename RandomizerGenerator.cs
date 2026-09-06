@@ -8,9 +8,19 @@ namespace Randomizer.CatQuest3
             RandomizerSettings settings,
             int seed)
         {
+            // Start every generation from a clean resolved catalog.
+            RewardCatalog.Clear();
+
+            // Resolve vanilla weighted/random slots into one fixed
+            // reward per slot for this seed.
+            CatalogResolver.ResolveToRewardCatalog(seed);
+
+            // Only enabled rewards enter the global shuffle pool.
             List<RewardSlot> eligibleSlots =
                 RewardCatalog.GetEligibleSlots(settings);
 
+            // Shuffle while respecting destination compatibility
+            // rules such as mana locations rejecting Collectibles.
             RewardShuffler.Shuffle(
                 eligibleSlots,
                 seed

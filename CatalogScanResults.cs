@@ -24,6 +24,16 @@ namespace Randomizer.CatQuest3
             return location;
         }
 
+        public static void Set(CatalogRewardLocation location)
+        {
+            if (location == null)
+            {
+                return;
+            }
+
+            locations[location.Key] = location;
+        }
+
         public static CatalogRewardLocation Get(string key)
         {
             if (locations.TryGetValue(

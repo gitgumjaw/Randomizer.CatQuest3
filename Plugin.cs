@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using System.Collections.Generic;
 
 namespace Randomizer.CatQuest3
 {

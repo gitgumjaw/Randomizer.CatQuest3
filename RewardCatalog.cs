@@ -48,7 +48,8 @@ namespace Randomizer.CatQuest3
                     RewardSlot slot =
                         new RewardSlot(
                             location,
-                            i
+                            i,
+                            location.AllowCollectiblesBySlot[i]
                         );
 
                     if (RandomizerEligibility.IsEnabled(slot, settings))
@@ -67,6 +68,11 @@ namespace Randomizer.CatQuest3
             {
                 Add(location);
             }
+        }
+
+        public static void Clear()
+        {
+            locations.Clear();
         }
     }
 }

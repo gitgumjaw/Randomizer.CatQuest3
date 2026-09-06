@@ -50,13 +50,11 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
-            if (CatalogScanResults.Get(chestID.Guid) != null)
-            {
-                return;
-            }
-
-            CatalogRewardLocation catalogLocation =
-                CatalogScanResults.GetOrCreate(chestID.Guid);
+            // Always rebuild a fresh version from the chest's
+            // CURRENT state so dynamically populated chests can
+            // be rescanned later.
+            CatalogRewardLocation scannedLocation =
+                new CatalogRewardLocation(chestID.Guid);
 
             // Equipment / Blueprint slot
             if (itemsDrops != null && itemsDrops.Length > 0)
@@ -92,7 +90,7 @@ namespace Randomizer.CatQuest3
 
                 if (options.Count > 0)
                 {
-                    catalogLocation.AddSlot(
+                    scannedLocation.AddSlot(
                         new WeightedRewardSlot(options)
                     );
                 }
@@ -142,7 +140,7 @@ namespace Randomizer.CatQuest3
                                 collectibleData
                             );
 
-                        catalogLocation.AddSlot(
+                        scannedLocation.AddSlot(
                             new WeightedRewardSlot(
                                 new[]
                                 {
@@ -169,7 +167,7 @@ namespace Randomizer.CatQuest3
                                 entry.dropQuestItem.Guid
                             );
 
-                        catalogLocation.AddSlot(
+                        scannedLocation.AddSlot(
                             new WeightedRewardSlot(
                                 new[]
                                 {
@@ -191,15 +189,40 @@ namespace Randomizer.CatQuest3
                 }
             }
 
+            CatalogRewardLocation existingLocation =
+                CatalogScanResults.Get(chestID.Guid);
+
+            // Never let an earlier/partial state overwrite a version
+            // that already contains more complete reward information.
+            if (existingLocation != null &&
+                scannedLocation.RewardSlots.Count <
+                existingLocation.RewardSlots.Count)
+            {
+                Plugin.Log.LogInfo(
+                    $"Chest rescan ignored: {chestID.Guid} | " +
+                    $"Existing Slots: {existingLocation.RewardSlots.Count} | " +
+                    $"Scanned Slots: {scannedLocation.RewardSlots.Count}"
+                );
+
+                return;
+            }
+
+            CatalogScanResults.Set(scannedLocation);
+
+            string scanType =
+                existingLocation == null
+                    ? "Scanned Chest"
+                    : "Rescanned Chest";
+
             Plugin.Log.LogInfo(
-                $"Scanned Chest: {chestID.Guid} | " +
-                $"Reward Slots: {catalogLocation.RewardSlots.Count}"
+                $"{scanType}: {chestID.Guid} | " +
+                $"Reward Slots: {scannedLocation.RewardSlots.Count}"
             );
 
-            for (int i = 0; i < catalogLocation.RewardSlots.Count; i++)
+            for (int i = 0; i < scannedLocation.RewardSlots.Count; i++)
             {
                 WeightedRewardSlot slot =
-                    catalogLocation.RewardSlots[i];
+                    scannedLocation.RewardSlots[i];
 
                 Plugin.Log.LogInfo(
                     $"  Slot {i}: {slot.Options.Count} option(s)"
