@@ -5,6 +5,7 @@
         Equipment,
         Blueprint,
         Spell,
+        ShipSpell,
         QuestItem,
         KeyItem,
         ManaCrystal,

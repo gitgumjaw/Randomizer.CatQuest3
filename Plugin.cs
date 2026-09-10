@@ -1,10 +1,12 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using System.Collections.Generic;
 
 namespace Randomizer.CatQuest3
 {
-    [BepInPlugin("Randomizer.CatQuest3", "Cat Quest 3 Randomizer", "0.1.0")]
+    [BepInPlugin(
+        "Randomizer.CatQuest3",
+        "Cat Quest 3 Randomizer",
+        "0.1.0")]
     public class Plugin : BaseUnityPlugin
     {
         internal static Plugin Instance;
@@ -15,12 +17,64 @@ namespace Randomizer.CatQuest3
             Instance = this;
             Log = Logger;
 
-            Logger.LogInfo("Hello from Cat Quest 3 Randomizer!");
+            Logger.LogInfo(
+                "Hello from Cat Quest 3 Randomizer!"
+            );
 
-            Harmony harmony = new Harmony("Randomizer.CatQuest3");
+            Logger.LogInfo(
+                "Cat Quest 3 Randomizer DEBUG BUILD: All scanners fixed. Woohoo"
+            );
+
+            Harmony harmony =
+                new Harmony(
+                    "Randomizer.CatQuest3"
+                );
+
             harmony.PatchAll();
 
-            Logger.LogInfo("Harmony patches applied.");
+            var shipBlueprintMethod =
+    AccessTools.Method(
+        typeof(AwardShipBlueprintToPlayer),
+        "OnEnter"
+    );
+
+            var shipBlueprintPatchInfo =
+                Harmony.GetPatchInfo(
+                    shipBlueprintMethod
+                );
+
+            bool shipBlueprintPatchFound = false;
+
+            if (shipBlueprintPatchInfo != null)
+            {
+                foreach (string owner in shipBlueprintPatchInfo.Owners)
+                {
+                    if (owner == "Randomizer.CatQuest3")
+                    {
+                        shipBlueprintPatchFound = true;
+                        break;
+                    }
+                }
+            }
+
+            Logger.LogInfo(
+                $"SHIP BLUEPRINT PATCH INSTALLED: " +
+                $"{shipBlueprintPatchFound}"
+            );
+
+            Logger.LogInfo(
+                "Harmony patches applied."
+            );
+        }
+
+        private void LateUpdate()
+        {
+            if (!CatalogScanResults.IsDirty)
+            {
+                return;
+            }
+
+            CatalogExporter.Export();
         }
     }
 }

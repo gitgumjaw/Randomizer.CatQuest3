@@ -7,6 +7,8 @@ namespace Randomizer.CatQuest3
         private static readonly Dictionary<string, CatalogRewardLocation> locations =
             new Dictionary<string, CatalogRewardLocation>();
 
+        private static bool dirty;
+
         public static CatalogRewardLocation GetOrCreate(string key)
         {
             if (locations.TryGetValue(
@@ -21,6 +23,8 @@ namespace Randomizer.CatQuest3
 
             locations[key] = location;
 
+            MarkDirty();
+
             return location;
         }
 
@@ -32,6 +36,8 @@ namespace Randomizer.CatQuest3
             }
 
             locations[location.Key] = location;
+
+            MarkDirty();
         }
 
         public static CatalogRewardLocation Get(string key)
@@ -59,6 +65,24 @@ namespace Randomizer.CatQuest3
             {
                 return locations.Count;
             }
+        }
+
+        public static bool IsDirty
+        {
+            get
+            {
+                return dirty;
+            }
+        }
+
+        public static void MarkDirty()
+        {
+            dirty = true;
+        }
+
+        public static void MarkClean()
+        {
+            dirty = false;
         }
     }
 }

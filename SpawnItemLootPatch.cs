@@ -24,24 +24,8 @@ namespace Randomizer.CatQuest3
 
                 if (replacement != null)
                 {
-                    Plugin.Log.LogInfo(
-                        $"Randomized Bag equipment: " +
-                        $"{__result.itemName} -> " +
-                        $"{replacement.itemName}"
-                    );
-
                     __result = replacement;
                 }
-            }
-
-            if (__result != null && ___chestID == null)
-            {
-                Plugin.Log.LogInfo(
-                    $"SpawnItemLoot with NO ChestID | " +
-                    $"ChestType: {(int)___chestType} ({___chestType}) | " +
-                    $"Item: {__result.itemName} | " +
-                    $"Guid: {__result.Guid}"
-                );
             }
 
             if (__result == null || ___chestID == null)

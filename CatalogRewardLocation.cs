@@ -26,9 +26,12 @@ namespace Randomizer.CatQuest3
                 new List<WeightedRewardSlot>();
         }
 
-        public void AddSlot(WeightedRewardSlot slot)
+        public void AddSlot(
+            WeightedRewardSlot slot)
         {
             RewardSlots.Add(slot);
+
+            CatalogScanResults.MarkDirty();
         }
     }
 }

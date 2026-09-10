@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(SceneManager), "Internal_SceneLoaded")]
+    [HarmonyPatch(
+        typeof(SceneManager),
+        "Internal_SceneLoaded")]
     public static class SceneScanPatch
     {
         public static void Postfix(
@@ -15,6 +17,9 @@ namespace Randomizer.CatQuest3
             );
 
             CatalogScanner.ScanLoadedChests();
+
+            CatalogDiagnostics
+                .LogWeightedEquipmentSlots();
         }
     }
 }
