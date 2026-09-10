@@ -22,7 +22,7 @@ namespace Randomizer.CatQuest3
             );
 
             Logger.LogInfo(
-                "Cat Quest 3 Randomizer DEBUG BUILD: All scanners fixed. Woohoo"
+                "Cat Quest 3 Randomizer DEBUG BUILD: Category Label Maker 1"
             );
 
             Harmony harmony =
@@ -65,6 +65,8 @@ namespace Randomizer.CatQuest3
             Logger.LogInfo(
                 "Harmony patches applied."
             );
+
+            CatalogExporter.UpgradeExistingCatalogMetadata();
         }
 
         private void LateUpdate()
