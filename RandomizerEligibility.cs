@@ -23,6 +23,7 @@
                     return settings.RandomizeEquipment;
 
                 case RewardType.Blueprint:
+                case RewardType.ShipSpell:
                     return settings.RandomizeEquipment;
 
                 case RewardType.Spell:
@@ -64,8 +65,8 @@
         }
 
         public static bool IsEnabled(
-    RewardSlot slot,
-    RandomizerSettings settings)
+            RewardSlot slot,
+            RandomizerSettings settings)
         {
             if (slot == null)
             {

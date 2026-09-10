@@ -1,0 +1,2434 @@
+Catalog Locations: 282
+
+LOCATION|0294cd0074d1d204db0bac9eab555e55
+LABEL|Catuga — North Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|0298dd4cc39e1da4eabc8543b62c3aad
+LABEL|Lovepurr Castle — 2nd Book Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|72e52ed580d288b4c86778032adf010d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|02a45c5c5c713e242bfc87cd00842473
+LABEL|Squeaky Cave — Stash Middle Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|05cc6497a3dfe114ea26d790975672dc
+LABEL|Fire Pirate Hideout — 1F Chest Near Entrance
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|511e00ecb4b224442a822c5d193a608e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|0acc33a4a5424af40a37a7e5c066d25e
+LABEL|Sunset Squid Isles — East of Center Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|14e768b983d6e444ca2e6bed3eaac492|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|0ae7048c4f28e274789aa9067f8be419
+LABEL|Golden Tower — Golden Treasure Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|e323a5b66b62ddb4d8eabe6a7f978442|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|0cc22180e8fc0954892d30d279091438
+LABEL|Hidden Chest — Rogue Bandana
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|db71318237afdd94f9cc735465ba4d2a|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|0ee1b826db5619c49820c97e1f40a603
+LABEL|Sibling Rivalry — Heirloom Treasure Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|0f2feba36548bd7418abb20cf712f29a
+LABEL|Ruins Orion — 2F Hallway Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|7577162b107ea814dac7bc94a5bc73bb|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|1407f568697db4f45993938fec140271
+LABEL|Purvanna — Northwest Chest behind Puzzle Mage
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|60707e1a9eae5ef40ae67003fe152d2d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|141696e640d364516a3b7c54d5e633e9
+LABEL|Gentlebros Treasure Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|6802dc76bfc0c43138904cf31e3a135b|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|15623d4fa9a260e49924e8eaadc94da4
+LABEL|Ruins Centauri — Silver Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|5219457213ff34fc38f86f28e343d37c|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|1593c8645e241fd4985755ec1b3893ee
+LABEL|Wanted Poster Fire Captain Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|0eea9849b2f2c4acd8c88a54739f7edc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:12000|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|15f6a3b8da064434ebf03f22ed5a9ba6
+LABEL|Sunset Maze — Puzzle Chest Sunset Maze
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|36be68c8e57f45c4a8ec4213ad4bd8c0|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|1751eee047777704abdcf4a8850d2f1c
+LABEL|Long Island — Starfish Beach Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|183796bc91c4b2d438f459521eeea9d6
+LABEL|Sunset Squid Isles — Middle Squid Key Chest
+CATEGORY|Quest Items;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|QuestItem|bc103da6bbfd2fc419c24fa84be14a8a|Weight:1
+
+LOCATION|18923644a48006e4cb913d6659dfc679
+LABEL|Long Island — Inside Fort Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|88702d3254d64e54b926c9bbfcad0300|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|18eb29576852a0a49ab53dcbec35f5c0
+LABEL|Twin Castle (Light) - 3F Master Room Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|19e8ffe66f2256a4c940b760da49f6c0
+LABEL|Oinker Maze — Midsouth Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|1a2f714ee2ac91642b3a10ca439b1dca
+LABEL|Ruined Castle — 2F Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|1a560e2024cc4544b9088b89d3438ceb
+LABEL|Fishercat — Fish Sunset Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|7b91d604cdaea5041a23fa0f960eff3e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|1bfdcdccecc9d5644b3a28a2ae65152c
+LABEL|Furggy Island — Meowgus Puzzle Chest
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:15|Value:450|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:20|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|2256b9efebb70a24ca2ea71f473ebdbd
+LABEL|Fire Pirate Hideout — 3F Storage - Left Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|22e3c82ce535c2a4ebc2c53e50a5e28f
+LABEL|Ruins Orion — 4F Boss Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|dd2394eb14ca08f4587611deef3ad431|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|260010564cd4f98439a9c737e10b0f57
+LABEL|Furst Cave — South Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|261ce9cb52222074d9b16b8fde8d5ff9
+LABEL|Spicy Cave — Waterway Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|476e7ec69b0c83c42ab943af38723942|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|267e1fb1ecce1db44b74ce076b888dd5
+LABEL|Golden Tower — 4F Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:2
+OPTION|Equipment|265e6d948988ee74c8028e3a0c991710|Weight:1
+OPTION|Equipment|79d36535bbeafbf44a4e6f38efe46f10|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|4|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|26f49bbe109e19649bf24720fa8f49dd
+LABEL|Purvanna — Long West Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|2886586db97f4844185d51a93607616a
+LABEL|Wanted Poster Rubber Duck Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:20|Value:99999|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|29c1fe796bb21604cb38c8490b9403a7
+LABEL|Fishercat — Fish Ghost Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|5e7fae7d2a4801241958b53f5dfd0950|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|29c566636e6b4584fabfca543bf92884
+LABEL|Ice Pirate Hideout — 3F Storage - Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|2c72187e064a83b40b4d8b572d687709
+LABEL|Purvanna — Puzzle Chest Purvanna Beach
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:3
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|2d7f47bd4c1c53c4ab176ca074865522
+LABEL|Booty Cave — Southeast Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|30a5eace858b19f49a0b891553ba7449
+LABEL|Heartpurreak Cave — East Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|0afefe0426e4ef149af4dcdba1dff3ea|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|31efb466be90b0c48a78e21acf18f41a
+LABEL|Zero Dimension — Midwest Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|33fee15cffb16fd49b79610468f4c162
+LABEL|Doggy Jones Silver Chest
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|5ccbc4e4af1b0d74aa9d295226a4f8c6|Weight:1
+
+LOCATION|34c936f5885617b4e8b0aefd996d0b66
+LABEL|Oinker Maze — Northwest Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|351906c663d633a479e75b7e8e041ec7
+LABEL|Ruins Antares — 1F Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|511e00ecb4b224442a822c5d193a608e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|38cd4cd2c9fb18b4b866669b8d6af7ec
+LABEL|Purricade Island — Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|6be78838022fdfa4d858005b12d7da59|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|3932ca5ac640623479aad9802c072acb
+LABEL|Wanted Poster Pirate King Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:20|Value:66666|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|393fe718501adc647937573afd7d7b8b
+LABEL|Purricade Island — East Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|39f16566266b9a54eabd82b9ff09c04a
+LABEL|Golden Tower — 5F Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:2
+OPTION|Equipment|265e6d948988ee74c8028e3a0c991710|Weight:1
+OPTION|Equipment|79d36535bbeafbf44a4e6f38efe46f10|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|4|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|3c6679dc4786d1e488cf3eb788de02d1
+LABEL|Wanted Poster Ice Captain Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|0eea9849b2f2c4acd8c88a54739f7edc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:4500|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|3c6c9743645e41f43a350a2eac957339
+LABEL|Squeaky Cave — East Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a2a53c60e7f309842b7f98e743d488ca|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|3ea8ee2370c612e438a1a87573659360
+LABEL|Ruins Orion — 2F Jailed Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|ad14fa34366d8a24593ddec86b5685e2|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|3f889d945ebc9b64bb1fec6ce9d958ce
+LABEL|Lovepurr Castle — Good Clawford Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a8b1b5a198a523242afdbef645fbc878|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|412ae0f105665914682393c44afb6bff
+LABEL|Hidden Chest — Purvanna Starfish
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|2a77b2ebec8fe45ef82139e8131e0a4d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|41e8fc856247df649b91d4feab8ab5ea
+LABEL|Fishercat — Fish Rock Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|7b91d604cdaea5041a23fa0f960eff3e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|422de585444f27a44880337447009e8a
+LABEL|Purvanna — Strait Watchtower Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|42952e286c6845e4292ff22aee9e5112
+LABEL|Hidden Chest — Purvanna Bush
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|deceac1753640df498d791d9f5f0c730|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|45a66d30b0778ff4c9460f3697c200ae
+LABEL|Sunset Squid Isles — Puzzle Chest Volcano
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|45b6bcffd0fe2a040866e875c5bc1091
+LABEL|Wanted Poster Pig Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:7500|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|45f01605765638645a88115d012de54b
+LABEL|Hidden Chest — Furtigua Rock
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|5505a271cff345949a5853a64812a63f|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|483118acd52fb634096af9c84c13459f
+LABEL|Ruins Orion — 1F Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|4d3ce29d1c2ff6c4cb43911c3441f93c
+LABEL|Furst Cave — East Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|485f8e9efe7b88b439833e66e0b7b4aa|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|4da727baf755b6149b9fa363c77a3f4a
+LABEL|Fire Pirate Hideout — 3F Storage - Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|ea1bd2467b130094490bcc54a0fd45f9|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|4eb17e845d7483c4cacf4abcb0638589
+LABEL|Ruins Antares — 3F Silver Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|315e51fe6a3095b42b303215e83fe805|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|4f5cf9c5150ebeb42b05fbb05984cc50
+LABEL|Purvanna — Northeast Ambush Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|7194c5e8666e60349a53faa508626aa6|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|4f768de2337b01f4f84b7b8c39bbce95
+LABEL|Ruins Antares — 2F Silver Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|2b23dd80b39373c47802ab20782ebcb2|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5103bd10c70b02f478a6847bf1a0532d
+LABEL|Furggy Island — Pirate King Chest
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|e5022c29d9917bd4abaa23319d34d0e0|Weight:1
+
+LOCATION|538666e2a65e6a541b5f32698dd4242c
+LABEL|Sibling Rivalry — Starfish Chest
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|8ea8047249a361d4db404527a3c15040|Weight:1
+
+LOCATION|54e4b9b58f104ac41991f57702a842ec
+LABEL|Ruined Castle — 2F Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|55277548c718ace4383d3069933a9a90
+LABEL|Zero Dimension — East Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|561abb47fa18a4a4ea7454655357eb02
+LABEL|Purvanna — South Polaris Field Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|4e6ec354a142b46a28584ba49a12f11c|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|58fa6214e5a835c4e9892081f1985237
+LABEL|Ruins Orion — 3F Northeast Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|59dbcf423b7833645930a13b9c08fa59
+LABEL|Ruins Polaris — 1F Arena Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|2a19ecdd4b825354296c219bbd4fe166|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5a6c2d1d4f6e7c14e809e3974d205402
+LABEL|Hidden Chest — Furggy Rock
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5b556b74e37a53c42a78456d9e8d5df2
+LABEL|Lovepurr Cave — Southeast Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5beccabce2ecdc942b327dddd868b1b6
+LABEL|Zero Dimension — Northwest Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5c8c69b2d010ab34d9ff927087c1f8ce
+LABEL|Twin Castle (Dark) - 2F Dining Hall Center Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|fc70ba5ad13881747838751bfa015f93|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5d340ab81b0589e499200e3798c33e94
+LABEL|Ruins Centauri — Stairway Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|7297468d864ec4ae587bb8b15587d63d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5d63f0b6fac9f184c942a0d0bde6bc32
+LABEL|Ruins Orion — 3F Middle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|bc5d04eda9a275140b45d43ec560c9bb|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5da65f809499be340acffeb3c50a481d
+LABEL|Purvanna — Postmutt Inc. Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|4abccf991e5427b4ca02c44e08925c2d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|5e50b5c9ff27f65489de1179dcbc509c
+LABEL|Oinker Maze — South Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|4a1f3c31bb068a049a497f4b921b5321|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6173ff30115e9ac4f97d975afcbc05a5
+LABEL|Sunset Squid Isles — West of Center Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|61d8bcfe28f108f4cb40ad4609a78cd7
+LABEL|Furst Island — Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|6f5c149052fb745bda2cd8f255c595d6|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|638408a12bed38444b384f0cde8c9aef
+LABEL|Spicy Cave — Waterway Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6474872b10eb23a4f80db2ab474c9efb
+LABEL|Straits Island — Crate by Barrels
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|64a38d13326f05d48aaed811df73ea14
+LABEL|Wanted Poster Mewtallica Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|0eea9849b2f2c4acd8c88a54739f7edc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:9000|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|650a3b3f9dc251d418a1210095932574
+LABEL|8 Bit Dungeon — 6F Boss Room Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|5bc5771112e39724da71a8acb6b1ac64|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|673c1ba89895c1044a67380b86e1aa93
+LABEL|Fishercat — Fish Blue Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|5e7fae7d2a4801241958b53f5dfd0950|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|68b2cc3e2778b814a88f462a694205ae
+LABEL|Purrgatory Silver Chest - Purrvana
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:3
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:5|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6933e153a18611b4aa2e200b61ffbe98
+LABEL|Oinker Maze — Northeast Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6a455d30b4b3f7c4ba9706cecd14c9bc
+LABEL|Mewtallica Stage — Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|9e84470ed00c12d44befdadb7653b606|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6a9906e7eaa875e40af268898cc5d319
+LABEL|Ice Pirate Hideout — 3F Storage - Secret Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|afe3168cc9e6dfb4d9494ed8e585bf99|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6af9706a9de86e94196493c0d53a0a15
+LABEL|Lovepurr Castle — 1st Book Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:2
+OPTION|Equipment|72e52ed580d288b4c86778032adf010d|Weight:1
+OPTION|Equipment|6f745808351b0b94da3e17cfecb5b09a|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6b9f59a8637366d43ad1ef3da5caba52
+LABEL|Fire Pirate Hideout — 1F Obstacle Room Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|3a6541654bd805b48acae446af1c8f41|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6c490b335ded9a14d89c9c18c6ad8b03
+LABEL|Straits Island — Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:3
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6d13f4ec1fca4d845a89adb064acb25f
+LABEL|Furrlorn Cave — South Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a89e219720277d445aa44c1ecf883231|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6dd3d666854199043accdeb7db7ee6ef
+LABEL|Long Island — Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:3
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6ea2dee80b528214584104c3852b98cf
+LABEL|Furrlorn Cave — West Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|6fbf13274c1400f49873c0364a291cf5
+LABEL|Ruins Orion — 3F Southwest Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|4c877fdb67fe04d4fb847f0a64561012|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|705337889a942bd448bf9775204670d9
+LABEL|Booty Cave — Southeast Silver Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|06d833928ae2247429482ca8860399c8|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|70a652125ad35114eb07f8ca03e9ca4d
+LABEL|Purvanna — Crate behind Postmutt
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|710b17d5f4483634db7334baa449f877
+LABEL|Booty Cave — Southwest Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:1|Value:1|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|713ca6ef34e68488e869322864fff567
+LABEL|Wanted Poster Macho Dog Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|087db2a1ab2cc46ddb65cf498b40850e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:10000|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|71b038b5c49de574db6f980e8d47314b
+LABEL|Lovepurr Island — East Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|b8cdf4f95ea10f545bd6c1aa6c0c9a2c|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|77715414f8e354bcda5c757d2c9fd052
+LABEL|Wanted Poster Lonely Boar Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|c3a8bf3256d4d524199c03256b382e24|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:99999|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|7790326666aad054e8775e3759d4a28a
+LABEL|Catuga — West Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|996c2d9486433f74cafe4879a88a16f2|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|77de935239d827f47bac48e3eabaf703
+LABEL|Lonely Island — Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|557474af70de9734fbb307cb7365d891|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|793ef98daa1cbb84199b3f510bef7973
+LABEL|Twin Castle (Dark) - 1F Ladder Room Secret Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|7dd48d87bef43b8449cf059db65c44ff
+LABEL|Purvanna — Fort Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|57250ee8db5c5eb49a9ecd833725e44a|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|7eef18bdcb68fd8488b9abbc8b7cd06c
+LABEL|Furtigua —Running Coin Chest
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|7f60a487de20f3442ad04cfd731d525f
+LABEL|Wanted Poster Necromouser Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|0eea9849b2f2c4acd8c88a54739f7edc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:13500|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|7ffc3cfad5dc7fd4dbb797725534b476
+LABEL|Ice Pirate Hideout — 3F Silver Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|82a4dc6f4295d1340b424cfbbcf73e9f
+LABEL|Ruins Antares — 2F Hallway Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|8404bf3e4082dcd47b7a49f72abbe4c5
+LABEL|Sunset Squid Isles — Southwest Squid Key Chest
+CATEGORY|Quest Items;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|QuestItem|c57d682e39ed68742b78ac8f10fa11ff|Weight:1
+
+LOCATION|8998202d86997af459daeaa646fdca1b
+LABEL|Twlight Isles — West Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|1b40fbbaf162b374e995e4f1baeb9d57|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|8b18fe868c67f4746bd8650cbbc938d6
+LABEL|Ruined Castle — 1F Hidden Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|c0721868106f4ef4e8b93cf31f34a994|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|8fd8d1ca6974b4049b195d297b1e4df9
+LABEL|Purvanna — Monster Researcher Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|ac7868a7350644454af106341d1ab15f|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|90477425058ebba4fab00aa1874f8cb6
+LABEL|Fishercat — Treasure Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|68200e67071238644bfcb12ab7f25d62|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|934c21a2d35eb7f4288f21e7a3541757
+LABEL|8 Bit Dungeon — 4F Painting Reward Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|50e881e98d4643747aa91f034b3d08b6|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|93bde94f3b424c141a03e022e73db2f8
+LABEL|Golden Tower — 2F Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|265e6d948988ee74c8028e3a0c991710|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|4|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|967f5e72fc001c04c8b9f47141da8647
+LABEL|Purricade Island — West Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|97c655d0c52d71f449bac4027cc88162
+LABEL|Booty Cave — Northwest Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:1|Value:1|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|98f31902d9a7e6346a695d0cde7e63df
+LABEL|Fire Pirate Hideout — 3F Storage - Right Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|999a297bce7a7a04c8ca97ef179e32ae
+LABEL|Squeaky Cave — Silver Chest
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|9c3ba62a7e041964f827d060b6da0396
+LABEL|Squeaky Cave — Midsouth Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|9c818583d272d6c4890e5b4624a28f1b
+LABEL|Purvanna — Running Coin Chest
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|Castle_FirePiratesHideout|DungeonQuest_FirePirateHideout|FSM|Learn Spell
+LABEL|Defeat Fire Captain
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|149063cc94514124e828ad4ac945ca5f|Weight:1
+
+LOCATION|Castle_FirePiratesHideout|DungeonQuest_FirePirateHideout|FSM|Spirit gives wand
+LABEL|Free Wand in Fire Hideout
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
+
+LOCATION|Castle_GoldenTower|DungeonQuest_GoldenTower|FSM|Get Key
+LABEL|Golden Tower - LV40 Rat Reward
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|57a129a2cb4ad13429cb324f717ad156|Weight:1
+
+LOCATION|Castle_IcePiratesHideout|DungeonQuest_IcePiratesHideout|FSM|Learn Spell
+LABEL|Defeat Ice Captain
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|07e501cc6e150497c999080885dd0ae2|Weight:1
+
+LOCATION|Castle_LovepurrCastle|Interactable_NPC_Clawford|FSM|(Intro cont.) Clawford tells player to break curse
+LABEL|First Meeting Clawford
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|51dda95ff2f6198488ec4e9b935196f7|Weight:1
+
+LOCATION|Castle_TwinCastle_01|DungeonQuest_TwinCastle_01|FSM|Get Boss Room Key
+LABEL|Twin Castle (Light) - Master Bedroom
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|978b44d6dcc44274db693c5c869fcca6|Weight:1
+
+LOCATION|Castle_TwinCastle_01|DungeonQuest_TwinCastle_01|FSM|Get Dining Hall Key
+LABEL|Twin Castle (Light) - Jailed Key
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|eeb66a3cf17d7ee4898f93f452cc8c10|Weight:1
+
+LOCATION|Castle_TwinCastle_02|DungeonQuest_TwinCastle_02|FSM|Earn the Necropawmicon
+LABEL|Defeat Necromouser
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|11f1df91d1233e347b28fd752ea56bef|Weight:1
+
+LOCATION|Castle_TwinCastle_02|DungeonQuest_TwinCastle_02|FSM|Get Main Entrance Key
+LABEL|Twin Castle (Dark) - Near Entrance Key
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|ce43f985f70b1f946b6cd7d2449e2264|Weight:1
+
+LOCATION|Castle_TwinCastle_02|DungeonQuest_TwinCastle_02|FSM|Get Master Room Key
+LABEL|Twin Castle (Dark) - Jailed Key
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|8cd504f5730445840b225e33fc79ee52|Weight:1
+
+LOCATION|Cave_BootyCave|DungeonQuest_BootyCave|FSM|Boss Reward
+LABEL|Defeat Patchy
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|2c80b4f47c565924c8b254fe9e19ddc4|Weight:1
+
+LOCATION|Cave_Volcano|DungeonQuest_MainQuest_SquidBoss|FSM|Award Equipment
+LABEL|Defeat Takemeowki
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|3bda770fe9f979a499b9dc4c1ae4bf10|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Equipment|da33a185d3f67534eac9f8dce133fbff|Weight:1
+
+LOCATION|InfinityTower|DungeonQuest_InfinityTower|FSM|Receive the North Star essence
+LABEL|Ascend Infinity Tower
+CATEGORY|North Star Essence;Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|57a1c1899c8b716478ee76b01f186fd4|Weight:1
+
+LOCATION|InfinityTower|InfinityTowerFiniteManager|FSM|Cleared Final Batch|Wave:8
+LABEL|Infinity Tower - Wave 8
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|2a19ecdd4b825354296c219bbd4fe166|Weight:1
+OPTION|Equipment|315e51fe6a3095b42b303215e83fe805|Weight:1
+OPTION|Equipment|2b23dd80b39373c47802ab20782ebcb2|Weight:1
+OPTION|Equipment|db1335b11a1572c4caf632f8fc06c935|Weight:1
+OPTION|Equipment|dd2394eb14ca08f4587611deef3ad431|Weight:1
+OPTION|Equipment|ad14fa34366d8a24593ddec86b5685e2|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|InfinityTower|InfinityTowerFiniteManager|FSM|Cleared Ongoing Batch|Wave:3
+LABEL|Infinity Tower - Wave 3
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:25
+OPTION|Equipment|a9a12b1d652518c4c833750e965ad108|Weight:1
+OPTION|Equipment|996c2d9486433f74cafe4879a88a16f2|Weight:1
+OPTION|Equipment|f14e4bbc80f3e6f4f8c6992049be567e|Weight:1
+OPTION|Equipment|be1a97b87da865e4ba66bd2a2e67b3f9|Weight:1
+OPTION|Equipment|b8cdf4f95ea10f545bd6c1aa6c0c9a2c|Weight:1
+OPTION|Equipment|a89e219720277d445aa44c1ecf883231|Weight:1
+OPTION|Equipment|ea1bd2467b130094490bcc54a0fd45f9|Weight:1
+OPTION|Equipment|3a6541654bd805b48acae446af1c8f41|Weight:1
+OPTION|Equipment|511e00ecb4b224442a822c5d193a608e|Weight:1
+OPTION|Equipment|5505a271cff345949a5853a64812a63f|Weight:1
+OPTION|Equipment|60707e1a9eae5ef40ae67003fe152d2d|Weight:1
+OPTION|Equipment|db71318237afdd94f9cc735465ba4d2a|Weight:1
+OPTION|Equipment|4e6ec354a142b46a28584ba49a12f11c|Weight:1
+OPTION|Equipment|2a77b2ebec8fe45ef82139e8131e0a4d|Weight:1
+OPTION|Equipment|6f5c149052fb745bda2cd8f255c595d6|Weight:1
+OPTION|Equipment|2a1e5ebb40871634385970ccca6ab09d|Weight:1
+OPTION|Equipment|afe3168cc9e6dfb4d9494ed8e585bf99|Weight:1
+OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
+OPTION|Equipment|deceac1753640df498d791d9f5f0c730|Weight:1
+OPTION|Equipment|7194c5e8666e60349a53faa508626aa6|Weight:1
+OPTION|Equipment|7577162b107ea814dac7bc94a5bc73bb|Weight:1
+OPTION|Equipment|bc5d04eda9a275140b45d43ec560c9bb|Weight:1
+OPTION|Equipment|cc5bb1210428f466ca01fff6bba14a40|Weight:1
+OPTION|Equipment|5219457213ff34fc38f86f28e343d37c|Weight:1
+OPTION|Equipment|7297468d864ec4ae587bb8b15587d63d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:40|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|InfinityTower|InfinityTowerFiniteManager|FSM|Cleared Ongoing Batch|Wave:5
+LABEL|Infinity Tower - Wave 5
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:25
+OPTION|Equipment|a9a12b1d652518c4c833750e965ad108|Weight:1
+OPTION|Equipment|996c2d9486433f74cafe4879a88a16f2|Weight:1
+OPTION|Equipment|f14e4bbc80f3e6f4f8c6992049be567e|Weight:1
+OPTION|Equipment|be1a97b87da865e4ba66bd2a2e67b3f9|Weight:1
+OPTION|Equipment|b8cdf4f95ea10f545bd6c1aa6c0c9a2c|Weight:1
+OPTION|Equipment|a89e219720277d445aa44c1ecf883231|Weight:1
+OPTION|Equipment|ea1bd2467b130094490bcc54a0fd45f9|Weight:1
+OPTION|Equipment|3a6541654bd805b48acae446af1c8f41|Weight:1
+OPTION|Equipment|511e00ecb4b224442a822c5d193a608e|Weight:1
+OPTION|Equipment|5505a271cff345949a5853a64812a63f|Weight:1
+OPTION|Equipment|60707e1a9eae5ef40ae67003fe152d2d|Weight:1
+OPTION|Equipment|db71318237afdd94f9cc735465ba4d2a|Weight:1
+OPTION|Equipment|4e6ec354a142b46a28584ba49a12f11c|Weight:1
+OPTION|Equipment|2a77b2ebec8fe45ef82139e8131e0a4d|Weight:1
+OPTION|Equipment|6f5c149052fb745bda2cd8f255c595d6|Weight:1
+OPTION|Equipment|2a1e5ebb40871634385970ccca6ab09d|Weight:1
+OPTION|Equipment|afe3168cc9e6dfb4d9494ed8e585bf99|Weight:1
+OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
+OPTION|Equipment|deceac1753640df498d791d9f5f0c730|Weight:1
+OPTION|Equipment|7194c5e8666e60349a53faa508626aa6|Weight:1
+OPTION|Equipment|7577162b107ea814dac7bc94a5bc73bb|Weight:1
+OPTION|Equipment|bc5d04eda9a275140b45d43ec560c9bb|Weight:1
+OPTION|Equipment|cc5bb1210428f466ca01fff6bba14a40|Weight:1
+OPTION|Equipment|5219457213ff34fc38f86f28e343d37c|Weight:1
+OPTION|Equipment|7297468d864ec4ae587bb8b15587d63d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:40|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|Interior_KiddCatSmithy|Interactable_KiddCat|FSM|Get Reward
+LABEL|Smithy - Reward for Dragonbone
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|05a3052309998477998604ae09e04138|Weight:1
+
+LOCATION|Interior_MageShop|Interactable_Mage|FSM|Learn P2 Spell
+LABEL|P2 Spell at Magic Shop
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|6c43417d9de5ddf4c8256d456e866aab|Weight:1
+
+LOCATION|Interior_MageShop|Interactable_Mage|FSM|Learn Spell
+LABEL|Mage Shop - Reward for Necropawmicon
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|7a4e22db244714a6682b58f11e45b26c|Weight:1
+
+LOCATION|Interior_MageShop|Interactable_Mage|FSM|Mage Intro
+LABEL|Freebie Spell at Magic Shop
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|9fb4828dd524549b0a4677d2453a19ab|Weight:1
+
+LOCATION|Interior_MageShop|InteriorQuest_LostItem_VoodooDoll|FSM|Learn Spell
+LABEL|Mage Shop -Reward for Voodoo Dool
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|6c5cca708f40ac348b547f292de31d46|Weight:1
+
+LOCATION|Interior_MewtallicaStage|DungeonQuest_MewtallicaStage_BossFight|FSM|Get Reward
+LABEL|Defeat Meowtallika
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|50acd59b67faf194dbbf08ee7d181aa3|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Equipment|cb1e055b9f101d94d849f098e0c767fa|Weight:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|b42a74af9127a1546af227630f195521|Weight:1
+
+LOCATION|Interior_PirateKingHideout|DungeonQuest_PirateKing|FSM|Earn Reward
+LABEL|Defeat Pi-rat King
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|8cfd849e295cf2d4a95d6f4f2e0aeaf2|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Equipment|d2dfe7bfeadd52949acd59f25acafd34|Weight:1
+
+LOCATION|Interior_Tavern|Interactable_MamaMilka|FSM|Gives Reward
+LABEL|Tavern - Cathulhu kill reward
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
+
+LOCATION|Interior_ZeroDimension|SQ_Aelius_ZeroDimension_01|FSM|give reward
+LABEL|Aelius Visit 1
+CATEGORY|Mana Crystals
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|ManaCrystal||Weight:1
+
+LOCATION|Interior_ZeroDimension|SQ_Aelius_ZeroDimension_02|FSM|give reward 2
+LABEL|Aelius Visit 2
+CATEGORY|Mana Crystals
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|ManaCrystal||Weight:1
+
+LOCATION|Interior_ZeroDimension|SQ_Aelius_ZeroDimension_03|FSM|give reward 2
+LABEL|Aelius Visit 3
+CATEGORY|Mana Crystals
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|ManaCrystal||Weight:1
+
+LOCATION|LOGICAL|LoveBook|Chapter1
+LABEL|Lovepurr Book — Chapter 1
+CATEGORY|Quest Items
+TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 1
+TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 1
+TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 1
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|9da86e0edf3a6f1449e64400a6a9096b|Weight:1
+
+LOCATION|LOGICAL|LoveBook|Chapter2
+LABEL|Lovepurr Book — Chapter 2
+CATEGORY|Quest Items
+TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 2
+TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 2
+TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 2
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|a4f4a4f4891108b46b6fd1ef79ce9e0a|Weight:1
+
+LOCATION|LOGICAL|LoveBook|Chapter3
+LABEL|Lovepurr Book — Chapter 3
+CATEGORY|Quest Items
+TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 3
+TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 3 v2
+TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 3
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|092d5c5aeb3b19743a6f438818eb14ac|Weight:1
+
+LOCATION|MainOverworld|Interactable_Sibling02_Rock06_Trigger|FSM|Message to say get key and get key
+LABEL|Heirloom Quest Under Rock
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|9552edad9714ac54fb57e0a721ba5b4a|Weight:1
+
+LOCATION|MainOverworld|MainQuest_01|FSM|Defeated Mr Clean
+LABEL|Defeat Mr Clean 1
+CATEGORY|Quest Items;Ship Key
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|6726806ecdc575241a6d006d02344975|Weight:1
+
+LOCATION|MainOverworld|MainQuest_07_Key_03|FSM|Get Squid Key
+LABEL|Defeat Meowkoyakuza
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|7fe0b53d50a362d42bba16375b91b18d|Weight:1
+
+LOCATION|MainOverworld|SQ_Cathulu|FSM|Fight Cathulhu
+LABEL|Defeat Cathulhu
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|5f1e3f3209c0c494eb09563e77d78756|Weight:1
+
+LOCATION|MainOverworld|SQ_FearsofthePawst_01|FSM|GIVE REWARD
+LABEL|Purrgatory Questline Finish
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|4f68b5975ee4a5b4bae55c66ce80dc98|Weight:1
+
+LOCATION|MainOverworld|SQ_GentlebrosSpeech|FSM|give reward Body and Head
+LABEL|Gentlebros Quest Reward
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|d8c33e8f52e4f4b8eb8aa88824833351|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Equipment|0cdedd7af543b4f9d8a3467e2a04e994|Weight:1
+
+LOCATION|MainOverworld|SQ_SiblingRivalry_Sea|FSM|Message to say get key
+LABEL|Heirloom Quest Sea Shadow
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|72b50bc2215acf448a2193fa3fcd0d8f|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_BoarBoss|FSM|Defeat Monster and Reward
+LABEL|Defeat Boar King
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|ShipSpell|90482cd1a280aba4dbd0b76e5831b30f|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_Fishercat_FishGhost|FSM|CAUGHT FISH CHEST SPAWN
+LABEL|Catch Ghost Fish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|2e77d136d66e9dd49be96381876913eb|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_Fishercat_FishLove|FSM|CAUGHT FISH CHEST SPAWN
+LABEL|Catch Love Fish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|89857728d1996e94b8770a6732b134b3|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_Fishercat_FishRock|FSM|CAUGHT FISH CHEST SPAWN
+LABEL|Catch Rock Fish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|767cfb45c04cd3c469e8aa48f9e5e646|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_Fishercat_FishSunset|FSM|CAUGHT FISH CHEST SPAWN
+LABEL|Catch Sunset Fish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|28e45dd16af5e964c893fe7297d6a504|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_Fishercat|FSM|CAUGHT FISH SPAWN CHEST
+LABEL|Catch Regular Fish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|ad66710673e3d814893db55c5762d52d|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD
+LABEL|Delivery to Blue Starfish
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD 2
+LABEL|Delivery to Pink Starfish
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD 3
+LABEL|Delivery to Boarb
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|55629125b5625984ca727b181c9a87b4|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD 4
+LABEL|Delivery to Charon
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD 5
+LABEL|Delivery to Floaty Rat
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:8
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD 6
+LABEL|Delivery to Charon
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:8
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD 7
+LABEL|Delivery to Skull
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:8
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:8
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item)
+LABEL|Mail from Postmutt
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|08952e6278361304ea3d7e988637de6e|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item) 2
+LABEL|Mail from Blue Starfish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|f14e80a6d251cea459653f49e25477ef|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item) 3
+LABEL|Mail from Pink Starfish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|b55e4020c560a5646be96d8fb3ba5568|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item) 4
+LABEL|Mail from Board 1
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|418b2dc4a64bab64490e2c1512b3b82f|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item) 5
+LABEL|Mail from Floaty Rat
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|266de2538fe901e40b7bcce7c5f7d4dd|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item) 6
+LABEL|Mail from Charon
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|04efe6e991cef4e47a3ee7b4b3cad594|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item) 7
+LABEL|Mail from Skull
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|7fd62494db0d19948b662959e79ae9bc|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|Get New Mail (Quest Item) 8
+LABEL|Mail from Boarb 2
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|c2c077f8e3e160f4fa2e9039ddaa1a19|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_HiddenItem_Furggy_Rock|FSM|Spawn Chest
+LABEL|Reveal Hidden - Furrgy
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|MainOverworld|WorldQuest_HiddenItem_Furtigua_Rock|FSM|Spawn Chest
+LABEL|Reveal Hidden - Furtuga
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|MainOverworld|WorldQuest_HiddenItem_PawtPurvanna_Bush|FSM|Spawn Chest
+LABEL|Reveal Hidden - PawtPurvanna
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|MainOverworld|WorldQuest_HiddenItem_Purvanna_Starfish|FSM|Spawn Chest
+LABEL|Reveal Hidden - Purvanna Starfish
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|MainOverworld|WorldQuest_HiddenItem_SandyIsle_Starfish|FSM|Spawn Chest
+LABEL|Reveal Hidden - SandyIsle Starfish
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|MainOverworld|WorldQuest_HiddenItem_SunsetMaze_Starfish|FSM|Spawn Chest
+LABEL|Reveal Hidden - SunsetMaze Starfish
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|MainOverworld|WorldQuest_LostItem_PurrierReefTreasure|FSM|Get Reward
+LABEL|Lost Milk
+CATEGORY|Quest Items;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|QuestItem|e93547692c56bb94c95fbfcf9316d8c0|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_LostItem_SunsetTreasure|FSM|Get Reward
+LABEL|Lost Voodoo Doll
+CATEGORY|Quest Items;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|QuestItem|3680762945d570b4ab6d6cee59e7bfcf|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_LostItem_TwilightTreasure|FSM|Get Reward
+LABEL|Lost Hammer
+CATEGORY|Quest Items;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|QuestItem|2fe408df4c1ccbe418eae43dfabc7f99|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_Mewtallica_BossShip|FSM|Give Ship Upgrade
+LABEL|Defeat Meowtallicurse
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|ShipSpell|4469b90338d6c6748a52a574e28770f7|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_MonsterResearcher|FSM|Capture Boar and Reward
+LABEL|Capture Boar for Science
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+
+LOCATION|MainOverworld|WorldQuest_MonsterResearcher|FSM|Capture Chubby and Reward
+LABEL|Capture Chubby for Science
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+
+LOCATION|MainOverworld|WorldQuest_PirateKing_BossShip|FSM|Give Ship Upgrade
+LABEL|Defeat Unsinkable
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|ShipSpell|2ed25839eaf5692439fb69de11c22a3f|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PirateKing|FSM|Get Quest Item
+LABEL|Defeat Pirat King (Dragonbone)
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|2604e87ce825cb240964fce931cd7e2c|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Catuga|FSM|Get Reward
+LABEL|Purrmaid Pool Catuga
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|c351f25f947081b4e800a28c00837a39|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Furggy|FSM|Get Reward
+LABEL|Purrmaid Pool Furggy
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|26958f850750eb0479a3a8bc1852deaf|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Furtigua|FSM|Get Reward
+LABEL|Purrmaid Pool Furtigua
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|26958f850750eb0479a3a8bc1852deaf|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_PawtPurvanna|FSM|Get Reward
+LABEL|Purrmaid Pool PawtPurvanna
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|c351f25f947081b4e800a28c00837a39|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Purvanna|FSM|Get Reward
+LABEL|Purrmaid Pool Purvanna
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|fe839ed1e2e988545a0f40899439a213|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Sunset|FSM|Get Reward
+LABEL|Purrmaid Pool Sunset
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|fe839ed1e2e988545a0f40899439a213|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Twilight|FSM|Get Reward
+LABEL|Purrmaid Pool Twilight
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|fe839ed1e2e988545a0f40899439a213|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Twin|FSM|Get Reward
+LABEL|Purrmaid Pool Twin Castle
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:18
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:18
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Equipment|c351f25f947081b4e800a28c00837a39|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_Purrmaid|FSM|Get Shell Phone
+LABEL|Rescue Purrmaid
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|5d0d4fedc9f879849975b130aa0834db|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PurrseidonsTrident|FSM|Get Trident as reward
+LABEL|Purrseidon Reward
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a84918523ed6a2f44937469e9658704d|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_PuzzleStone_Meowgus|FSM|Reward with mana
+LABEL|Meowgus Mana Crystal
+CATEGORY|Mana Crystals
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|ManaCrystal||Weight:1
+
+LOCATION|MainOverworld|WorldQuest_RubberDuck|FSM|Award Blueprint
+LABEL|Defeat Duck of Doom
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|c0465a498514abd499737497506adccd|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_RunningGold_Furggy|FSM|Get Golden Key 05
+LABEL|Running Coin Furrgy
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|697db15b7663cb7448bf88736b902757|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_RunningGold_Furtigua|FSM|Get Golden Key 03
+LABEL|Running Coin Furtuga
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|cd75bf1dfa29f234fa35755833503014|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_RunningGold_Purvanna|FSM|Get Golden Key 02
+LABEL|Running Coin Purvanna
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|cfc47de2c1131de41a9490c6ddf46423|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_RunningGold_Sunset|FSM|Get Golden Key
+LABEL|Running Coin Sunset
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|95ac0d5c165568349b791abfe7d69d79|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_StraitsWatchtower|FSM|Go get Lousy Boot and Reward
+LABEL|Watchtower Quest 1
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Equipment|f5c57488a278cb9428f39fb4a99157a1|Weight:1
+
+LOCATION|MainOverworld|WorldQuest_StraitsWatchtower|FSM|Go get Lousy Gloves and Reward
+LABEL|Watchtower Quest 2
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:2
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Equipment|e27eced6ee3f7f644b4338224a3de2cb|Weight:1
+
+LOCATION|Ruins_Antares|MainQuest_04_AntaresRuins|FSM|Get Key of Antares
+LABEL|Defeat Antares - Key
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|9ed0dd9195f53d741ac56fba693b50c6|Weight:1
+
+LOCATION|Ruins_Antares|MainQuest_04_AntaresRuins|FSM|Learn Spell
+LABEL|Defeat Antares - Spell
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|d55a7ad9dc89ae649834882278fc0ef5|Weight:1
+
+LOCATION|Ruins_Antares|MainQuest_04_AntaresRuins|FSM|Spawn Loot
+LABEL|Defeat Antares - Loot
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:20|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:5
+
+LOCATION|Ruins_Centauri|DungeonQuest_GoingPostal_OinkerChief|FSM|GET REWARD
+LABEL|Delivery to Oinker
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:1|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:2|ValueMultiplier:500
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:1|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:2|ValueMultiplier:500
+
+LOCATION|Ruins_Centauri|DungeonQuest_GoingPostal_OinkerChief|FSM|Get New Mail (Quest Item)
+LABEL|Mail from Oinker
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|e26a1f630c0f302429d5aac6e4c7b8ef|Weight:1
+
+LOCATION|Ruins_Centauri|MainQuest_05_CentauriRuins|FSM|Go Talk to Pig Boss, get Centauri Key
+LABEL|Oinker Chief Reward
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|5a36b5c0341129b408cc08b37a33b84c|Weight:1
+
+LOCATION|Ruins_Orion|MainQuest_03_OrionRuins|FSM|Get Orion Key
+LABEL|Defeat Orion - Key
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|d437c226478785e4b8f7b058ed3a9728|Weight:1
+
+LOCATION|Ruins_Orion|MainQuest_03_OrionRuins|FSM|Learn Spell
+LABEL|Defeat Orion - Spell
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|1fafd3cbec8754e359dbb8ef5e643196|Weight:1
+
+LOCATION|Ruins_Orion|MainQuest_03_OrionRuins|FSM|Spawn Boss Chest
+LABEL|Defeat Orion - Loot
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|Ruins_Polaris|MainQuest_06_PolarisRuins|FSM|Get Infinity Key
+LABEL|Polaris Mural - Infinity Key
+CATEGORY|Infinity Key;Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|0155432565248e64e8378122cbb41406|Weight:1
+
+LOCATION|Ruins_Polaris|MainQuest_06_PolarisRuins|FSM|Mewtallica talks
+LABEL|Polaris - Meowtallika Ticket
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|66ebef354aeecdd4a81d7ca697309ac9|Weight:1
+
+LOCATION|a35cc2876b24ad644a56fb48e53b83dc
+LABEL|Wanted Poster Takomeowki Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|087db2a1ab2cc46ddb65cf498b40850e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:13500|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|a3a76bece3af81b4a9fda9683e142135
+LABEL|Wanted Poster Boar Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:3000|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|a4a0ff1717a25354a9fea38bb192c7a0
+LABEL|Purrgatory Silver Chest - Sunset Isles
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:3
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:5|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|a5a38691eb6971f49836b0a3a7110eee
+LABEL|8 Bit Dungeon — 4F Jailed Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|191f43b910b9f90439fbda4606d93575|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|a5a766e09d1501d4294a69afa881c923
+LABEL|Twlight Isles — Oinker Field Bush Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|cc5bb1210428f466ca01fff6bba14a40|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|a6b238a85756cee4e99e777f69adcb46
+LABEL|Twin Castle (Dark) - 2F Dining Hall East Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|372460f0f3ceea74785f1b1317778bfa|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|a7b8e9e0c3078d94a80d95b1a2212d18
+LABEL|Purrseidon Treasure Chest
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|aa443439d999ea8448ecca0a70766c21
+LABEL|Purvanna — Beach Starguide Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|ab89e4e54f9044643933cc44377e4e34
+LABEL|Hidden Chest  — Sunset Maze Starfish
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|ab9934d4c98574c4c933285db0f02ba9
+LABEL|Squeaky Cave — Stash Lower Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|ad374b5039a7e65428b67123e6eb0241
+LABEL|Smithy — Kidd Cat's Treasure Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|ade0153040edc094ab6f92579b203996
+LABEL|Furggy Island — Upper Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|adf7097a005347a4db661064c9080f27
+LABEL|Twlight Isles — Crate before Barricade
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b00f38fee899baa47ad8bbc0ee8b87ea
+LABEL|Ruins Antares — 2F Guarded Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|0cf269bb33c63c8439c3a53528e953d9|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b2499a3555b56eb4daae8b1cc6b9cd8c
+LABEL|Volcano — Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|23240f77bf616924d92c8f9b3d5d9177|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b272609e38d2da641b02478112f3dc2a
+LABEL|Fishercat — Fish Love Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:2
+OPTION|Equipment|7b91d604cdaea5041a23fa0f960eff3e|Weight:1
+OPTION|Equipment|5e7fae7d2a4801241958b53f5dfd0950|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b3c5d4e55fb2a914b8a547680be68a78
+LABEL|Catuga — East Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b72d69482c7757848af2dce623a7e515
+LABEL|Twin Castle (Light) - 1F Crate near entrance
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b8310d164078e92438d3ff599c2930cd
+LABEL|Purrgatory Silver Chest - Twilight Isles
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:3
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:5|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b864f5c7b30f6784d97fed7e2acffb28
+LABEL|Twlight Isles — Urchin-field Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b8705aa0b55653945832585e5490180b
+LABEL|Macho Dog Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|0b20e35ff4a848a439f46136742053f8|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|b8f61f3e00ecea04681c4da63a125264
+LABEL|Tavern — Mama Milka's Treasure Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|bfa78bb6bcac0a647ac487b438aa30bb
+LABEL|Sandy Isle — Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:3
+OPTION|Equipment|109f7faaf9c9e403fa18bb8b281f4bf9|Weight:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|c0f90f4d9db2e384e95d523203d2cb26
+LABEL|Ice Pirate Hideout — 3F Secret Boss Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|c1430ab86288b0e429895078cdb462d1
+LABEL|Lovepurr Island — North Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|c2930180ed192db4ebf640ce951a0326
+LABEL|Ruins Centauri — Exit Gate Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|162e6fb9c105f1040bf3f23e7dfda6bc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|c5135337e4fcd3148842b15dc6173d89
+LABEL|Sunset Maze — Southwest Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|c5ec6f52e8dbb9c4da7b757521618417
+LABEL|Sunset Maze — Middle Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|c8ce1e3d1398ebb40b24504a83f8a9b6
+LABEL|Ruins Polaris — 3F Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|c98d45fadc3efbc46ae8038998bc8506
+LABEL|Lovepurr Island — East Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|ca2deab51e68ef948958a2602a55d96e
+LABEL|Squeaky Cave — Stash Upper Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|ce0de41c4a8f54f4eba73810b1f3b92f
+LABEL|Lovepurr Cave — Northeast Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:19
+OPTION|Equipment|a9a12b1d652518c4c833750e965ad108|Weight:1
+OPTION|Equipment|996c2d9486433f74cafe4879a88a16f2|Weight:1
+OPTION|Equipment|f14e4bbc80f3e6f4f8c6992049be567e|Weight:1
+OPTION|Equipment|be1a97b87da865e4ba66bd2a2e67b3f9|Weight:1
+OPTION|Equipment|b8cdf4f95ea10f545bd6c1aa6c0c9a2c|Weight:1
+OPTION|Equipment|a89e219720277d445aa44c1ecf883231|Weight:1
+OPTION|Equipment|ea1bd2467b130094490bcc54a0fd45f9|Weight:1
+OPTION|Equipment|3a6541654bd805b48acae446af1c8f41|Weight:1
+OPTION|Equipment|511e00ecb4b224442a822c5d193a608e|Weight:1
+OPTION|Equipment|5505a271cff345949a5853a64812a63f|Weight:1
+OPTION|Equipment|60707e1a9eae5ef40ae67003fe152d2d|Weight:1
+OPTION|Equipment|db71318237afdd94f9cc735465ba4d2a|Weight:1
+OPTION|Equipment|4e6ec354a142b46a28584ba49a12f11c|Weight:1
+OPTION|Equipment|2a77b2ebec8fe45ef82139e8131e0a4d|Weight:1
+OPTION|Equipment|6f5c149052fb745bda2cd8f255c595d6|Weight:1
+OPTION|Equipment|2a1e5ebb40871634385970ccca6ab09d|Weight:1
+OPTION|Equipment|afe3168cc9e6dfb4d9494ed8e585bf99|Weight:1
+OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
+OPTION|Equipment|deceac1753640df498d791d9f5f0c730|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|cec4cb43c43ff1947a098e33eafdbd1a
+LABEL|Wanted Poster Clawford Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|087db2a1ab2cc46ddb65cf498b40850e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:7500|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|cf416388ba105e04e87e442c364d5904
+LABEL|Purvanna — Crate between Kidd/Bonnie
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|cfde168fd11e6a14ebd25dfc688c4569
+LABEL|Sunset Maze — Running Coin Chest
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|cffd7dd91ce2f0047b4147b98e1de519
+LABEL|Squeaky Cave — Southeast Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|d107fb7f357514a43a557593c8a1b66c
+LABEL|Sunset Squid Isles — East Voodoo Island Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|d173c2366ee964c49b2d532cbd6edd25
+LABEL|Twin Castle (Light) - 1F Ladder Room Secret Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|d17953ae3c25506468127f9303ecc6af
+LABEL|Wanted Poster Dratcula Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|087db2a1ab2cc46ddb65cf498b40850e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:15|Value:12000|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|d4b443db593fa614b8d31364c618c701
+LABEL|Fire Pirate Hideout — 1F Silver Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|511e00ecb4b224442a822c5d193a608e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|d984358aec0bbd54eaf49469b714b7ed
+LABEL|Furggy Island — Running Coin Chest
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|db68361cf021927468cb1e8bbae943ea
+LABEL|Ice Pirate Hideout — 2F Side Room - Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|2a1e5ebb40871634385970ccca6ab09d|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|dba40d9696029314a9cdc8bce592f234
+LABEL|Purvanna — East Boar Field Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|55629125b5625984ca727b181c9a87b4|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|dfc3fbac9afec104694dd7b01c6350ee
+LABEL|Furrlorn Cave — East Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|e4a19150ff4a0b148a88dfc1177ec0ad
+LABEL|Ruins Polaris — 2F Puzzle Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|e522995d163539e44a6e1254027f390d
+LABEL|Lovepurr Castle — 3rd Book Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|6f745808351b0b94da3e17cfecb5b09a|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|eec25a62ba70cd041b84ba7c24435edb
+LABEL|Lonely Cave — Dragon Boar Treasure
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|d1f9a6d20248e3f4e8678d2bf828dc5e|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f0ae325c8aebd1f498f65f6cca2f3ce2
+LABEL|Ruins Polaris — 3F Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|db1335b11a1572c4caf632f8fc06c935|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f0e0c67d26a5a544a8deee091b2caabc
+LABEL|Booty Cave — Southeast Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|35b1114715ace1e4287c943e28c47af8|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f1870b21c3481b347b67772f5040dc72
+LABEL|Twin Castle (Light) - 2F Dining Hall Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f486e3102443a1247a74a86c4e20eb3d
+LABEL|Ruins Polaris — 1F Puzzle Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f6c19dda60222654295850e763940365
+LABEL|Long Island — Inside Fort Crate
+CATEGORY|Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f787f84550d5dab4d91336a61439d3fd
+LABEL|Sunset Squid Isles — Purrmaid Purrison Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|ffdf189f74d31ff43a1706c24c47d0ea|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f82978ff672a3f242a70538d55a51ea1
+LABEL|Purvanna — Puzzle Chest Purvanna Tower
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|d1f63b68407984a7aacaf1dd4d6c27fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f8a072b39ec682441909c974658f50ec
+LABEL|Lovepurr Castle — Boss Room Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|0e5106fb19ef49c41b39d6cef53c1efe|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|f9ef4f4f11165884a90e2716603ff0f5
+LABEL|Twin Castle (Dark) - 3F Silver Boss Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|da085ee77836af34fa74c9289db12ae2|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|fc6ac86f93a489a4ea033cdf2b0aea7f
+LABEL|Golden Tower — 3F Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|79d36535bbeafbf44a4e6f38efe46f10|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|4|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|fd3c4288b8589a245a1f0c4a485df86a
+LABEL|Heartpurreak Cave — West Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:19
+OPTION|Equipment|a9a12b1d652518c4c833750e965ad108|Weight:1
+OPTION|Equipment|996c2d9486433f74cafe4879a88a16f2|Weight:1
+OPTION|Equipment|f14e4bbc80f3e6f4f8c6992049be567e|Weight:1
+OPTION|Equipment|be1a97b87da865e4ba66bd2a2e67b3f9|Weight:1
+OPTION|Equipment|b8cdf4f95ea10f545bd6c1aa6c0c9a2c|Weight:1
+OPTION|Equipment|a89e219720277d445aa44c1ecf883231|Weight:1
+OPTION|Equipment|ea1bd2467b130094490bcc54a0fd45f9|Weight:1
+OPTION|Equipment|3a6541654bd805b48acae446af1c8f41|Weight:1
+OPTION|Equipment|511e00ecb4b224442a822c5d193a608e|Weight:1
+OPTION|Equipment|5505a271cff345949a5853a64812a63f|Weight:1
+OPTION|Equipment|60707e1a9eae5ef40ae67003fe152d2d|Weight:1
+OPTION|Equipment|db71318237afdd94f9cc735465ba4d2a|Weight:1
+OPTION|Equipment|4e6ec354a142b46a28584ba49a12f11c|Weight:1
+OPTION|Equipment|2a77b2ebec8fe45ef82139e8131e0a4d|Weight:1
+OPTION|Equipment|6f5c149052fb745bda2cd8f255c595d6|Weight:1
+OPTION|Equipment|2a1e5ebb40871634385970ccca6ab09d|Weight:1
+OPTION|Equipment|afe3168cc9e6dfb4d9494ed8e585bf99|Weight:1
+OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
+OPTION|Equipment|deceac1753640df498d791d9f5f0c730|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|fdef68233b096cf4d8700a2779f50c6c
+LABEL|Spicy Cave — Arena Silver Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|4acebff9ed392764b9841ae7acbc5b47|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|fe3fe14f11edeae41900d430c0b50e00
+LABEL|Furggy Island — Lower Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:6
+OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
+OPTION|Equipment|b7785028aedfb724dac830ed9e28f18c|Weight:1
+OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1
+OPTION|Equipment|83801aa69466a4f469081e4cf7aa5214|Weight:1
+OPTION|Equipment|e41ef77460893a846bc2e55d5bb55aab|Weight:1
+OPTION|Equipment|3887830cfdb07bf48ad72b4eaddd72fc|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|fe61992df5a3b424d9d54d570f469efc
+LABEL|Cathulu Treasure Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Blueprint|ebe65fd4ea1c09946aa1ed774b0f5ea2|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|3|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:10|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|ff059a94849ec604fa0b4e9ab8e1bfa7
+LABEL|Code Isle — Puzzle Chest
+CATEGORY|Equipment & Blueprints;Resources/Collectibles
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Equipment|ac1c4311cf0474e1cbab1f1406a7e375|Weight:1
+SLOT|1|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+SLOT|2|AllowCollectibles:True|Options:1
+OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+

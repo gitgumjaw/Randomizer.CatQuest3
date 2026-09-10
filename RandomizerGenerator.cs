@@ -20,7 +20,7 @@ namespace Randomizer.CatQuest3
                 RewardCatalog.GetEligibleSlots(settings);
 
             // Shuffle while respecting destination compatibility
-            // rules such as mana locations rejecting Collectibles.
+            // rules such as restricted locations rejecting Collectibles.
             RewardShuffler.Shuffle(
                 eligibleSlots,
                 seed

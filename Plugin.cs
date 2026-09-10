@@ -18,11 +18,7 @@ namespace Randomizer.CatQuest3
             Log = Logger;
 
             Logger.LogInfo(
-                "Hello from Cat Quest 3 Randomizer!"
-            );
-
-            Logger.LogInfo(
-                "Cat Quest 3 Randomizer DEBUG BUILD: Category Label Maker 1"
+                "Cat Quest 3 Randomizer starting."
             );
 
             Harmony harmony =
@@ -32,51 +28,36 @@ namespace Randomizer.CatQuest3
 
             harmony.PatchAll();
 
-            var shipBlueprintMethod =
-    AccessTools.Method(
-        typeof(AwardShipBlueprintToPlayer),
-        "OnEnter"
-    );
-
-            var shipBlueprintPatchInfo =
-                Harmony.GetPatchInfo(
-                    shipBlueprintMethod
-                );
-
-            bool shipBlueprintPatchFound = false;
-
-            if (shipBlueprintPatchInfo != null)
-            {
-                foreach (string owner in shipBlueprintPatchInfo.Owners)
+            RandomizerSettings settings =
+                new RandomizerSettings
                 {
-                    if (owner == "Randomizer.CatQuest3")
-                    {
-                        shipBlueprintPatchFound = true;
-                        break;
-                    }
-                }
-            }
+                    RandomizeEquipment = true,
+                    RandomizeSpells = true,
+                    RandomizeQuestItems = true,
+                    RandomizeManaCrystals = true,
+                    RandomizeCollectibles = true,
 
-            Logger.LogInfo(
-                $"SHIP BLUEPRINT PATCH INSTALLED: " +
-                $"{shipBlueprintPatchFound}"
+                    RandomizeShipKey = false,
+                    RandomizeInfinityKey = false,
+                    RandomizeNorthStarEssence = false,
+                    RandomizeBirdPoop = false
+                };
+
+            RandomizerState.Settings =
+                settings;
+
+            RandomizerGenerator.Generate(
+                settings,
+                54321
             );
 
             Logger.LogInfo(
                 "Harmony patches applied."
             );
 
-            CatalogExporter.UpgradeExistingCatalogMetadata();
-        }
-
-        private void LateUpdate()
-        {
-            if (!CatalogScanResults.IsDirty)
-            {
-                return;
-            }
-
-            CatalogExporter.Export();
+            Logger.LogInfo(
+                "Sanity Check: Rando test 1"
+            );
         }
     }
 }

@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\RewardCatalog.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\RewardCatalog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>

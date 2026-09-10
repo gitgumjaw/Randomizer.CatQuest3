@@ -8,7 +8,7 @@ namespace Randomizer.CatQuest3
         public static void ResolveToRewardCatalog(int seed)
         {
             List<CatalogRewardLocation> catalogLocations =
-                CatalogScanResults.GetAll();
+                CatalogLoader.Load();
 
             // Dictionary enumeration order should not determine a seed.
             // Always resolve locations in a stable order.
@@ -61,7 +61,9 @@ namespace Randomizer.CatQuest3
                     new RewardLocation(
                         catalogLocation.Key,
                         resolvedRewards,
-                        allowCollectiblesBySlot
+                        allowCollectiblesBySlot,
+                        catalogLocation.Triggers,
+                        catalogLocation.Label
                     );
 
                 RewardCatalog.Add(resolvedLocation);

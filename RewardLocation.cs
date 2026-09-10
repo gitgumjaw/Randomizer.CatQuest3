@@ -6,19 +6,30 @@ namespace Randomizer.CatQuest3
     {
         public string Key { get; }
 
+        public string Label { get; }
+
+        public List<string> Triggers { get; }
+
         public List<Reward> VanillaRewards { get; }
         public List<Reward> RandomizedRewards { get; }
 
-        // One entry for each reward slot.
-        // Existing locations default to allowing collectibles.
         public List<bool> AllowCollectiblesBySlot { get; }
 
         public RewardLocation(
             string key,
             IEnumerable<Reward> vanillaRewards,
-            IEnumerable<bool> allowCollectiblesBySlot = null)
+            IEnumerable<bool> allowCollectiblesBySlot = null,
+            IEnumerable<string> triggers = null,
+            string label = null)
         {
             Key = key;
+
+            Label = label;
+
+            Triggers =
+                triggers == null
+                    ? new List<string>()
+                    : new List<string>(triggers);
 
             VanillaRewards =
                 new List<Reward>(vanillaRewards);
@@ -31,7 +42,6 @@ namespace Randomizer.CatQuest3
 
             if (allowCollectiblesBySlot == null)
             {
-                // Normal/default behavior.
                 for (int i = 0; i < VanillaRewards.Count; i++)
                 {
                     AllowCollectiblesBySlot.Add(true);
@@ -43,9 +53,8 @@ namespace Randomizer.CatQuest3
                     allowCollectiblesBySlot
                 );
 
-                // A location must have exactly one restriction
-                // value for every reward slot.
-                if (AllowCollectiblesBySlot.Count != VanillaRewards.Count)
+                if (AllowCollectiblesBySlot.Count !=
+                    VanillaRewards.Count)
                 {
                     throw new System.ArgumentException(
                         "Reward slot restriction count must match reward count."

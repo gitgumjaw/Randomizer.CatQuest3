@@ -7,14 +7,50 @@ namespace Randomizer.CatQuest3
         private static readonly Dictionary<string, RewardLocation> locations =
             new Dictionary<string, RewardLocation>();
 
+        private static readonly Dictionary<string, RewardLocation> triggerLocations =
+            new Dictionary<string, RewardLocation>();
+
         public static void Add(RewardLocation location)
         {
-            locations[location.Key] = location;
+            locations[location.Key] =
+                location;
+
+            foreach (string trigger in location.Triggers)
+            {
+                if (string.IsNullOrWhiteSpace(trigger))
+                {
+                    continue;
+                }
+
+                if (triggerLocations.TryGetValue(
+                    trigger,
+                    out RewardLocation existing) &&
+                    existing != location)
+                {
+                    Plugin.Log.LogError(
+                        $"Duplicate reward trigger: {trigger}"
+                    );
+
+                    continue;
+                }
+
+                triggerLocations[trigger] =
+                    location;
+            }
         }
 
         public static RewardLocation Get(string key)
         {
-            if (locations.TryGetValue(key, out RewardLocation location))
+            if (locations.TryGetValue(
+                key,
+                out RewardLocation location))
+            {
+                return location;
+            }
+
+            if (triggerLocations.TryGetValue(
+                key,
+                out location))
             {
                 return location;
             }
@@ -24,7 +60,9 @@ namespace Randomizer.CatQuest3
 
         public static List<RewardLocation> GetAll()
         {
-            return new List<RewardLocation>(locations.Values);
+            return new List<RewardLocation>(
+                locations.Values
+            );
         }
 
         public static int Count
@@ -36,14 +74,16 @@ namespace Randomizer.CatQuest3
         }
 
         public static List<RewardSlot> GetEligibleSlots(
-    RandomizerSettings settings)
+            RandomizerSettings settings)
         {
             List<RewardSlot> eligibleSlots =
                 new List<RewardSlot>();
 
             foreach (RewardLocation location in locations.Values)
             {
-                for (int i = 0; i < location.VanillaRewards.Count; i++)
+                for (int i = 0;
+                     i < location.VanillaRewards.Count;
+                     i++)
                 {
                     RewardSlot slot =
                         new RewardSlot(
@@ -52,9 +92,13 @@ namespace Randomizer.CatQuest3
                             location.AllowCollectiblesBySlot[i]
                         );
 
-                    if (RandomizerEligibility.IsEnabled(slot, settings))
+                    if (RandomizerEligibility.IsEnabled(
+                        slot,
+                        settings))
                     {
-                        eligibleSlots.Add(slot);
+                        eligibleSlots.Add(
+                            slot
+                        );
                     }
                 }
             }
@@ -62,17 +106,21 @@ namespace Randomizer.CatQuest3
             return eligibleSlots;
         }
 
-        public static void AddRange(IEnumerable<RewardLocation> newLocations)
+        public static void AddRange(
+            IEnumerable<RewardLocation> newLocations)
         {
             foreach (RewardLocation location in newLocations)
             {
-                Add(location);
+                Add(
+                    location
+                );
             }
         }
 
         public static void Clear()
         {
             locations.Clear();
+            triggerLocations.Clear();
         }
     }
 }

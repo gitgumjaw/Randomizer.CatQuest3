@@ -13,5 +13,8 @@
 
         public const string BirdPoopGuid =
             "321ebd701eff1264eb7f7296d033831c";
+
+        public const string StarRuneGuid =
+            "fd36ba1341aa4d24692cc3eedea20405";
     }
 }
