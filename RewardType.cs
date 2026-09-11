@@ -7,7 +7,6 @@
         Spell,
         ShipSpell,
         QuestItem,
-        KeyItem,
         ManaCrystal,
         Collectible
     }

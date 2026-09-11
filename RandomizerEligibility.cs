@@ -56,9 +56,6 @@
                 case RewardType.Collectible:
                     return settings.RandomizeCollectibles;
 
-                case RewardType.KeyItem:
-                    return false;
-
                 default:
                     return false;
             }
