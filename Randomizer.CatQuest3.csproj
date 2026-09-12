@@ -21,8 +21,14 @@
     <Reference Include="BepInEx">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\Cat Quest III_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="Entitas">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\Cat Quest III_Data\Managed\Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="Gentlebros">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\Cat Quest III_Data\Managed\Gentlebros.dll</HintPath>
     </Reference>
     <Reference Include="PlayMaker">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\Cat Quest III_Data\Managed\PlayMaker.dll</HintPath>
@@ -35,6 +41,9 @@
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\Cat Quest III_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\CatQuest_Purribean\Cat Quest III_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 

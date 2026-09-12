@@ -48,7 +48,7 @@ namespace Randomizer.CatQuest3
 
             RandomizerGenerator.Generate(
                 settings,
-                54321
+                37
             );
 
             Logger.LogInfo(

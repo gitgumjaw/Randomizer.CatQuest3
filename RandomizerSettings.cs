@@ -9,6 +9,9 @@
         public bool RandomizeManaCrystals { get; set; }
         public bool RandomizeCollectibles { get; set; }
 
+        // Equipment options
+        public bool MatchEquipmentLevelToPlayer { get; set; }
+
         // Special-case rewards
         public bool RandomizeShipKey { get; set; }
         public bool RandomizeInfinityKey { get; set; }

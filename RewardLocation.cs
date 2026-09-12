@@ -73,5 +73,39 @@ namespace Randomizer.CatQuest3
                 new[] { allowCollectibles })
         {
         }
+        public int FindVanillaRewardIndex(
+    RewardType type,
+    string id)
+        {
+            int matchIndex = -1;
+
+            for (int i = 0; i < VanillaRewards.Count; i++)
+            {
+                Reward reward =
+                    VanillaRewards[i];
+
+                if (reward.Type != type ||
+                    reward.Id != id)
+                {
+                    continue;
+                }
+
+                if (matchIndex != -1)
+                {
+                    Plugin.Log.LogError(
+                        $"Ambiguous vanilla reward match | " +
+                        $"Location:{Key} | " +
+                        $"Type:{type} | " +
+                        $"Id:{id}"
+                    );
+
+                    return -1;
+                }
+
+                matchIndex = i;
+            }
+
+            return matchIndex;
+        }
     }
 }
