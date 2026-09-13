@@ -1,5 +1,7 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using UnityEngine;
+using UnityEngine.Windows;
 
 namespace Randomizer.CatQuest3
 {
@@ -48,7 +50,7 @@ namespace Randomizer.CatQuest3
 
             RandomizerGenerator.Generate(
                 settings,
-                37
+                5
             );
 
             Logger.LogInfo(
@@ -56,7 +58,7 @@ namespace Randomizer.CatQuest3
             );
 
             Logger.LogInfo(
-                "Sanity Check: Rando test 1"
+                "Sanity Check: meowkya"
             );
         }
     }

@@ -60,6 +60,7 @@ namespace Randomizer.CatQuest3
                 case RewardType.QuestItem:
                     GrantQuestItem(
                         reward,
+                        position,
                         callback
                     );
                     return;
@@ -308,8 +309,9 @@ namespace Randomizer.CatQuest3
         }
 
         private static void GrantQuestItem(
-            Reward reward,
-            Action callback)
+    Reward reward,
+    Vector3 position,
+    Action callback)
         {
             QuestItem questItem =
                 RewardDataResolver.GetQuestItem(
@@ -326,7 +328,12 @@ namespace Randomizer.CatQuest3
                 questItem,
                 delegate
                 {
-                    callback?.Invoke();
+                    ProgressionRewardHandler
+                        .HandleQuestItem(
+                            questItem,
+                            position,
+                            callback
+                        );
                 }
             );
         }
