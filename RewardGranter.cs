@@ -339,7 +339,7 @@ namespace Randomizer.CatQuest3
         }
 
         private static void GrantManaCrystal(
-            Action callback)
+    Action callback)
         {
             MessageUIInfo messageInfo =
                 new MessageUIInfo
@@ -375,37 +375,48 @@ namespace Randomizer.CatQuest3
                     InputState.UI
                 );
 
-            Contexts.sharedInstance.gUI
-                .messagePanel
-                .value
-                .Show(
-                    messageInfo,
-                    delegate
-                    {
-                        Contexts.sharedInstance.input
-                            .CreateInputStateCommand(
-                                InputStateCommand.Pop
-                            );
+            ManaCrystalMessagePatch.AllowRandomizerMessage =
+                true;
 
-                        IGroup<GameEntity> players =
-                            Contexts.sharedInstance.game
-                                .GetGroup(
-                                    GameMatcher.PlayerCharacter
+            try
+            {
+                Contexts.sharedInstance.gUI
+                    .messagePanel
+                    .value
+                    .Show(
+                        messageInfo,
+                        delegate
+                        {
+                            Contexts.sharedInstance.input
+                                .CreateInputStateCommand(
+                                    InputStateCommand.Pop
                                 );
 
-                        SingletonMonoBehaviour<SaveGameManager>
-                            .Instance
-                            .currSaveSlot
-                            .savedAcquiredManaCrystals++;
+                            IGroup<GameEntity> players =
+                                Contexts.sharedInstance.game
+                                    .GetGroup(
+                                        GameMatcher.PlayerCharacter
+                                    );
 
-                        GameStateHelper
-                            .UpdatePlayersMaxMana(
-                                players
-                            );
+                            SingletonMonoBehaviour<SaveGameManager>
+                                .Instance
+                                .currSaveSlot
+                                .savedAcquiredManaCrystals++;
 
-                        callback?.Invoke();
-                    }
-                );
+                            GameStateHelper
+                                .UpdatePlayersMaxMana(
+                                    players
+                                );
+
+                            callback?.Invoke();
+                        }
+                    );
+            }
+            finally
+            {
+                ManaCrystalMessagePatch.AllowRandomizerMessage =
+                    false;
+            }
         }
 
         private static Sprite GetManaCrystalSprite()

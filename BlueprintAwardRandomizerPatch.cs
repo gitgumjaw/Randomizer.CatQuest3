@@ -45,14 +45,6 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
-            // If this slot still contains its original Blueprint,
-            // let the game's vanilla action handle it.
-            if (randomizedReward.Type == RewardType.Blueprint &&
-                randomizedReward.Id == blueprintGuid)
-            {
-                return true;
-            }
-
             if (!__instance.dontRaiseCutsceneFlag)
             {
                 Contexts.sharedInstance.game
@@ -68,15 +60,17 @@ namespace Randomizer.CatQuest3
                     .transform.position;
 
             Plugin.Log.LogInfo(
-                $"Replacing blueprint reward | " +
+                $"Queueing blueprint reward | " +
                 $"Location:{location.Label} | " +
                 $"Slot:{rewardIndex} | " +
-                $"Vanilla:{blueprintGuid} | " +
+                $"Vanilla:Blueprint:{blueprintGuid} | " +
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );
 
-            RewardGranter.Grant(
+            RewardGrantQueue.Enqueue(
+                location,
+                rewardIndex,
                 randomizedReward,
                 -1,
                 position,

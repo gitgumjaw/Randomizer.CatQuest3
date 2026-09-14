@@ -45,12 +45,6 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
-            if (randomizedReward.Type == RewardType.Spell &&
-                randomizedReward.Id == spellGuid)
-            {
-                return true;
-            }
-
             if (!__instance.dontRaiseCutsceneFlag)
             {
                 Contexts.sharedInstance.game
@@ -66,15 +60,17 @@ namespace Randomizer.CatQuest3
                     .transform.position;
 
             Plugin.Log.LogInfo(
-                $"Replacing spell reward | " +
+                $"Queueing spell reward | " +
                 $"Location:{location.Label} | " +
                 $"Slot:{rewardIndex} | " +
-                $"Vanilla:{spellGuid} | " +
+                $"Vanilla:Spell:{spellGuid} | " +
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );
 
-            RewardGranter.Grant(
+            RewardGrantQueue.Enqueue(
+                location,
+                rewardIndex,
                 randomizedReward,
                 -1,
                 position,

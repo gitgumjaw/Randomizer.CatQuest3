@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(AwardShipSpecialAmmoToPlayer), "Award")]
-    public static class ShipSpellAwardRandomizerPatch
+    [HarmonyPatch(typeof(GivePlayersManaCrystal), "OnEnter")]
+    public static class ManaCrystalAwardRandomizerPatch
     {
         public static bool Prefix(
-            AwardShipSpecialAmmoToPlayer __instance)
+            GivePlayersManaCrystal __instance)
         {
             string key =
                 PlayMakerLocation.GetKey(
@@ -17,19 +17,15 @@ namespace Randomizer.CatQuest3
             RewardLocation location =
                 RewardCatalog.Get(key);
 
-            if (location == null ||
-                __instance.specialAmmo == null)
+            if (location == null)
             {
                 return true;
             }
 
-            string shipSpellGuid =
-                __instance.specialAmmo.Guid;
-
             int rewardIndex =
                 location.FindVanillaRewardIndex(
-                    RewardType.ShipSpell,
-                    shipSpellGuid
+                    RewardType.ManaCrystal,
+                    ""
                 );
 
             if (rewardIndex < 0)
@@ -45,25 +41,15 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
-            if (!__instance.dontRaiseCutsceneFlag)
-            {
-                Contexts.sharedInstance.game
-                    .isInCutscene = true;
-
-                Contexts.sharedInstance.game
-                    .cutsceneOwner.value =
-                        __instance.Fsm.GameObject;
-            }
-
             Vector3 position =
                 __instance.Fsm.GameObject
                     .transform.position;
 
             Plugin.Log.LogInfo(
-                $"Queueing ship spell reward | " +
+                $"Queueing mana crystal reward | " +
                 $"Location:{location.Label} | " +
                 $"Slot:{rewardIndex} | " +
-                $"Vanilla:ShipSpell:{shipSpellGuid} | " +
+                $"Vanilla:ManaCrystal | " +
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );
