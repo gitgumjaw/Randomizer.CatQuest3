@@ -3,12 +3,17 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(AwardShipBlueprintToPlayer), "Award")]
-    public static class BlueprintAwardRandomizerPatch
+    [HarmonyPatch(typeof(AwardQuestItem), "OnEnter")]
+    public static class QuestItemAwardRandomizerPatch
     {
         public static bool Prefix(
-            AwardShipBlueprintToPlayer __instance)
+            AwardQuestItem __instance)
         {
+            if (__instance.questItem == null)
+            {
+                return true;
+            }
+
             string key =
                 PlayMakerLocation.GetKey(
                     __instance.Fsm
@@ -17,19 +22,15 @@ namespace Randomizer.CatQuest3
             RewardLocation location =
                 RewardCatalog.Get(key);
 
-            if (location == null ||
-                __instance.shipBlueprintItemData == null)
+            if (location == null)
             {
                 return true;
             }
 
-            string blueprintGuid =
-                __instance.shipBlueprintItemData.Guid;
-
             int rewardIndex =
                 location.FindVanillaRewardIndex(
-                    RewardType.Blueprint,
-                    blueprintGuid
+                    RewardType.QuestItem,
+                    __instance.questItem.Guid
                 );
 
             if (rewardIndex < 0)
@@ -38,21 +39,13 @@ namespace Randomizer.CatQuest3
             }
 
             Reward randomizedReward =
-                location.RandomizedRewards[rewardIndex];
+                location.RandomizedRewards[
+                    rewardIndex
+                ];
 
             if (randomizedReward == null)
             {
                 return true;
-            }
-
-            if (!__instance.dontRaiseCutsceneFlag)
-            {
-                Contexts.sharedInstance.game
-                    .isInCutscene = true;
-
-                Contexts.sharedInstance.game
-                    .cutsceneOwner.value =
-                        __instance.Fsm.GameObject;
             }
 
             Vector3 position =
@@ -62,10 +55,11 @@ namespace Randomizer.CatQuest3
                 );
 
             Plugin.Log.LogInfo(
-                $"Queueing blueprint reward | " +
+                $"Queueing quest item reward | " +
                 $"Location:{location.Label} | " +
                 $"Slot:{rewardIndex} | " +
-                $"Vanilla:Blueprint:{blueprintGuid} | " +
+                $"Vanilla:QuestItem:" +
+                $"{__instance.questItem.Guid} | " +
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );

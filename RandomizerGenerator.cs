@@ -20,7 +20,8 @@ namespace Randomizer.CatQuest3
                 RewardCatalog.GetEligibleSlots(settings);
 
             // Shuffle while respecting destination compatibility
-            // rules such as restricted locations rejecting Collectibles.
+            // rules such as restricted locations rejecting Collectibles
+            // and Catuga locations rejecting the randomized Ship Key.
             RewardShuffler.Shuffle(
                 eligibleSlots,
                 seed

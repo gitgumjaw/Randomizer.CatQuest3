@@ -39,7 +39,7 @@ namespace Randomizer.CatQuest3
                     RandomizeManaCrystals = true,
                     RandomizeCollectibles = true,
 
-                    RandomizeShipKey = false,
+                    RandomizeShipKey = true,
                     RandomizeInfinityKey = false,
                     RandomizeNorthStarEssence = false,
                     RandomizeBirdPoop = false
@@ -58,7 +58,7 @@ namespace Randomizer.CatQuest3
             );
 
             Logger.LogInfo(
-                "Sanity Check: meowkya"
+                "Sanity Check: Float test"
             );
         }
     }

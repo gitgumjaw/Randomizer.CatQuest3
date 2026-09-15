@@ -56,8 +56,10 @@ namespace Randomizer.CatQuest3
             }
 
             Vector3 position =
-                __instance.Fsm.GameObject
-                    .transform.position;
+                RewardPositionResolver.PlayerOrFallback(
+                    __instance.Fsm.GameObject
+                        .transform.position
+                );
 
             Plugin.Log.LogInfo(
                 $"Queueing spell reward | " +
