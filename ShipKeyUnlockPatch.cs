@@ -15,35 +15,64 @@ namespace Randomizer.CatQuest3
                     SpecialRewards.ShipKeyGuid;
         }
 
-        public static void TryEnableShip()
+        public static bool HasShipKey()
+        {
+            QuestItem shipKey =
+                RewardDataResolver.GetQuestItem(
+                    SpecialRewards.ShipKeyGuid
+                );
+
+            if (
+                shipKey == null ||
+                shipKey.key == null
+            )
+            {
+                Plugin.Log.LogWarning(
+                    "Ship Key state | " +
+                    "Could not resolve Ship Key data."
+                );
+
+                return false;
+            }
+
+            if (
+                SaveGameKeyData.currSaveFileInstance ==
+                    null
+            )
+            {
+                Plugin.Log.LogWarning(
+                    "Ship Key state | " +
+                    "Save key data is not available."
+                );
+
+                return false;
+            }
+
+            return
+                SaveGameKeyData
+                    .currSaveFileInstance
+                    .ContainsKey(
+                        shipKey.key
+                    );
+        }
+
+        public static void RefreshShipState()
         {
             if (
                 RandomizerState.Settings == null ||
-                !RandomizerState.Settings.RandomizeShipKey
+                !RandomizerState.Settings
+                    .RandomizeShipKey
             )
             {
                 return;
             }
 
-            // Float is unlocked during the rewritten
-            // MainQuest_01 tutorial.
-            //
-            // If Float is still blocked, the player has
-            // not reached that point yet, so possessing
-            // the Ship Key should not unlock the ship.
-            if (
-                Contexts.sharedInstance.game
-                    .isFloatBlocked
-            )
-            {
-                Plugin.Log.LogInfo(
-                    "Ship Key unlock | " +
-                    "Ship Key acquired before Float. " +
-                    "Ship remains locked."
-                );
+            bool hasShipKey =
+                HasShipKey();
 
-                return;
-            }
+            Contexts.sharedInstance.game
+                .isShipEnterBlocked =
+                    !hasShipKey;
 
             GameObject ship =
                 AddressableSingletonScriptableObject<
@@ -58,8 +87,8 @@ namespace Randomizer.CatQuest3
             if (ship == null)
             {
                 Plugin.Log.LogWarning(
-                    "Ship Key unlock | " +
-                    "Player ship object not found."
+                    "Ship Key state | " +
+                    "Player ship object was not found."
                 );
 
                 return;
@@ -70,20 +99,30 @@ namespace Randomizer.CatQuest3
                     SphereCollider
                 >();
 
-            Contexts.sharedInstance.game
-                .isShipEnterBlocked = false;
-
-            if (collider != null)
+            if (collider == null)
             {
-                collider.enabled = true;
+                Plugin.Log.LogWarning(
+                    "Ship Key state | " +
+                    "Player ship collider was not found."
+                );
+
+                return;
             }
 
+            collider.enabled =
+                hasShipKey;
+
             Plugin.Log.LogInfo(
-                "Ship Key unlock | " +
-                "Ship entry enabled."
+                "Ship Key state | " +
+                $"Ship entry " +
+                $"{(hasShipKey ? "enabled" : "disabled")}."
             );
         }
     }
+
+    // ============================================================
+    // SHIP KEY ACQUISITION
+    // ============================================================
 
     [HarmonyPatch(
         typeof(GameplayHelper),
@@ -118,10 +157,30 @@ namespace Randomizer.CatQuest3
             callback = delegate
             {
                 ShipKeyUnlockHelper
-                    .TryEnableShip();
+                    .RefreshShipState();
 
                 originalCallback?.Invoke();
             };
+        }
+    }
+
+    // ============================================================
+    // WAKE ANIMATION DIAGNOSTIC
+    //
+    // For now, only prove whether these callbacks actually run
+    // during the load/wake sequence.
+    // ============================================================
+
+    [HarmonyPatch(
+    typeof(PlayerSleepExitAnimatorStateBehaviour),
+    "OnStateExit"
+)]
+    public static class ShipKeySleepExitRefreshPatch
+    {
+        public static void Postfix()
+        {
+            ShipKeyUnlockHelper
+                .RefreshShipState();
         }
     }
 }
