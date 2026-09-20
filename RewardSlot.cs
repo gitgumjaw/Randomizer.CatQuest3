@@ -24,11 +24,13 @@ namespace Randomizer.CatQuest3
                     "MainOverworld|MainQuest_01|FSM|Defeated Mr Clean"
                 };
 
+
         public RewardLocation Location { get; }
 
         public int RewardIndex { get; }
 
         public bool AllowCollectibles { get; }
+
 
         public RewardSlot(
             RewardLocation location,
@@ -40,8 +42,12 @@ namespace Randomizer.CatQuest3
             AllowCollectibles = allowCollectibles;
         }
 
+
         public Reward VanillaReward =>
-            Location.VanillaRewards[RewardIndex];
+            Location.VanillaRewards[
+                RewardIndex
+            ];
+
 
         public Reward RandomizedReward
         {
@@ -55,6 +61,13 @@ namespace Randomizer.CatQuest3
                     RewardIndex
                 ] = value;
         }
+
+
+        public bool IsVanillaRandom =>
+            Location.IsVanillaRandomBySlot[
+                RewardIndex
+            ];
+
 
         public bool CanAccept(
             Reward reward)

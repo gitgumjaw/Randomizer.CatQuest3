@@ -11,16 +11,21 @@ namespace Randomizer.CatQuest3
         public List<string> Triggers { get; }
 
         public List<Reward> VanillaRewards { get; }
+
         public List<Reward> RandomizedRewards { get; }
 
         public List<bool> AllowCollectiblesBySlot { get; }
+
+        public List<bool> IsVanillaRandomBySlot { get; }
+
 
         public RewardLocation(
             string key,
             IEnumerable<Reward> vanillaRewards,
             IEnumerable<bool> allowCollectiblesBySlot = null,
             IEnumerable<string> triggers = null,
-            string label = null)
+            string label = null,
+            IEnumerable<bool> isVanillaRandomBySlot = null)
         {
             Key = key;
 
@@ -32,19 +37,28 @@ namespace Randomizer.CatQuest3
                     : new List<string>(triggers);
 
             VanillaRewards =
-                new List<Reward>(vanillaRewards);
+                new List<Reward>(
+                    vanillaRewards
+                );
 
             RandomizedRewards =
-                new List<Reward>(VanillaRewards);
+                new List<Reward>(
+                    VanillaRewards
+                );
+
 
             AllowCollectiblesBySlot =
                 new List<bool>();
 
             if (allowCollectiblesBySlot == null)
             {
-                for (int i = 0; i < VanillaRewards.Count; i++)
+                for (int i = 0;
+                     i < VanillaRewards.Count;
+                     i++)
                 {
-                    AllowCollectiblesBySlot.Add(true);
+                    AllowCollectiblesBySlot.Add(
+                        true
+                    );
                 }
             }
             else
@@ -57,11 +71,44 @@ namespace Randomizer.CatQuest3
                     VanillaRewards.Count)
                 {
                     throw new System.ArgumentException(
-                        "Reward slot restriction count must match reward count."
+                        "Reward slot restriction count " +
+                        "must match reward count."
+                    );
+                }
+            }
+
+
+            IsVanillaRandomBySlot =
+                new List<bool>();
+
+            if (isVanillaRandomBySlot == null)
+            {
+                for (int i = 0;
+                     i < VanillaRewards.Count;
+                     i++)
+                {
+                    IsVanillaRandomBySlot.Add(
+                        false
+                    );
+                }
+            }
+            else
+            {
+                IsVanillaRandomBySlot.AddRange(
+                    isVanillaRandomBySlot
+                );
+
+                if (IsVanillaRandomBySlot.Count !=
+                    VanillaRewards.Count)
+                {
+                    throw new System.ArgumentException(
+                        "Vanilla random slot count " +
+                        "must match reward count."
                     );
                 }
             }
         }
+
 
         public RewardLocation(
             string key,
@@ -73,13 +120,17 @@ namespace Randomizer.CatQuest3
                 new[] { allowCollectibles })
         {
         }
+
+
         public int FindVanillaRewardIndex(
-    RewardType type,
-    string id)
+            RewardType type,
+            string id)
         {
             int matchIndex = -1;
 
-            for (int i = 0; i < VanillaRewards.Count; i++)
+            for (int i = 0;
+                 i < VanillaRewards.Count;
+                 i++)
             {
                 Reward reward =
                     VanillaRewards[i];

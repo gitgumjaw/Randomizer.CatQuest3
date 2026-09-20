@@ -5,20 +5,33 @@ namespace Randomizer.CatQuest3
 {
     public static class CatalogResolver
     {
-        public static void ResolveToRewardCatalog(int seed)
+        public static void ResolveToRewardCatalog(
+            int seed)
         {
-            List<CatalogRewardLocation> catalogLocations =
-                CatalogLoader.Load();
+            List<CatalogRewardLocation>
+                catalogLocations =
+                    CatalogLoader.Load();
 
-            // Dictionary enumeration order should not determine a seed.
+            // Dictionary enumeration order should not
+            // determine a seed.
             // Always resolve locations in a stable order.
             catalogLocations.Sort(
-                (a, b) => string.CompareOrdinal(a.Key, b.Key)
+                (a, b) =>
+                    string.CompareOrdinal(
+                        a.Key,
+                        b.Key
+                    )
             );
 
-            Random random = new Random(seed);
+            Random random =
+                new Random(seed);
 
-            foreach (CatalogRewardLocation catalogLocation in catalogLocations)
+            int vanillaRandomSlotCount = 0;
+
+
+            foreach (
+                CatalogRewardLocation catalogLocation
+                in catalogLocations)
             {
                 List<Reward> resolvedRewards =
                     new List<Reward>();
@@ -26,8 +39,13 @@ namespace Randomizer.CatQuest3
                 List<bool> allowCollectiblesBySlot =
                     new List<bool>();
 
-                foreach (WeightedRewardSlot weightedSlot
-                         in catalogLocation.RewardSlots)
+                List<bool> isVanillaRandomBySlot =
+                    new List<bool>();
+
+
+                foreach (
+                    WeightedRewardSlot weightedSlot
+                    in catalogLocation.RewardSlots)
                 {
                     Reward resolvedReward =
                         ResolveSlot(
@@ -45,17 +63,34 @@ namespace Randomizer.CatQuest3
                         continue;
                     }
 
-                    resolvedRewards.Add(resolvedReward);
+                    bool isVanillaRandom =
+                        weightedSlot.Options != null &&
+                        weightedSlot.Options.Count > 1;
+
+                    resolvedRewards.Add(
+                        resolvedReward
+                    );
 
                     allowCollectiblesBySlot.Add(
                         weightedSlot.AllowCollectibles
                     );
+
+                    isVanillaRandomBySlot.Add(
+                        isVanillaRandom
+                    );
+
+                    if (isVanillaRandom)
+                    {
+                        vanillaRandomSlotCount++;
+                    }
                 }
+
 
                 if (resolvedRewards.Count == 0)
                 {
                     continue;
                 }
+
 
                 RewardLocation resolvedLocation =
                     new RewardLocation(
@@ -63,18 +98,25 @@ namespace Randomizer.CatQuest3
                         resolvedRewards,
                         allowCollectiblesBySlot,
                         catalogLocation.Triggers,
-                        catalogLocation.Label
+                        catalogLocation.Label,
+                        isVanillaRandomBySlot
                     );
 
-                RewardCatalog.Add(resolvedLocation);
+                RewardCatalog.Add(
+                    resolvedLocation
+                );
             }
+
 
             Plugin.Log.LogInfo(
                 $"Resolved catalog into RewardCatalog | " +
                 $"Locations: {RewardCatalog.Count} | " +
+                $"Vanilla random slots: " +
+                $"{vanillaRandomSlotCount} | " +
                 $"Seed: {seed}"
             );
         }
+
 
         private static Reward ResolveSlot(
             WeightedRewardSlot slot,
@@ -87,15 +129,19 @@ namespace Randomizer.CatQuest3
                 return null;
             }
 
+
             // Fixed slot.
             if (slot.Options.Count == 1)
             {
                 return slot.Options[0].Reward;
             }
 
+
             int totalWeight = 0;
 
-            foreach (WeightedRewardOption option in slot.Options)
+            foreach (
+                WeightedRewardOption option
+                in slot.Options)
             {
                 if (option == null ||
                     option.Reward == null ||
@@ -104,18 +150,28 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
-                totalWeight += option.Weight;
+                totalWeight +=
+                    option.Weight;
             }
+
 
             if (totalWeight <= 0)
             {
                 return null;
             }
 
-            int roll = random.Next(totalWeight);
+
+            int roll =
+                random.Next(
+                    totalWeight
+                );
+
             int cumulativeWeight = 0;
 
-            foreach (WeightedRewardOption option in slot.Options)
+
+            foreach (
+                WeightedRewardOption option
+                in slot.Options)
             {
                 if (option == null ||
                     option.Reward == null ||
@@ -124,13 +180,15 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
-                cumulativeWeight += option.Weight;
+                cumulativeWeight +=
+                    option.Weight;
 
                 if (roll < cumulativeWeight)
                 {
                     return option.Reward;
                 }
             }
+
 
             return null;
         }

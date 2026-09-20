@@ -20,32 +20,54 @@ namespace Randomizer.CatQuest3
             foreach (RewardSlot slot in slots)
             {
                 // Reset first in case a seed is generated more than once.
-                slot.RandomizedReward = slot.VanillaReward;
+                slot.RandomizedReward =
+                    slot.VanillaReward;
 
-                rewards.Add(slot.VanillaReward);
+                rewards.Add(
+                    slot.VanillaReward
+                );
             }
 
-            Random random = new Random(seed);
+            InjectMewGameRewards(
+                slots,
+                rewards,
+                seed
+            );
+
+            Random random =
+                new Random(seed);
 
             // Randomize the order in which we consider rewards.
-            List<int> rewardOrder = new List<int>();
+            List<int> rewardOrder =
+                new List<int>();
 
-            for (int i = 0; i < rewards.Count; i++)
+            for (int i = 0;
+                 i < rewards.Count;
+                 i++)
             {
                 rewardOrder.Add(i);
             }
 
-            ShuffleList(rewardOrder, random);
+            ShuffleList(
+                rewardOrder,
+                random
+            );
 
             // Randomize slot processing order too.
-            List<int> slotOrder = new List<int>();
+            List<int> slotOrder =
+                new List<int>();
 
-            for (int i = 0; i < slots.Count; i++)
+            for (int i = 0;
+                 i < slots.Count;
+                 i++)
             {
                 slotOrder.Add(i);
             }
 
-            ShuffleList(slotOrder, random);
+            ShuffleList(
+                slotOrder,
+                random
+            );
 
             // For each reward, remember which slot currently owns it.
             int[] assignedSlotByReward =
@@ -55,14 +77,20 @@ namespace Randomizer.CatQuest3
             int[] assignedRewardBySlot =
                 new int[slots.Count];
 
-            for (int i = 0; i < assignedSlotByReward.Length; i++)
+            for (int i = 0;
+                 i < assignedSlotByReward.Length;
+                 i++)
             {
-                assignedSlotByReward[i] = -1;
+                assignedSlotByReward[i] =
+                    -1;
             }
 
-            for (int i = 0; i < assignedRewardBySlot.Length; i++)
+            for (int i = 0;
+                 i < assignedRewardBySlot.Length;
+                 i++)
             {
-                assignedRewardBySlot[i] = -1;
+                assignedRewardBySlot[i] =
+                    -1;
             }
 
             foreach (int slotIndex in slotOrder)
@@ -102,12 +130,137 @@ namespace Randomizer.CatQuest3
 
             // Apply the completed assignment only after we know
             // every slot has a valid reward.
-            for (int i = 0; i < slots.Count; i++)
+            for (int i = 0;
+                 i < slots.Count;
+                 i++)
             {
                 slots[i].RandomizedReward =
-                    rewards[assignedRewardBySlot[i]];
+                    rewards[
+                        assignedRewardBySlot[i]
+                    ];
             }
         }
+
+
+        private static void InjectMewGameRewards(
+            List<RewardSlot> slots,
+            List<Reward> rewards,
+            int seed)
+        {
+            List<Reward> mewRewards =
+                MewGameRewards.GetAll();
+
+            if (mewRewards == null ||
+                mewRewards.Count == 0)
+            {
+                return;
+            }
+
+            List<int> candidates =
+                new List<int>();
+
+            for (int i = 0;
+                 i < slots.Count;
+                 i++)
+            {
+                RewardSlot slot =
+                    slots[i];
+
+                if (!slot.IsVanillaRandom)
+                {
+                    continue;
+                }
+
+                if (slot.VanillaReward == null ||
+                    slot.VanillaReward.Type !=
+                        RewardType.Equipment)
+                {
+                    continue;
+                }
+
+                candidates.Add(i);
+            }
+
+            // No candidates normally means equipment
+            // randomization is disabled.
+            if (candidates.Count == 0)
+            {
+                return;
+            }
+
+            if (candidates.Count <
+                mewRewards.Count)
+            {
+                Plugin.Log.LogError(
+                    "MEW INJECTION | " +
+                    $"Need {mewRewards.Count} " +
+                    $"vanilla-random equipment slots, " +
+                    $"but only found {candidates.Count}. " +
+                    "No Mew Game rewards were injected."
+                );
+
+                return;
+            }
+
+            // Put the candidates into a stable order before
+            // applying seeded random selection.
+            candidates.Sort(
+                delegate (int a, int b)
+                {
+                    int keyComparison =
+                        string.CompareOrdinal(
+                            slots[a].Location.Key,
+                            slots[b].Location.Key
+                        );
+
+                    if (keyComparison != 0)
+                    {
+                        return keyComparison;
+                    }
+
+                    return slots[a]
+                        .RewardIndex
+                        .CompareTo(
+                            slots[b].RewardIndex
+                        );
+                }
+            );
+
+            Random injectionRandom =
+                new Random(seed);
+
+            ShuffleList(
+                candidates,
+                injectionRandom
+            );
+
+            for (int i = 0;
+                 i < mewRewards.Count;
+                 i++)
+            {
+                int rewardIndex =
+                    candidates[i];
+
+                Reward displacedReward =
+                    rewards[rewardIndex];
+
+                Reward mewReward =
+                    mewRewards[i];
+
+                rewards[rewardIndex] =
+                    mewReward;
+
+                Plugin.Log.LogInfo(
+                    "MEW INJECTION | " +
+                    $"Source:{slots[rewardIndex].Location.Label} | " +
+                    $"Displaced:{displacedReward.Type}:" +
+                    $"{displacedReward.Id} | " +
+                    $"Injected:{mewReward.Type}:" +
+                    $"{mewReward.Id}"
+                );
+            }
+        }
+
 
         private static bool TryAssignReward(
             int slotIndex,
@@ -118,9 +271,11 @@ namespace Randomizer.CatQuest3
             int[] assignedRewardBySlot,
             bool[] visitedRewards)
         {
-            foreach (int rewardIndex in rewardOrder)
+            foreach (int rewardIndex
+                     in rewardOrder)
             {
-                if (visitedRewards[rewardIndex])
+                if (visitedRewards[
+                    rewardIndex])
                 {
                     continue;
                 }
@@ -128,15 +283,19 @@ namespace Randomizer.CatQuest3
                 Reward reward =
                     rewards[rewardIndex];
 
-                if (!slots[slotIndex].CanAccept(reward))
+                if (!slots[slotIndex]
+                    .CanAccept(reward))
                 {
                     continue;
                 }
 
-                visitedRewards[rewardIndex] = true;
+                visitedRewards[
+                    rewardIndex] = true;
 
                 int previousSlot =
-                    assignedSlotByReward[rewardIndex];
+                    assignedSlotByReward[
+                        rewardIndex
+                    ];
 
                 // Reward is unused, or we can move its current
                 // owner onto another compatible reward.
@@ -150,11 +309,13 @@ namespace Randomizer.CatQuest3
                         assignedRewardBySlot,
                         visitedRewards))
                 {
-                    assignedSlotByReward[rewardIndex] =
-                        slotIndex;
+                    assignedSlotByReward[
+                        rewardIndex] =
+                            slotIndex;
 
-                    assignedRewardBySlot[slotIndex] =
-                        rewardIndex;
+                    assignedRewardBySlot[
+                        slotIndex] =
+                            rewardIndex;
 
                     return true;
                 }
@@ -163,17 +324,26 @@ namespace Randomizer.CatQuest3
             return false;
         }
 
+
         private static void ShuffleList(
             List<int> list,
             Random random)
         {
-            for (int i = list.Count - 1; i > 0; i--)
+            for (int i = list.Count - 1;
+                 i > 0;
+                 i--)
             {
-                int j = random.Next(i + 1);
+                int j =
+                    random.Next(i + 1);
 
-                int temp = list[i];
-                list[i] = list[j];
-                list[j] = temp;
+                int temp =
+                    list[i];
+
+                list[i] =
+                    list[j];
+
+                list[j] =
+                    temp;
             }
         }
     }
