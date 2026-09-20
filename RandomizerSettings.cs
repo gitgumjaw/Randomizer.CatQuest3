@@ -15,7 +15,6 @@
         // Special-case rewards
         public bool RandomizeShipKey { get; set; }
         public bool RandomizeInfinityKey { get; set; }
-        public bool RandomizeNorthStarEssence { get; set; }
         public bool RandomizeBirdPoop { get; set; }
     }
 }

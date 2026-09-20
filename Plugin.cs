@@ -41,8 +41,7 @@ namespace Randomizer.CatQuest3
 
                     RandomizeShipKey = false,
                     RandomizeInfinityKey = false,
-                    RandomizeNorthStarEssence = false,
-                    RandomizeBirdPoop = false
+                    RandomizeBirdPoop = true,
                 };
 
             RandomizerState.Settings =

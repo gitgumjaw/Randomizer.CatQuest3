@@ -241,23 +241,12 @@ namespace Randomizer.CatQuest3
                 int rewardIndex =
                     candidates[i];
 
-                Reward displacedReward =
-                    rewards[rewardIndex];
-
                 Reward mewReward =
                     mewRewards[i];
 
                 rewards[rewardIndex] =
                     mewReward;
 
-                Plugin.Log.LogInfo(
-                    "MEW INJECTION | " +
-                    $"Source:{slots[rewardIndex].Location.Label} | " +
-                    $"Displaced:{displacedReward.Type}:" +
-                    $"{displacedReward.Id} | " +
-                    $"Injected:{mewReward.Type}:" +
-                    $"{mewReward.Id}"
-                );
             }
         }
 

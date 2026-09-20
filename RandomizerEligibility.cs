@@ -109,6 +109,18 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+            // North Star Essence always stays vanilla.
+            if (
+                vanillaReward != null &&
+                vanillaReward.Type ==
+                    RewardType.QuestItem &&
+                vanillaReward.Id ==
+                    SpecialRewards.NorthStarEssenceGuid
+            )
+            {
+                return false;
+            }
+
             return IsEnabled(
                 vanillaReward,
                 settings
@@ -143,16 +155,12 @@ namespace Randomizer.CatQuest3
                 return settings.RandomizeInfinityKey;
             }
 
+            // North Star Essence is intentionally excluded
+            // from the randomizer entirely.
             if (reward.Id ==
                 SpecialRewards.NorthStarEssenceGuid)
             {
-                return settings.RandomizeNorthStarEssence;
-            }
-
-            if (reward.Id ==
-                SpecialRewards.BirdPoopGuid)
-            {
-                return settings.RandomizeBirdPoop;
+                return false;
             }
 
             return true;
