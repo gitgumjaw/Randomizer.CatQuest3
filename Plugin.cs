@@ -39,7 +39,7 @@ namespace Randomizer.CatQuest3
                     RandomizeManaCrystals = true,
                     RandomizeCollectibles = true,
 
-                    RandomizeShipKey = true,
+                    RandomizeShipKey = false,
                     RandomizeInfinityKey = false,
                     RandomizeNorthStarEssence = false,
                     RandomizeBirdPoop = false

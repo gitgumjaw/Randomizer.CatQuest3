@@ -20,11 +20,27 @@ namespace Randomizer.CatQuest3
                 };
 
 
+        private static readonly HashSet<string>
+            TwinCastleVanillaKeyGuids =
+                new HashSet<string>
+                {
+                    // Dining Hall Key
+                    "eeb66a3cf17d7ee4898f93f452cc8c10",
+
+                    // Master Room Key
+                    "8cd504f5730445840b225e33fc79ee52",
+
+                    // Boss Room Key
+                    "978b44d6dcc44274db693c5c869fcca6"
+                };
+
+
         public static bool IsEnabled(
             Reward reward,
             RandomizerSettings settings)
         {
-            if (reward == null || settings == null)
+            if (reward == null ||
+                settings == null)
             {
                 return false;
             }
@@ -32,16 +48,6 @@ namespace Randomizer.CatQuest3
             switch (reward.Type)
             {
                 case RewardType.Equipment:
-                    if (reward.Id ==
-                        SpecialRewards.BirdPoopGuid)
-                    {
-                        return
-                            settings.RandomizeEquipment &&
-                            settings.RandomizeBirdPoop;
-                    }
-
-                    return settings.RandomizeEquipment;
-
                 case RewardType.Blueprint:
                 case RewardType.ShipSpell:
                     return settings.RandomizeEquipment;
@@ -50,31 +56,10 @@ namespace Randomizer.CatQuest3
                     return settings.RandomizeSpells;
 
                 case RewardType.QuestItem:
-                    if (reward.Id ==
-                        SpecialRewards.ShipKeyGuid)
-                    {
-                        return
-                            settings.RandomizeQuestItems &&
-                            settings.RandomizeShipKey;
-                    }
-
-                    if (reward.Id ==
-                        SpecialRewards.InfinityKeyGuid)
-                    {
-                        return
-                            settings.RandomizeQuestItems &&
-                            settings.RandomizeInfinityKey;
-                    }
-
-                    if (reward.Id ==
-                        SpecialRewards.NorthStarEssenceGuid)
-                    {
-                        return
-                            settings.RandomizeQuestItems &&
-                            settings.RandomizeNorthStarEssence;
-                    }
-
-                    return settings.RandomizeQuestItems;
+                    return IsQuestItemEnabled(
+                        reward,
+                        settings
+                    );
 
                 case RewardType.ManaCrystal:
                     return settings.RandomizeManaCrystals;
@@ -112,10 +97,65 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+            if (
+                vanillaReward != null &&
+                vanillaReward.Type ==
+                    RewardType.QuestItem &&
+                TwinCastleVanillaKeyGuids.Contains(
+                    vanillaReward.Id
+                )
+            )
+            {
+                return false;
+            }
+
             return IsEnabled(
                 vanillaReward,
                 settings
             );
+        }
+
+
+        private static bool IsQuestItemEnabled(
+            Reward reward,
+            RandomizerSettings settings)
+        {
+            if (!settings.RandomizeQuestItems)
+            {
+                return false;
+            }
+
+            if (reward.Id ==
+                SpecialRewards.StarRuneGuid)
+            {
+                return false;
+            }
+
+            if (reward.Id ==
+                SpecialRewards.ShipKeyGuid)
+            {
+                return settings.RandomizeShipKey;
+            }
+
+            if (reward.Id ==
+                SpecialRewards.InfinityKeyGuid)
+            {
+                return settings.RandomizeInfinityKey;
+            }
+
+            if (reward.Id ==
+                SpecialRewards.NorthStarEssenceGuid)
+            {
+                return settings.RandomizeNorthStarEssence;
+            }
+
+            if (reward.Id ==
+                SpecialRewards.BirdPoopGuid)
+            {
+                return settings.RandomizeBirdPoop;
+            }
+
+            return true;
         }
     }
 }
