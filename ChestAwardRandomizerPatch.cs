@@ -308,10 +308,11 @@ namespace Randomizer.CatQuest3
         }
 
         private static int FindChestItemSlot(
-            RewardLocation location,
-            EquipmentItemData itemLoot)
+    RewardLocation location,
+    EquipmentItemData itemLoot)
         {
-            if (itemLoot == null)
+            if (location == null ||
+                itemLoot == null)
             {
                 return -1;
             }
@@ -321,10 +322,55 @@ namespace Randomizer.CatQuest3
                     ? RewardType.Blueprint
                     : RewardType.Equipment;
 
-            return location.FindVanillaRewardIndex(
-                type,
-                itemLoot.Guid
-            );
+
+            // First try the normal fixed-reward mapping.
+            //
+            // For fixed equipment/blueprint chests, the runtime
+            // item should exactly match the catalog reward.
+            int exactMatch =
+                location.FindVanillaRewardIndex(
+                    type,
+                    itemLoot.Guid
+                );
+
+            if (exactMatch >= 0)
+            {
+                return exactMatch;
+            }
+
+
+            // A vanilla-random equipment slot can legitimately
+            // produce a different item at runtime than the item
+            // our seeded CatalogResolver happened to resolve.
+            //
+            // If this chest has exactly one vanilla-random slot,
+            // that slot must be the runtime equipment award.
+            int randomSlotMatch = -1;
+
+            for (int i = 0;
+                 i < location.VanillaRewards.Count;
+                 i++)
+            {
+                if (!location.IsVanillaRandomBySlot[i])
+                {
+                    continue;
+                }
+
+                if (randomSlotMatch != -1)
+                {
+                    Plugin.Log.LogWarning(
+                        "Could not uniquely map vanilla-random " +
+                        $"chest item slot | Location:{location.Label} | " +
+                        $"Item:{itemLoot.Guid}"
+                    );
+
+                    return -1;
+                }
+
+                randomSlotMatch = i;
+            }
+
+            return randomSlotMatch;
         }
 
         private static int GetVanillaAwardLevel(
