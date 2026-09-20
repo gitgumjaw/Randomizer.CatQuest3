@@ -57,7 +57,7 @@ namespace Randomizer.CatQuest3
             );
 
             Logger.LogInfo(
-                "Sanity Check: Float test"
+                "Sanity Check: UI Menu Creation"
             );
         }
     }
