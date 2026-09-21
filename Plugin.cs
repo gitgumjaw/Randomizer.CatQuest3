@@ -56,7 +56,7 @@ namespace Randomizer.CatQuest3
 
 
             Logger.LogInfo(
-                "Sanity Check: UI Menu link to settings"
+                "Playtest Version: 0.1.260921 - Initial Playtest Release"
             );
         }
     }
