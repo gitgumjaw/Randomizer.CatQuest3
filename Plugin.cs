@@ -1,7 +1,5 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using UnityEngine;
-using UnityEngine.Windows;
 
 namespace Randomizer.CatQuest3
 {
@@ -14,50 +12,51 @@ namespace Randomizer.CatQuest3
         internal static Plugin Instance;
         internal static BepInEx.Logging.ManualLogSource Log;
 
+
         private void Awake()
         {
-            Instance = this;
-            Log = Logger;
+            Instance =
+                this;
+
+            Log =
+                Logger;
+
 
             Logger.LogInfo(
                 "Cat Quest 3 Randomizer starting."
             );
+
 
             Harmony harmony =
                 new Harmony(
                     "Randomizer.CatQuest3"
                 );
 
+
             harmony.PatchAll();
 
-            RandomizerSettings settings =
-                new RandomizerSettings
-                {
-                    RandomizeEquipment = true,
-                    RandomizeSpells = true,
-                    RandomizeQuestItems = true,
-                    RandomizeManaCrystals = true,
-                    RandomizeCollectibles = true,
 
-                    RandomizeShipKey = false,
-                    RandomizeInfinityKey = false,
-                    RandomizeBirdPoop = true,
-                };
+            /*
+             * Do not create RandomizerSettings or generate a
+             * randomized reward layout here.
+             *
+             * The active configuration is now chosen after the
+             * player commits a new-game save slot, or when an
+             * existing save is loaded.
+             *
+             * RandomizerRuntime translates that save-associated
+             * configuration into the existing RandomizerSettings
+             * booleans and calls the existing RandomizerGenerator.
+             */
 
-            RandomizerState.Settings =
-                settings;
-
-            RandomizerGenerator.Generate(
-                settings,
-                5
-            );
 
             Logger.LogInfo(
                 "Harmony patches applied."
             );
 
+
             Logger.LogInfo(
-                "Sanity Check: UI Menu Creation"
+                "Sanity Check: UI Menu link to settings"
             );
         }
     }

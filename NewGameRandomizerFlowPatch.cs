@@ -131,8 +131,8 @@ namespace Randomizer.CatQuest3
 
 
         private static RandomizerScreen
-            CreateRandomizerScreen(
-                UIGenderSelectionScreen genderScreen)
+    CreateRandomizerScreen(
+        UIGenderSelectionScreen genderScreen)
         {
             OptionsControllerPanel optionsController =
                 GetOptionsController();
@@ -168,7 +168,6 @@ namespace Randomizer.CatQuest3
                 genderScreen.transform.parent,
                 false
             );
-
 
             CopyRectTransform(
                 genderScreen
@@ -225,15 +224,177 @@ namespace Randomizer.CatQuest3
             }
 
 
+            Transform titleTransform =
+                display.transform.Find(
+                    "Title"
+                );
+
+            RectTransform titleRect =
+                titleTransform
+                    ?.GetComponent<RectTransform>();
+
+            CenterRect(
+                titleRect,
+                new Vector2(
+                    -120f,
+                    415f // CHANGE POSITION FOR TITLE HERE.
+                )
+            );
+
+
+            // Master Randomizer toggle.
+            // Keep the internal name because RandomizerScreen
+            // already looks for Display/EnableRandomizer.
             if (!CreateBooleanRow(
                 optionsController,
                 display.transform,
                 "EnableRandomizer",
-                "Enable Randomizer",
-                30f))
+                "",
+                415f))
             {
                 Object.Destroy(root);
                 return null;
+            }
+
+
+            Transform enableTransform =
+                display.transform.Find(
+                    "EnableRandomizer"
+                );
+
+
+            // Hide the arrow graphics while leaving the controls
+            // active so the UISlider keeps its normal behavior.
+            Transform enableLeftArrow =
+                enableTransform
+                    ?.Find(
+                        "HorizontalGrp/LeftButton"
+                    );
+
+            Transform enableRightArrow =
+                enableTransform
+                    ?.Find(
+                        "HorizontalGrp/RightButton"
+                    );
+
+            DisableGraphics(
+                enableLeftArrow
+            );
+
+            DisableGraphics(
+                enableRightArrow
+            );
+
+            Transform enableValueBackground =
+    enableTransform
+        ?.Find(
+            "HorizontalGrp/Slider/BG"
+        );
+
+            Graphic enableValueBackgroundGraphic =
+                enableValueBackground
+                    ?.GetComponent<Graphic>();
+
+            if (enableValueBackgroundGraphic != null)
+            {
+                enableValueBackgroundGraphic.enabled =
+                    false;
+            }
+
+
+            // Make Off / On look like part of the title row.
+            Transform enableValueTransform =
+                enableTransform
+                    ?.Find(
+                        "HorizontalGrp/Slider"
+                    );
+
+            RectTransform enableValueRect =
+                enableValueTransform
+                    ?.GetComponent<RectTransform>();
+
+            if (enableValueRect != null)
+            {
+                enableValueRect.sizeDelta =
+                    new Vector2(
+                        180f,
+                        enableValueRect.sizeDelta.y
+                    );
+            }
+
+
+            Transform enableValueTextTransform =
+                enableTransform
+                    ?.Find(
+                        "HorizontalGrp/Slider/BG/Text"
+                    );
+
+            TextMeshProUGUI enableValueText =
+                enableValueTextTransform
+                    ?.GetComponent<TextMeshProUGUI>();
+
+            TextMeshProUGUI titleText =
+                titleTransform
+                    ?.GetComponent<TextMeshProUGUI>();
+
+            if (enableValueText != null &&
+                titleText != null)
+            {
+                enableValueText.font =
+                    titleText.font;
+
+                enableValueText.fontSharedMaterial =
+                    titleText.fontSharedMaterial;
+
+                enableValueText.fontStyle =
+                    titleText.fontStyle;
+
+                enableValueText.enableAutoSizing =
+                    false;
+
+                enableValueText.fontSize =
+                    titleText.fontSize * 0.65f;
+            }
+
+
+            RectTransform enableValueTextRect =
+                enableValueTextTransform
+                    ?.GetComponent<RectTransform>();
+
+            if (enableValueTextRect != null)
+            {
+                enableValueTextRect.sizeDelta =
+                    new Vector2(
+                        180f,
+                        enableValueTextRect.sizeDelta.y
+                    );
+
+                enableValueTextRect.anchoredPosition =
+                    new Vector2(
+                        -65f,
+                        -19f
+                    );
+            }
+
+
+            // Put the selection hand beside the title-row value.
+            Transform enableHandTransform =
+                enableTransform
+                    ?.Find(
+                        "RandomizerHandAnchor"
+                    );
+
+            RectTransform enableHandRect =
+                enableHandTransform
+                    ?.GetComponent<RectTransform>();
+
+            if (enableHandRect != null)
+            {
+                enableHandRect.anchoredPosition =
+                    new Vector2(
+                        75f,
+                        -40f
+                    );
             }
 
 
@@ -241,8 +402,8 @@ namespace Randomizer.CatQuest3
                 optionsController,
                 display.transform,
                 "EquipmentAndBlueprints",
-                "Equipment & Blueprints",
-                -20f))
+                "Equipment", // CHANGE NAME PLAYER SEES HERE
+                300f)) // CHANGE POSITION FOR THIS OPTION HERE.
             {
                 Object.Destroy(root);
                 return null;
@@ -253,8 +414,102 @@ namespace Randomizer.CatQuest3
                 optionsController,
                 display.transform,
                 "Spells",
-                "Spells",
-                -70f))
+                "Spells", // CHANGE NAME PLAYER SEES HERE
+                245f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateBooleanRow(
+                optionsController,
+                display.transform,
+                "QuestItems",
+                "Quest Items", // CHANGE NAME PLAYER SEES HERE
+                190f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateBooleanRow(
+                optionsController,
+                display.transform,
+                "ManaCrystals",
+                "Mana Crystals", // CHANGE NAME PLAYER SEES HERE
+                135f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateBooleanRow(
+                optionsController,
+                display.transform,
+                "ResourcesCollectibles",
+                "Gold / Exp / Magic", // CHANGE NAME PLAYER SEES HERE
+                80f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateBooleanRow(
+                optionsController,
+                display.transform,
+                "ShipKey",
+                "Ship Key", // CHANGE NAME PLAYER SEES HERE
+                5f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateBooleanRow(
+                optionsController,
+                display.transform,
+                "InfinityKey",
+                "Infinity Key", // CHANGE NAME PLAYER SEES HERE
+                -50f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateBooleanRow(
+                optionsController,
+                display.transform,
+                "BirdPoop",
+                "Bird Poop", // CHANGE NAME PLAYER SEES HERE
+                -105f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateBooleanRow(
+                optionsController,
+                display.transform,
+                "MatchPlayerLevel",
+                "Drop Level = Player Level", // CHANGE NAME PLAYER SEES HERE
+                -180f)) // CHANGE POSITION FOR THIS OPTION HERE.
+            {
+                Object.Destroy(root);
+                return null;
+            }
+
+
+            if (!CreateSeedInput(
+                optionsController,
+                display.transform,
+                -255f)) // CHANGE POSITION FOR SEED ROW HERE.
             {
                 Object.Destroy(root);
                 return null;
@@ -268,6 +523,24 @@ namespace Randomizer.CatQuest3
                 Object.Destroy(root);
                 return null;
             }
+
+
+            Transform continueTransform =
+                display.transform.Find(
+                    "Continue"
+                );
+
+            RectTransform continueRect =
+                continueTransform
+                    ?.GetComponent<RectTransform>();
+
+            CenterRect(
+                continueRect,
+                new Vector2(
+                    0f,
+                    -340f // CHANGE POSITION FOR THIS OPTION HERE.
+                )
+            );
 
 
             if (genderScreen.backButton == null)
@@ -659,6 +932,640 @@ namespace Randomizer.CatQuest3
         }
 
 
+        private static bool CreateSeedInput(
+            OptionsControllerPanel optionsController,
+            Transform parent,
+            float yPosition)
+        {
+            Transform optionsRoot =
+                optionsController
+                    .anchoringGrp
+                    ?.Find("OptionsPanelRoot");
+
+
+            if (optionsRoot == null)
+            {
+                Plugin.Log.LogError(
+                    "RANDOMIZER FLOW | OptionsPanelRoot not found for Seed input."
+                );
+
+                return false;
+            }
+
+
+            Transform rowTemplate =
+                optionsRoot.Find(
+                    "CameraShake"
+                );
+
+
+            Transform labelTemplate =
+                rowTemplate
+                    ?.Find(
+                        "Label/Display/LabelText"
+                    );
+
+            TextMeshProUGUI labelSource =
+                labelTemplate
+                    ?.GetComponent<TextMeshProUGUI>();
+
+
+            if (labelSource == null)
+            {
+                Plugin.Log.LogError(
+                    "RANDOMIZER FLOW | Seed label text template not found."
+                );
+
+                return false;
+            }
+
+
+            GameObject seedObject =
+                new GameObject(
+                    "SeedInput",
+                    typeof(RectTransform)
+                );
+
+
+            seedObject.transform.SetParent(
+                parent,
+                false
+            );
+
+
+            RectTransform seedRect =
+                seedObject.GetComponent<RectTransform>();
+
+            seedRect.sizeDelta =
+                new Vector2(
+                    900f,
+                    60f
+                );
+
+            CenterRect(
+                seedRect,
+                new Vector2(
+                    -75f, // REPOSITION SEED ROW X POSITION HERE.
+                    yPosition
+                )
+            );
+
+
+            GameObject labelObject =
+                new GameObject(
+                    "Label",
+                    typeof(RectTransform),
+                    typeof(TextMeshProUGUI)
+                );
+
+
+            labelObject.transform.SetParent(
+                seedObject.transform,
+                false
+            );
+
+
+            RectTransform labelRect =
+                labelObject.GetComponent<RectTransform>();
+
+            labelRect.anchorMin =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            labelRect.anchorMax =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            labelRect.pivot =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            labelRect.sizeDelta =
+                new Vector2(
+                    260f,
+                    60f
+                );
+
+            labelRect.anchoredPosition =
+                new Vector2(
+                    -265f,
+                    -2f
+                );
+
+
+            TextMeshProUGUI labelText =
+                labelObject.GetComponent<TextMeshProUGUI>();
+
+            CopyTextStyle(
+                labelSource,
+                labelText
+            );
+
+            labelText.text =
+                "Seed";
+
+            labelText.alignment =
+                TextAlignmentOptions.MidlineRight;
+
+            labelText.raycastTarget =
+                false;
+
+
+            GameObject inputObject =
+                new GameObject(
+                    "Input",
+                    typeof(RectTransform),
+                    typeof(Image),
+                    typeof(TMP_InputField)
+                );
+
+
+            inputObject.transform.SetParent(
+                seedObject.transform,
+                false
+            );
+
+
+            RectTransform inputRect =
+                inputObject.GetComponent<RectTransform>();
+
+            inputRect.anchorMin =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            inputRect.anchorMax =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            inputRect.pivot =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            inputRect.sizeDelta =
+                new Vector2(
+                    245f,
+                    54f
+                );
+
+            inputRect.anchoredPosition =
+                new Vector2(
+                    15f,
+                    0f
+                );
+
+
+            Image inputBackground =
+                inputObject.GetComponent<Image>();
+
+            inputBackground.color =
+                new Color(
+                    0.25f,
+                    0.08f,
+                    0.08f,
+                    0.18f
+                );
+
+
+            GameObject viewportObject =
+                new GameObject(
+                    "Text Area",
+                    typeof(RectTransform),
+                    typeof(RectMask2D)
+                );
+
+
+            viewportObject.transform.SetParent(
+                inputObject.transform,
+                false
+            );
+
+
+            RectTransform viewportRect =
+                viewportObject.GetComponent<RectTransform>();
+
+            viewportRect.anchorMin =
+                Vector2.zero;
+
+            viewportRect.anchorMax =
+                Vector2.one;
+
+            viewportRect.offsetMin =
+                new Vector2(
+                    14f,
+                    5f
+                );
+
+            viewportRect.offsetMax =
+                new Vector2(
+                    -14f,
+                    -5f
+                );
+
+
+            GameObject placeholderObject =
+                new GameObject(
+                    "Placeholder",
+                    typeof(RectTransform),
+                    typeof(TextMeshProUGUI)
+                );
+
+
+            placeholderObject.transform.SetParent(
+                viewportObject.transform,
+                false
+            );
+
+
+            RectTransform placeholderRect =
+                placeholderObject.GetComponent<RectTransform>();
+
+            placeholderRect.anchorMin =
+                Vector2.zero;
+
+            placeholderRect.anchorMax =
+                Vector2.one;
+
+            placeholderRect.offsetMin =
+                Vector2.zero;
+
+            placeholderRect.offsetMax =
+                Vector2.zero;
+
+            placeholderRect.anchoredPosition =
+            new Vector2(
+                placeholderRect.anchoredPosition.x,
+                -7f // CHANGE POSITION FOR TEXT HERE.
+            );
+
+            TextMeshProUGUI placeholderText =
+                placeholderObject.GetComponent<TextMeshProUGUI>();
+
+            CopyTextStyle(
+                labelSource,
+                placeholderText
+            );
+
+            placeholderText.text =
+                "Enter Seed";
+
+            placeholderText.alignment =
+                TextAlignmentOptions.BottomLeft;
+
+            placeholderText.raycastTarget =
+                false;
+
+            Color placeholderColor =
+                placeholderText.color;
+
+            placeholderColor.a =
+                0.45f;
+
+            placeholderText.color =
+                placeholderColor;
+
+
+            GameObject textObject =
+                new GameObject(
+                    "Text",
+                    typeof(RectTransform),
+                    typeof(TextMeshProUGUI)
+                );
+
+
+            textObject.transform.SetParent(
+                viewportObject.transform,
+                false
+            );
+
+
+            RectTransform textRect =
+                textObject.GetComponent<RectTransform>();
+
+            textRect.anchorMin =
+                Vector2.zero;
+
+            textRect.anchorMax =
+                Vector2.one;
+
+            textRect.offsetMin =
+                Vector2.zero;
+
+            textRect.offsetMax =
+                Vector2.zero;
+
+            textRect.anchoredPosition =
+            new Vector2(
+                textRect.anchoredPosition.x,
+                -7f // CHANGE POSITION FOR TEXT HERE.
+            );
+
+
+            TextMeshProUGUI inputText =
+                textObject.GetComponent<TextMeshProUGUI>();
+
+            CopyTextStyle(
+                labelSource,
+                inputText
+            );
+
+            inputText.text =
+                "";
+
+            inputText.alignment =
+                TextAlignmentOptions.BottomLeft;
+
+            inputText.raycastTarget =
+                false;
+
+
+            TMP_InputField inputField =
+                inputObject.GetComponent<TMP_InputField>();
+
+            inputField.textViewport =
+                viewportRect;
+
+            inputField.textComponent =
+                inputText;
+
+            inputField.placeholder =
+                placeholderText;
+
+            inputField.targetGraphic =
+                inputBackground;
+
+            inputField.lineType =
+                TMP_InputField.LineType.SingleLine;
+
+            inputField.contentType =
+                TMP_InputField.ContentType.Standard;
+
+            inputField.characterLimit =
+                32;
+
+            inputField.resetOnDeActivation =
+                false;
+
+            inputField.customCaretColor =
+                true;
+
+            inputField.caretColor =
+                labelSource.color;
+
+            inputField.caretWidth =
+                3;
+
+
+            if (!CreateGenerateSeedButton(
+                optionsController,
+                seedObject.transform))
+            {
+                Object.Destroy(seedObject);
+                return false;
+            }
+
+
+            seedObject.SetActive(
+                true
+            );
+
+
+            return true;
+        }
+
+
+        private static bool CreateGenerateSeedButton(
+    OptionsControllerPanel optionsController,
+    Transform parent)
+        {
+            Transform optionsRoot =
+                optionsController
+                    .anchoringGrp
+                    ?.Find("OptionsPanelRoot");
+
+
+            if (optionsRoot == null)
+            {
+                return false;
+            }
+
+
+            Transform buttonsLayout =
+                optionsRoot.Find(
+                    "ButtonsLayoutGrp"
+                );
+
+
+            if (buttonsLayout == null)
+            {
+                return false;
+            }
+
+
+            Transform template =
+                buttonsLayout.Find(
+                    "ApplyChanges"
+                );
+
+
+            if (template == null)
+            {
+                Plugin.Log.LogError(
+                    "RANDOMIZER FLOW | Generate button template not found."
+                );
+
+                return false;
+            }
+
+
+            GameObject buttonObject =
+                Object.Instantiate(
+                    template.gameObject,
+                    parent,
+                    false
+                );
+
+            buttonObject.name =
+                "Generate";
+
+
+            DisableLocalization(
+                buttonObject
+            );
+
+
+            UIButton button =
+                buttonObject
+                    .GetComponent<UIButton>();
+
+
+            if (button == null)
+            {
+                return false;
+            }
+
+
+            TextMeshProUGUI text =
+                buttonObject
+                    .GetComponentInChildren
+                        <TextMeshProUGUI>(
+                            true
+                        );
+
+
+            if (text != null)
+            {
+                text.text =
+                    "Generate";
+            }
+
+
+            button
+                .OnSelectionConfirmed
+                .RemoveAll();
+
+            button
+                .OnReselectionConfirmed
+                .RemoveAll();
+
+
+            RectTransform rect =
+                buttonObject
+                    .GetComponent<RectTransform>();
+
+
+            if (rect != null)
+            {
+                rect.sizeDelta =
+                    new Vector2(
+                        220f,
+                        60f
+                    );
+            }
+
+
+            CenterRect(
+                rect,
+                new Vector2(
+                    248f, // CHANGE GENERATE BUTTON X POSITION HERE.
+                    0f
+                )
+            );
+
+
+            // Use the Seed row itself as the coordinate system
+            // for the Generate selection hand.
+            GameObject handAnchorObject =
+                new GameObject(
+                    "GenerateHandAnchor",
+                    typeof(RectTransform)
+                );
+
+
+            handAnchorObject.transform.SetParent(
+                parent,
+                false
+            );
+
+
+            RectTransform handAnchor =
+                handAnchorObject
+                    .GetComponent<RectTransform>();
+
+
+            handAnchor.anchorMin =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            handAnchor.anchorMax =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            handAnchor.pivot =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+
+            handAnchor.anchoredPosition =
+                new Vector2(
+                    175f, // CHANGE GENERATE HAND X POSITION HERE.
+                    -40f  // CHANGE GENERATE HAND Y POSITION HERE.
+                );
+
+
+            button.overrideHandIconPosX =
+                true;
+
+            button.overrideHandIconPosY =
+                true;
+
+            button.handIconOverridePos =
+                handAnchor;
+
+
+            buttonObject.SetActive(
+                true
+            );
+
+
+            return true;
+        }
+
+
+        private static void CopyTextStyle(
+            TextMeshProUGUI source,
+            TextMeshProUGUI destination)
+        {
+            if (source == null ||
+                destination == null)
+            {
+                return;
+            }
+
+
+            destination.font =
+                source.font;
+
+            destination.fontSharedMaterial =
+                source.fontSharedMaterial;
+
+            destination.fontStyle =
+                source.fontStyle;
+
+            destination.color =
+                source.color;
+
+            destination.enableAutoSizing =
+                false;
+
+            destination.fontSize =
+                source.fontSize;
+
+            destination.enableWordWrapping =
+                false;
+
+            destination.overflowMode =
+                TextOverflowModes.Overflow;
+        }
+
+
         private static bool CreateContinueButton(
             OptionsControllerPanel optionsController,
             Transform parent)
@@ -774,6 +1681,41 @@ namespace Randomizer.CatQuest3
 
 
             return true;
+        }
+
+
+        private static void SetGraphicsVisible(
+            Transform root,
+            bool visible)
+        {
+            if (root == null)
+            {
+                return;
+            }
+
+
+            Graphic[] graphics =
+                root.GetComponentsInChildren
+                    <Graphic>(
+                        true
+                    );
+
+
+            for (int i = 0;
+                 i < graphics.Length;
+                 i++)
+            {
+                Color color =
+                    graphics[i].color;
+
+                color.a =
+                    visible
+                        ? 1f
+                        : 0f;
+
+                graphics[i].color =
+                    color;
+            }
         }
 
 
@@ -958,6 +1900,31 @@ namespace Randomizer.CatQuest3
                     behaviour.enabled =
                         false;
                 }
+            }
+        }
+
+        private static void DisableGraphics(
+    Transform root)
+        {
+            if (root == null)
+            {
+                return;
+            }
+
+
+            Graphic[] graphics =
+                root.GetComponentsInChildren
+                    <Graphic>(
+                        true
+                    );
+
+
+            for (int i = 0;
+                 i < graphics.Length;
+                 i++)
+            {
+                graphics[i].enabled =
+                    false;
             }
         }
     }
