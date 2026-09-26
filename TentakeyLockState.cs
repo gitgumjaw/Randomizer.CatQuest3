@@ -135,12 +135,6 @@ namespace Randomizer.CatQuest3
                 questObject.transform.parent,
                 true
             );
-
-            Plugin.Log.LogInfo(
-                "Tentakey compatibility | " +
-                $"Detached {lockName} from " +
-                $"{questObject.name} before quest completion."
-            );
         }
 
 
@@ -220,13 +214,6 @@ namespace Randomizer.CatQuest3
 
             lockObject.SetActive(
                 !hasKey
-            );
-
-            Plugin.Log.LogInfo(
-                "Tentakey compatibility | " +
-                $"{lockName} restored " +
-                $"{(hasKey ? "hidden" : "visible")} " +
-                $"from save."
             );
         }
 
@@ -312,12 +299,6 @@ namespace Randomizer.CatQuest3
 
             lockObject.SetActive(
                 false
-            );
-
-            Plugin.Log.LogInfo(
-                "Tentakey compatibility | " +
-                $"{tentakeyName} obtained. " +
-                $"Hid {lockName}."
             );
         }
 

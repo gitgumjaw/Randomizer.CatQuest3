@@ -8,13 +8,11 @@
             private set;
         } = CreateVanillaConfiguration();
 
-
         public static int CurrentProfileIndex
         {
             get;
             private set;
         } = -1;
-
 
         public static bool IsEnabled
         {
@@ -25,7 +23,6 @@
             }
         }
 
-
         public static void Activate(
             int profileIndex,
             RandomizerRunConfiguration configuration)
@@ -33,14 +30,11 @@
             CurrentProfileIndex =
                 profileIndex;
 
-
             CurrentConfiguration =
                 configuration ??
                 CreateVanillaConfiguration();
 
-
             ApplyCurrentConfiguration();
-
 
             Plugin.Log.LogInfo(
                 "RANDOMIZER RUNTIME | " +
@@ -55,7 +49,6 @@
             );
         }
 
-
         public static void ActivateVanilla(
             int profileIndex)
         {
@@ -65,9 +58,7 @@
             CurrentConfiguration =
                 CreateVanillaConfiguration();
 
-
             ApplyCurrentConfiguration();
-
 
             Plugin.Log.LogInfo(
                 "RANDOMIZER RUNTIME | " +
@@ -76,7 +67,6 @@
             );
         }
 
-
         private static void ApplyCurrentConfiguration()
         {
             RandomizerSettings settings =
@@ -84,10 +74,8 @@
                     CurrentConfiguration
                 );
 
-
             RandomizerState.Settings =
                 settings;
-
 
             Plugin.Log.LogInfo(
                 "RANDOMIZER SETTINGS | " +
@@ -111,7 +99,6 @@
                 settings.RandomizeBirdPoop
             );
 
-
             if (!CurrentConfiguration.Enabled)
             {
                 RewardCatalog.Clear();
@@ -124,12 +111,15 @@
                 return;
             }
 
-
             RandomizerGenerator.Generate(
                 settings,
                 CurrentConfiguration.SeedValue
             );
 
+            SpoilerLogWriter.Write(
+                CurrentProfileIndex,
+                CurrentConfiguration
+            );
 
             Plugin.Log.LogInfo(
                 "RANDOMIZER RUNTIME | " +
@@ -137,14 +127,12 @@
             );
         }
 
-
         private static RandomizerSettings CreateSettings(
             RandomizerRunConfiguration configuration)
         {
             bool enabled =
                 configuration != null &&
                 configuration.Enabled;
-
 
             return new RandomizerSettings
             {
@@ -186,21 +174,20 @@
             };
         }
 
-
         private static RandomizerRunConfiguration
             CreateVanillaConfiguration()
         {
             return new RandomizerRunConfiguration(
-                false, // Enabled
-                false, // Equipment
-                false, // Spells
-                false, // QuestItems
-                false, // ManaCrystals
-                false, // ResourcesCollectibles
-                false, // ShipKey
-                false, // InfinityKey
-                false, // BirdPoop
-                false, // MatchPlayerLevel
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
                 "",
                 0
             );

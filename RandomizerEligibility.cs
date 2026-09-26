@@ -45,6 +45,7 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             switch (reward.Type)
             {
                 case RewardType.Equipment:
@@ -82,8 +83,10 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             Reward vanillaReward =
                 slot.VanillaReward;
+
 
             if (
                 vanillaReward != null &&
@@ -97,6 +100,7 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             if (
                 vanillaReward != null &&
                 vanillaReward.Type ==
@@ -108,6 +112,7 @@ namespace Randomizer.CatQuest3
             {
                 return false;
             }
+
 
             // North Star Essence always stays vanilla.
             if (
@@ -121,6 +126,7 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             return IsEnabled(
                 vanillaReward,
                 settings
@@ -129,20 +135,9 @@ namespace Randomizer.CatQuest3
 
 
         private static bool IsQuestItemEnabled(
-            Reward reward,
-            RandomizerSettings settings)
+    Reward reward,
+    RandomizerSettings settings)
         {
-            if (!settings.RandomizeQuestItems)
-            {
-                return false;
-            }
-
-            if (reward.Id ==
-                SpecialRewards.StarRuneGuid)
-            {
-                return false;
-            }
-
             if (reward.Id ==
                 SpecialRewards.ShipKeyGuid)
             {
@@ -155,6 +150,12 @@ namespace Randomizer.CatQuest3
                 return settings.RandomizeInfinityKey;
             }
 
+            if (reward.Id ==
+                SpecialRewards.StarRuneGuid)
+            {
+                return false;
+            }
+
             // North Star Essence is intentionally excluded
             // from the randomizer entirely.
             if (reward.Id ==
@@ -163,7 +164,7 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-            return true;
+            return settings.RandomizeQuestItems;
         }
     }
 }

@@ -49,13 +49,6 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
-            Plugin.Log.LogInfo(
-                "Tentakey compatibility | " +
-                $"Skipped {action.GetType().Name} in " +
-                $"{action.Fsm.GameObject.name} / " +
-                $"{UnlockState}."
-            );
-
             action.Finish();
 
             return false;

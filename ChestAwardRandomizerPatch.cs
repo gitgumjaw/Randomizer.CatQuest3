@@ -243,16 +243,15 @@ namespace Randomizer.CatQuest3
                 }
 
                 if (reward.Type ==
-                        RewardType.Equipment ||
-                    reward.Type ==
-                        RewardType.Blueprint)
+                    RewardType.Equipment ||
+                reward.Type ==
+                    RewardType.Blueprint ||
+                reward.Type ==
+                    RewardType.QuestItem)
                 {
                     continue;
                 }
 
-                // QuestItems, Keys, or other special
-                // vanilla chest rewards stay untouched
-                // until progression handling is ready.
                 return false;
             }
 
