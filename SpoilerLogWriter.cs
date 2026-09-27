@@ -101,37 +101,20 @@ namespace Randomizer.CatQuest3
                     writer.WriteLine(
                         $"[{label}]"
                     );
-                    writer.WriteLine(
-                        $"Key: {location.Key}"
-                    );
-
-                    int slotCount =
-                        Math.Min(
-                            location.VanillaRewards.Count,
-                            location.RandomizedRewards.Count
-                        );
 
                     for (
                         int slotIndex = 0;
-                        slotIndex < slotCount;
+                        slotIndex <
+                            location.RandomizedRewards.Count;
                         slotIndex++)
                     {
-                        Reward vanillaReward =
-                            location.VanillaRewards[slotIndex];
-
                         Reward randomizedReward =
                             location.RandomizedRewards[slotIndex];
 
                         writer.WriteLine(
-                            $"Slot {slotIndex}"
+                            $"Slot {slotIndex} - " +
+                            FormatReward(randomizedReward)
                         );
-                        writer.WriteLine(
-                            $"Vanilla: {FormatReward(vanillaReward)}"
-                        );
-                        writer.WriteLine(
-                            $"Randomized: {FormatReward(randomizedReward)}"
-                        );
-                        writer.WriteLine();
                     }
 
                     writer.WriteLine();
@@ -152,7 +135,161 @@ namespace Randomizer.CatQuest3
                 return "<null>";
             }
 
-            return $"{reward.Type}:{reward.Id}";
+            if (reward.Type == RewardType.Collectible)
+            {
+                return FormatCollectible(reward);
+            }
+
+            return RewardNameResolver.GetName(reward);
+        }
+
+        private static string FormatCollectible(
+            Reward reward)
+        {
+            CollectibleRewardData data =
+                reward.CollectibleData;
+
+            if (data == null)
+            {
+                return RewardNameResolver.GetName(reward);
+            }
+
+            string collectibleName =
+                GetCollectibleName(reward.Id);
+
+            GetCollectibleAmountRange(
+                data,
+                out long minimum,
+                out long maximum
+            );
+
+            if (minimum == maximum)
+            {
+                return $"{minimum} {collectibleName}";
+            }
+
+            return
+                $"{minimum}-{maximum} {collectibleName}";
+        }
+
+        private static string GetCollectibleName(
+            string rewardId)
+        {
+            switch (rewardId)
+            {
+                case "Collectible_Gold":
+                    return "Gold";
+
+                case "Collectible_Exp":
+                    return "Experience";
+
+                case "Collectible_Crystal":
+                    return "Magic";
+
+                default:
+                    return string.IsNullOrWhiteSpace(rewardId)
+                        ? "Collectible"
+                        : rewardId;
+            }
+        }
+
+        private static void GetCollectibleAmountRange(
+            CollectibleRewardData data,
+            out long minimum,
+            out long maximum)
+        {
+            int minimumQuantity =
+                data.RandomQuantity
+                    ? data.QuantityMin
+                    : data.Quantity;
+
+            int maximumQuantity =
+                data.RandomQuantity
+                    ? data.QuantityMax
+                    : data.Quantity;
+
+            minimumQuantity =
+                Math.Max(
+                    1,
+                    minimumQuantity *
+                    data.QuantityMultiplier
+                );
+
+            maximumQuantity =
+                Math.Max(
+                    minimumQuantity,
+                    maximumQuantity *
+                    data.QuantityMultiplier
+                );
+
+            int minimumValue =
+                data.RandomValue
+                    ? data.ValueMin
+                    : data.Value;
+
+            int maximumValue =
+                data.RandomValue
+                    ? data.ValueMax
+                    : data.Value;
+
+            minimum = long.MaxValue;
+            maximum = long.MinValue;
+
+            for (
+                int quantity = minimumQuantity;
+                quantity <= maximumQuantity;
+                quantity++)
+            {
+                long low =
+                    CalculateCollectibleTotal(
+                        data,
+                        quantity,
+                        minimumValue
+                    );
+
+                long high =
+                    CalculateCollectibleTotal(
+                        data,
+                        quantity,
+                        maximumValue
+                    );
+
+                minimum =
+                    Math.Min(
+                        minimum,
+                        low
+                    );
+
+                maximum =
+                    Math.Max(
+                        maximum,
+                        high
+                    );
+            }
+        }
+
+        private static long CalculateCollectibleTotal(
+            CollectibleRewardData data,
+            int quantity,
+            int value)
+        {
+            long adjustedValue =
+                value;
+
+            if (!data.IgnoreCollectibleMultiplier)
+            {
+                adjustedValue *=
+                    data.ValueMultiplier;
+            }
+
+            long valuePerCollectible =
+                (adjustedValue +
+                 quantity - 1) /
+                quantity;
+
+            return
+                valuePerCollectible *
+                quantity;
         }
     }
 }

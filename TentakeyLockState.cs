@@ -122,12 +122,6 @@ namespace Randomizer.CatQuest3
 
             if (lockTransform == null)
             {
-                Plugin.Log.LogWarning(
-                    "Tentakey compatibility | " +
-                    $"{lockName} not found under " +
-                    $"{questObject.name}."
-                );
-
                 return;
             }
 

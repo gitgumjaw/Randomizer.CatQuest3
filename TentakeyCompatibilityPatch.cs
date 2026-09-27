@@ -269,4 +269,115 @@ namespace Randomizer.CatQuest3
                 );
         }
     }
+
+    [HarmonyPatch(
+    typeof(GameplayHelper),
+    "AwardQuestItem"
+)]
+    public static class
+    TentakeyVanillaChestAwardPatch
+    {
+        public static bool Prefix(
+    QuestItem questItem,
+    Action callback)
+        {
+            if (!ShouldSuppress(
+                    questItem,
+                    callback))
+            {
+                return true;
+            }
+
+            Plugin.Log.LogInfo(
+                $"Tentakey compatibility | " +
+                $"Suppressed vanilla chest award | " +
+                $"QuestItem:{questItem.Guid}"
+            );
+
+            // The vanilla Tentakey quests react to the KeyData
+            // event fired by SaveGameKeyData.AddKey().
+            //
+            // We need that progression event to occur even though
+            // this vanilla location must not actually give the
+            // player the Tentakey.
+            if (questItem.key != null)
+            {
+                Relays.keyEvents
+                    .GetKeyEvent(questItem.key)
+                    .Dispatch();
+
+                Plugin.Log.LogInfo(
+                    $"Tentakey compatibility | " +
+                    $"Dispatched vanilla key progression event | " +
+                    $"Key:{questItem.key.Guid}"
+                );
+            }
+            else
+            {
+                Plugin.Log.LogWarning(
+                    $"Tentakey compatibility | " +
+                    $"Could not dispatch key progression event | " +
+                    $"QuestItem:{questItem.Guid}"
+                );
+            }
+
+            // Continue the completion path that DropQuestItem()
+            // supplied to GameplayHelper.AwardQuestItem().
+            callback?.Invoke();
+
+            return false;
+        }
+
+        private static bool ShouldSuppress(
+            QuestItem questItem,
+            Action callback)
+        {
+            if (RandomizerState.Settings == null ||
+                !RandomizerState.Settings.RandomizeQuestItems)
+            {
+                return false;
+            }
+
+            if (questItem == null)
+            {
+                return false;
+            }
+
+            bool isTentakey =
+                questItem.Guid ==
+                    "bc103da6bbfd2fc419c24fa84be14a8a" ||
+                questItem.Guid ==
+                    "c57d682e39ed68742b78ac8f10fa11ff";
+
+            if (!isTentakey)
+            {
+                return false;
+            }
+
+            if (callback == null ||
+                callback.Method == null)
+            {
+                return false;
+            }
+
+            string methodName =
+                callback.Method.Name;
+
+            Type declaringType =
+                callback.Method.DeclaringType;
+
+            string declaringTypeName =
+                declaringType != null
+                    ? declaringType.FullName
+                    : string.Empty;
+
+            return
+                methodName.Contains(
+                    "DropQuestItem"
+                ) &&
+                declaringTypeName.Contains(
+                    "ChestBehaviour"
+                );
+        }
+    }
 }

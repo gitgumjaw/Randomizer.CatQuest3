@@ -6,10 +6,14 @@
 
   <ItemGroup>
     <None Remove="Data\RewardCatalog.txt" />
+    <None Remove="Data\RewardNames.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Data\RewardCatalog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\RewardNames.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

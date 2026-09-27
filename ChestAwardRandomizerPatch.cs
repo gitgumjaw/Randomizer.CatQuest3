@@ -244,9 +244,9 @@ namespace Randomizer.CatQuest3
 
                 if (reward.Type ==
                     RewardType.Equipment ||
-                reward.Type ==
+                    reward.Type ==
                     RewardType.Blueprint ||
-                reward.Type ==
+                    reward.Type ==
                     RewardType.QuestItem)
                 {
                     continue;
@@ -265,14 +265,25 @@ namespace Randomizer.CatQuest3
             foreach (LootTableItem item
                      in currentTable.list)
             {
-                if (item == null ||
-                    item.dropType !=
-                        LootTableItem.DropType.Collectible)
+                if (item == null)
                 {
                     return false;
                 }
 
-                lootCollectibleCount++;
+                if (item.dropType ==
+                    LootTableItem.DropType.Collectible)
+                {
+                    lootCollectibleCount++;
+                    continue;
+                }
+
+                if (item.dropType ==
+                    LootTableItem.DropType.QuestItem)
+                {
+                    continue;
+                }
+
+                return false;
             }
 
             if (lootCollectibleCount !=
@@ -307,8 +318,8 @@ namespace Randomizer.CatQuest3
         }
 
         private static int FindChestItemSlot(
-    RewardLocation location,
-    EquipmentItemData itemLoot)
+            RewardLocation location,
+            EquipmentItemData itemLoot)
         {
             if (location == null ||
                 itemLoot == null)
@@ -320,7 +331,6 @@ namespace Randomizer.CatQuest3
                 itemLoot is ShipBlueprintItemData
                     ? RewardType.Blueprint
                     : RewardType.Equipment;
-
 
             // First try the normal fixed-reward mapping.
             //
@@ -336,7 +346,6 @@ namespace Randomizer.CatQuest3
             {
                 return exactMatch;
             }
-
 
             // A vanilla-random equipment slot can legitimately
             // produce a different item at runtime than the item

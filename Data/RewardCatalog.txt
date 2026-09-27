@@ -325,7 +325,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 LOCATION|33fee15cffb16fd49b79610468f4c162
 LABEL|Doggy Jones Silver Chest
 CATEGORY|Equipment & Blueprints
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Equipment|5ccbc4e4af1b0d74aa9d295226a4f8c6|Weight:1
 
 LOCATION|34c936f5885617b4e8b0aefd996d0b66
@@ -1295,9 +1295,9 @@ OPTION|Equipment|b42a74af9127a1546af227630f195521|Weight:1
 LOCATION|Interior_PirateKingHideout|DungeonQuest_PirateKing|FSM|Earn Reward
 LABEL|Defeat Pi-rat King
 CATEGORY|Equipment & Blueprints
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Equipment|8cfd849e295cf2d4a95d6f4f2e0aeaf2|Weight:1
-SLOT|1|AllowCollectibles:True|Options:1
+SLOT|1|AllowCollectibles:False|Options:1
 OPTION|Equipment|d2dfe7bfeadd52949acd59f25acafd34|Weight:1
 
 LOCATION|Interior_Tavern|Interactable_MamaMilka|FSM|Gives Reward
