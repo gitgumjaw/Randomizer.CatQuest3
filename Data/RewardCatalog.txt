@@ -8,6 +8,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|0298dd4cc39e1da4eabc8543b62c3aad
 LABEL|Lovepurr Castle — 2nd Book Puzzle Chest
+LOGIC|LovepurrBooks
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|72e52ed580d288b4c86778032adf010d|Weight:1
@@ -423,6 +424,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|3f889d945ebc9b64bb1fec6ce9d958ce
 LABEL|Lovepurr Castle — Good Clawford Silver Chest
+LOGIC|LovepurrBooks
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|a8b1b5a198a523242afdbef645fbc878|Weight:1
@@ -799,6 +801,7 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 
 LOCATION|6af9706a9de86e94196493c0d53a0a15
 LABEL|Lovepurr Castle — 1st Book Puzzle Chest
+LOGIC|LovepurrBooks
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:2
 OPTION|Equipment|72e52ed580d288b4c86778032adf010d|Weight:1
@@ -2286,6 +2289,7 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 
 LOCATION|e522995d163539e44a6e1254027f390d
 LABEL|Lovepurr Castle — 3rd Book Puzzle Chest
+LOGIC|LovepurrBooks
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|6f745808351b0b94da3e17cfecb5b09a|Weight:1
@@ -2380,6 +2384,7 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 
 LOCATION|f8a072b39ec682441909c974658f50ec
 LABEL|Lovepurr Castle — Boss Room Silver Chest
+LOGIC|LovepurrBooks
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|0e5106fb19ef49c41b39d6cef53c1efe|Weight:1

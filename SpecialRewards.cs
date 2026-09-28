@@ -30,6 +30,16 @@
             "d437c226478785e4b8f7b058ed3a9728";
 
 
+        public const string LovepurrBook1Guid =
+            "9da86e0edf3a6f1449e64400a6a9096b";
+
+        public const string LovepurrBook2Guid =
+            "a4f4a4f4891108b46b6fd1ef79ce9e0a";
+
+        public const string LovepurrBook3Guid =
+            "092d5c5aeb3b19743a6f438818eb14ac";
+
+
         public const string InfinityKeyGuid =
             "0155432565248e64e8378122cbb41406";
 

@@ -226,7 +226,7 @@ namespace Randomizer.CatQuest3
 
 
         private static LogicRequirements ParseLogicRequirements(
-            string logic)
+    string logic)
         {
             bool requiresShipKey = false;
 
@@ -235,6 +235,8 @@ namespace Randomizer.CatQuest3
             int requiredTentakeys = 0;
 
             int requiredSeekerKeys = 0;
+
+            int requiredLovepurrBooks = 0;
 
             bool requiresInfinityKey = false;
 
@@ -286,6 +288,14 @@ namespace Randomizer.CatQuest3
                 }
 
 
+                if (requirement == "LovepurrBooks")
+                {
+                    requiredLovepurrBooks = 3;
+
+                    continue;
+                }
+
+
                 if (requirement == "InfinityKey")
                 {
                     requiresInfinityKey = true;
@@ -307,6 +317,7 @@ namespace Randomizer.CatQuest3
                 requiresTwinCastleKey,
                 requiredTentakeys,
                 requiredSeekerKeys,
+                requiredLovepurrBooks,
                 requiresInfinityKey,
                 requiresNorthStarEssence
             );

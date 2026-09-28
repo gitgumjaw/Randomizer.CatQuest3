@@ -10,6 +10,8 @@
 
         public int RequiredSeekerKeys { get; }
 
+        public int RequiredLovepurrBooks { get; }
+
         public bool RequiresInfinityKey { get; }
 
         public bool RequiresNorthStarEssence { get; }
@@ -20,6 +22,7 @@
             bool requiresTwinCastleKey = false,
             int requiredTentakeys = 0,
             int requiredSeekerKeys = 0,
+            int requiredLovepurrBooks = 0,
             bool requiresInfinityKey = false,
             bool requiresNorthStarEssence = false)
         {
@@ -34,6 +37,9 @@
 
             RequiredSeekerKeys =
                 requiredSeekerKeys;
+
+            RequiredLovepurrBooks =
+                requiredLovepurrBooks;
 
             RequiresInfinityKey =
                 requiresInfinityKey;
@@ -82,6 +88,15 @@
             if (
                 state.SeekerKeyCount <
                 RequiredSeekerKeys
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                state.LovepurrBookCount <
+                RequiredLovepurrBooks
             )
             {
                 return false;

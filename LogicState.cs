@@ -10,6 +10,8 @@
 
         public int SeekerKeyCount { get; set; }
 
+        public int LovepurrBookCount { get; set; }
+
         public bool HasInfinityKey { get; set; }
 
         public bool HasNorthStarEssence { get; set; }
@@ -24,6 +26,8 @@
             TentakeyCount = 0;
 
             SeekerKeyCount = 0;
+
+            LovepurrBookCount = 0;
 
             HasInfinityKey = false;
 

@@ -178,6 +178,7 @@ namespace Randomizer.CatQuest3
                 $"TwinCastleKey:{state.HasTwinCastleKey} | " +
                 $"Tentakeys:{state.TentakeyCount}/3 | " +
                 $"SeekerKeys:{state.SeekerKeyCount}/3 | " +
+                $"LovepurrBooks:{state.LovepurrBookCount}/3 | " +
                 $"InfinityKey:{state.HasInfinityKey} | " +
                 $"NorthStarEssence:{state.HasNorthStarEssence}"
             );
@@ -304,6 +305,13 @@ namespace Randomizer.CatQuest3
             }
 
 
+            if (IsLovepurrBook(
+                reward.Id))
+            {
+                return "Lovepurr Book";
+            }
+
+
             if (reward.Id ==
                 SpecialRewards.InfinityKeyGuid)
             {
@@ -376,6 +384,19 @@ namespace Randomizer.CatQuest3
                     $"Seeker Keys " +
                     $"{state.SeekerKeyCount}/" +
                     $"{requirements.RequiredSeekerKeys}"
+                );
+            }
+
+
+            if (
+                state.LovepurrBookCount <
+                requirements.RequiredLovepurrBooks
+            )
+            {
+                unmet.Add(
+                    $"Lovepurr Books " +
+                    $"{state.LovepurrBookCount}/" +
+                    $"{requirements.RequiredLovepurrBooks}"
                 );
             }
 
@@ -481,6 +502,15 @@ namespace Randomizer.CatQuest3
             }
 
 
+            if (IsLovepurrBook(
+                reward.Id))
+            {
+                state.LovepurrBookCount++;
+
+                return true;
+            }
+
+
             if (reward.Id ==
                 SpecialRewards.InfinityKeyGuid)
             {
@@ -541,6 +571,10 @@ namespace Randomizer.CatQuest3
                     reward.Id
                 ) ||
 
+                IsLovepurrBook(
+                    reward.Id
+                ) ||
+
                 reward.Id ==
                     SpecialRewards.InfinityKeyGuid ||
 
@@ -576,6 +610,21 @@ namespace Randomizer.CatQuest3
 
                 id ==
                     SpecialRewards.SeekerKeyOrionGuid;
+        }
+
+
+        private static bool IsLovepurrBook(
+            string id)
+        {
+            return
+                id ==
+                    SpecialRewards.LovepurrBook1Guid ||
+
+                id ==
+                    SpecialRewards.LovepurrBook2Guid ||
+
+                id ==
+                    SpecialRewards.LovepurrBook3Guid;
         }
     }
 }
