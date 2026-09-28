@@ -55,7 +55,7 @@ namespace Randomizer.CatQuest3
             );
 
             Logger.LogInfo(
-                "Logic good
+                "Logic good"
             );
         }
     }
