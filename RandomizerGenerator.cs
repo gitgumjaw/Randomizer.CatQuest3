@@ -56,6 +56,11 @@ namespace Randomizer.CatQuest3
                         $"Attempt Seed:{attemptSeed}"
                     );
 
+
+                    LogicValidator
+                        .LogCurrentLayoutFailureDiagnostics();
+
+
                     continue;
                 }
 
