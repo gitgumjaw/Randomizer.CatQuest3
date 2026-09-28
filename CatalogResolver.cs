@@ -99,7 +99,8 @@ namespace Randomizer.CatQuest3
                         allowCollectiblesBySlot,
                         catalogLocation.Triggers,
                         catalogLocation.Label,
-                        isVanillaRandomBySlot
+                        isVanillaRandomBySlot,
+                        catalogLocation.LogicRequirements
                     );
 
                 RewardCatalog.Add(

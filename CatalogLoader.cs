@@ -42,6 +42,7 @@ namespace Randomizer.CatQuest3
             WeightedRewardSlot currentSlot =
                 null;
 
+
             foreach (string rawLine in lines)
             {
                 string line =
@@ -52,12 +53,14 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
+
                 if (line.StartsWith(
                     "Catalog Locations:",
                     StringComparison.Ordinal))
                 {
                     continue;
                 }
+
 
                 if (line.StartsWith(
                     "LOCATION|",
@@ -83,6 +86,7 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
+
                 if (line.StartsWith(
                     "LABEL|",
                     StringComparison.Ordinal))
@@ -99,6 +103,7 @@ namespace Randomizer.CatQuest3
 
                     continue;
                 }
+
 
                 if (line.StartsWith(
                     "TRIGGER|",
@@ -120,6 +125,30 @@ namespace Randomizer.CatQuest3
 
                     continue;
                 }
+
+
+                if (line.StartsWith(
+                    "LOGIC|",
+                    StringComparison.Ordinal))
+                {
+                    if (currentLocation == null)
+                    {
+                        continue;
+                    }
+
+                    string logic =
+                        line.Substring(
+                            "LOGIC|".Length
+                        );
+
+                    currentLocation.LogicRequirements =
+                        ParseLogicRequirements(
+                            logic
+                        );
+
+                    continue;
+                }
+
 
                 if (line.StartsWith(
                     "SLOT|",
@@ -150,6 +179,7 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
+
                 if (line.StartsWith(
                     "OPTION|",
                     StringComparison.Ordinal))
@@ -173,13 +203,17 @@ namespace Randomizer.CatQuest3
                 }
             }
 
+
             int slotCount = 0;
 
-            foreach (CatalogRewardLocation location in locations)
+            foreach (
+                CatalogRewardLocation location
+                in locations)
             {
                 slotCount +=
                     location.RewardSlots.Count;
             }
+
 
             Plugin.Log.LogInfo(
                 $"Loaded reward catalog: " +
@@ -189,6 +223,95 @@ namespace Randomizer.CatQuest3
 
             return locations;
         }
+
+
+        private static LogicRequirements ParseLogicRequirements(
+            string logic)
+        {
+            bool requiresShipKey = false;
+
+            bool requiresTwinCastleKey = false;
+
+            int requiredTentakeys = 0;
+
+            int requiredSeekerKeys = 0;
+
+            bool requiresInfinityKey = false;
+
+            bool requiresNorthStarEssence = false;
+
+
+            string[] requirements =
+                logic.Split(',');
+
+
+            foreach (
+                string rawRequirement
+                in requirements)
+            {
+                string requirement =
+                    rawRequirement.Trim();
+
+
+                if (requirement == "ShipKey")
+                {
+                    requiresShipKey = true;
+
+                    continue;
+                }
+
+
+                if (requirement ==
+                    "TwinCastleKey")
+                {
+                    requiresTwinCastleKey = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "Tentakeys")
+                {
+                    requiredTentakeys = 3;
+
+                    continue;
+                }
+
+
+                if (requirement == "SeekerKeys")
+                {
+                    requiredSeekerKeys = 3;
+
+                    continue;
+                }
+
+
+                if (requirement == "InfinityKey")
+                {
+                    requiresInfinityKey = true;
+
+                    continue;
+                }
+
+
+                if (requirement ==
+                    "NorthStarEssence")
+                {
+                    requiresNorthStarEssence = true;
+                }
+            }
+
+
+            return new LogicRequirements(
+                requiresShipKey,
+                requiresTwinCastleKey,
+                requiredTentakeys,
+                requiredSeekerKeys,
+                requiresInfinityKey,
+                requiresNorthStarEssence
+            );
+        }
+
 
         private static WeightedRewardOption ParseOption(
             string line)
@@ -201,6 +324,7 @@ namespace Randomizer.CatQuest3
                 return null;
             }
 
+
             if (!Enum.TryParse(
                 parts[1],
                 out RewardType rewardType))
@@ -208,8 +332,10 @@ namespace Randomizer.CatQuest3
                 return null;
             }
 
+
             string rewardId =
                 parts[2];
+
 
             int weight =
                 ParseIntField(
@@ -218,8 +344,10 @@ namespace Randomizer.CatQuest3
                     1
                 );
 
+
             CollectibleRewardData collectibleData =
                 null;
+
 
             if (rewardType ==
                 RewardType.Collectible)
@@ -231,6 +359,7 @@ namespace Randomizer.CatQuest3
                     );
             }
 
+
             Reward reward =
                 new Reward(
                     rewardType,
@@ -238,11 +367,13 @@ namespace Randomizer.CatQuest3
                     collectibleData
                 );
 
+
             return new WeightedRewardOption(
                 reward,
                 weight
             );
         }
+
 
         private static CollectibleRewardData
             ParseCollectibleData(
@@ -333,6 +464,7 @@ namespace Randomizer.CatQuest3
                     1
                 );
 
+
             return new CollectibleRewardData(
                 prefabName,
                 quantity,
@@ -349,6 +481,7 @@ namespace Randomizer.CatQuest3
             );
         }
 
+
         private static string ParseStringField(
             string line,
             string fieldName,
@@ -359,6 +492,7 @@ namespace Randomizer.CatQuest3
 
             string prefix =
                 fieldName + ":";
+
 
             foreach (string part in parts)
             {
@@ -374,8 +508,10 @@ namespace Randomizer.CatQuest3
                 );
             }
 
+
             return defaultValue;
         }
+
 
         private static int ParseIntField(
             string line,
@@ -389,7 +525,9 @@ namespace Randomizer.CatQuest3
                     null
                 );
 
-            if (value != null &&
+
+            if (
+                value != null &&
                 int.TryParse(
                     value,
                     out int result))
@@ -397,8 +535,10 @@ namespace Randomizer.CatQuest3
                 return result;
             }
 
+
             return defaultValue;
         }
+
 
         private static bool ParseBoolField(
             string line,
@@ -412,13 +552,16 @@ namespace Randomizer.CatQuest3
                     null
                 );
 
-            if (value != null &&
+
+            if (
+                value != null &&
                 bool.TryParse(
                     value,
                     out bool result))
             {
                 return result;
             }
+
 
             return defaultValue;
         }

@@ -1,35 +1,95 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Randomizer.CatQuest3
 {
     public static class RandomizerGenerator
     {
+        private const int MaxLogicAttempts =
+            1000;
+
+
         public static void Generate(
             RandomizerSettings settings,
             int seed)
         {
-            // Start every generation from a clean resolved catalog.
-            RewardCatalog.Clear();
+            for (
+                int attempt = 0;
+                attempt < MaxLogicAttempts;
+                attempt++)
+            {
+                int attemptSeed =
+                    unchecked(
+                        seed + attempt
+                    );
 
-            // Resolve vanilla weighted/random slots into one fixed
-            // reward per slot for this seed.
-            CatalogResolver.ResolveToRewardCatalog(seed);
 
-            // Only enabled rewards enter the global shuffle pool.
-            List<RewardSlot> eligibleSlots =
-                RewardCatalog.GetEligibleSlots(settings);
+                RewardCatalog.Clear();
 
-            // Shuffle while respecting destination compatibility
-            // rules such as restricted locations rejecting Collectibles
-            // and Catuga locations rejecting the randomized Ship Key.
-            RewardShuffler.Shuffle(
-                eligibleSlots,
-                seed
+
+                CatalogResolver.ResolveToRewardCatalog(
+                    attemptSeed
+                );
+
+
+                List<RewardSlot> eligibleSlots =
+                    RewardCatalog.GetEligibleSlots(
+                        settings
+                    );
+
+
+                RewardShuffler.Shuffle(
+                    eligibleSlots,
+                    attemptSeed
+                );
+
+
+                bool logicValid =
+                    LogicValidator.IsCurrentLayoutValid();
+
+
+                if (!logicValid)
+                {
+                    Plugin.Log.LogInfo(
+                        $"LOGIC VALIDATION | FAIL | " +
+                        $"Attempt:{attempt + 1} | " +
+                        $"Attempt Seed:{attemptSeed}"
+                    );
+
+                    continue;
+                }
+
+
+                Plugin.Log.LogInfo(
+                    $"LOGIC VALIDATION | PASS | " +
+                    $"Attempt:{attempt + 1} | " +
+                    $"Attempt Seed:{attemptSeed}"
+                );
+
+
+                Plugin.Log.LogInfo(
+                    $"Generated randomizer with " +
+                    $"{eligibleSlots.Count} eligible reward slots | " +
+                    $"Seed:{seed} | " +
+                    $"Attempts:{attempt + 1}"
+                );
+
+
+                return;
+            }
+
+
+            Plugin.Log.LogError(
+                $"LOGIC VALIDATION | " +
+                $"Could not generate a beatable layout " +
+                $"after {MaxLogicAttempts} attempts | " +
+                $"Seed:{seed}"
             );
 
-            Plugin.Log.LogInfo(
-                $"Generated randomizer with " +
-                $"{eligibleSlots.Count} eligible reward slots."
+
+            throw new InvalidOperationException(
+                $"Could not generate a beatable randomizer " +
+                $"layout after {MaxLogicAttempts} attempts."
             );
         }
     }

@@ -54,9 +54,8 @@ namespace Randomizer.CatQuest3
                 "Harmony patches applied."
             );
 
-
             Logger.LogInfo(
-                "Playtest Version: 0.1.260921 - Initial Playtest Release"
+                "WIP - Logic Tests 3"
             );
         }
     }

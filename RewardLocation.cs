@@ -18,6 +18,8 @@ namespace Randomizer.CatQuest3
 
         public List<bool> IsVanillaRandomBySlot { get; }
 
+        public LogicRequirements LogicRequirements { get; }
+
 
         public RewardLocation(
             string key,
@@ -25,11 +27,16 @@ namespace Randomizer.CatQuest3
             IEnumerable<bool> allowCollectiblesBySlot = null,
             IEnumerable<string> triggers = null,
             string label = null,
-            IEnumerable<bool> isVanillaRandomBySlot = null)
+            IEnumerable<bool> isVanillaRandomBySlot = null,
+            LogicRequirements logicRequirements = null)
         {
             Key = key;
 
             Label = label;
+
+            LogicRequirements =
+                logicRequirements ??
+                new LogicRequirements();
 
             Triggers =
                 triggers == null

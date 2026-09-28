@@ -40,6 +40,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|0ae7048c4f28e274789aa9067f8be419
 LABEL|Golden Tower — Golden Treasure Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|e323a5b66b62ddb4d8eabe6a7f978442|Weight:1
@@ -105,6 +106,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 
 LOCATION|15623d4fa9a260e49924e8eaadc94da4
 LABEL|Ruins Centauri — Silver Boss Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|5219457213ff34fc38f86f28e343d37c|Weight:1
@@ -125,6 +127,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|15f6a3b8da064434ebf03f22ed5a9ba6
 LABEL|Sunset Maze — Puzzle Chest Sunset Maze
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|36be68c8e57f45c4a8ec4213ad4bd8c0|Weight:1
@@ -149,6 +152,7 @@ OPTION|QuestItem|bc103da6bbfd2fc419c24fa84be14a8a|Weight:1
 
 LOCATION|18923644a48006e4cb913d6659dfc679
 LABEL|Long Island — Inside Fort Silver Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|88702d3254d64e54b926c9bbfcad0300|Weight:1
@@ -161,6 +165,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|18eb29576852a0a49ab53dcbec35f5c0
 LABEL|Twin Castle (Light) - 3F Master Room Chest
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:6
 OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
@@ -236,6 +241,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|267e1fb1ecce1db44b74ce076b888dd5
 LABEL|Golden Tower — 4F Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:2
 OPTION|Equipment|265e6d948988ee74c8028e3a0c991710|Weight:1
@@ -257,6 +263,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|2886586db97f4844185d51a93607616a
 LABEL|Wanted Poster Rubber Duck Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
@@ -309,6 +316,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|31efb466be90b0c48a78e21acf18f41a
 LABEL|Zero Dimension — Midwest Silver Chest
+LOGIC|Tentakeys,NorthStarEssence
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:6
 OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
@@ -344,6 +352,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|38cd4cd2c9fb18b4b866669b8d6af7ec
 LABEL|Purricade Island — Silver Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|6be78838022fdfa4d858005b12d7da59|Weight:1
@@ -370,6 +379,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|39f16566266b9a54eabd82b9ff09c04a
 LABEL|Golden Tower — 5F Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:2
 OPTION|Equipment|265e6d948988ee74c8028e3a0c991710|Weight:1
@@ -569,6 +579,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|55277548c718ace4383d3069933a9a90
 LABEL|Zero Dimension — East Silver Chest
+LOGIC|Tentakeys,NorthStarEssence
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:6
 OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
@@ -598,6 +609,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|59dbcf423b7833645930a13b9c08fa59
 LABEL|Ruins Polaris — 1F Arena Chest
+LOGIC|SeekerKeys
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|2a19ecdd4b825354296c219bbd4fe166|Weight:1
@@ -624,6 +636,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|5beccabce2ecdc942b327dddd868b1b6
 LABEL|Zero Dimension — Northwest Silver Chest
+LOGIC|Tentakeys,NorthStarEssence
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:6
 OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
@@ -639,6 +652,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 
 LOCATION|5c8c69b2d010ab34d9ff927087c1f8ce
 LABEL|Twin Castle (Dark) - 2F Dining Hall Center Chest
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|fc70ba5ad13881747838751bfa015f93|Weight:1
@@ -647,6 +661,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|5d340ab81b0589e499200e3798c33e94
 LABEL|Ruins Centauri — Stairway Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|7297468d864ec4ae587bb8b15587d63d|Weight:1
@@ -721,6 +736,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|650a3b3f9dc251d418a1210095932574
 LABEL|8 Bit Dungeon — 6F Boss Room Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|5bc5771112e39724da71a8acb6b1ac64|Weight:1
@@ -925,12 +941,14 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|793ef98daa1cbb84199b3f510bef7973
 LABEL|Twin Castle (Dark) - 1F Ladder Room Secret Crate
+LOGIC|TwinCastleKey
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
 
 LOCATION|7dd48d87bef43b8449cf059db65c44ff
 LABEL|Purvanna — Fort Silver Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|57250ee8db5c5eb49a9ecd833725e44a|Weight:1
@@ -1025,6 +1043,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 
 LOCATION|934c21a2d35eb7f4288f21e7a3541757
 LABEL|8 Bit Dungeon — 4F Painting Reward Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|50e881e98d4643747aa91f034b3d08b6|Weight:1
@@ -1033,6 +1052,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|93bde94f3b424c141a03e022e73db2f8
 LABEL|Golden Tower — 2F Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|265e6d948988ee74c8028e3a0c991710|Weight:1
@@ -1105,6 +1125,7 @@ OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
 
 LOCATION|Castle_GoldenTower|DungeonQuest_GoldenTower|FSM|Get Key
 LABEL|Golden Tower - LV40 Rat Reward
+LOGIC|ShipKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|57a129a2cb4ad13429cb324f717ad156|Weight:1
@@ -1123,18 +1144,21 @@ OPTION|Spell|51dda95ff2f6198488ec4e9b935196f7|Weight:1
 
 LOCATION|Castle_TwinCastle_01|DungeonQuest_TwinCastle_01|FSM|Get Boss Room Key
 LABEL|Twin Castle (Light) - Master Bedroom
+LOGIC|TwinCastleKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|978b44d6dcc44274db693c5c869fcca6|Weight:1
 
 LOCATION|Castle_TwinCastle_01|DungeonQuest_TwinCastle_01|FSM|Get Dining Hall Key
 LABEL|Twin Castle (Light) - Jailed Key
+LOGIC|TwinCastleKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|eeb66a3cf17d7ee4898f93f452cc8c10|Weight:1
 
 LOCATION|Castle_TwinCastle_02|DungeonQuest_TwinCastle_02|FSM|Earn the Necropawmicon
 LABEL|Defeat Necromouser
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|11f1df91d1233e347b28fd752ea56bef|Weight:1
@@ -1147,6 +1171,7 @@ OPTION|QuestItem|ce43f985f70b1f946b6cd7d2449e2264|Weight:1
 
 LOCATION|Castle_TwinCastle_02|DungeonQuest_TwinCastle_02|FSM|Get Master Room Key
 LABEL|Twin Castle (Dark) - Jailed Key
+LOGIC|TwinCastleKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|8cd504f5730445840b225e33fc79ee52|Weight:1
@@ -1159,6 +1184,7 @@ OPTION|Equipment|2c80b4f47c565924c8b254fe9e19ddc4|Weight:1
 
 LOCATION|Cave_Volcano|DungeonQuest_MainQuest_SquidBoss|FSM|Award Equipment
 LABEL|Defeat Takemeowki
+LOGIC|Tentakeys
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|3bda770fe9f979a499b9dc4c1ae4bf10|Weight:1
@@ -1167,12 +1193,14 @@ OPTION|Equipment|da33a185d3f67534eac9f8dce133fbff|Weight:1
 
 LOCATION|InfinityTower|DungeonQuest_InfinityTower|FSM|Receive the North Star essence
 LABEL|Ascend Infinity Tower
+LOGIC|InfinityKey
 CATEGORY|North Star Essence;Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|57a1c1899c8b716478ee76b01f186fd4|Weight:1
 
 LOCATION|InfinityTower|InfinityTowerFiniteManager|FSM|Cleared Final Batch|Wave:8
 LABEL|Infinity Tower - Wave 8
+LOGIC|InfinityKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:6
 OPTION|Equipment|2a19ecdd4b825354296c219bbd4fe166|Weight:1
@@ -1190,6 +1218,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|InfinityTower|InfinityTowerFiniteManager|FSM|Cleared Ongoing Batch|Wave:3
 LABEL|Infinity Tower - Wave 3
+LOGIC|InfinityKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:25
 OPTION|Equipment|a9a12b1d652518c4c833750e965ad108|Weight:1
@@ -1222,6 +1251,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|InfinityTower|InfinityTowerFiniteManager|FSM|Cleared Ongoing Batch|Wave:5
 LABEL|Infinity Tower - Wave 5
+LOGIC|InfinityKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:25
 OPTION|Equipment|a9a12b1d652518c4c833750e965ad108|Weight:1
@@ -1302,6 +1332,7 @@ OPTION|Equipment|d2dfe7bfeadd52949acd59f25acafd34|Weight:1
 
 LOCATION|Interior_Tavern|Interactable_MamaMilka|FSM|Gives Reward
 LABEL|Tavern - Cathulhu kill reward
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
@@ -1409,6 +1440,7 @@ OPTION|QuestItem|2e77d136d66e9dd49be96381876913eb|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_Fishercat_FishLove|FSM|CAUGHT FISH CHEST SPAWN
 LABEL|Catch Love Fish
+LOGIC|ShipKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|89857728d1996e94b8770a6732b134b3|Weight:1
@@ -1709,6 +1741,7 @@ OPTION|Equipment|c351f25f947081b4e800a28c00837a39|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_Purrmaid|FSM|Get Shell Phone
 LABEL|Rescue Purrmaid
+LOGIC|ShipKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|5d0d4fedc9f879849975b130aa0834db|Weight:1
@@ -1727,6 +1760,7 @@ OPTION|ManaCrystal||Weight:1
 
 LOCATION|MainOverworld|WorldQuest_RubberDuck|FSM|Award Blueprint
 LABEL|Defeat Duck of Doom
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|c0465a498514abd499737497506adccd|Weight:1
@@ -1793,6 +1827,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 
 LOCATION|Ruins_Centauri|DungeonQuest_GoingPostal_OinkerChief|FSM|GET REWARD
 LABEL|Delivery to Oinker
+LOGIC|ShipKey
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:1|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:2|ValueMultiplier:500
@@ -1801,12 +1836,14 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 
 LOCATION|Ruins_Centauri|DungeonQuest_GoingPostal_OinkerChief|FSM|Get New Mail (Quest Item)
 LABEL|Mail from Oinker
+LOGIC|ShipKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|e26a1f630c0f302429d5aac6e4c7b8ef|Weight:1
 
 LOCATION|Ruins_Centauri|MainQuest_05_CentauriRuins|FSM|Go Talk to Pig Boss, get Centauri Key
 LABEL|Oinker Chief Reward
+LOGIC|ShipKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|5a36b5c0341129b408cc08b37a33b84c|Weight:1
@@ -1831,12 +1868,14 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 
 LOCATION|Ruins_Polaris|MainQuest_06_PolarisRuins|FSM|Get Infinity Key
 LABEL|Polaris Mural - Infinity Key
+LOGIC|SeekerKeys
 CATEGORY|Infinity Key;Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|0155432565248e64e8378122cbb41406|Weight:1
 
 LOCATION|Ruins_Polaris|MainQuest_06_PolarisRuins|FSM|Mewtallica talks
 LABEL|Polaris - Meowtallika Ticket
+LOGIC|SeekerKeys
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|66ebef354aeecdd4a81d7ca697309ac9|Weight:1
@@ -1873,6 +1912,7 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 
 LOCATION|a5a38691eb6971f49836b0a3a7110eee
 LABEL|8 Bit Dungeon — 4F Jailed Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|191f43b910b9f90439fbda4606d93575|Weight:1
@@ -1889,6 +1929,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|a6b238a85756cee4e99e777f69adcb46
 LABEL|Twin Castle (Dark) - 2F Dining Hall East Chest
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|372460f0f3ceea74785f1b1317778bfa|Weight:1
@@ -1966,6 +2007,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|b2499a3555b56eb4daae8b1cc6b9cd8c
 LABEL|Volcano — Boss Chest
+LOGIC|Tentakeys
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|23240f77bf616924d92c8f9b3d5d9177|Weight:1
@@ -1995,6 +2037,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|b72d69482c7757848af2dce623a7e515
 LABEL|Twin Castle (Light) - 1F Crate near entrance
+LOGIC|TwinCastleKey
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
@@ -2069,6 +2112,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|c2930180ed192db4ebf640ce951a0326
 LABEL|Ruins Centauri — Exit Gate Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|162e6fb9c105f1040bf3f23e7dfda6bc|Weight:1
@@ -2089,6 +2133,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|c8ce1e3d1398ebb40b24504a83f8a9b6
 LABEL|Ruins Polaris — 3F Crate
+LOGIC|SeekerKeys
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
@@ -2167,6 +2212,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|d173c2366ee964c49b2d532cbd6edd25
 LABEL|Twin Castle (Light) - 1F Ladder Room Secret Chest
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:6
 OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
@@ -2180,6 +2226,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|d17953ae3c25506468127f9303ecc6af
 LABEL|Wanted Poster Dratcula Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|087db2a1ab2cc46ddb65cf498b40850e|Weight:1
@@ -2230,6 +2277,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|e4a19150ff4a0b148a88dfc1177ec0ad
 LABEL|Ruins Polaris — 2F Puzzle Crate
+LOGIC|SeekerKeys
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
@@ -2260,6 +2308,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|f0ae325c8aebd1f498f65f6cca2f3ce2
 LABEL|Ruins Polaris — 3F Puzzle Chest
+LOGIC|SeekerKeys
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|db1335b11a1572c4caf632f8fc06c935|Weight:1
@@ -2278,6 +2327,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|f1870b21c3481b347b67772f5040dc72
 LABEL|Twin Castle (Light) - 2F Dining Hall Chest
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:6
 OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
@@ -2291,6 +2341,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|f486e3102443a1247a74a86c4e20eb3d
 LABEL|Ruins Polaris — 1F Puzzle Crate
+LOGIC|SeekerKeys
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
@@ -2299,12 +2350,14 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 
 LOCATION|f6c19dda60222654295850e763940365
 LABEL|Long Island — Inside Fort Crate
+LOGIC|ShipKey
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
 
 LOCATION|f787f84550d5dab4d91336a61439d3fd
 LABEL|Sunset Squid Isles — Purrmaid Purrison Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|ffdf189f74d31ff43a1706c24c47d0ea|Weight:1
@@ -2339,6 +2392,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|f9ef4f4f11165884a90e2716603ff0f5
 LABEL|Twin Castle (Dark) - 3F Silver Boss Chest
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|da085ee77836af34fa74c9289db12ae2|Weight:1
@@ -2347,6 +2401,7 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 
 LOCATION|fc6ac86f93a489a4ea033cdf2b0aea7f
 LABEL|Golden Tower — 3F Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|79d36535bbeafbf44a4e6f38efe46f10|Weight:1
@@ -2412,6 +2467,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|fe61992df5a3b424d9d54d570f469efc
 LABEL|Cathulu Treasure Chest
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Blueprint|ebe65fd4ea1c09946aa1ed774b0f5ea2|Weight:1

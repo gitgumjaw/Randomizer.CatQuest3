@@ -7,6 +7,7 @@ namespace Randomizer.CatQuest3
         public string Key { get; }
 
         public string Label { get; set; }
+        public LogicRequirements LogicRequirements { get; set; }
 
         public List<string> Triggers { get; }
 
@@ -25,6 +26,9 @@ namespace Randomizer.CatQuest3
 
             RewardSlots =
                 new List<WeightedRewardSlot>(rewardSlots);
+
+            LogicRequirements =
+                new LogicRequirements();
         }
 
         public CatalogRewardLocation(string key)
@@ -38,6 +42,9 @@ namespace Randomizer.CatQuest3
 
             RewardSlots =
                 new List<WeightedRewardSlot>();
+
+            LogicRequirements =
+                new LogicRequirements();
         }
 
         public void AddTrigger(
