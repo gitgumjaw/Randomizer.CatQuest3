@@ -3,8 +3,12 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(AwardEquipmentToPlayer), "Award")]
-    public static class EquipmentAwardRandomizerPatch
+    [HarmonyPatch(
+        typeof(AwardEquipmentToPlayer),
+        "Award"
+    )]
+    public static class
+        EquipmentAwardRandomizerPatch
     {
         public static bool Prefix(
             AwardEquipmentToPlayer __instance)
@@ -14,17 +18,41 @@ namespace Randomizer.CatQuest3
                     __instance.Fsm
                 );
 
-            RewardLocation location =
-                RewardCatalog.Get(key);
 
-            if (location == null ||
-                __instance.equipmentItem == null)
+            RewardLocation location =
+                RewardCatalog.Get(
+                    key
+                );
+
+
+            if (location == null)
             {
+                Plugin.Log.LogWarning(
+                    $"EQUIPMENT RANDOMIZER FALLBACK | " +
+                    $"Reason:LocationNotFound | " +
+                    $"Key:{key}"
+                );
+
                 return true;
             }
 
+
+            if (__instance.equipmentItem == null)
+            {
+                Plugin.Log.LogWarning(
+                    $"EQUIPMENT RANDOMIZER FALLBACK | " +
+                    $"Reason:EquipmentItemNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label}"
+                );
+
+                return true;
+            }
+
+
             string equipmentGuid =
                 __instance.equipmentItem.Guid;
+
 
             int rewardIndex =
                 location.FindVanillaRewardIndex(
@@ -32,20 +60,41 @@ namespace Randomizer.CatQuest3
                     equipmentGuid
                 );
 
+
             if (rewardIndex < 0)
             {
+                Plugin.Log.LogWarning(
+                    $"EQUIPMENT RANDOMIZER FALLBACK | " +
+                    $"Reason:VanillaRewardNotFound | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label} | " +
+                    $"Equipment:{equipmentGuid}"
+                );
+
                 return true;
             }
+
 
             Reward randomizedReward =
                 location.RandomizedRewards[
                     rewardIndex
                 ];
 
+
             if (randomizedReward == null)
             {
+                Plugin.Log.LogWarning(
+                    $"EQUIPMENT RANDOMIZER FALLBACK | " +
+                    $"Reason:RandomizedRewardNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label} | " +
+                    $"Slot:{rewardIndex} | " +
+                    $"Equipment:{equipmentGuid}"
+                );
+
                 return true;
             }
+
 
             if (!__instance.dontRaiseCutsceneFlag)
             {
@@ -57,6 +106,7 @@ namespace Randomizer.CatQuest3
                         __instance.Fsm.GameObject;
             }
 
+
             int vanillaAwardLevel =
                 Mathf.CeilToInt(
                     __instance.itemLevel +
@@ -67,11 +117,13 @@ namespace Randomizer.CatQuest3
                         .ItemDropFromChestMultiplier
                 );
 
+
             Vector3 position =
                 RewardPositionResolver.PlayerOrFallback(
                     __instance.Fsm.GameObject
                         .transform.position
                 );
+
 
             Plugin.Log.LogInfo(
                 $"Queueing equipment source | " +
@@ -81,6 +133,7 @@ namespace Randomizer.CatQuest3
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );
+
 
             RewardGrantQueue.Enqueue(
                 location,
@@ -93,6 +146,7 @@ namespace Randomizer.CatQuest3
                     __instance.Finish();
                 }
             );
+
 
             return false;
         }

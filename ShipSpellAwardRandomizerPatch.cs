@@ -3,8 +3,12 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(AwardShipSpecialAmmoToPlayer), "Award")]
-    public static class ShipSpellAwardRandomizerPatch
+    [HarmonyPatch(
+        typeof(AwardShipSpecialAmmoToPlayer),
+        "Award"
+    )]
+    public static class
+        ShipSpellAwardRandomizerPatch
     {
         public static bool Prefix(
             AwardShipSpecialAmmoToPlayer __instance)
@@ -14,17 +18,41 @@ namespace Randomizer.CatQuest3
                     __instance.Fsm
                 );
 
-            RewardLocation location =
-                RewardCatalog.Get(key);
 
-            if (location == null ||
-                __instance.specialAmmo == null)
+            RewardLocation location =
+                RewardCatalog.Get(
+                    key
+                );
+
+
+            if (location == null)
             {
+                Plugin.Log.LogWarning(
+                    $"SHIP SPELL RANDOMIZER FALLBACK | " +
+                    $"Reason:LocationNotFound | " +
+                    $"Key:{key}"
+                );
+
                 return true;
             }
 
+
+            if (__instance.specialAmmo == null)
+            {
+                Plugin.Log.LogWarning(
+                    $"SHIP SPELL RANDOMIZER FALLBACK | " +
+                    $"Reason:SpecialAmmoNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label}"
+                );
+
+                return true;
+            }
+
+
             string shipSpellGuid =
                 __instance.specialAmmo.Guid;
+
 
             int rewardIndex =
                 location.FindVanillaRewardIndex(
@@ -32,18 +60,41 @@ namespace Randomizer.CatQuest3
                     shipSpellGuid
                 );
 
+
             if (rewardIndex < 0)
             {
+                Plugin.Log.LogWarning(
+                    $"SHIP SPELL RANDOMIZER FALLBACK | " +
+                    $"Reason:VanillaRewardNotFound | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label} | " +
+                    $"ShipSpell:{shipSpellGuid}"
+                );
+
                 return true;
             }
 
+
             Reward randomizedReward =
-                location.RandomizedRewards[rewardIndex];
+                location.RandomizedRewards[
+                    rewardIndex
+                ];
+
 
             if (randomizedReward == null)
             {
+                Plugin.Log.LogWarning(
+                    $"SHIP SPELL RANDOMIZER FALLBACK | " +
+                    $"Reason:RandomizedRewardNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label} | " +
+                    $"Slot:{rewardIndex} | " +
+                    $"ShipSpell:{shipSpellGuid}"
+                );
+
                 return true;
             }
+
 
             if (!__instance.dontRaiseCutsceneFlag)
             {
@@ -55,11 +106,13 @@ namespace Randomizer.CatQuest3
                         __instance.Fsm.GameObject;
             }
 
+
             Vector3 position =
                 RewardPositionResolver.PlayerOrFallback(
                     __instance.Fsm.GameObject
                         .transform.position
                 );
+
 
             Plugin.Log.LogInfo(
                 $"Queueing ship spell reward | " +
@@ -69,6 +122,7 @@ namespace Randomizer.CatQuest3
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );
+
 
             RewardGrantQueue.Enqueue(
                 location,
@@ -81,6 +135,7 @@ namespace Randomizer.CatQuest3
                     __instance.Finish();
                 }
             );
+
 
             return false;
         }

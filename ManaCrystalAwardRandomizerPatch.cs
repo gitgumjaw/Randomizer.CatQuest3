@@ -3,8 +3,12 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(GivePlayersManaCrystal), "OnEnter")]
-    public static class ManaCrystalAwardRandomizerPatch
+    [HarmonyPatch(
+        typeof(GivePlayersManaCrystal),
+        "OnEnter"
+    )]
+    public static class
+        ManaCrystalAwardRandomizerPatch
     {
         public static bool Prefix(
             GivePlayersManaCrystal __instance)
@@ -14,13 +18,24 @@ namespace Randomizer.CatQuest3
                     __instance.Fsm
                 );
 
+
             RewardLocation location =
-                RewardCatalog.Get(key);
+                RewardCatalog.Get(
+                    key
+                );
+
 
             if (location == null)
             {
+                Plugin.Log.LogWarning(
+                    $"MANA CRYSTAL RANDOMIZER FALLBACK | " +
+                    $"Reason:LocationNotFound | " +
+                    $"Key:{key}"
+                );
+
                 return true;
             }
+
 
             int rewardIndex =
                 location.FindVanillaRewardIndex(
@@ -28,22 +43,44 @@ namespace Randomizer.CatQuest3
                     ""
                 );
 
+
             if (rewardIndex < 0)
             {
+                Plugin.Log.LogWarning(
+                    $"MANA CRYSTAL RANDOMIZER FALLBACK | " +
+                    $"Reason:VanillaRewardNotFound | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label}"
+                );
+
                 return true;
             }
 
+
             Reward randomizedReward =
-                location.RandomizedRewards[rewardIndex];
+                location.RandomizedRewards[
+                    rewardIndex
+                ];
+
 
             if (randomizedReward == null)
             {
+                Plugin.Log.LogWarning(
+                    $"MANA CRYSTAL RANDOMIZER FALLBACK | " +
+                    $"Reason:RandomizedRewardNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label} | " +
+                    $"Slot:{rewardIndex}"
+                );
+
                 return true;
             }
+
 
             Vector3 position =
                 __instance.Fsm.GameObject
                     .transform.position;
+
 
             Plugin.Log.LogInfo(
                 $"Queueing mana crystal reward | " +
@@ -53,6 +90,7 @@ namespace Randomizer.CatQuest3
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );
+
 
             RewardGrantQueue.Enqueue(
                 location,
@@ -65,6 +103,7 @@ namespace Randomizer.CatQuest3
                     __instance.Finish();
                 }
             );
+
 
             return false;
         }

@@ -561,12 +561,6 @@ CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|e5022c29d9917bd4abaa23319d34d0e0|Weight:1
 
-LOCATION|538666e2a65e6a541b5f32698dd4242c
-LABEL|Sibling Rivalry — Starfish Chest
-CATEGORY|Quest Items
-SLOT|0|AllowCollectibles:True|Options:1
-OPTION|QuestItem|8ea8047249a361d4db404527a3c15040|Weight:1
-
 LOCATION|54e4b9b58f104ac41991f57702a842ec
 LABEL|Ruined Castle — 2F Silver Chest
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
@@ -1139,9 +1133,11 @@ CATEGORY|Spells
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Spell|07e501cc6e150497c999080885dd0ae2|Weight:1
 
-LOCATION|Castle_LovepurrCastle|Interactable_NPC_Clawford|FSM|(Intro cont.) Clawford tells player to break curse
+LOCATION|LOGICAL|LovepurrCastle|FirstMeetingClawford
 LABEL|First Meeting Clawford
 CATEGORY|Spells
+TRIGGER|Castle_LovepurrCastle|Interactable_NPC_Clawford|FSM|(Intro cont.) Clawford tells player to break curse
+TRIGGER|Castle_LovepurrCastle|Interactable_NPC_Clawford|FSM|(Intro cont.) Clawford tells player to find books
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Spell|51dda95ff2f6198488ec4e9b935196f7|Weight:1
 
@@ -1364,6 +1360,9 @@ CATEGORY|Quest Items
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 1
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 1
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 1
+TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 1 v2
+TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 1 v2
+TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 1 v2
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|9da86e0edf3a6f1449e64400a6a9096b|Weight:1
 
@@ -1373,6 +1372,9 @@ CATEGORY|Quest Items
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 2
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 2
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 2
+TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 2 v2
+TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 2 v2
+TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 2 v2
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|a4f4a4f4891108b46b6fd1ef79ce9e0a|Weight:1
 
@@ -1380,16 +1382,13 @@ LOCATION|LOGICAL|LoveBook|Chapter3
 LABEL|Lovepurr Book — Chapter 3
 CATEGORY|Quest Items
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 3
-TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 3 v2
+TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 3
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 3
+TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 3 v2
+TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 3 v2
+TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 3 v2
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|092d5c5aeb3b19743a6f438818eb14ac|Weight:1
-
-LOCATION|MainOverworld|Interactable_Sibling02_Rock06_Trigger|FSM|Message to say get key and get key
-LABEL|Heirloom Quest Under Rock
-CATEGORY|Quest Items
-SLOT|0|AllowCollectibles:True|Options:1
-OPTION|QuestItem|9552edad9714ac54fb57e0a721ba5b4a|Weight:1
 
 LOCATION|MainOverworld|MainQuest_01|FSM|Defeated Mr Clean
 LABEL|Defeat Mr Clean 1
@@ -1409,9 +1408,12 @@ CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|5f1e3f3209c0c494eb09563e77d78756|Weight:1
 
-LOCATION|MainOverworld|SQ_FearsofthePawst_01|FSM|GIVE REWARD
+LOCATION|LOGICAL|FearsofthePawst|QuestlineFinish
 LABEL|Purrgatory Questline Finish
 CATEGORY|Equipment & Blueprints
+TRIGGER|MainOverworld|SQ_FearsofthePawst_01|FSM|GIVE REWARD
+TRIGGER|MainOverworld|SQ_FearsofthePawst_02|FSM|GIVE REWARD
+TRIGGER|MainOverworld|SQ_FearsofthePawst_03|FSM|GIVE REWARD
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|4f68b5975ee4a5b4bae55c66ce80dc98|Weight:1
 
@@ -1422,12 +1424,6 @@ SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|d8c33e8f52e4f4b8eb8aa88824833351|Weight:1
 SLOT|1|AllowCollectibles:True|Options:1
 OPTION|Equipment|0cdedd7af543b4f9d8a3467e2a04e994|Weight:1
-
-LOCATION|MainOverworld|SQ_SiblingRivalry_Sea|FSM|Message to say get key
-LABEL|Heirloom Quest Sea Shadow
-CATEGORY|Quest Items
-SLOT|0|AllowCollectibles:True|Options:1
-OPTION|QuestItem|72b50bc2215acf448a2193fa3fcd0d8f|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_BoarBoss|FSM|Defeat Monster and Reward
 LABEL|Defeat Boar King
@@ -1459,12 +1455,6 @@ LABEL|Catch Sunset Fish
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|28e45dd16af5e964c893fe7297d6a504|Weight:1
-
-LOCATION|MainOverworld|WorldQuest_Fishercat|FSM|CAUGHT FISH SPAWN CHEST
-LABEL|Catch Regular Fish
-CATEGORY|Quest Items
-SLOT|0|AllowCollectibles:True|Options:1
-OPTION|QuestItem|ad66710673e3d814893db55c5762d52d|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_GoingPostal|FSM|GET REWARD
 LABEL|Delivery to Blue Starfish

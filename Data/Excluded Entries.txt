@@ -1,0 +1,23 @@
+LOCATION|MainOverworld|WorldQuest_Fishercat|FSM|CAUGHT FISH SPAWN CHEST
+LABEL|Catch Regular Fish
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|ad66710673e3d814893db55c5762d52d|Weight:1
+
+LOCATION|MainOverworld|Interactable_Sibling02_Rock06_Trigger|FSM|Message to say get key and get key
+LABEL|Heirloom Quest Under Rock
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|9552edad9714ac54fb57e0a721ba5b4a|Weight:1
+
+LOCATION|MainOverworld|SQ_SiblingRivalry_Sea|FSM|Message to say get key
+LABEL|Heirloom Quest Sea Shadow
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|72b50bc2215acf448a2193fa3fcd0d8f|Weight:1
+
+LOCATION|538666e2a65e6a541b5f32698dd4242c
+LABEL|Sibling Rivalry — Starfish Chest
+CATEGORY|Quest Items
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|QuestItem|8ea8047249a361d4db404527a3c15040|Weight:1

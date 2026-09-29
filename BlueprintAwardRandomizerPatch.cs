@@ -3,8 +3,12 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(AwardShipBlueprintToPlayer), "Award")]
-    public static class BlueprintAwardRandomizerPatch
+    [HarmonyPatch(
+        typeof(AwardShipBlueprintToPlayer),
+        "Award"
+    )]
+    public static class
+        BlueprintAwardRandomizerPatch
     {
         public static bool Prefix(
             AwardShipBlueprintToPlayer __instance)
@@ -14,17 +18,41 @@ namespace Randomizer.CatQuest3
                     __instance.Fsm
                 );
 
-            RewardLocation location =
-                RewardCatalog.Get(key);
 
-            if (location == null ||
-                __instance.shipBlueprintItemData == null)
+            RewardLocation location =
+                RewardCatalog.Get(
+                    key
+                );
+
+
+            if (location == null)
             {
+                Plugin.Log.LogWarning(
+                    $"BLUEPRINT RANDOMIZER FALLBACK | " +
+                    $"Reason:LocationNotFound | " +
+                    $"Key:{key}"
+                );
+
                 return true;
             }
 
+
+            if (__instance.shipBlueprintItemData == null)
+            {
+                Plugin.Log.LogWarning(
+                    $"BLUEPRINT RANDOMIZER FALLBACK | " +
+                    $"Reason:BlueprintItemNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label}"
+                );
+
+                return true;
+            }
+
+
             string blueprintGuid =
                 __instance.shipBlueprintItemData.Guid;
+
 
             int rewardIndex =
                 location.FindVanillaRewardIndex(
@@ -32,18 +60,41 @@ namespace Randomizer.CatQuest3
                     blueprintGuid
                 );
 
+
             if (rewardIndex < 0)
             {
+                Plugin.Log.LogWarning(
+                    $"BLUEPRINT RANDOMIZER FALLBACK | " +
+                    $"Reason:VanillaRewardNotFound | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label} | " +
+                    $"Blueprint:{blueprintGuid}"
+                );
+
                 return true;
             }
 
+
             Reward randomizedReward =
-                location.RandomizedRewards[rewardIndex];
+                location.RandomizedRewards[
+                    rewardIndex
+                ];
+
 
             if (randomizedReward == null)
             {
+                Plugin.Log.LogWarning(
+                    $"BLUEPRINT RANDOMIZER FALLBACK | " +
+                    $"Reason:RandomizedRewardNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label} | " +
+                    $"Slot:{rewardIndex} | " +
+                    $"Blueprint:{blueprintGuid}"
+                );
+
                 return true;
             }
+
 
             if (!__instance.dontRaiseCutsceneFlag)
             {
@@ -55,11 +106,13 @@ namespace Randomizer.CatQuest3
                         __instance.Fsm.GameObject;
             }
 
+
             Vector3 position =
                 RewardPositionResolver.PlayerOrFallback(
                     __instance.Fsm.GameObject
                         .transform.position
                 );
+
 
             Plugin.Log.LogInfo(
                 $"Queueing blueprint reward | " +
@@ -69,6 +122,7 @@ namespace Randomizer.CatQuest3
                 $"Randomized:{randomizedReward.Type}:" +
                 $"{randomizedReward.Id}"
             );
+
 
             RewardGrantQueue.Enqueue(
                 location,
@@ -81,6 +135,7 @@ namespace Randomizer.CatQuest3
                     __instance.Finish();
                 }
             );
+
 
             return false;
         }

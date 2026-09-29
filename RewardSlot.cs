@@ -77,6 +77,7 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             if (
                 !AllowCollectibles &&
                 reward.Type ==
@@ -85,6 +86,7 @@ namespace Randomizer.CatQuest3
             {
                 return false;
             }
+
 
             // The randomized Ship Key must always be found
             // somewhere beyond Catuga.
@@ -103,6 +105,23 @@ namespace Randomizer.CatQuest3
             {
                 return false;
             }
+
+
+            // The Twin Castle Key may not be placed
+            // somewhere that already requires the
+            // Twin Castle Key to reach.
+            if (
+                reward.Type ==
+                    RewardType.QuestItem &&
+                reward.Id ==
+                    SpecialRewards.TwinCastleKeyGuid &&
+                Location.LogicRequirements
+                    .RequiresTwinCastleKey
+            )
+            {
+                return false;
+            }
+
 
             return true;
         }

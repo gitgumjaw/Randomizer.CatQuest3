@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    [HarmonyPatch(typeof(SpawnLootTable), "OnEnter")]
-    public static class CollectibleAwardRandomizerPatch
+    [HarmonyPatch(
+        typeof(SpawnLootTable),
+        "OnEnter"
+    )]
+    public static class
+        CollectibleAwardRandomizerPatch
     {
         public static bool Prefix(
             SpawnLootTable __instance)
@@ -15,17 +19,30 @@ namespace Randomizer.CatQuest3
                     __instance.Fsm
                 );
 
+
             RewardLocation location =
-                RewardCatalog.Get(key);
+                RewardCatalog.Get(
+                    key
+                );
+
 
             if (location == null)
             {
+                Plugin.Log.LogWarning(
+                    $"COLLECTIBLE RANDOMIZER FALLBACK | " +
+                    $"Reason:LocationNotFound | " +
+                    $"Key:{key}"
+                );
+
                 return true;
             }
 
+
             LootTable lootTable =
                 __instance.IsUsingLootTableRef()
-                    ? AddressableSingletonScriptableObject<LootTableReference>
+                    ? AddressableSingletonScriptableObject<
+                        LootTableReference
+                    >
                         .Instance
                         .GetLootTable(
                             __instance.lootTableIdentifier
@@ -33,13 +50,23 @@ namespace Randomizer.CatQuest3
                     : __instance.scriptableLootTable
                         ?.lootTable;
 
+
             if (lootTable == null)
             {
+                Plugin.Log.LogWarning(
+                    $"COLLECTIBLE RANDOMIZER FALLBACK | " +
+                    $"Reason:LootTableNull | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label}"
+                );
+
                 return true;
             }
 
+
             List<int> collectibleSlots =
                 new List<int>();
+
 
             for (int i = 0;
                  i < location.VanillaRewards.Count;
@@ -52,36 +79,52 @@ namespace Randomizer.CatQuest3
                 }
             }
 
+
             if (collectibleSlots.Count == 0)
             {
+                Plugin.Log.LogWarning(
+                    $"COLLECTIBLE RANDOMIZER FALLBACK | " +
+                    $"Reason:NoCollectibleSlots | " +
+                    $"Key:{key} | " +
+                    $"Location:{location.Label}"
+                );
+
                 return true;
             }
+
 
             if (lootTable.list.Count !=
                 collectibleSlots.Count)
             {
                 Plugin.Log.LogWarning(
-                    $"Collectible source shape mismatch | " +
+                    $"COLLECTIBLE RANDOMIZER FALLBACK | " +
+                    $"Reason:SourceShapeMismatch | " +
+                    $"Key:{key} | " +
                     $"Location:{location.Label} | " +
                     $"LootItems:{lootTable.list.Count} | " +
-                    $"CatalogCollectibles:{collectibleSlots.Count}"
+                    $"CatalogCollectibles:" +
+                    $"{collectibleSlots.Count}"
                 );
 
                 return true;
             }
+
 
             Vector3 position =
                 __instance.target.Value
                     .transform.position +
                 __instance.offset;
 
+
             position.y = 0f;
+
 
             Plugin.Log.LogInfo(
                 $"Queueing collectible source | " +
                 $"Location:{location.Label} | " +
                 $"Slots:{collectibleSlots.Count}"
             );
+
 
             for (int i = 0;
                  i < collectibleSlots.Count;
@@ -90,14 +133,17 @@ namespace Randomizer.CatQuest3
                 int slotIndex =
                     collectibleSlots[i];
 
+
                 Reward randomizedReward =
                     location.RandomizedRewards[
                         slotIndex
                     ];
 
+
                 bool isLast =
                     i ==
                     collectibleSlots.Count - 1;
+
 
                 RewardGrantQueue.Enqueue(
                     location,
@@ -118,6 +164,7 @@ namespace Randomizer.CatQuest3
                 : null
                 );
 
+
                 Plugin.Log.LogInfo(
                     $"Queueing collectible reward | " +
                     $"Location:{location.Label} | " +
@@ -129,6 +176,7 @@ namespace Randomizer.CatQuest3
                     $"{randomizedReward.Id}"
                 );
             }
+
 
             return false;
         }

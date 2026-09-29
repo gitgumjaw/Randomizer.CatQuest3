@@ -11,6 +11,7 @@ namespace Randomizer.CatQuest3
         private const string UnlockState =
             "Tentacle Gate Unlocks";
 
+
         public static bool ShouldSkip(
             FsmStateAction action)
         {
@@ -21,25 +22,36 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             if (RandomizerState.Settings == null ||
                 !RandomizerState.Settings.RandomizeQuestItems)
             {
                 return false;
             }
 
-            if (action.Fsm.ActiveStateName != UnlockState)
+
+            if (action.Fsm.ActiveStateName !=
+                UnlockState)
             {
                 return false;
             }
 
+
             string questName =
                 action.Fsm.GameObject.name;
 
+
             return
-                questName == "MainQuest_07_Key_01" ||
-                questName == "MainQuest_07_Key_02" ||
-                questName == "MainQuest_07_Key_03";
+                questName ==
+                    "MainQuest_07_Key_01" ||
+
+                questName ==
+                    "MainQuest_07_Key_02" ||
+
+                questName ==
+                    "MainQuest_07_Key_03";
         }
+
 
         public static bool Skip(
             FsmStateAction action)
@@ -49,7 +61,9 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
+
             action.Finish();
+
 
             return false;
         }
@@ -220,16 +234,19 @@ namespace Randomizer.CatQuest3
                     "HutongGames.PlayMaker.Actions.Wait"
                 );
 
+
             if (waitType == null)
             {
                 return null;
             }
+
 
             return AccessTools.Method(
                 waitType,
                 "OnEnter"
             );
         }
+
 
         public static bool Prefix(
             FsmStateAction __instance)
@@ -240,12 +257,13 @@ namespace Randomizer.CatQuest3
         }
     }
 
+
     [HarmonyPatch(
-    typeof(QuestComplete),
-    "OnEnter"
-)]
+        typeof(QuestComplete),
+        "OnEnter"
+    )]
     public static class
-    TentakeyLockReparentPatch
+        TentakeyLockReparentPatch
     {
         public static void Prefix(
             QuestComplete __instance)
@@ -257,11 +275,13 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
+
             if (RandomizerState.Settings == null ||
                 !RandomizerState.Settings.RandomizeQuestItems)
             {
                 return;
             }
+
 
             TentakeyLockState
                 .DetachLockForQuest(
@@ -270,16 +290,17 @@ namespace Randomizer.CatQuest3
         }
     }
 
+
     [HarmonyPatch(
-    typeof(GameplayHelper),
-    "AwardQuestItem"
-)]
+        typeof(GameplayHelper),
+        "AwardQuestItem"
+    )]
     public static class
-    TentakeyVanillaChestAwardPatch
+        TentakeyVanillaChestAwardPatch
     {
         public static bool Prefix(
-    QuestItem questItem,
-    Action callback)
+            QuestItem questItem,
+            Action callback)
         {
             if (!ShouldSuppress(
                     questItem,
@@ -288,45 +309,80 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
+
             Plugin.Log.LogInfo(
-                $"Tentakey compatibility | " +
-                $"Suppressed vanilla chest award | " +
+                $"TENTAKEY CHEST TRACE | " +
+                $"Step:SuppressVanillaAward | " +
                 $"QuestItem:{questItem.Guid}"
             );
 
-            // The vanilla Tentakey quests react to the KeyData
-            // event fired by SaveGameKeyData.AddKey().
-            //
-            // We need that progression event to occur even though
-            // this vanilla location must not actually give the
-            // player the Tentakey.
+
             if (questItem.key != null)
             {
+                Plugin.Log.LogInfo(
+                    $"TENTAKEY CHEST TRACE | " +
+                    $"Step:BeforeKeyEventDispatch | " +
+                    $"QuestItem:{questItem.Guid} | " +
+                    $"Key:{questItem.key.Guid}"
+                );
+
+
                 Relays.keyEvents
-                    .GetKeyEvent(questItem.key)
+                    .GetKeyEvent(
+                        questItem.key
+                    )
                     .Dispatch();
 
+
                 Plugin.Log.LogInfo(
-                    $"Tentakey compatibility | " +
-                    $"Dispatched vanilla key progression event | " +
+                    $"TENTAKEY CHEST TRACE | " +
+                    $"Step:AfterKeyEventDispatch | " +
+                    $"QuestItem:{questItem.Guid} | " +
                     $"Key:{questItem.key.Guid}"
                 );
             }
             else
             {
                 Plugin.Log.LogWarning(
-                    $"Tentakey compatibility | " +
-                    $"Could not dispatch key progression event | " +
+                    $"TENTAKEY CHEST TRACE | " +
+                    $"Step:KeyMissing | " +
                     $"QuestItem:{questItem.Guid}"
                 );
             }
 
-            // Continue the completion path that DropQuestItem()
-            // supplied to GameplayHelper.AwardQuestItem().
-            callback?.Invoke();
+
+            if (callback != null)
+            {
+                Plugin.Log.LogInfo(
+                    $"TENTAKEY CHEST TRACE | " +
+                    $"Step:BeforeCallback | " +
+                    $"QuestItem:{questItem.Guid} | " +
+                    $"Callback:{callback.Method.Name}"
+                );
+
+
+                callback.Invoke();
+
+
+                Plugin.Log.LogInfo(
+                    $"TENTAKEY CHEST TRACE | " +
+                    $"Step:AfterCallback | " +
+                    $"QuestItem:{questItem.Guid}"
+                );
+            }
+            else
+            {
+                Plugin.Log.LogWarning(
+                    $"TENTAKEY CHEST TRACE | " +
+                    $"Step:CallbackNull | " +
+                    $"QuestItem:{questItem.Guid}"
+                );
+            }
+
 
             return false;
         }
+
 
         private static bool ShouldSuppress(
             QuestItem questItem,
@@ -338,21 +394,26 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             if (questItem == null)
             {
                 return false;
             }
 
+
             bool isTentakey =
                 questItem.Guid ==
-                    "bc103da6bbfd2fc419c24fa84be14a8a" ||
+                    SpecialRewards.Tentakey2Guid ||
+
                 questItem.Guid ==
-                    "c57d682e39ed68742b78ac8f10fa11ff";
+                    SpecialRewards.Tentakey3Guid;
+
 
             if (!isTentakey)
             {
                 return false;
             }
+
 
             if (callback == null ||
                 callback.Method == null)
@@ -360,21 +421,26 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+
             string methodName =
                 callback.Method.Name;
 
+
             Type declaringType =
                 callback.Method.DeclaringType;
+
 
             string declaringTypeName =
                 declaringType != null
                     ? declaringType.FullName
                     : string.Empty;
 
+
             return
                 methodName.Contains(
                     "DropQuestItem"
                 ) &&
+
                 declaringTypeName.Contains(
                     "ChestBehaviour"
                 );
