@@ -101,6 +101,23 @@ Equipment|23240f77bf616924d92c8f9b3d5d9177|Tsurai
 Equipment|485f8e9efe7b88b439833e66e0b7b4aa|Warrior's Braid
 Equipment|a2a53c60e7f309842b7f98e743d488ca|Warrior's Braid II
 
+# Supplemental bag-only equipment
+Equipment|2a9ad2fe7abf0124a8ca3d72e91fe6a4|Bomb Satchel
+Equipment|b39ec733282179049a39f0ce28245c73|Electric Circuit
+Equipment|4af61a79efc84e94385da5cda75eef83|Flame Crystal
+Equipment|e08d84b88c3622a439496c2c4cacae0f|Ice Crystal
+Equipment|5a2435316df0c480ab7b6eb569761ec4|Weird Mushroom
+Equipment|321ebd701eff1264eb7f7296d033831c|Bird Poop
+
+# Mew Game equipment
+Equipment|b6bb6a7a321f74d3fbf158fb9e6da379|The Guiding Light
+Equipment|9e7287eff0140485394ef479b49431aa|North Star Bicorne
+Equipment|d2955e7c2ddc742e1991c0f65cfe47ae|The Guiding Wall
+Equipment|3a3d9eb918bec4250afa91e79ab9c4d8|The Guiding Blade
+Equipment|8f96b8fd5ba4e4eef88c56304c467d0f|The Guiding Star
+Equipment|e80d3aaa2222c4cb8adf4e90b5294381|North Star Coat
+Equipment|10dc602349d724047a814545e0f23ad8|The Guiding Claw
+
 # Blueprint
 Blueprint|57250ee8db5c5eb49a9ecd833725e44a|Ammo Capacity +
 Blueprint|ffdf189f74d31ff43a1706c24c47d0ea|Ammo Capacity ++

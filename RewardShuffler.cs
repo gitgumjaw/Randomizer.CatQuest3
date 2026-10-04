@@ -28,7 +28,7 @@ namespace Randomizer.CatQuest3
                 );
             }
 
-            InjectMewGameRewards(
+            InjectSupplementalEquipmentRewards(
                 slots,
                 rewards,
                 seed
@@ -142,16 +142,36 @@ namespace Randomizer.CatQuest3
         }
 
 
-        private static void InjectMewGameRewards(
-            List<RewardSlot> slots,
-            List<Reward> rewards,
-            int seed)
+        private static void
+            InjectSupplementalEquipmentRewards(
+                List<RewardSlot> slots,
+                List<Reward> rewards,
+                int seed)
         {
+            List<Reward> supplementalRewards =
+                new List<Reward>();
+
             List<Reward> mewRewards =
                 MewGameRewards.GetAll();
 
-            if (mewRewards == null ||
-                mewRewards.Count == 0)
+            if (mewRewards != null)
+            {
+                supplementalRewards.AddRange(
+                    mewRewards
+                );
+            }
+
+            List<Reward> bagOnlyRewards =
+                BagOnlyRewards.GetAll();
+
+            if (bagOnlyRewards != null)
+            {
+                supplementalRewards.AddRange(
+                    bagOnlyRewards
+                );
+            }
+
+            if (supplementalRewards.Count == 0)
             {
                 return;
             }
@@ -189,14 +209,15 @@ namespace Randomizer.CatQuest3
             }
 
             if (candidates.Count <
-                mewRewards.Count)
+                supplementalRewards.Count)
             {
                 Plugin.Log.LogError(
-                    "MEW INJECTION | " +
-                    $"Need {mewRewards.Count} " +
-                    $"vanilla-random equipment slots, " +
+                    "SUPPLEMENTAL EQUIPMENT INJECTION | " +
+                    $"Need {supplementalRewards.Count} " +
+                    "vanilla-random equipment slots, " +
                     $"but only found {candidates.Count}. " +
-                    "No Mew Game rewards were injected."
+                    "No supplemental equipment rewards " +
+                    "were injected."
                 );
 
                 return;
@@ -235,18 +256,14 @@ namespace Randomizer.CatQuest3
             );
 
             for (int i = 0;
-                 i < mewRewards.Count;
+                 i < supplementalRewards.Count;
                  i++)
             {
                 int rewardIndex =
                     candidates[i];
 
-                Reward mewReward =
-                    mewRewards[i];
-
                 rewards[rewardIndex] =
-                    mewReward;
-
+                    supplementalRewards[i];
             }
         }
 
