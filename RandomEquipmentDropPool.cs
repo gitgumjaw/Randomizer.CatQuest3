@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using ProjectStar.Data;
 using UnityEngine;
 
@@ -8,14 +9,17 @@ namespace Randomizer.CatQuest3
     {
         private static List<EquipmentItemData> equipment;
 
+
         private static void BuildPool()
         {
             equipment =
                 new List<EquipmentItemData>();
 
+
             var database =
                 AddressableSingletonScriptableObject<EquipmentDatabase>
                     .Instance;
+
 
             if (database?.contentTable == null)
             {
@@ -27,15 +31,18 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
+
             foreach (var entry in database.contentTable)
             {
                 EquipmentItemData item =
                     entry.Value;
 
+
                 if (item == null)
                 {
                     continue;
                 }
+
 
                 // Blueprints are not random enemy equipment drops.
                 if (item is ShipBlueprintItemData)
@@ -43,14 +50,29 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
+
+                // "Naked weapon" represents the player's fists
+                // when no weapon is equipped. It is not a real
+                // obtainable equipment drop.
+                if (string.Equals(
+                        item.itemName,
+                        "Naked weapon",
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+
                 equipment.Add(item);
             }
+
 
             Plugin.Log.LogInfo(
                 $"Built random equipment drop pool: " +
                 $"{equipment.Count} items."
             );
         }
+
 
         public static EquipmentItemData GetRandom()
         {
@@ -59,17 +81,20 @@ namespace Randomizer.CatQuest3
                 BuildPool();
             }
 
+
             if (equipment == null ||
                 equipment.Count == 0)
             {
                 return null;
             }
 
+
             int index =
-                Random.Range(
+                UnityEngine.Random.Range(
                     0,
                     equipment.Count
                 );
+
 
             return equipment[index];
         }
