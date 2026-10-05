@@ -100,6 +100,7 @@ Equipment|fe839ed1e2e988545a0f40899439a213|Tri-Claws
 Equipment|23240f77bf616924d92c8f9b3d5d9177|Tsurai
 Equipment|485f8e9efe7b88b439833e66e0b7b4aa|Warrior's Braid
 Equipment|a2a53c60e7f309842b7f98e743d488ca|Warrior's Braid II
+Equipment|915f26a96425b264c83a9a40f23ec0ef|Squeaky's Mop
 
 # Supplemental bag-only equipment
 Equipment|2a9ad2fe7abf0124a8ca3d72e91fe6a4|Bomb Satchel

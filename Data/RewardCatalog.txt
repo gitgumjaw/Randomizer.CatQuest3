@@ -1,4 +1,4 @@
-Catalog Locations: 282
+Catalog Locations: 283
 
 LOCATION|0294cd0074d1d204db0bac9eab555e55
 LABEL|Catuga — North Crate
@@ -1958,6 +1958,12 @@ LABEL|Squeaky Cave — Stash Lower Crate
 CATEGORY|Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:10|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|Cave_SqueakyCave|DungeonQuest_SqueakyCave|FSM|Award Equipment
+LABEL|Squeaky Cave — Arena Reward
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|Equipment|915f26a96425b264c83a9a40f23ec0ef|Weight:1
 
 LOCATION|ad374b5039a7e65428b67123e6eb0241
 LABEL|Smithy — Kidd Cat's Treasure Chest
