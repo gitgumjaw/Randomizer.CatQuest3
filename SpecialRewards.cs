@@ -9,6 +9,8 @@
         public const string TwinCastleKeyGuid =
             "ce43f985f70b1f946b6cd7d2449e2264";
 
+        public const string GoldenTowerFirstFloorKeyGuid =
+"57a129a2cb4ad13429cb324f717ad156";
 
         public const string Tentakey1Guid =
             "7fe0b53d50a362d42bba16375b91b18d";
