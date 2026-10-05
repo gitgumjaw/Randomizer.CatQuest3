@@ -16,7 +16,7 @@ namespace Randomizer.CatQuest3
             "Cat Quest 3 Randomizer";
 
         public const string PluginVersion =
-            "0.261004";
+            "0.261005";
 
 
         internal static Plugin Instance;
