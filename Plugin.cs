@@ -4,19 +4,32 @@ using HarmonyLib;
 namespace Randomizer.CatQuest3
 {
     [BepInPlugin(
-        "Randomizer.CatQuest3",
-        "Cat Quest 3 Randomizer",
-        "0.1.0")]
+        PluginId,
+        PluginName,
+        PluginVersion)]
     public class Plugin : BaseUnityPlugin
     {
+        public const string PluginId =
+            "Randomizer.CatQuest3";
+
+        public const string PluginName =
+            "Cat Quest 3 Randomizer";
+
+        public const string PluginVersion =
+            "0.261004";
+
+
         internal static Plugin Instance;
-        internal static BepInEx.Logging.ManualLogSource Log;
+
+        internal static
+            BepInEx.Logging.ManualLogSource Log;
 
 
         private void Awake()
         {
             Instance =
                 this;
+
 
             Log =
                 Logger;
@@ -29,7 +42,7 @@ namespace Randomizer.CatQuest3
 
             Harmony harmony =
                 new Harmony(
-                    "Randomizer.CatQuest3"
+                    PluginId
                 );
 
 
@@ -53,6 +66,7 @@ namespace Randomizer.CatQuest3
             Logger.LogInfo(
                 "Harmony patches applied."
             );
+
 
             Logger.LogInfo(
                 "Logic good"
