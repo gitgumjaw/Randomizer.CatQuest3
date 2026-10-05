@@ -11,14 +11,20 @@ namespace Randomizer.CatQuest3
         private const float RewardDelaySeconds =
             0.25f;
 
+
         private class QueuedReward
         {
             public int SlotIndex;
+
             public Reward Reward;
+
             public int VanillaAwardLevel;
+
             public Vector3 Position;
+
             public Action CompletionCallback;
         }
+
 
         private class LocationQueue
         {
@@ -26,11 +32,18 @@ namespace Randomizer.CatQuest3
                 new List<QueuedReward>();
 
             public bool IsProcessing;
+
+            public Action QueueCompletionCallback;
         }
 
-        private static readonly Dictionary<string, LocationQueue>
-            queues =
-                new Dictionary<string, LocationQueue>();
+
+        private static readonly
+            Dictionary<string, LocationQueue>
+                queues =
+                    new Dictionary<
+                        string,
+                        LocationQueue
+                    >();
 
 
         public static void Enqueue(
@@ -45,8 +58,10 @@ namespace Randomizer.CatQuest3
                 reward == null)
             {
                 completionCallback?.Invoke();
+
                 return;
             }
+
 
             if (!queues.TryGetValue(
                     location.Key,
@@ -59,27 +74,41 @@ namespace Randomizer.CatQuest3
                     queue;
             }
 
+
             queue.Rewards.Add(
                 new QueuedReward
                 {
-                    SlotIndex = slotIndex,
-                    Reward = reward,
+                    SlotIndex =
+                        slotIndex,
+
+                    Reward =
+                        reward,
+
                     VanillaAwardLevel =
                         vanillaAwardLevel,
-                    Position = position,
+
+                    Position =
+                        position,
+
                     CompletionCallback =
                         completionCallback
                 }
             );
+
 
             if (queue.IsProcessing)
             {
                 return;
             }
 
-            queue.IsProcessing = true;
 
-            SingletonMonoBehaviour<SaveGameManager>
+            queue.IsProcessing =
+                true;
+
+
+            SingletonMonoBehaviour<
+                SaveGameManager
+            >
                 .Instance
                 .StartCoroutine(
                     ProcessQueue(
@@ -89,13 +118,41 @@ namespace Randomizer.CatQuest3
                 );
         }
 
-        private static IEnumerator ProcessQueue(
-            string locationKey,
-            LocationQueue queue)
+
+        public static void
+            SetQueueCompletionCallback(
+                string locationKey,
+                Action completionCallback)
+        {
+            if (string.IsNullOrEmpty(
+                    locationKey))
+            {
+                return;
+            }
+
+
+            if (!queues.TryGetValue(
+                    locationKey,
+                    out LocationQueue queue))
+            {
+                return;
+            }
+
+
+            queue.QueueCompletionCallback =
+                completionCallback;
+        }
+
+
+        private static IEnumerator
+            ProcessQueue(
+                string locationKey,
+                LocationQueue queue)
         {
             // Give every PlayMaker action in this
             // location one frame to submit its rewards.
             yield return null;
+
 
             while (true)
             {
@@ -105,11 +162,13 @@ namespace Randomizer.CatQuest3
                     // to enqueue another reward.
                     yield return null;
 
+
                     if (queue.Rewards.Count == 0)
                     {
                         break;
                     }
                 }
+
 
                 queue.Rewards.Sort(
                     (a, b) =>
@@ -118,13 +177,19 @@ namespace Randomizer.CatQuest3
                         )
                 );
 
+
                 QueuedReward queued =
                     queue.Rewards[0];
 
-                queue.Rewards.RemoveAt(0);
+
+                queue.Rewards.RemoveAt(
+                    0
+                );
+
 
                 bool finished =
                     false;
+
 
                 RewardGranter.Grant(
                     queued.Reward,
@@ -135,28 +200,46 @@ namespace Randomizer.CatQuest3
                         queued.CompletionCallback
                             ?.Invoke();
 
-                        finished = true;
+
+                        finished =
+                            true;
                     }
                 );
+
 
                 yield return new WaitUntil(
                     () => finished
                 );
+
 
                 // Award callbacks can occur before the UI
                 // panel has fully completed its outro.
                 //
                 // Give the previous reward a small amount
                 // of real time to finish cleaning up before
-                // displaying the next reward.
-                yield return new WaitForSecondsRealtime(
-                    RewardDelaySeconds
-                );
+                // displaying the next reward or continuing
+                // location progression.
+                yield return
+                    new WaitForSecondsRealtime(
+                        RewardDelaySeconds
+                    );
             }
 
+
+            Action queueCompletionCallback =
+                queue.QueueCompletionCallback;
+
+
+            // Remove the finished queue before invoking the
+            // callback. If that callback causes another
+            // reward to be queued for this location, it gets
+            // a new queue instead of reusing this one.
             queues.Remove(
                 locationKey
             );
+
+
+            queueCompletionCallback?.Invoke();
         }
     }
 }

@@ -298,6 +298,13 @@ namespace Randomizer.CatQuest3
     public static class
         TentakeyVanillaChestAwardPatch
     {
+        private static QuestItem
+            deferredQuestItem;
+
+        private static Action
+            deferredCallback;
+
+
         public static bool Prefix(
             QuestItem questItem,
             Action callback)
@@ -310,77 +317,51 @@ namespace Randomizer.CatQuest3
             }
 
 
-            Plugin.Log.LogInfo(
-                $"TENTAKEY CHEST TRACE | " +
-                $"Step:SuppressVanillaAward | " +
-                $"QuestItem:{questItem.Guid}"
-            );
+            deferredQuestItem =
+                questItem;
+
+            deferredCallback =
+                callback;
+
+
+            return false;
+        }
+
+
+        public static void
+            ReleaseDeferredAward()
+        {
+            if (deferredQuestItem == null)
+            {
+                return;
+            }
+
+
+            QuestItem questItem =
+                deferredQuestItem;
+
+            Action callback =
+                deferredCallback;
+
+
+            deferredQuestItem =
+                null;
+
+            deferredCallback =
+                null;
 
 
             if (questItem.key != null)
             {
-                Plugin.Log.LogInfo(
-                    $"TENTAKEY CHEST TRACE | " +
-                    $"Step:BeforeKeyEventDispatch | " +
-                    $"QuestItem:{questItem.Guid} | " +
-                    $"Key:{questItem.key.Guid}"
-                );
-
-
                 Relays.keyEvents
                     .GetKeyEvent(
                         questItem.key
                     )
                     .Dispatch();
-
-
-                Plugin.Log.LogInfo(
-                    $"TENTAKEY CHEST TRACE | " +
-                    $"Step:AfterKeyEventDispatch | " +
-                    $"QuestItem:{questItem.Guid} | " +
-                    $"Key:{questItem.key.Guid}"
-                );
-            }
-            else
-            {
-                Plugin.Log.LogWarning(
-                    $"TENTAKEY CHEST TRACE | " +
-                    $"Step:KeyMissing | " +
-                    $"QuestItem:{questItem.Guid}"
-                );
             }
 
 
-            if (callback != null)
-            {
-                Plugin.Log.LogInfo(
-                    $"TENTAKEY CHEST TRACE | " +
-                    $"Step:BeforeCallback | " +
-                    $"QuestItem:{questItem.Guid} | " +
-                    $"Callback:{callback.Method.Name}"
-                );
-
-
-                callback.Invoke();
-
-
-                Plugin.Log.LogInfo(
-                    $"TENTAKEY CHEST TRACE | " +
-                    $"Step:AfterCallback | " +
-                    $"QuestItem:{questItem.Guid}"
-                );
-            }
-            else
-            {
-                Plugin.Log.LogWarning(
-                    $"TENTAKEY CHEST TRACE | " +
-                    $"Step:CallbackNull | " +
-                    $"QuestItem:{questItem.Guid}"
-                );
-            }
-
-
-            return false;
+            callback?.Invoke();
         }
 
 

@@ -75,7 +75,8 @@ namespace Randomizer.CatQuest3
             //
             // We suppress vanilla loot spawning, so preserve the
             // non-randomized chest state ourselves.
-            ___hasQuestItem = false;
+            ___hasQuestItem =
+                false;
 
 
             foreach (LootTableItem item
@@ -86,6 +87,7 @@ namespace Randomizer.CatQuest3
                 {
                     ___keyDrop =
                         item.dropKeyOnOpen;
+
 
                     Plugin.Log.LogInfo(
                         $"Preserving chest key | " +
@@ -98,20 +100,23 @@ namespace Randomizer.CatQuest3
                 if (item.dropType ==
                     LootTableItem.DropType.QuestItem)
                 {
-                    ___hasQuestItem = true;
+                    ___hasQuestItem =
+                        true;
                 }
             }
 
 
             // Vanilla SpawnLoot() finishes by marking the
             // chest as opened.
-            ___opened = true;
+            ___opened =
+                true;
 
 
-            // Prevent ChestBehaviour.Update() from
-            // removing the chest before RandomLootItem()
-            // gets a chance to submit the rewards.
-            ___dropItem = true;
+            // Prevent ChestBehaviour.Update() from removing
+            // the chest before RandomLootItem() submits the
+            // randomized rewards.
+            ___dropItem =
+                true;
 
 
             Plugin.Log.LogInfo(
@@ -170,9 +175,11 @@ namespace Randomizer.CatQuest3
                 Plugin.Log.LogWarning(
                     $"CHEST RANDOMIZER FALLBACK | " +
                     $"Stage:RandomLootItem | " +
-                    $"Reason:PreviouslyAcceptedChestFailedSecondValidation | " +
+                    $"Reason:" +
+                    $"PreviouslyAcceptedChestFailedSecondValidation | " +
                     $"Guid:{GetChestGuid(___chestID)}"
                 );
+
 
                 return true;
             }
@@ -183,7 +190,8 @@ namespace Randomizer.CatQuest3
             );
 
 
-            ___dropItem = true;
+            ___dropItem =
+                true;
 
 
             Vector3 position =
@@ -208,6 +216,12 @@ namespace Randomizer.CatQuest3
 
             int finalSlot =
                 location.RandomizedRewards.Count - 1;
+
+
+            bool isTentakeyChest =
+                IsTentakeyChest(
+                    location
+                );
 
 
             Plugin.Log.LogInfo(
@@ -235,6 +249,7 @@ namespace Randomizer.CatQuest3
 
 
                 System.Action completionCallback =
+                    !isTentakeyChest &&
                     slotIndex == finalSlot
                         ? (System.Action)delegate
                         {
@@ -254,7 +269,8 @@ namespace Randomizer.CatQuest3
                     $"Vanilla:" +
                     $"{location.VanillaRewards[slotIndex].Type}:" +
                     $"{location.VanillaRewards[slotIndex].Id} | " +
-                    $"Randomized:{randomizedReward.Type}:" +
+                    $"Randomized:" +
+                    $"{randomizedReward.Type}:" +
                     $"{randomizedReward.Id}"
                 );
 
@@ -266,6 +282,32 @@ namespace Randomizer.CatQuest3
                     awardLevel,
                     position,
                     completionCallback
+                );
+            }
+
+
+            if (isTentakeyChest)
+            {
+                RewardGrantQueue
+                    .SetQueueCompletionCallback(
+                        location.Key,
+                        delegate
+                        {
+                            TentakeyVanillaChestAwardPatch
+                                .ReleaseDeferredAward();
+                        }
+                    );
+
+
+                // Tentakey chest progression can start its
+                // cinematic while randomized award UI is still
+                // active. Finish the physical chest immediately,
+                // then allow the reward queue to fully complete
+                // before releasing the deferred Tentakey event.
+                CompleteChest(
+                    __instance,
+                    ___chestID,
+                    instanceId
                 );
             }
 
@@ -282,7 +324,8 @@ namespace Randomizer.CatQuest3
             ChestData.ChestType chestType,
             out RewardLocation location)
         {
-            location = null;
+            location =
+                null;
 
 
             if (chestType ==
@@ -294,6 +337,7 @@ namespace Randomizer.CatQuest3
                     chestID,
                     null
                 );
+
 
                 return false;
             }
@@ -308,6 +352,7 @@ namespace Randomizer.CatQuest3
                     null
                 );
 
+
                 return false;
             }
 
@@ -320,6 +365,7 @@ namespace Randomizer.CatQuest3
                     chestID,
                     null
                 );
+
 
                 return false;
             }
@@ -340,11 +386,13 @@ namespace Randomizer.CatQuest3
                     null
                 );
 
+
                 return false;
             }
 
 
-            int collectibleCount = 0;
+            int collectibleCount =
+                0;
 
 
             foreach (Reward reward
@@ -360,11 +408,11 @@ namespace Randomizer.CatQuest3
 
 
                 if (reward.Type ==
-                    RewardType.Equipment ||
+                        RewardType.Equipment ||
                     reward.Type ==
-                    RewardType.Blueprint ||
+                        RewardType.Blueprint ||
                     reward.Type ==
-                    RewardType.QuestItem)
+                        RewardType.QuestItem)
                 {
                     continue;
                 }
@@ -376,6 +424,7 @@ namespace Randomizer.CatQuest3
                     chestID,
                     location
                 );
+
 
                 return false;
             }
@@ -390,11 +439,13 @@ namespace Randomizer.CatQuest3
                     location
                 );
 
+
                 return false;
             }
 
 
-            int lootCollectibleCount = 0;
+            int lootCollectibleCount =
+                0;
 
 
             foreach (LootTableItem item
@@ -408,6 +459,7 @@ namespace Randomizer.CatQuest3
                         chestID,
                         location
                     );
+
 
                     return false;
                 }
@@ -451,6 +503,7 @@ namespace Randomizer.CatQuest3
                     $"DropType:{item.dropType}"
                 );
 
+
                 return false;
             }
 
@@ -467,6 +520,7 @@ namespace Randomizer.CatQuest3
                     $"LootCollectibles:{lootCollectibleCount} | " +
                     $"CatalogCollectibles:{collectibleCount}"
                 );
+
 
                 return false;
             }
@@ -487,11 +541,47 @@ namespace Randomizer.CatQuest3
                     $"Item:{itemLoot.Guid}"
                 );
 
+
                 return false;
             }
 
 
             return true;
+        }
+
+
+        private static bool IsTentakeyChest(
+            RewardLocation location)
+        {
+            if (location == null ||
+                location.VanillaRewards == null)
+            {
+                return false;
+            }
+
+
+            foreach (Reward reward
+                     in location.VanillaRewards)
+            {
+                if (reward == null ||
+                    reward.Type !=
+                        RewardType.QuestItem)
+                {
+                    continue;
+                }
+
+
+                if (reward.Id ==
+                        SpecialRewards.Tentakey2Guid ||
+                    reward.Id ==
+                        SpecialRewards.Tentakey3Guid)
+                {
+                    return true;
+                }
+            }
+
+
+            return false;
         }
 
 
@@ -567,7 +657,8 @@ namespace Randomizer.CatQuest3
             }
 
 
-            int randomSlotMatch = -1;
+            int randomSlotMatch =
+                -1;
 
 
             for (int i = 0;
@@ -590,11 +681,13 @@ namespace Randomizer.CatQuest3
                         $"Item:{itemLoot.Guid}"
                     );
 
+
                     return -1;
                 }
 
 
-                randomSlotMatch = i;
+                randomSlotMatch =
+                    i;
             }
 
 
@@ -615,7 +708,9 @@ namespace Randomizer.CatQuest3
 
 
             float multiplier =
-                AddressableSingletonScriptableObject<GameConfig>
+                AddressableSingletonScriptableObject<
+                    GameConfig
+                >
                     .Instance
                     .lootDropConfig
                     .ItemDropFromChestMultiplier;
@@ -625,7 +720,9 @@ namespace Randomizer.CatQuest3
                 ChestData.ChestType.Bag)
             {
                 multiplier =
-                    AddressableSingletonScriptableObject<GameConfig>
+                    AddressableSingletonScriptableObject<
+                        GameConfig
+                    >
                         .Instance
                         .lootDropConfig
                         .ItemDropFromEnemyMultiplier;
