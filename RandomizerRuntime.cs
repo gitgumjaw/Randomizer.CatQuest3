@@ -34,6 +34,8 @@
                 configuration ??
                 CreateVanillaConfiguration();
 
+            StartingLoadoutPatch.Reset();
+
             ApplyCurrentConfiguration();
 
             Plugin.Log.LogInfo(
@@ -57,6 +59,8 @@
 
             CurrentConfiguration =
                 CreateVanillaConfiguration();
+
+            StartingLoadoutPatch.Reset();
 
             ApplyCurrentConfiguration();
 
