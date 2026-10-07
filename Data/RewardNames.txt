@@ -135,6 +135,7 @@ Blueprint|ebe65fd4ea1c09946aa1ed774b0f5ea2|The Fires of Cathulhu
 Blueprint|c0465a498514abd499737497506adccd|The Fowlmidable
 
 # Spell
+Spell|f82e802b773c84c768e5bfa2150324f5|Flamepurr
 Spell|149063cc94514124e828ad4ac945ca5f|Firepurrism
 Spell|07e501cc6e150497c999080885dd0ae2|Freezepaw
 Spell|6c43417d9de5ddf4c8256d456e866aab|Furry Shield
@@ -146,6 +147,7 @@ Spell|d55a7ad9dc89ae649834882278fc0ef5|Mewteors
 Spell|7a4e22db244714a6682b58f11e45b26c|Pawer Up
 
 # ShipSpell
+ShipSpell|2e86f70211bd95e449475ce0ccb01dfc|Super Cannonpaws
 ShipSpell|2ed25839eaf5692439fb69de11c22a3f|Cursed Cannonpaw
 ShipSpell|4469b90338d6c6748a52a574e28770f7|Electric Cannonpaw
 ShipSpell|90482cd1a280aba4dbd0b76e5831b30f|Magma Cannonpaw

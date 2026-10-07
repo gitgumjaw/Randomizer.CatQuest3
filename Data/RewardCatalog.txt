@@ -1,4 +1,34 @@
-Catalog Locations: 283
+Catalog Locations: 288
+
+LOCATION|RANDOMIZER|STARTING|MELEE
+LABEL|Starting Loadout — Melee
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|Equipment|f14e4bbc80f3e6f4f8c6992049be567e|Weight:1
+
+LOCATION|RANDOMIZER|STARTING|BODY
+LABEL|Starting Loadout — Body
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|Equipment|a9a12b1d652518c4c833750e965ad108|Weight:1
+
+LOCATION|RANDOMIZER|STARTING|RANGED
+LABEL|Starting Loadout — Ranged
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|Equipment|be1a97b87da865e4ba66bd2a2e67b3f9|Weight:1
+
+LOCATION|RANDOMIZER|STARTING|SPELL
+LABEL|Starting Loadout — Spell
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|Spell|f82e802b773c84c768e5bfa2150324f5|Weight:1
+
+LOCATION|RANDOMIZER|STARTING|SHIP_SPELL
+LABEL|Starting Loadout — Special Ammo
+CATEGORY|Equipment & Blueprints
+SLOT|0|AllowCollectibles:False|Options:1
+OPTION|ShipSpell|2e86f70211bd95e449475ce0ccb01dfc|Weight:1
 
 LOCATION|0294cd0074d1d204db0bac9eab555e55
 LABEL|Catuga — North Crate

@@ -1,9 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using ProjectStar.Data;
+using System.Collections.Generic;
 
 namespace Randomizer.CatQuest3
 {
     public class RewardSlot
     {
+        private const string
+            StartingMeleeLocation =
+                "RANDOMIZER|STARTING|MELEE";
+
+        private const string
+            StartingBodyLocation =
+                "RANDOMIZER|STARTING|BODY";
+
+        private const string
+            StartingRangedLocation =
+                "RANDOMIZER|STARTING|RANGED";
+
+        private const string
+            StartingSpellLocation =
+                "RANDOMIZER|STARTING|SPELL";
+
+        private const string
+            StartingShipSpellLocation =
+                "RANDOMIZER|STARTING|SHIP_SPELL";
+
+
         private static readonly HashSet<string>
             ShipKeyExcludedLocations =
                 new HashSet<string>
@@ -78,6 +100,13 @@ namespace Randomizer.CatQuest3
             }
 
 
+            if (!CanAcceptStartingLoadoutReward(
+                    reward))
+            {
+                return false;
+            }
+
+
             if (
                 !AllowCollectibles &&
                 reward.Type ==
@@ -124,6 +153,80 @@ namespace Randomizer.CatQuest3
 
 
             return true;
+        }
+
+
+        private bool CanAcceptStartingLoadoutReward(
+            Reward reward)
+        {
+            if (Location == null)
+            {
+                return true;
+            }
+
+
+            if (Location.Key ==
+                    StartingSpellLocation)
+            {
+                return
+                    reward.Type ==
+                        RewardType.Spell;
+            }
+
+
+            if (Location.Key ==
+                    StartingShipSpellLocation)
+            {
+                return
+                    reward.Type ==
+                        RewardType.ShipSpell;
+            }
+
+
+            if (Location.Key !=
+                    StartingMeleeLocation &&
+                Location.Key !=
+                    StartingBodyLocation &&
+                Location.Key !=
+                    StartingRangedLocation)
+            {
+                return true;
+            }
+
+
+            if (reward.Type !=
+                    RewardType.Equipment ||
+                VanillaReward == null ||
+                VanillaReward.Type !=
+                    RewardType.Equipment)
+            {
+                return false;
+            }
+
+
+            EquipmentItemData vanillaEquipment =
+                RewardDataResolver.GetEquipment(
+                    VanillaReward.Id
+                );
+
+            EquipmentItemData candidateEquipment =
+                RewardDataResolver.GetEquipment(
+                    reward.Id
+                );
+
+
+            if (vanillaEquipment == null ||
+                candidateEquipment == null)
+            {
+                return false;
+            }
+
+
+            return
+                candidateEquipment.partType ==
+                    vanillaEquipment.partType &&
+                candidateEquipment.weaponType ==
+                    vanillaEquipment.weaponType;
         }
     }
 }
