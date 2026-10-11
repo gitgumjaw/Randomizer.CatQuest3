@@ -754,6 +754,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|64a38d13326f05d48aaed811df73ea14
 LABEL|Wanted Poster Mewtallica Chest
+LOGIC|ConcertTicket
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|0eea9849b2f2c4acd8c88a54739f7edc|Weight:1
@@ -805,6 +806,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|6a455d30b4b3f7c4ba9706cecd14c9bc
 LABEL|Mewtallica Stage — Boss Chest
+LOGIC|ConcertTicket
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|9e84470ed00c12d44befdadb7653b606|Weight:1
@@ -1058,6 +1060,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|90477425058ebba4fab00aa1874f8cb6
 LABEL|Fishercat — Treasure Chest
+LOGIC|Catfish
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|68200e67071238644bfcb12ab7f25d62|Weight:1
@@ -1313,6 +1316,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|Interior_KiddCatSmithy|Interactable_KiddCat|FSM|Get Reward
 LABEL|Smithy - Reward for Dragonbone
+LOGIC|SmithyHammer,Dragonbone
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|05a3052309998477998604ae09e04138|Weight:1
@@ -1325,6 +1329,7 @@ OPTION|Spell|6c43417d9de5ddf4c8256d456e866aab|Weight:1
 
 LOCATION|Interior_MageShop|Interactable_Mage|FSM|Learn Spell
 LABEL|Mage Shop - Reward for Necropawmicon
+LOGIC|VoodooDoll,Necropawmicon
 CATEGORY|Spells
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Spell|7a4e22db244714a6682b58f11e45b26c|Weight:1
@@ -1337,12 +1342,14 @@ OPTION|Spell|9fb4828dd524549b0a4677d2453a19ab|Weight:1
 
 LOCATION|Interior_MageShop|InteriorQuest_LostItem_VoodooDoll|FSM|Learn Spell
 LABEL|Mage Shop -Reward for Voodoo Dool
+LOGIC|VoodooDoll
 CATEGORY|Spells
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Spell|6c5cca708f40ac348b547f292de31d46|Weight:1
 
 LOCATION|Interior_MewtallicaStage|DungeonQuest_MewtallicaStage_BossFight|FSM|Get Reward
 LABEL|Defeat Meowtallika
+LOGIC|ConcertTicket
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|50acd59b67faf194dbbf08ee7d181aa3|Weight:1
@@ -1361,7 +1368,7 @@ OPTION|Equipment|d2dfe7bfeadd52949acd59f25acafd34|Weight:1
 
 LOCATION|Interior_Tavern|Interactable_MamaMilka|FSM|Gives Reward
 LABEL|Tavern - Cathulhu kill reward
-LOGIC|ShipKey
+LOGIC|ShipKey,JugOfMilk,CathulhuFang
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
@@ -1997,6 +2004,7 @@ OPTION|Equipment|915f26a96425b264c83a9a40f23ec0ef|Weight:1
 
 LOCATION|ad374b5039a7e65428b67123e6eb0241
 LABEL|Smithy — Kidd Cat's Treasure Chest
+LOGIC|SmithyHammer
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|25d8454650e86dd44a477eea9e98fed1|Weight:1
@@ -2105,6 +2113,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|b8f61f3e00ecea04681c4da63a125264
 LABEL|Tavern — Mama Milka's Treasure Chest
+LOGIC|JugOfMilk
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|4de760602ad941d4da69d4de7b965a34|Weight:1

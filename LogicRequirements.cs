@@ -17,6 +17,23 @@
         public bool RequiresNorthStarEssence { get; }
 
 
+        public bool RequiresVoodooDoll { get; }
+
+        public bool RequiresSmithyHammer { get; }
+
+        public bool RequiresJugOfMilk { get; }
+
+        public bool RequiresCathulhuFang { get; }
+
+        public bool RequiresConcertTicket { get; }
+
+        public bool RequiresNecropawmicon { get; }
+
+        public bool RequiresDragonbone { get; }
+
+        public int RequiredCatfish { get; }
+
+
         public LogicRequirements(
             bool requiresShipKey = false,
             bool requiresTwinCastleKey = false,
@@ -24,7 +41,15 @@
             int requiredSeekerKeys = 0,
             int requiredLovepurrBooks = 0,
             bool requiresInfinityKey = false,
-            bool requiresNorthStarEssence = false)
+            bool requiresNorthStarEssence = false,
+            bool requiresVoodooDoll = false,
+            bool requiresSmithyHammer = false,
+            bool requiresJugOfMilk = false,
+            bool requiresCathulhuFang = false,
+            bool requiresConcertTicket = false,
+            bool requiresNecropawmicon = false,
+            bool requiresDragonbone = false,
+            int requiredCatfish = 0)
         {
             RequiresShipKey =
                 requiresShipKey;
@@ -46,6 +71,31 @@
 
             RequiresNorthStarEssence =
                 requiresNorthStarEssence;
+
+
+            RequiresVoodooDoll =
+                requiresVoodooDoll;
+
+            RequiresSmithyHammer =
+                requiresSmithyHammer;
+
+            RequiresJugOfMilk =
+                requiresJugOfMilk;
+
+            RequiresCathulhuFang =
+                requiresCathulhuFang;
+
+            RequiresConcertTicket =
+                requiresConcertTicket;
+
+            RequiresNecropawmicon =
+                requiresNecropawmicon;
+
+            RequiresDragonbone =
+                requiresDragonbone;
+
+            RequiredCatfish =
+                requiredCatfish;
         }
 
 
@@ -115,6 +165,78 @@
             if (
                 RequiresNorthStarEssence &&
                 !state.HasNorthStarEssence
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                RequiresVoodooDoll &&
+                !state.HasVoodooDoll
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                RequiresSmithyHammer &&
+                !state.HasSmithyHammer
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                RequiresJugOfMilk &&
+                !state.HasJugOfMilk
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                RequiresCathulhuFang &&
+                !state.HasCathulhuFang
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                RequiresConcertTicket &&
+                !state.HasConcertTicket
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                RequiresNecropawmicon &&
+                !state.HasNecropawmicon
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                RequiresDragonbone &&
+                !state.HasDragonbone
+            )
+            {
+                return false;
+            }
+
+
+            if (
+                state.CatfishCount <
+                RequiredCatfish
             )
             {
                 return false;

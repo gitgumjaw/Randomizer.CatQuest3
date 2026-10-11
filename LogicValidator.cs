@@ -180,6 +180,14 @@ namespace Randomizer.CatQuest3
                 $"SeekerKeys:{state.SeekerKeyCount}/3 | " +
                 $"LovepurrBooks:{state.LovepurrBookCount}/3 | " +
                 $"InfinityKey:{state.HasInfinityKey} | " +
+                $"VoodooDoll:{state.HasVoodooDoll} | " +
+                $"SmithyHammer:{state.HasSmithyHammer} | " +
+                $"JugOfMilk:{state.HasJugOfMilk} | " +
+                $"CathulhuFang:{state.HasCathulhuFang} | " +
+                $"ConcertTicket:{state.HasConcertTicket} | " +
+                $"Necropawmicon:{state.HasNecropawmicon} | " +
+                $"Dragonbone:{state.HasDragonbone} | " +
+                $"Catfish:{state.CatfishCount}/4 | " +
                 $"NorthStarEssence:{state.HasNorthStarEssence}"
             );
 
@@ -234,7 +242,479 @@ namespace Randomizer.CatQuest3
                     $"Location:{locationName} | " +
                     $"BlockedBy:{blockedBy}"
                 );
+
+
+                HashSet<RewardSlot> currentPath =
+                    new HashSet<RewardSlot>();
+
+
+                currentPath.Add(
+                    slot
+                );
+
+
+                LogRequirementChain(
+                    slots,
+                    collectedSlots,
+                    state,
+                    slot.Location.LogicRequirements,
+                    1,
+                    currentPath
+                );
             }
+        }
+
+
+        private static void LogRequirementChain(
+            List<RewardSlot> slots,
+            HashSet<RewardSlot> collectedSlots,
+            LogicState state,
+            LogicRequirements requirements,
+            int depth,
+            HashSet<RewardSlot> currentPath)
+        {
+            if (
+                slots == null ||
+                collectedSlots == null ||
+                state == null ||
+                requirements == null
+            )
+            {
+                return;
+            }
+
+
+            if (
+                requirements.RequiresShipKey &&
+                !state.HasShipKey
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Ship Key",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.ShipKeyGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresTwinCastleKey &&
+                !state.HasTwinCastleKey
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Twin Castle Key",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.TwinCastleKeyGuid
+                );
+            }
+
+
+            if (
+                state.TentakeyCount <
+                requirements.RequiredTentakeys
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Tentakey",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.Tentakey1Guid,
+                    SpecialRewards.Tentakey2Guid,
+                    SpecialRewards.Tentakey3Guid
+                );
+            }
+
+
+            if (
+                state.SeekerKeyCount <
+                requirements.RequiredSeekerKeys
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Seeker Key",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.SeekerKeyAntaresGuid,
+                    SpecialRewards.SeekerKeyCentauriGuid,
+                    SpecialRewards.SeekerKeyOrionGuid
+                );
+            }
+
+
+            if (
+                state.LovepurrBookCount <
+                requirements.RequiredLovepurrBooks
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Lovepurr Book",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.LovepurrBook1Guid,
+                    SpecialRewards.LovepurrBook2Guid,
+                    SpecialRewards.LovepurrBook3Guid
+                );
+            }
+
+
+            if (
+                requirements.RequiresInfinityKey &&
+                !state.HasInfinityKey
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Infinity Key",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.InfinityKeyGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresNorthStarEssence &&
+                !state.HasNorthStarEssence
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "North Star Essence",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.NorthStarEssenceGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresVoodooDoll &&
+                !state.HasVoodooDoll
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Voodoo Doll",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.VoodooDollGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresSmithyHammer &&
+                !state.HasSmithyHammer
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Smithy Hammer",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.SmithyHammerGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresJugOfMilk &&
+                !state.HasJugOfMilk
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Jug o' Milk",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.JugOfMilkGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresCathulhuFang &&
+                !state.HasCathulhuFang
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Fang of Cathulhu",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.CathulhuFangGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresConcertTicket &&
+                !state.HasConcertTicket
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Concert Ticket",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.ConcertTicketGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresNecropawmicon &&
+                !state.HasNecropawmicon
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Necropawmicon",
+                    RewardType.Equipment,
+                    depth,
+                    currentPath,
+                    SpecialRewards.NecropawmiconGuid
+                );
+            }
+
+
+            if (
+                requirements.RequiresDragonbone &&
+                !state.HasDragonbone
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Dragonbone",
+                    RewardType.Equipment,
+                    depth,
+                    currentPath,
+                    SpecialRewards.DragonboneGuid
+                );
+            }
+
+
+            if (
+                state.CatfishCount <
+                requirements.RequiredCatfish
+            )
+            {
+                TraceBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    "Catfish",
+                    RewardType.QuestItem,
+                    depth,
+                    currentPath,
+                    SpecialRewards.SunsetCatfishGuid,
+                    SpecialRewards.GhostCatfishGuid,
+                    SpecialRewards.RockCatfishGuid,
+                    SpecialRewards.LoverCatfishGuid
+                );
+            }
+        }
+
+
+        private static void TraceBlocker(
+            List<RewardSlot> slots,
+            HashSet<RewardSlot> collectedSlots,
+            LogicState state,
+            string fallbackBlockerName,
+            RewardType rewardType,
+            int depth,
+            HashSet<RewardSlot> currentPath,
+            params string[] rewardIds)
+        {
+            bool foundBlocker =
+                false;
+
+
+            foreach (
+                RewardSlot slot
+                in slots)
+            {
+                if (
+                    slot == null ||
+                    collectedSlots.Contains(
+                        slot)
+                )
+                {
+                    continue;
+                }
+
+
+                Reward reward =
+                    slot.RandomizedReward;
+
+
+                if (
+                    reward == null ||
+                    reward.Type != rewardType ||
+                    !ContainsId(
+                        rewardIds,
+                        reward.Id
+                    )
+                )
+                {
+                    continue;
+                }
+
+
+                foundBlocker =
+                    true;
+
+
+                string blockerName =
+                    GetDetailedLogicRewardName(
+                        reward,
+                        fallbackBlockerName
+                    );
+
+                string locationName =
+                    slot.Location.Label ??
+                    slot.Location.Key;
+
+                string blockedBy =
+                    GetUnmetRequirements(
+                        slot.Location.LogicRequirements,
+                        state
+                    );
+
+
+                if (currentPath.Contains(
+                    slot))
+                {
+                    Plugin.Log.LogInfo(
+                        "LOGIC BLOCKER CHAIN | " +
+                        $"Depth:{depth} | " +
+                        $"Blocker:{blockerName} | " +
+                        $"Location:{locationName} | " +
+                        $"BlockedBy:{blockedBy} | " +
+                        "Self-Lock:True"
+                    );
+
+                    continue;
+                }
+
+
+                Plugin.Log.LogInfo(
+                    "LOGIC BLOCKER CHAIN | " +
+                    $"Depth:{depth} | " +
+                    $"Blocker:{blockerName} | " +
+                    $"Location:{locationName} | " +
+                    $"BlockedBy:{blockedBy}"
+                );
+
+
+                currentPath.Add(
+                    slot
+                );
+
+
+                LogRequirementChain(
+                    slots,
+                    collectedSlots,
+                    state,
+                    slot.Location.LogicRequirements,
+                    depth + 1,
+                    currentPath
+                );
+
+
+                currentPath.Remove(
+                    slot
+                );
+            }
+
+
+            if (!foundBlocker)
+            {
+                Plugin.Log.LogInfo(
+                    "LOGIC BLOCKER CHAIN | " +
+                    $"Depth:{depth} | " +
+                    $"Blocker:{fallbackBlockerName} | " +
+                    "Location:<not found in reward slots> | " +
+                    "BlockedBy:Unknown"
+                );
+            }
+        }
+
+
+        private static bool ContainsId(
+            string[] ids,
+            string id)
+        {
+            if (
+                ids == null ||
+                id == null
+            )
+            {
+                return false;
+            }
+
+
+            for (
+                int i = 0;
+                i < ids.Length;
+                i++)
+            {
+                if (ids[i] == id)
+                {
+                    return true;
+                }
+            }
+
+
+            return false;
         }
 
 
@@ -319,7 +799,149 @@ namespace Randomizer.CatQuest3
             }
 
 
+            if (reward.Id ==
+                SpecialRewards.VoodooDollGuid)
+            {
+                return "Voodoo Doll";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.SmithyHammerGuid)
+            {
+                return "Smithy Hammer";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.JugOfMilkGuid)
+            {
+                return "Jug o' Milk";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.CathulhuFangGuid)
+            {
+                return "Fang of Cathulhu";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.ConcertTicketGuid)
+            {
+                return "Meowtallika Concert Ticket";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.NecropawmiconGuid)
+            {
+                return "The Necropawmicon";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.DragonboneGuid)
+            {
+                return "The Dragonbone";
+            }
+
+
+            if (IsCatfish(
+                reward.Id))
+            {
+                return "Catfish";
+            }
+
+
             return reward.Id;
+        }
+
+
+        private static string GetDetailedLogicRewardName(
+            Reward reward,
+            string fallbackName)
+        {
+            if (reward == null)
+            {
+                return fallbackName;
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.SeekerKeyAntaresGuid)
+            {
+                return "Key of Antares";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.SeekerKeyCentauriGuid)
+            {
+                return "Key of Centauri";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.SeekerKeyOrionGuid)
+            {
+                return "Key of Orion";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.LovepurrBook1Guid)
+            {
+                return "Lovepurr Book One";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.LovepurrBook2Guid)
+            {
+                return "Lovepurr Book Two";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.LovepurrBook3Guid)
+            {
+                return "Lovepurr Book Three";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.SunsetCatfishGuid)
+            {
+                return "Sunset Catfish";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.GhostCatfishGuid)
+            {
+                return "Ghost Catfish";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.RockCatfishGuid)
+            {
+                return "Rock Catfish";
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.LoverCatfishGuid)
+            {
+                return "Lover Catfish";
+            }
+
+
+            return GetLogicRewardName(
+                reward
+            );
         }
 
 
@@ -423,9 +1045,99 @@ namespace Randomizer.CatQuest3
             }
 
 
+            if (
+                requirements.RequiresVoodooDoll &&
+                !state.HasVoodooDoll
+            )
+            {
+                unmet.Add(
+                    "Voodoo Doll"
+                );
+            }
+
+
+            if (
+                requirements.RequiresSmithyHammer &&
+                !state.HasSmithyHammer
+            )
+            {
+                unmet.Add(
+                    "Smithy Hammer"
+                );
+            }
+
+
+            if (
+                requirements.RequiresJugOfMilk &&
+                !state.HasJugOfMilk
+            )
+            {
+                unmet.Add(
+                    "Jug o' Milk"
+                );
+            }
+
+
+            if (
+                requirements.RequiresCathulhuFang &&
+                !state.HasCathulhuFang
+            )
+            {
+                unmet.Add(
+                    "Fang of Cathulhu"
+                );
+            }
+
+
+            if (
+                requirements.RequiresConcertTicket &&
+                !state.HasConcertTicket
+            )
+            {
+                unmet.Add(
+                    "Concert Ticket"
+                );
+            }
+
+
+            if (
+                requirements.RequiresNecropawmicon &&
+                !state.HasNecropawmicon
+            )
+            {
+                unmet.Add(
+                    "Necropawmicon"
+                );
+            }
+
+
+            if (
+                requirements.RequiresDragonbone &&
+                !state.HasDragonbone
+            )
+            {
+                unmet.Add(
+                    "Dragonbone"
+                );
+            }
+
+
+            if (
+                state.CatfishCount <
+                requirements.RequiredCatfish
+            )
+            {
+                unmet.Add(
+                    $"Catfish " +
+                    $"{state.CatfishCount}/" +
+                    $"{requirements.RequiredCatfish}"
+                );
+            }
+
+
             if (unmet.Count == 0)
             {
-                return "Unknown";
+                return "None";
             }
 
 
@@ -449,8 +1161,51 @@ namespace Randomizer.CatQuest3
             }
 
 
-            if (reward.Type !=
-                RewardType.QuestItem)
+            if (
+                reward.Type ==
+                RewardType.Equipment
+            )
+            {
+                if (
+                    reward.Id ==
+                    SpecialRewards.NecropawmiconGuid
+                )
+                {
+                    if (state.HasNecropawmicon)
+                    {
+                        return false;
+                    }
+
+                    state.HasNecropawmicon = true;
+
+                    return true;
+                }
+
+
+                if (
+                    reward.Id ==
+                    SpecialRewards.DragonboneGuid
+                )
+                {
+                    if (state.HasDragonbone)
+                    {
+                        return false;
+                    }
+
+                    state.HasDragonbone = true;
+
+                    return true;
+                }
+
+
+                return false;
+            }
+
+
+            if (
+                reward.Type !=
+                RewardType.QuestItem
+            )
             {
                 return false;
             }
@@ -539,6 +1294,85 @@ namespace Randomizer.CatQuest3
             }
 
 
+            if (reward.Id ==
+                SpecialRewards.VoodooDollGuid)
+            {
+                if (state.HasVoodooDoll)
+                {
+                    return false;
+                }
+
+                state.HasVoodooDoll = true;
+
+                return true;
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.SmithyHammerGuid)
+            {
+                if (state.HasSmithyHammer)
+                {
+                    return false;
+                }
+
+                state.HasSmithyHammer = true;
+
+                return true;
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.JugOfMilkGuid)
+            {
+                if (state.HasJugOfMilk)
+                {
+                    return false;
+                }
+
+                state.HasJugOfMilk = true;
+
+                return true;
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.CathulhuFangGuid)
+            {
+                if (state.HasCathulhuFang)
+                {
+                    return false;
+                }
+
+                state.HasCathulhuFang = true;
+
+                return true;
+            }
+
+
+            if (reward.Id ==
+                SpecialRewards.ConcertTicketGuid)
+            {
+                if (state.HasConcertTicket)
+                {
+                    return false;
+                }
+
+                state.HasConcertTicket = true;
+
+                return true;
+            }
+
+
+            if (IsCatfish(
+                reward.Id))
+            {
+                state.CatfishCount++;
+
+                return true;
+            }
+
+
             return false;
         }
 
@@ -546,10 +1380,29 @@ namespace Randomizer.CatQuest3
         public static bool IsLogicReward(
             Reward reward)
         {
+            if (reward == null)
+            {
+                return false;
+            }
+
+
             if (
-                reward == null ||
+                reward.Type ==
+                RewardType.Equipment
+            )
+            {
+                return
+                    reward.Id ==
+                        SpecialRewards.NecropawmiconGuid ||
+
+                    reward.Id ==
+                        SpecialRewards.DragonboneGuid;
+            }
+
+
+            if (
                 reward.Type !=
-                    RewardType.QuestItem
+                RewardType.QuestItem
             )
             {
                 return false;
@@ -579,7 +1432,26 @@ namespace Randomizer.CatQuest3
                     SpecialRewards.InfinityKeyGuid ||
 
                 reward.Id ==
-                    SpecialRewards.NorthStarEssenceGuid;
+                    SpecialRewards.NorthStarEssenceGuid ||
+
+                reward.Id ==
+                    SpecialRewards.VoodooDollGuid ||
+
+                reward.Id ==
+                    SpecialRewards.SmithyHammerGuid ||
+
+                reward.Id ==
+                    SpecialRewards.JugOfMilkGuid ||
+
+                reward.Id ==
+                    SpecialRewards.CathulhuFangGuid ||
+
+                reward.Id ==
+                    SpecialRewards.ConcertTicketGuid ||
+
+                IsCatfish(
+                    reward.Id
+                );
         }
 
 
@@ -625,6 +1497,24 @@ namespace Randomizer.CatQuest3
 
                 id ==
                     SpecialRewards.LovepurrBook3Guid;
+        }
+
+
+        private static bool IsCatfish(
+            string id)
+        {
+            return
+                id ==
+                    SpecialRewards.SunsetCatfishGuid ||
+
+                id ==
+                    SpecialRewards.GhostCatfishGuid ||
+
+                id ==
+                    SpecialRewards.RockCatfishGuid ||
+
+                id ==
+                    SpecialRewards.LoverCatfishGuid;
         }
     }
 }

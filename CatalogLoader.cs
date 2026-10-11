@@ -243,6 +243,23 @@ namespace Randomizer.CatQuest3
             bool requiresNorthStarEssence = false;
 
 
+            bool requiresVoodooDoll = false;
+
+            bool requiresSmithyHammer = false;
+
+            bool requiresJugOfMilk = false;
+
+            bool requiresCathulhuFang = false;
+
+            bool requiresConcertTicket = false;
+
+            bool requiresNecropawmicon = false;
+
+            bool requiresDragonbone = false;
+
+            int requiredCatfish = 0;
+
+
             string[] requirements =
                 logic.Split(',');
 
@@ -263,8 +280,7 @@ namespace Randomizer.CatQuest3
                 }
 
 
-                if (requirement ==
-                    "TwinCastleKey")
+                if (requirement == "TwinCastleKey")
                 {
                     requiresTwinCastleKey = true;
 
@@ -304,10 +320,73 @@ namespace Randomizer.CatQuest3
                 }
 
 
-                if (requirement ==
-                    "NorthStarEssence")
+                if (requirement == "NorthStarEssence")
                 {
                     requiresNorthStarEssence = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "VoodooDoll")
+                {
+                    requiresVoodooDoll = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "SmithyHammer")
+                {
+                    requiresSmithyHammer = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "JugOfMilk")
+                {
+                    requiresJugOfMilk = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "CathulhuFang")
+                {
+                    requiresCathulhuFang = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "ConcertTicket")
+                {
+                    requiresConcertTicket = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "Necropawmicon")
+                {
+                    requiresNecropawmicon = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "Dragonbone")
+                {
+                    requiresDragonbone = true;
+
+                    continue;
+                }
+
+
+                if (requirement == "Catfish")
+                {
+                    requiredCatfish = 4;
                 }
             }
 
@@ -319,7 +398,15 @@ namespace Randomizer.CatQuest3
                 requiredSeekerKeys,
                 requiredLovepurrBooks,
                 requiresInfinityKey,
-                requiresNorthStarEssence
+                requiresNorthStarEssence,
+                requiresVoodooDoll,
+                requiresSmithyHammer,
+                requiresJugOfMilk,
+                requiresCathulhuFang,
+                requiresConcertTicket,
+                requiresNecropawmicon,
+                requiresDragonbone,
+                requiredCatfish
             );
         }
 

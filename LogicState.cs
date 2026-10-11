@@ -17,6 +17,23 @@
         public bool HasNorthStarEssence { get; set; }
 
 
+        public bool HasVoodooDoll { get; set; }
+
+        public bool HasSmithyHammer { get; set; }
+
+        public bool HasJugOfMilk { get; set; }
+
+        public bool HasCathulhuFang { get; set; }
+
+        public bool HasConcertTicket { get; set; }
+
+        public bool HasNecropawmicon { get; set; }
+
+        public bool HasDragonbone { get; set; }
+
+        public int CatfishCount { get; set; }
+
+
         public LogicState()
         {
             HasShipKey = false;
@@ -32,6 +49,23 @@
             HasInfinityKey = false;
 
             HasNorthStarEssence = false;
+
+
+            HasVoodooDoll = false;
+
+            HasSmithyHammer = false;
+
+            HasJugOfMilk = false;
+
+            HasCathulhuFang = false;
+
+            HasConcertTicket = false;
+
+            HasNecropawmicon = false;
+
+            HasDragonbone = false;
+
+            CatfishCount = 0;
         }
     }
 }
