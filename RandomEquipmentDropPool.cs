@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ProjectStar.Data;
 using UnityEngine;
 
@@ -7,7 +6,8 @@ namespace Randomizer.CatQuest3
 {
     public static class RandomEquipmentDropPool
     {
-        private static List<EquipmentItemData> equipment;
+        private static List<EquipmentItemData>
+            equipment;
 
 
         private static void BuildPool()
@@ -15,61 +15,91 @@ namespace Randomizer.CatQuest3
             equipment =
                 new List<EquipmentItemData>();
 
-
             var database =
-                AddressableSingletonScriptableObject<EquipmentDatabase>
+                AddressableSingletonScriptableObject<
+                    EquipmentDatabase
+                >
                     .Instance;
 
-
-            if (database?.contentTable == null)
+            if (
+                database == null ||
+                database.contentTable == null
+            )
             {
                 Plugin.Log.LogError(
-                    "Could not build random equipment drop pool: " +
+                    "Could not build random " +
+                    "equipment drop pool: " +
                     "EquipmentDatabase was unavailable."
                 );
 
                 return;
             }
 
+            IReadOnlyList<string>
+                allowedEquipmentIds =
+                    RewardNameResolver.GetIds(
+                        RewardType.Equipment
+                    );
 
-            foreach (var entry in database.contentTable)
+            foreach (
+                string equipmentId
+                in allowedEquipmentIds)
             {
-                EquipmentItemData item =
-                    entry.Value;
+                if (string.IsNullOrWhiteSpace(
+                        equipmentId))
+                {
+                    continue;
+                }
 
+                if (!database.contentTable
+                    .TryGetValue(
+                        equipmentId,
+                        out EquipmentItemData item
+                    ))
+                {
+                    Plugin.Log.LogWarning(
+                        "Random equipment drop " +
+                        "pool item not found in " +
+                        "EquipmentDatabase | Guid:" +
+                        equipmentId
+                    );
+
+                    continue;
+                }
 
                 if (item == null)
                 {
+                    Plugin.Log.LogWarning(
+                        "Random equipment drop " +
+                        "pool item resolved to NULL | Guid:" +
+                        equipmentId
+                    );
+
                     continue;
                 }
 
-
-                // Blueprints are not random enemy equipment drops.
                 if (item is ShipBlueprintItemData)
                 {
+                    Plugin.Log.LogWarning(
+                        "Random equipment drop " +
+                        "pool whitelist resolved to " +
+                        "ShipBlueprintItemData | Guid:" +
+                        equipmentId
+                    );
+
                     continue;
                 }
 
-
-                // "Naked weapon" represents the player's fists
-                // when no weapon is equipped. It is not a real
-                // obtainable equipment drop.
-                if (string.Equals(
-                        item.itemName,
-                        "Naked weapon",
-                        StringComparison.OrdinalIgnoreCase))
-                {
-                    continue;
-                }
-
-
-                equipment.Add(item);
+                equipment.Add(
+                    item
+                );
             }
 
-
             Plugin.Log.LogInfo(
-                $"Built random equipment drop pool: " +
-                $"{equipment.Count} items."
+                "Built random equipment drop pool " +
+                "from RewardNames whitelist: " +
+                equipment.Count +
+                " items."
             );
         }
 
@@ -81,13 +111,13 @@ namespace Randomizer.CatQuest3
                 BuildPool();
             }
 
-
-            if (equipment == null ||
-                equipment.Count == 0)
+            if (
+                equipment == null ||
+                equipment.Count == 0
+            )
             {
                 return null;
             }
-
 
             int index =
                 UnityEngine.Random.Range(
@@ -95,8 +125,9 @@ namespace Randomizer.CatQuest3
                     equipment.Count
                 );
 
-
-            return equipment[index];
+            return equipment[
+                index
+            ];
         }
     }
 }

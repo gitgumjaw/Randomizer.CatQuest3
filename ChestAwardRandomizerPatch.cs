@@ -51,6 +51,7 @@ namespace Randomizer.CatQuest3
         {
             if (!CanRandomizeChest(
                     "SpawnLoot",
+                    __instance,
                     ___chestID,
                     ___currentTable,
                     ___itemLootToBeSpawned,
@@ -70,59 +71,68 @@ namespace Randomizer.CatQuest3
             );
 
 
-            // Vanilla SpawnLoot() prepares these fields before
-            // RandomLootItem() / OnPostChestAwardedUI().
-            //
-            // We suppress vanilla loot spawning, so preserve the
-            // non-randomized chest state ourselves.
             ___hasQuestItem =
                 false;
 
 
-            foreach (LootTableItem item
-                     in ___currentTable.list)
+            if (
+                ___currentTable != null &&
+                ___currentTable.list != null
+            )
             {
-                if (item.dropType ==
-                    LootTableItem.DropType.Key)
+                foreach (
+                    LootTableItem item
+                    in ___currentTable.list)
                 {
-                    ___keyDrop =
-                        item.dropKeyOnOpen;
+                    if (item == null)
+                    {
+                        continue;
+                    }
 
 
-                    Plugin.Log.LogInfo(
-                        $"Preserving chest key | " +
-                        $"Location:{location.Label} | " +
-                        $"Key:{___keyDrop}"
-                    );
-                }
+                    if (item.dropType ==
+                        LootTableItem.DropType.Key)
+                    {
+                        ___keyDrop =
+                            item.dropKeyOnOpen;
 
 
-                if (item.dropType ==
-                    LootTableItem.DropType.QuestItem)
-                {
-                    ___hasQuestItem =
-                        true;
+                        Plugin.Log.LogInfo(
+                            "Preserving chest key | " +
+                            "Location:" +
+                            location.Label +
+                            " | Key:" +
+                            ___keyDrop
+                        );
+                    }
+
+
+                    if (item.dropType ==
+                        LootTableItem
+                            .DropType
+                            .QuestItem)
+                    {
+                        ___hasQuestItem =
+                            true;
+                    }
                 }
             }
 
 
-            // Vanilla SpawnLoot() finishes by marking the
-            // chest as opened.
             ___opened =
                 true;
 
 
-            // Prevent ChestBehaviour.Update() from removing
-            // the chest before RandomLootItem() submits the
-            // randomized rewards.
             ___dropItem =
                 true;
 
 
             Plugin.Log.LogInfo(
-                $"Suppressing vanilla chest loot | " +
-                $"Location:{location.Label} | " +
-                $"Slots:{location.RandomizedRewards.Count}"
+                "Suppressing vanilla chest loot | " +
+                "Location:" +
+                location.Label +
+                " | Slots:" +
+                location.RandomizedRewards.Count
             );
 
 
@@ -166,6 +176,7 @@ namespace Randomizer.CatQuest3
 
             if (!CanRandomizeChest(
                     "RandomLootItem",
+                    __instance,
                     ___chestID,
                     ___currentTable,
                     ___itemLootToBeSpawned,
@@ -173,11 +184,14 @@ namespace Randomizer.CatQuest3
                     out RewardLocation location))
             {
                 Plugin.Log.LogWarning(
-                    $"CHEST RANDOMIZER FALLBACK | " +
-                    $"Stage:RandomLootItem | " +
-                    $"Reason:" +
-                    $"PreviouslyAcceptedChestFailedSecondValidation | " +
-                    $"Guid:{GetChestGuid(___chestID)}"
+                    "CHEST RANDOMIZER FALLBACK | " +
+                    "Stage:RandomLootItem | " +
+                    "Reason:" +
+                    "PreviouslyAcceptedChestFailedSecondValidation | " +
+                    "Guid:" +
+                    GetChestGuid(
+                        ___chestID
+                    )
                 );
 
 
@@ -225,16 +239,19 @@ namespace Randomizer.CatQuest3
 
 
             Plugin.Log.LogInfo(
-                $"Queueing chest rewards | " +
-                $"Location:{location.Label} | " +
-                $"Slots:{location.RandomizedRewards.Count}"
+                "Queueing chest rewards | " +
+                "Location:" +
+                location.Label +
+                " | Slots:" +
+                location.RandomizedRewards.Count
             );
 
 
-            for (int slotIndex = 0;
-                 slotIndex <
+            for (
+                int slotIndex = 0;
+                slotIndex <
                     location.RandomizedRewards.Count;
-                 slotIndex++)
+                slotIndex++)
             {
                 Reward randomizedReward =
                     location.RandomizedRewards[
@@ -263,15 +280,23 @@ namespace Randomizer.CatQuest3
 
 
                 Plugin.Log.LogInfo(
-                    $"Queueing chest reward | " +
-                    $"Location:{location.Label} | " +
-                    $"Slot:{slotIndex} | " +
-                    $"Vanilla:" +
-                    $"{location.VanillaRewards[slotIndex].Type}:" +
-                    $"{location.VanillaRewards[slotIndex].Id} | " +
-                    $"Randomized:" +
-                    $"{randomizedReward.Type}:" +
-                    $"{randomizedReward.Id}"
+                    "Queueing chest reward | " +
+                    "Location:" +
+                    location.Label +
+                    " | Slot:" +
+                    slotIndex +
+                    " | Vanilla:" +
+                    location.VanillaRewards[
+                        slotIndex
+                    ].Type +
+                    ":" +
+                    location.VanillaRewards[
+                        slotIndex
+                    ].Id +
+                    " | Randomized:" +
+                    randomizedReward.Type +
+                    ":" +
+                    randomizedReward.Id
                 );
 
 
@@ -299,11 +324,6 @@ namespace Randomizer.CatQuest3
                     );
 
 
-                // Tentakey chest progression can start its
-                // cinematic while randomized award UI is still
-                // active. Finish the physical chest immediately,
-                // then allow the reward queue to fully complete
-                // before releasing the deferred Tentakey event.
                 CompleteChest(
                     __instance,
                     ___chestID,
@@ -318,6 +338,7 @@ namespace Randomizer.CatQuest3
 
         private static bool CanRandomizeChest(
             string stage,
+            ChestBehaviour chest,
             ChestID chestID,
             LootTable currentTable,
             EquipmentItemData itemLoot,
@@ -340,6 +361,46 @@ namespace Randomizer.CatQuest3
 
 
                 return false;
+            }
+
+
+            /*
+             * Infinity Tower finite rewards use dynamically
+             * spawned ChestTrigger objects with no ChestID.
+             *
+             * InfinityTowerRewardChestPatch associates those
+             * instances with the existing Wave 3 / 5 / 8
+             * catalog locations when they are spawned.
+             *
+             * Their SpawnLoot shape differs from ordinary
+             * persistent chests, particularly the final reward,
+             * which invokes SpawnLoot multiple times. The
+             * submittedChestInstances guard handles those
+             * repeated calls, so once the registered tower
+             * location is resolved we intentionally bypass the
+             * ordinary ChestID / loot-shape validation.
+             */
+            if (
+                InfinityTowerRewardChestPatch
+                    .TryGetLocation(
+                        chest,
+                        out location
+                    )
+            )
+            {
+                Plugin.Log.LogInfo(
+                    "INFINITY TOWER CHEST | " +
+                    "Resolved | " +
+                    "Stage:" +
+                    stage +
+                    " | Location:" +
+                    location.Label +
+                    " | Instance:" +
+                    chest.GetInstanceID()
+                );
+
+
+                return true;
             }
 
 
@@ -395,8 +456,9 @@ namespace Randomizer.CatQuest3
                 0;
 
 
-            foreach (Reward reward
-                     in location.VanillaRewards)
+            foreach (
+                Reward reward
+                in location.VanillaRewards)
             {
                 if (reward.Type ==
                     RewardType.Collectible)
@@ -407,12 +469,14 @@ namespace Randomizer.CatQuest3
                 }
 
 
-                if (reward.Type ==
+                if (
+                    reward.Type ==
                         RewardType.Equipment ||
                     reward.Type ==
                         RewardType.Blueprint ||
                     reward.Type ==
-                        RewardType.QuestItem)
+                        RewardType.QuestItem
+                )
                 {
                     continue;
                 }
@@ -448,8 +512,9 @@ namespace Randomizer.CatQuest3
                 0;
 
 
-            foreach (LootTableItem item
-                     in currentTable.list)
+            foreach (
+                LootTableItem item
+                in currentTable.list)
             {
                 if (item == null)
                 {
@@ -465,8 +530,10 @@ namespace Randomizer.CatQuest3
                 }
 
 
-                if (item.dropType ==
-                    LootTableItem.DropType.Collectible)
+                if (
+                    item.dropType ==
+                    LootTableItem.DropType.Collectible
+                )
                 {
                     lootCollectibleCount++;
 
@@ -474,33 +541,38 @@ namespace Randomizer.CatQuest3
                 }
 
 
-                if (item.dropType ==
-                    LootTableItem.DropType.QuestItem)
+                if (
+                    item.dropType ==
+                    LootTableItem.DropType.QuestItem
+                )
                 {
                     continue;
                 }
 
 
-                // Keys are vanilla chest side effects rather
-                // than randomized reward slots.
-                //
-                // SpawnLootPrefix preserves dropKeyOnOpen in
-                // the chest's keyDrop field so the normal
-                // OnPostChestAwardedUI() flow can award it.
-                if (item.dropType ==
-                    LootTableItem.DropType.Key)
+                if (
+                    item.dropType ==
+                    LootTableItem.DropType.Key
+                )
                 {
                     continue;
                 }
 
 
                 Plugin.Log.LogWarning(
-                    $"CHEST RANDOMIZER FALLBACK | " +
-                    $"Stage:{stage} | " +
-                    $"Reason:UnsupportedLootTableDropType | " +
-                    $"Guid:{GetChestGuid(chestID)} | " +
-                    $"Location:{location.Label} | " +
-                    $"DropType:{item.dropType}"
+                    "CHEST RANDOMIZER FALLBACK | " +
+                    "Stage:" +
+                    stage +
+                    " | Reason:" +
+                    "UnsupportedLootTableDropType | " +
+                    "Guid:" +
+                    GetChestGuid(
+                        chestID
+                    ) +
+                    " | Location:" +
+                    location.Label +
+                    " | DropType:" +
+                    item.dropType
                 );
 
 
@@ -508,17 +580,27 @@ namespace Randomizer.CatQuest3
             }
 
 
-            if (lootCollectibleCount !=
-                collectibleCount)
+            if (
+                lootCollectibleCount !=
+                collectibleCount
+            )
             {
                 Plugin.Log.LogWarning(
-                    $"CHEST RANDOMIZER FALLBACK | " +
-                    $"Stage:{stage} | " +
-                    $"Reason:CollectibleShapeMismatch | " +
-                    $"Guid:{GetChestGuid(chestID)} | " +
-                    $"Location:{location.Label} | " +
-                    $"LootCollectibles:{lootCollectibleCount} | " +
-                    $"CatalogCollectibles:{collectibleCount}"
+                    "CHEST RANDOMIZER FALLBACK | " +
+                    "Stage:" +
+                    stage +
+                    " | Reason:" +
+                    "CollectibleShapeMismatch | " +
+                    "Guid:" +
+                    GetChestGuid(
+                        chestID
+                    ) +
+                    " | Location:" +
+                    location.Label +
+                    " | LootCollectibles:" +
+                    lootCollectibleCount +
+                    " | CatalogCollectibles:" +
+                    collectibleCount
                 );
 
 
@@ -526,19 +608,28 @@ namespace Randomizer.CatQuest3
             }
 
 
-            if (itemLoot != null &&
+            if (
+                itemLoot != null &&
                 FindChestItemSlot(
                     location,
                     itemLoot
-                ) < 0)
+                ) < 0
+            )
             {
                 Plugin.Log.LogWarning(
-                    $"CHEST RANDOMIZER FALLBACK | " +
-                    $"Stage:{stage} | " +
-                    $"Reason:CouldNotMapChestItemSlot | " +
-                    $"Guid:{GetChestGuid(chestID)} | " +
-                    $"Location:{location.Label} | " +
-                    $"Item:{itemLoot.Guid}"
+                    "CHEST RANDOMIZER FALLBACK | " +
+                    "Stage:" +
+                    stage +
+                    " | Reason:" +
+                    "CouldNotMapChestItemSlot | " +
+                    "Guid:" +
+                    GetChestGuid(
+                        chestID
+                    ) +
+                    " | Location:" +
+                    location.Label +
+                    " | Item:" +
+                    itemLoot.Guid
                 );
 
 
@@ -553,28 +644,37 @@ namespace Randomizer.CatQuest3
         private static bool IsTentakeyChest(
             RewardLocation location)
         {
-            if (location == null ||
-                location.VanillaRewards == null)
+            if (
+                location == null ||
+                location.VanillaRewards == null
+            )
             {
                 return false;
             }
 
 
-            foreach (Reward reward
-                     in location.VanillaRewards)
+            foreach (
+                Reward reward
+                in location.VanillaRewards)
             {
-                if (reward == null ||
+                if (
+                    reward == null ||
                     reward.Type !=
-                        RewardType.QuestItem)
+                        RewardType.QuestItem
+                )
                 {
                     continue;
                 }
 
 
-                if (reward.Id ==
-                        SpecialRewards.Tentakey2Guid ||
+                if (
                     reward.Id ==
-                        SpecialRewards.Tentakey3Guid)
+                        SpecialRewards
+                            .Tentakey2Guid ||
+                    reward.Id ==
+                        SpecialRewards
+                            .Tentakey3Guid
+                )
                 {
                     return true;
                 }
@@ -598,11 +698,17 @@ namespace Randomizer.CatQuest3
 
 
             Plugin.Log.LogWarning(
-                $"CHEST RANDOMIZER FALLBACK | " +
-                $"Stage:{stage} | " +
-                $"Reason:{reason} | " +
-                $"Guid:{GetChestGuid(chestID)} | " +
-                $"Location:{locationName}"
+                "CHEST RANDOMIZER FALLBACK | " +
+                "Stage:" +
+                stage +
+                " | Reason:" +
+                reason +
+                " | Guid:" +
+                GetChestGuid(
+                    chestID
+                ) +
+                " | Location:" +
+                locationName
             );
         }
 
@@ -631,8 +737,10 @@ namespace Randomizer.CatQuest3
             RewardLocation location,
             EquipmentItemData itemLoot)
         {
-            if (location == null ||
-                itemLoot == null)
+            if (
+                location == null ||
+                itemLoot == null
+            )
             {
                 return -1;
             }
@@ -661,11 +769,14 @@ namespace Randomizer.CatQuest3
                 -1;
 
 
-            for (int i = 0;
-                 i < location.VanillaRewards.Count;
-                 i++)
+            for (
+                int i = 0;
+                i < location.VanillaRewards.Count;
+                i++)
             {
-                if (!location.IsVanillaRandomBySlot[i])
+                if (
+                    !location.IsVanillaRandomBySlot[i]
+                )
                 {
                     continue;
                 }
@@ -674,11 +785,14 @@ namespace Randomizer.CatQuest3
                 if (randomSlotMatch != -1)
                 {
                     Plugin.Log.LogWarning(
-                        $"CHEST RANDOMIZER FALLBACK | " +
-                        $"Stage:FindChestItemSlot | " +
-                        $"Reason:MultipleVanillaRandomSlots | " +
-                        $"Location:{location.Label} | " +
-                        $"Item:{itemLoot.Guid}"
+                        "CHEST RANDOMIZER FALLBACK | " +
+                        "Stage:FindChestItemSlot | " +
+                        "Reason:" +
+                        "MultipleVanillaRandomSlots | " +
+                        "Location:" +
+                        location.Label +
+                        " | Item:" +
+                        itemLoot.Guid
                     );
 
 
@@ -716,8 +830,10 @@ namespace Randomizer.CatQuest3
                     .ItemDropFromChestMultiplier;
 
 
-            if (chestType ==
-                ChestData.ChestType.Bag)
+            if (
+                chestType ==
+                ChestData.ChestType.Bag
+            )
             {
                 multiplier =
                     AddressableSingletonScriptableObject<
@@ -750,13 +866,22 @@ namespace Randomizer.CatQuest3
             );
 
 
+            InfinityTowerRewardChestPatch
+                .Forget(
+                    chest
+                );
+
+
             string sceneName =
                 chest.gameObject.scene.name;
 
 
             Plugin.Log.LogInfo(
-                $"Completed randomized chest | " +
-                $"Guid:{chestID.Guid}"
+                "Completed randomized chest | " +
+                "Guid:" +
+                GetChestGuid(
+                    chestID
+                )
             );
 
 

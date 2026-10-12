@@ -12,7 +12,18 @@ namespace Randomizer.CatQuest3
                 StringComparer.Ordinal
             );
 
+        private static readonly Dictionary<
+            RewardType,
+            List<string>
+        >
+            idsByType =
+                new Dictionary<
+                    RewardType,
+                    List<string>
+                >();
+
         private static bool loaded;
+
 
         public static string GetName(
             Reward reward)
@@ -42,13 +53,32 @@ namespace Randomizer.CatQuest3
                 return name;
             }
 
-            if (!string.IsNullOrWhiteSpace(reward.Id))
+            if (!string.IsNullOrWhiteSpace(
+                    reward.Id))
             {
                 return reward.Id;
             }
 
             return reward.Type.ToString();
         }
+
+
+        public static IReadOnlyList<string>
+            GetIds(
+                RewardType rewardType)
+        {
+            EnsureLoaded();
+
+            if (idsByType.TryGetValue(
+                    rewardType,
+                    out List<string> ids))
+            {
+                return ids;
+            }
+
+            return Array.Empty<string>();
+        }
+
 
         private static void EnsureLoaded()
         {
@@ -61,7 +91,9 @@ namespace Randomizer.CatQuest3
 
             string pluginDirectory =
                 Path.GetDirectoryName(
-                    Assembly.GetExecutingAssembly().Location
+                    Assembly
+                        .GetExecutingAssembly()
+                        .Location
                 );
 
             string namesPath =
@@ -74,24 +106,34 @@ namespace Randomizer.CatQuest3
             if (!File.Exists(namesPath))
             {
                 Plugin.Log.LogWarning(
-                    $"Reward names file not found: {namesPath}"
+                    "Reward names file not found: " +
+                    namesPath
                 );
 
                 return;
             }
 
             string[] lines =
-                File.ReadAllLines(namesPath);
+                File.ReadAllLines(
+                    namesPath
+                );
 
-            foreach (string rawLine in lines)
+            foreach (
+                string rawLine
+                in lines)
             {
                 string line =
                     rawLine.Trim();
 
-                if (string.IsNullOrWhiteSpace(line) ||
+                if (
+                    string.IsNullOrWhiteSpace(
+                        line
+                    ) ||
                     line.StartsWith(
                         "#",
-                        StringComparison.Ordinal))
+                        StringComparison.Ordinal
+                    )
+                )
                 {
                     continue;
                 }
@@ -102,10 +144,13 @@ namespace Randomizer.CatQuest3
                         3
                     );
 
-                if (parts.Length != 3 ||
+                if (
+                    parts.Length != 3 ||
                     !Enum.TryParse(
                         parts[0],
-                        out RewardType rewardType))
+                        out RewardType rewardType
+                    )
+                )
                 {
                     continue;
                 }
@@ -116,8 +161,14 @@ namespace Randomizer.CatQuest3
                 string name =
                     parts[2].Trim();
 
-                if (string.IsNullOrWhiteSpace(rewardId) ||
-                    string.IsNullOrWhiteSpace(name))
+                if (
+                    string.IsNullOrWhiteSpace(
+                        rewardId
+                    ) ||
+                    string.IsNullOrWhiteSpace(
+                        name
+                    )
+                )
                 {
                     continue;
                 }
@@ -127,13 +178,37 @@ namespace Randomizer.CatQuest3
                         rewardType,
                         rewardId
                     )
-                ] = name;
+                ] =
+                    name;
+
+                if (!idsByType.TryGetValue(
+                        rewardType,
+                        out List<string> ids))
+                {
+                    ids =
+                        new List<string>();
+
+                    idsByType[
+                        rewardType
+                    ] =
+                        ids;
+                }
+
+                if (!ids.Contains(
+                        rewardId))
+                {
+                    ids.Add(
+                        rewardId
+                    );
+                }
             }
 
             Plugin.Log.LogInfo(
-                $"Loaded reward names: {names.Count}"
+                "Loaded reward names: " +
+                names.Count
             );
         }
+
 
         private static string CreateKey(
             RewardType rewardType,
@@ -142,7 +217,10 @@ namespace Randomizer.CatQuest3
             return
                 rewardType.ToString() +
                 "|" +
-                (rewardId ?? string.Empty);
+                (
+                    rewardId ??
+                    string.Empty
+                );
         }
     }
 }
