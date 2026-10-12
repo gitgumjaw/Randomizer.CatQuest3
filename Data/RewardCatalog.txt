@@ -1813,7 +1813,7 @@ CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|cfc47de2c1131de41a9490c6ddf46423|Weight:1
 
-LOCATION|MainOverworld|WorldQuest_RunningGold_Sunset|FSM|Get Golden Key
+LOCATION|MainOverworld|WorldQuest_RunningGold_Sunset|FSM|Get Golden Key 04
 LABEL|Running Coin Sunset
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
