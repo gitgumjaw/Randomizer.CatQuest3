@@ -1,4 +1,6 @@
-﻿namespace Randomizer.CatQuest3
+﻿using System.Collections.Generic;
+
+namespace Randomizer.CatQuest3
 {
     public class LogicRequirements
     {
@@ -34,6 +36,22 @@
         public int RequiredCatfish { get; }
 
 
+        public IReadOnlyList<string>
+            RequiredSpells =>
+                requiredSpells;
+
+        public IReadOnlyList<string>
+            RequiredLocations =>
+                requiredLocations;
+
+
+        private readonly List<string>
+            requiredSpells;
+
+        private readonly List<string>
+            requiredLocations;
+
+
         public LogicRequirements(
             bool requiresShipKey = false,
             bool requiresTwinCastleKey = false,
@@ -49,7 +67,9 @@
             bool requiresConcertTicket = false,
             bool requiresNecropawmicon = false,
             bool requiresDragonbone = false,
-            int requiredCatfish = 0)
+            int requiredCatfish = 0,
+            IEnumerable<string> requiredSpells = null,
+            IEnumerable<string> requiredLocations = null)
         {
             RequiresShipKey =
                 requiresShipKey;
@@ -96,6 +116,21 @@
 
             RequiredCatfish =
                 requiredCatfish;
+
+
+            this.requiredSpells =
+                requiredSpells == null
+                    ? new List<string>()
+                    : new List<string>(
+                        requiredSpells
+                    );
+
+            this.requiredLocations =
+                requiredLocations == null
+                    ? new List<string>()
+                    : new List<string>(
+                        requiredLocations
+                    );
         }
 
 
@@ -240,6 +275,30 @@
             )
             {
                 return false;
+            }
+
+
+            for (int i = 0;
+                 i < requiredSpells.Count;
+                 i++)
+            {
+                if (!state.HasSpell(
+                        requiredSpells[i]))
+                {
+                    return false;
+                }
+            }
+
+
+            for (int i = 0;
+                 i < requiredLocations.Count;
+                 i++)
+            {
+                if (!state.HasCompletedLocation(
+                        requiredLocations[i]))
+                {
+                    return false;
+                }
             }
 
 

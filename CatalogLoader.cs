@@ -260,6 +260,13 @@ namespace Randomizer.CatQuest3
             int requiredCatfish = 0;
 
 
+            List<string> requiredSpells =
+                new List<string>();
+
+            List<string> requiredLocations =
+                new List<string>();
+
+
             string[] requirements =
                 logic.Split(',');
 
@@ -275,7 +282,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "ShipKey")
                 {
                     requiresShipKey = true;
-
                     continue;
                 }
 
@@ -283,7 +289,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "TwinCastleKey")
                 {
                     requiresTwinCastleKey = true;
-
                     continue;
                 }
 
@@ -291,7 +296,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "Tentakeys")
                 {
                     requiredTentakeys = 3;
-
                     continue;
                 }
 
@@ -299,7 +303,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "SeekerKeys")
                 {
                     requiredSeekerKeys = 3;
-
                     continue;
                 }
 
@@ -307,7 +310,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "LovepurrBooks")
                 {
                     requiredLovepurrBooks = 3;
-
                     continue;
                 }
 
@@ -315,7 +317,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "InfinityKey")
                 {
                     requiresInfinityKey = true;
-
                     continue;
                 }
 
@@ -323,7 +324,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "NorthStarEssence")
                 {
                     requiresNorthStarEssence = true;
-
                     continue;
                 }
 
@@ -331,7 +331,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "VoodooDoll")
                 {
                     requiresVoodooDoll = true;
-
                     continue;
                 }
 
@@ -339,7 +338,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "SmithyHammer")
                 {
                     requiresSmithyHammer = true;
-
                     continue;
                 }
 
@@ -347,7 +345,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "JugOfMilk")
                 {
                     requiresJugOfMilk = true;
-
                     continue;
                 }
 
@@ -355,7 +352,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "CathulhuFang")
                 {
                     requiresCathulhuFang = true;
-
                     continue;
                 }
 
@@ -363,7 +359,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "ConcertTicket")
                 {
                     requiresConcertTicket = true;
-
                     continue;
                 }
 
@@ -371,7 +366,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "Necropawmicon")
                 {
                     requiresNecropawmicon = true;
-
                     continue;
                 }
 
@@ -379,7 +373,6 @@ namespace Randomizer.CatQuest3
                 if (requirement == "Dragonbone")
                 {
                     requiresDragonbone = true;
-
                     continue;
                 }
 
@@ -387,6 +380,55 @@ namespace Randomizer.CatQuest3
                 if (requirement == "Catfish")
                 {
                     requiredCatfish = 4;
+                    continue;
+                }
+
+
+                const string spellPrefix =
+                    "Spell:";
+
+                if (requirement.StartsWith(
+                        spellPrefix,
+                        StringComparison.Ordinal))
+                {
+                    string spellGuid =
+                        requirement.Substring(
+                            spellPrefix.Length
+                        )
+                        .Trim();
+
+                    if (!string.IsNullOrEmpty(
+                            spellGuid))
+                    {
+                        requiredSpells.Add(
+                            spellGuid
+                        );
+                    }
+
+                    continue;
+                }
+
+
+                const string locationPrefix =
+                    "Location:";
+
+                if (requirement.StartsWith(
+                        locationPrefix,
+                        StringComparison.Ordinal))
+                {
+                    string locationKey =
+                        requirement.Substring(
+                            locationPrefix.Length
+                        )
+                        .Trim();
+
+                    if (!string.IsNullOrEmpty(
+                            locationKey))
+                    {
+                        requiredLocations.Add(
+                            locationKey
+                        );
+                    }
                 }
             }
 
@@ -406,7 +448,9 @@ namespace Randomizer.CatQuest3
                 requiresConcertTicket,
                 requiresNecropawmicon,
                 requiresDragonbone,
-                requiredCatfish
+                requiredCatfish,
+                requiredSpells,
+                requiredLocations
             );
         }
 

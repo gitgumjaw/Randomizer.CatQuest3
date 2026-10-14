@@ -1,4 +1,4 @@
-Catalog Locations: 288
+Catalog Locations: 304
 
 LOCATION|RANDOMIZER|STARTING|MELEE
 LABEL|Starting Loadout — Melee
@@ -2527,4 +2527,144 @@ SLOT|1|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:5|Value:25|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
 SLOT|2|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:50|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FLAMEPURR|2
+LABEL|Magic Shop — Flamepurr II
+LOGIC|Spell:f82e802b773c84c768e5bfa2150324f5
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|f82e802b773c84c768e5bfa2150324f5|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FLAMEPURR|3
+LABEL|Magic Shop — Flamepurr III
+LOGIC|Spell:f82e802b773c84c768e5bfa2150324f5,Location:RANDOMIZER|MAGIC_SHOP|FLAMEPURR|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|f82e802b773c84c768e5bfa2150324f5|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FIREPURRISM|2
+LABEL|Magic Shop — Firepurrism II
+LOGIC|Spell:149063cc94514124e828ad4ac945ca5f
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|149063cc94514124e828ad4ac945ca5f|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FIREPURRISM|3
+LABEL|Magic Shop — Firepurrism III
+LOGIC|Spell:149063cc94514124e828ad4ac945ca5f,Location:RANDOMIZER|MAGIC_SHOP|FIREPURRISM|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|149063cc94514124e828ad4ac945ca5f|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FREEZEPAW|2
+LABEL|Magic Shop — Freezepaw II
+LOGIC|Spell:07e501cc6e150497c999080885dd0ae2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|07e501cc6e150497c999080885dd0ae2|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FREEZEPAW|3
+LABEL|Magic Shop — Freezepaw III
+LOGIC|Spell:07e501cc6e150497c999080885dd0ae2,Location:RANDOMIZER|MAGIC_SHOP|FREEZEPAW|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|07e501cc6e150497c999080885dd0ae2|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FURRY_SHIELD|2
+LABEL|Magic Shop — Furry Shield II
+LOGIC|Spell:6c43417d9de5ddf4c8256d456e866aab
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|6c43417d9de5ddf4c8256d456e866aab|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|FURRY_SHIELD|3
+LABEL|Magic Shop — Furry Shield III
+LOGIC|Spell:6c43417d9de5ddf4c8256d456e866aab,Location:RANDOMIZER|MAGIC_SHOP|FURRY_SHIELD|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|6c43417d9de5ddf4c8256d456e866aab|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|HEALPAW|2
+LABEL|Magic Shop — Healpaw II
+LOGIC|Spell:51dda95ff2f6198488ec4e9b935196f7
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|51dda95ff2f6198488ec4e9b935196f7|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|HEALPAW|3
+LABEL|Magic Shop — Healpaw III
+LOGIC|Spell:51dda95ff2f6198488ec4e9b935196f7,Location:RANDOMIZER|MAGIC_SHOP|HEALPAW|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|51dda95ff2f6198488ec4e9b935196f7|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|ICEPAW|2
+LABEL|Magic Shop — Icepaw II
+LOGIC|Spell:6c5cca708f40ac348b547f292de31d46
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|6c5cca708f40ac348b547f292de31d46|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|ICEPAW|3
+LABEL|Magic Shop — Icepaw III
+LOGIC|Spell:6c5cca708f40ac348b547f292de31d46,Location:RANDOMIZER|MAGIC_SHOP|ICEPAW|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|6c5cca708f40ac348b547f292de31d46|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|LIGHTNYAN|2
+LABEL|Magic Shop — Lightnyan II
+LOGIC|Spell:9fb4828dd524549b0a4677d2453a19ab
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|9fb4828dd524549b0a4677d2453a19ab|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|LIGHTNYAN|3
+LABEL|Magic Shop — Lightnyan III
+LOGIC|Spell:9fb4828dd524549b0a4677d2453a19ab,Location:RANDOMIZER|MAGIC_SHOP|LIGHTNYAN|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|9fb4828dd524549b0a4677d2453a19ab|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|LIGHTWHISKER|2
+LABEL|Magic Shop — Lightwhisker II
+LOGIC|Spell:1fafd3cbec8754e359dbb8ef5e643196
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|1fafd3cbec8754e359dbb8ef5e643196|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|LIGHTWHISKER|3
+LABEL|Magic Shop — Lightwhisker III
+LOGIC|Spell:1fafd3cbec8754e359dbb8ef5e643196,Location:RANDOMIZER|MAGIC_SHOP|LIGHTWHISKER|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|1fafd3cbec8754e359dbb8ef5e643196|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|MEWTEORS|2
+LABEL|Magic Shop — Mewteors II
+LOGIC|Spell:d55a7ad9dc89ae649834882278fc0ef5
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|d55a7ad9dc89ae649834882278fc0ef5|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|MEWTEORS|3
+LABEL|Magic Shop — Mewteors III
+LOGIC|Spell:d55a7ad9dc89ae649834882278fc0ef5,Location:RANDOMIZER|MAGIC_SHOP|MEWTEORS|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|d55a7ad9dc89ae649834882278fc0ef5|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|PAWER_UP|2
+LABEL|Magic Shop — Pawer Up II
+LOGIC|Spell:7a4e22db244714a6682b58f11e45b26c
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|7a4e22db244714a6682b58f11e45b26c|Weight:1
+
+LOCATION|RANDOMIZER|MAGIC_SHOP|PAWER_UP|3
+LABEL|Magic Shop — Pawer Up III
+LOGIC|Spell:7a4e22db244714a6682b58f11e45b26c,Location:RANDOMIZER|MAGIC_SHOP|PAWER_UP|2
+CATEGORY|Spells
+SLOT|0|AllowCollectibles:True|Options:1
+OPTION|Spell|7a4e22db244714a6682b58f11e45b26c|Weight:1
 

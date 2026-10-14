@@ -1,4 +1,5 @@
 ﻿using ProjectStar.Data;
+using System;
 using System.Collections.Generic;
 
 namespace Randomizer.CatQuest3
@@ -24,6 +25,27 @@ namespace Randomizer.CatQuest3
         private const string
             StartingShipSpellLocation =
                 "RANDOMIZER|STARTING|SHIP_SPELL";
+
+
+        private const string
+            MagicShopPrefix =
+                "RANDOMIZER|MAGIC_SHOP|";
+
+        private const string
+            TavernTalesPrefix =
+                "RANDOMIZER|TAVERN_TALES|";
+
+        private const string
+            InteriorMageShopPrefix =
+                "Interior_MageShop|";
+
+        private const string
+            InteriorTavernPrefix =
+                "Interior_Tavern|";
+
+        private const string
+            WantedPosterLabelPrefix =
+                "Wanted Poster";
 
 
         private static readonly HashSet<string>
@@ -152,7 +174,110 @@ namespace Randomizer.CatQuest3
             }
 
 
+            // Acquiring the Voodoo Doll while already
+            // inside the Magic Shop can immediately
+            // trigger Bonnie's quest progression and
+            // hijack control from the reward flow.
+            //
+            // Keep it out of both Bonnie's normal
+            // Magic Shop rewards and all synthetic
+            // Magic Shop lockbox locations.
+            if (
+                reward.Type ==
+                    RewardType.QuestItem &&
+                reward.Id ==
+                    SpecialRewards.VoodooDollGuid &&
+                IsMagicShopLocation()
+            )
+            {
+                return false;
+            }
+
+
+            // Acquiring the Jug of Milk while interacting
+            // with Tavern content can immediately advance
+            // Mama Milka's progression.
+            //
+            // Keep it out of all Interior Tavern rewards,
+            // Wanted Poster rewards, and future Tavern
+            // Tales randomized locations.
+            if (
+                reward.Type ==
+                    RewardType.QuestItem &&
+                reward.Id ==
+                    SpecialRewards.JugOfMilkGuid &&
+                IsJugOfMilkExcludedLocation()
+            )
+            {
+                return false;
+            }
+
+
             return true;
+        }
+
+
+        private bool IsMagicShopLocation()
+        {
+            if (Location == null ||
+                string.IsNullOrEmpty(
+                    Location.Key))
+            {
+                return false;
+            }
+
+
+            return
+                Location.Key.StartsWith(
+                    InteriorMageShopPrefix,
+                    StringComparison.OrdinalIgnoreCase
+                ) ||
+                Location.Key.StartsWith(
+                    MagicShopPrefix,
+                    StringComparison.OrdinalIgnoreCase
+                );
+        }
+
+
+        private bool IsJugOfMilkExcludedLocation()
+        {
+            if (Location == null)
+            {
+                return false;
+            }
+
+
+            if (!string.IsNullOrEmpty(
+                    Location.Key))
+            {
+                if (Location.Key.StartsWith(
+                        InteriorTavernPrefix,
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+
+
+                if (Location.Key.StartsWith(
+                        TavernTalesPrefix,
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+
+            if (!string.IsNullOrEmpty(
+                    Location.Label) &&
+                Location.Label.StartsWith(
+                    WantedPosterLabelPrefix,
+                    StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+
+            return false;
         }
 
 

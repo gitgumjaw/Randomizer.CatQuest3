@@ -190,8 +190,8 @@ namespace Randomizer.CatQuest3
         }
 
         private static void GrantSpell(
-            Reward reward,
-            Action callback)
+    Reward reward,
+    Action callback)
         {
             SpellConfig spell =
                 RewardDataResolver.GetSpell(
@@ -204,56 +204,52 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
-            Spell existingSpell;
+            Contexts.sharedInstance.game
+                .CreateAddOrLevelUpSpellCommand(
+                    spell,
+                    out int previousLevel,
+                    out int newLevel,
+                    out SpellLevelConfigBase newSpellConfig,
+                    out bool success
+                );
 
-            if ((Contexts.sharedInstance.game
-                    .CreateAddNewSpellCommand(
-                        spell,
-                        out var _,
-                        out var success
-                    ) != null) &&
-                success)
+            if (!success)
             {
-                Contexts.sharedInstance.gUI
-                    .ShowSpellAwardedUIPanel(
-                        spell,
-                        0,
-                        1,
-                        delegate
-                        {
-                            callback?.Invoke();
-                        }
-                    );
-            }
-            else if (Contexts.sharedInstance.game
-                .unlockedSpellTable
-                .value
-                .TryGetValue(
-                    spell.Guid,
-                    out existingSpell
-                ))
-            {
-                int previousLevel =
-                    existingSpell.level;
+                Plugin.Log.LogWarning(
+                    "PROGRESSIVE SPELL | " +
+                    "Could not advance spell | " +
+                    "Guid:" +
+                    spell.Guid +
+                    " | PreviousLevel:" +
+                    previousLevel +
+                    " | NewLevel:" +
+                    newLevel
+                );
 
-                int newLevel =
-                    existingSpell.level;
-
-                Contexts.sharedInstance.gUI
-                    .ShowSpellAwardedUIPanel(
-                        spell,
-                        previousLevel,
-                        newLevel,
-                        delegate
-                        {
-                            callback?.Invoke();
-                        }
-                    );
-            }
-            else
-            {
                 callback?.Invoke();
+                return;
             }
+
+            Plugin.Log.LogInfo(
+                "PROGRESSIVE SPELL | " +
+                "Guid:" +
+                spell.Guid +
+                " | PreviousLevel:" +
+                previousLevel +
+                " | NewLevel:" +
+                newLevel
+            );
+
+            Contexts.sharedInstance.gUI
+                .ShowSpellAwardedUIPanel(
+                    spell,
+                    previousLevel,
+                    newLevel,
+                    delegate
+                    {
+                        callback?.Invoke();
+                    }
+                );
         }
 
         private static void GrantShipSpell(

@@ -130,7 +130,7 @@ namespace Randomizer.CatQuest3
 
 
                     if (collectedSlots.Contains(
-                        slot))
+                            slot))
                     {
                         continue;
                     }
@@ -149,9 +149,16 @@ namespace Randomizer.CatQuest3
                     );
 
 
+                    if (state.AddCompletedLocation(
+                            slot.Location.Key))
+                    {
+                        madeProgress = true;
+                    }
+
+
                     if (ApplyReward(
-                        slot.RandomizedReward,
-                        state))
+                            slot.RandomizedReward,
+                            state))
                     {
                         madeProgress = true;
                     }
@@ -203,7 +210,7 @@ namespace Randomizer.CatQuest3
 
 
                 if (collectedSlots.Contains(
-                    slot))
+                        slot))
                 {
                     continue;
                 }
@@ -214,7 +221,7 @@ namespace Randomizer.CatQuest3
 
 
                 if (!IsRequiredForVictory(
-                    reward))
+                        reward))
                 {
                     continue;
                 }
@@ -561,6 +568,280 @@ namespace Randomizer.CatQuest3
                     SpecialRewards.LoverCatfishGuid
                 );
             }
+
+
+            foreach (
+                string spellGuid
+                in requirements.RequiredSpells)
+            {
+                if (state.HasSpell(
+                        spellGuid))
+                {
+                    continue;
+                }
+
+
+                TraceSpellBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    spellGuid,
+                    depth,
+                    currentPath
+                );
+            }
+
+
+            foreach (
+                string locationKey
+                in requirements.RequiredLocations)
+            {
+                if (state.HasCompletedLocation(
+                        locationKey))
+                {
+                    continue;
+                }
+
+
+                TraceLocationBlocker(
+                    slots,
+                    collectedSlots,
+                    state,
+                    locationKey,
+                    depth,
+                    currentPath
+                );
+            }
+        }
+
+
+        private static void TraceSpellBlocker(
+            List<RewardSlot> slots,
+            HashSet<RewardSlot> collectedSlots,
+            LogicState state,
+            string spellGuid,
+            int depth,
+            HashSet<RewardSlot> currentPath)
+        {
+            bool foundBlocker =
+                false;
+
+
+            foreach (
+                RewardSlot slot
+                in slots)
+            {
+                if (
+                    slot == null ||
+                    collectedSlots.Contains(
+                        slot)
+                )
+                {
+                    continue;
+                }
+
+
+                Reward reward =
+                    slot.RandomizedReward;
+
+
+                if (
+                    reward == null ||
+                    reward.Type != RewardType.Spell ||
+                    reward.Id != spellGuid
+                )
+                {
+                    continue;
+                }
+
+
+                foundBlocker =
+                    true;
+
+
+                string spellName =
+                    RewardNameResolver.GetName(
+                        reward
+                    );
+
+                string locationName =
+                    slot.Location.Label ??
+                    slot.Location.Key;
+
+                string blockedBy =
+                    GetUnmetRequirements(
+                        slot.Location.LogicRequirements,
+                        state
+                    );
+
+
+                if (currentPath.Contains(
+                        slot))
+                {
+                    Plugin.Log.LogInfo(
+                        "LOGIC BLOCKER CHAIN | " +
+                        $"Depth:{depth} | " +
+                        $"Blocker:{spellName} | " +
+                        $"Location:{locationName} | " +
+                        $"BlockedBy:{blockedBy} | " +
+                        "Self-Lock:True"
+                    );
+
+                    continue;
+                }
+
+
+                Plugin.Log.LogInfo(
+                    "LOGIC BLOCKER CHAIN | " +
+                    $"Depth:{depth} | " +
+                    $"Blocker:{spellName} | " +
+                    $"Location:{locationName} | " +
+                    $"BlockedBy:{blockedBy}"
+                );
+
+
+                currentPath.Add(
+                    slot
+                );
+
+
+                LogRequirementChain(
+                    slots,
+                    collectedSlots,
+                    state,
+                    slot.Location.LogicRequirements,
+                    depth + 1,
+                    currentPath
+                );
+
+
+                currentPath.Remove(
+                    slot
+                );
+            }
+
+
+            if (!foundBlocker)
+            {
+                Reward spellReward =
+                    new Reward(
+                        RewardType.Spell,
+                        spellGuid
+                    );
+
+
+                Plugin.Log.LogInfo(
+                    "LOGIC BLOCKER CHAIN | " +
+                    $"Depth:{depth} | " +
+                    $"Blocker:{RewardNameResolver.GetName(spellReward)} | " +
+                    "Location:<not found in reward slots> | " +
+                    "BlockedBy:Unknown"
+                );
+            }
+        }
+
+
+        private static void TraceLocationBlocker(
+            List<RewardSlot> slots,
+            HashSet<RewardSlot> collectedSlots,
+            LogicState state,
+            string locationKey,
+            int depth,
+            HashSet<RewardSlot> currentPath)
+        {
+            RewardSlot targetSlot =
+                null;
+
+
+            foreach (
+                RewardSlot slot
+                in slots)
+            {
+                if (
+                    slot == null ||
+                    slot.Location == null ||
+                    slot.Location.Key != locationKey
+                )
+                {
+                    continue;
+                }
+
+
+                targetSlot =
+                    slot;
+
+                break;
+            }
+
+
+            if (targetSlot == null)
+            {
+                Plugin.Log.LogInfo(
+                    "LOGIC BLOCKER CHAIN | " +
+                    $"Depth:{depth} | " +
+                    $"Blocker:Location:{locationKey} | " +
+                    "Location:<not found in reward slots> | " +
+                    "BlockedBy:Unknown"
+                );
+
+                return;
+            }
+
+
+            string locationName =
+                targetSlot.Location.Label ??
+                targetSlot.Location.Key;
+
+            string blockedBy =
+                GetUnmetRequirements(
+                    targetSlot.Location.LogicRequirements,
+                    state
+                );
+
+
+            if (currentPath.Contains(
+                    targetSlot))
+            {
+                Plugin.Log.LogInfo(
+                    "LOGIC BLOCKER CHAIN | " +
+                    $"Depth:{depth} | " +
+                    $"Blocker:{locationName} | " +
+                    $"Location:{locationName} | " +
+                    $"BlockedBy:{blockedBy} | " +
+                    "Self-Lock:True"
+                );
+
+                return;
+            }
+
+
+            Plugin.Log.LogInfo(
+                "LOGIC BLOCKER CHAIN | " +
+                $"Depth:{depth} | " +
+                $"Blocker:{locationName} | " +
+                $"Location:{locationName} | " +
+                $"BlockedBy:{blockedBy}"
+            );
+
+
+            currentPath.Add(
+                targetSlot
+            );
+
+
+            LogRequirementChain(
+                slots,
+                collectedSlots,
+                state,
+                targetSlot.Location.LogicRequirements,
+                depth + 1,
+                currentPath
+            );
+
+
+            currentPath.Remove(
+                targetSlot
+            );
         }
 
 
@@ -631,7 +912,7 @@ namespace Randomizer.CatQuest3
 
 
                 if (currentPath.Contains(
-                    slot))
+                        slot))
                 {
                     Plugin.Log.LogInfo(
                         "LOGIC BLOCKER CHAIN | " +
@@ -751,7 +1032,7 @@ namespace Randomizer.CatQuest3
 
 
             if (IsTentakey(
-                reward.Id))
+                    reward.Id))
             {
                 return "Tentakey";
             }
@@ -779,14 +1060,14 @@ namespace Randomizer.CatQuest3
 
 
             if (IsSeekerKey(
-                reward.Id))
+                    reward.Id))
             {
                 return "Seeker Key";
             }
 
 
             if (IsLovepurrBook(
-                reward.Id))
+                    reward.Id))
             {
                 return "Lovepurr Book";
             }
@@ -849,7 +1130,7 @@ namespace Randomizer.CatQuest3
 
 
             if (IsCatfish(
-                reward.Id))
+                    reward.Id))
             {
                 return "Catfish";
             }
@@ -1135,6 +1416,59 @@ namespace Randomizer.CatQuest3
             }
 
 
+            foreach (
+                string spellGuid
+                in requirements.RequiredSpells)
+            {
+                if (state.HasSpell(
+                        spellGuid))
+                {
+                    continue;
+                }
+
+
+                Reward reward =
+                    new Reward(
+                        RewardType.Spell,
+                        spellGuid
+                    );
+
+
+                unmet.Add(
+                    RewardNameResolver.GetName(
+                        reward
+                    )
+                );
+            }
+
+
+            foreach (
+                string locationKey
+                in requirements.RequiredLocations)
+            {
+                if (state.HasCompletedLocation(
+                        locationKey))
+                {
+                    continue;
+                }
+
+
+                RewardLocation location =
+                    RewardCatalog.Get(
+                        locationKey
+                    );
+
+
+                unmet.Add(
+                    location != null &&
+                    !string.IsNullOrEmpty(
+                        location.Label)
+                        ? location.Label
+                        : locationKey
+                );
+            }
+
+
             if (unmet.Count == 0)
             {
                 return "None";
@@ -1158,6 +1492,17 @@ namespace Randomizer.CatQuest3
             )
             {
                 return false;
+            }
+
+
+            if (
+                reward.Type ==
+                RewardType.Spell
+            )
+            {
+                return state.AddSpell(
+                    reward.Id
+                );
             }
 
 
@@ -1240,7 +1585,7 @@ namespace Randomizer.CatQuest3
 
 
             if (IsTentakey(
-                reward.Id))
+                    reward.Id))
             {
                 state.TentakeyCount++;
 
@@ -1249,7 +1594,7 @@ namespace Randomizer.CatQuest3
 
 
             if (IsSeekerKey(
-                reward.Id))
+                    reward.Id))
             {
                 state.SeekerKeyCount++;
 
@@ -1258,7 +1603,7 @@ namespace Randomizer.CatQuest3
 
 
             if (IsLovepurrBook(
-                reward.Id))
+                    reward.Id))
             {
                 state.LovepurrBookCount++;
 
@@ -1365,7 +1710,7 @@ namespace Randomizer.CatQuest3
 
 
             if (IsCatfish(
-                reward.Id))
+                    reward.Id))
             {
                 state.CatfishCount++;
 
