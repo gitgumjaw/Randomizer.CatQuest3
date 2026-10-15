@@ -290,6 +290,10 @@ namespace Randomizer.CatQuest3
             }
 
 
+            // --------------------------------------------------------
+            // SPELL
+            // --------------------------------------------------------
+
             if (Location.Key ==
                     StartingSpellLocation)
             {
@@ -299,6 +303,10 @@ namespace Randomizer.CatQuest3
             }
 
 
+            // --------------------------------------------------------
+            // SPECIAL AMMO
+            // --------------------------------------------------------
+
             if (Location.Key ==
                     StartingShipSpellLocation)
             {
@@ -307,6 +315,10 @@ namespace Randomizer.CatQuest3
                         RewardType.ShipSpell;
             }
 
+
+            // --------------------------------------------------------
+            // NON-STARTING EQUIPMENT LOCATIONS
+            // --------------------------------------------------------
 
             if (Location.Key !=
                     StartingMeleeLocation &&
@@ -320,19 +332,11 @@ namespace Randomizer.CatQuest3
 
 
             if (reward.Type !=
-                    RewardType.Equipment ||
-                VanillaReward == null ||
-                VanillaReward.Type !=
                     RewardType.Equipment)
             {
                 return false;
             }
 
-
-            EquipmentItemData vanillaEquipment =
-                RewardDataResolver.GetEquipment(
-                    VanillaReward.Id
-                );
 
             EquipmentItemData candidateEquipment =
                 RewardDataResolver.GetEquipment(
@@ -340,18 +344,85 @@ namespace Randomizer.CatQuest3
                 );
 
 
-            if (vanillaEquipment == null ||
-                candidateEquipment == null)
+            if (candidateEquipment == null)
             {
                 return false;
             }
 
 
-            return
-                candidateEquipment.partType ==
-                    vanillaEquipment.partType &&
-                candidateEquipment.weaponType ==
-                    vanillaEquipment.weaponType;
+            // --------------------------------------------------------
+            // STARTING MELEE
+            // --------------------------------------------------------
+            //
+            // Any melee weapon is valid.
+            //
+            // This includes swords, claws, shields,
+            // and any other equipment classified by
+            // the game as WEAPON_MELEE.
+
+            if (Location.Key ==
+                    StartingMeleeLocation)
+            {
+                return
+                    candidateEquipment.partType ==
+                        EquipmentPartType.WEAPON_MELEE;
+            }
+
+
+            // --------------------------------------------------------
+            // STARTING RANGED
+            // --------------------------------------------------------
+            //
+            // Any ranged weapon is valid.
+            //
+            // This includes both guns and wands.
+
+            if (Location.Key ==
+                    StartingRangedLocation)
+            {
+                return
+                    candidateEquipment.partType ==
+                        EquipmentPartType.WEAPON_RANGED;
+            }
+
+
+            // --------------------------------------------------------
+            // STARTING BODY
+            // --------------------------------------------------------
+            //
+            // Body equipment should remain the same
+            // equipment slot as the vanilla Pirate Shirt.
+
+            if (Location.Key ==
+                    StartingBodyLocation)
+            {
+                if (VanillaReward == null ||
+                    VanillaReward.Type !=
+                        RewardType.Equipment)
+                {
+                    return false;
+                }
+
+
+                EquipmentItemData vanillaEquipment =
+                    RewardDataResolver.GetEquipment(
+                        VanillaReward.Id
+                    );
+
+
+                if (vanillaEquipment == null)
+                {
+                    return false;
+                }
+
+
+                return
+                    candidateEquipment.partType ==
+                        vanillaEquipment.partType;
+            }
+
+
+            return false;
         }
     }
 }
