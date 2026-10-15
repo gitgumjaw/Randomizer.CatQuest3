@@ -57,11 +57,20 @@ namespace Randomizer.CatQuest3
                 "f82e802b773c84c768e5bfa2150324f5";
 
         private const string
+            FlamepurrRuntimeGuid =
+                "c0a5ef232225049c0b9b73926d8e1f0e";
+
+        private const string
             SuperCannonpawsGuid =
                 "2e86f70211bd95e449475ce0ccb01dfc";
 
+        private const string
+            SuperCannonpawsRuntimeGuid =
+                "73109fddb5f110740b09af87859843f8";
+
 
         private static bool hasRun;
+
 
         public static void Reset()
         {
@@ -202,47 +211,78 @@ namespace Randomizer.CatQuest3
                     );
 
 
-            if (equipment == null)
+            if (equipment != null)
+            {
+                if (player.hasEquippedItems &&
+                    player.equippedItems.value != null)
+                {
+                    player.equippedItems.value
+                        .UnequipItem(
+                            player,
+                            equipment
+                        );
+                }
+
+
+                if (Contexts.sharedInstance.game
+                        .hasUnlockedEquipmentList &&
+                    Contexts.sharedInstance.game
+                        .unlockedEquipmentList
+                        .value != null)
+                {
+                    Contexts.sharedInstance.game
+                        .unlockedEquipmentList
+                        .value
+                        .Remove(
+                            equipment
+                        );
+                }
+
+
+                Plugin.Log.LogInfo(
+                    "STARTING LOADOUT | " +
+                    $"Removed vanilla equipment:{guid}"
+                );
+            }
+            else
             {
                 Plugin.Log.LogWarning(
                     "STARTING LOADOUT | " +
                     $"Vanilla equipment not found:{guid}"
                 );
-
-                return;
             }
 
 
-            if (player.hasEquippedItems &&
-                player.equippedItems.value != null)
+            SaveGameEquipmentData saveData =
+                SaveGameEquipmentData
+                    .currSaveFileInstance;
+
+
+            if (saveData != null &&
+                saveData.equipmentSaveData != null)
             {
-                player.equippedItems.value
-                    .UnequipItem(
-                        player,
-                        equipment
-                    );
+                bool removedFromSave =
+                    saveData.equipmentSaveData
+                        .Remove(
+                            guid
+                        );
+
+
+                Plugin.Log.LogInfo(
+                    "STARTING LOADOUT | " +
+                    "Removed vanilla equipment from save data:" +
+                    removedFromSave +
+                    $" | Guid:{guid}"
+                );
             }
-
-
-            if (Contexts.sharedInstance.game
-                    .hasUnlockedEquipmentList &&
-                Contexts.sharedInstance.game
-                    .unlockedEquipmentList
-                    .value != null)
+            else
             {
-                Contexts.sharedInstance.game
-                    .unlockedEquipmentList
-                    .value
-                    .Remove(
-                        equipment
-                    );
+                Plugin.Log.LogWarning(
+                    "STARTING LOADOUT | " +
+                    "Equipment save data unavailable while " +
+                    $"removing vanilla equipment:{guid}"
+                );
             }
-
-
-            Plugin.Log.LogInfo(
-                "STARTING LOADOUT | " +
-                $"Removed vanilla equipment:{guid}"
-            );
         }
 
 
@@ -313,8 +353,13 @@ namespace Randomizer.CatQuest3
                 );
 
 
-            if (config != null &&
-                Contexts.sharedInstance.game
+            string runtimeGuid =
+                config != null
+                    ? config.Guid
+                    : FlamepurrRuntimeGuid;
+
+
+            if (Contexts.sharedInstance.game
                     .hasUnlockedSpellTable &&
                 Contexts.sharedInstance.game
                     .unlockedSpellTable
@@ -325,7 +370,7 @@ namespace Randomizer.CatQuest3
                         .unlockedSpellTable
                         .value
                         .Remove(
-                            config.Guid
+                            runtimeGuid
                         );
 
 
@@ -333,7 +378,39 @@ namespace Randomizer.CatQuest3
                     "STARTING LOADOUT | " +
                     "Removed vanilla spell ownership:" +
                     removed +
-                    $" | Guid:{config.Guid}"
+                    $" | Guid:{runtimeGuid}"
+                );
+            }
+
+
+            SaveGameSpellData saveData =
+                SaveGameSpellData
+                    .currSaveFileInstance;
+
+
+            if (saveData != null &&
+                saveData.spellSaveData != null)
+            {
+                bool removedFromSave =
+                    saveData.spellSaveData
+                        .Remove(
+                            runtimeGuid
+                        );
+
+
+                Plugin.Log.LogInfo(
+                    "STARTING LOADOUT | " +
+                    "Removed vanilla spell from save data:" +
+                    removedFromSave +
+                    $" | Guid:{runtimeGuid}"
+                );
+            }
+            else
+            {
+                Plugin.Log.LogWarning(
+                    "STARTING LOADOUT | " +
+                    "Spell save data unavailable while " +
+                    "removing vanilla starting spell."
                 );
             }
 
@@ -418,8 +495,13 @@ namespace Randomizer.CatQuest3
                 );
 
 
-            if (config != null &&
-                Contexts.sharedInstance.game
+            string runtimeGuid =
+                config != null
+                    ? config.Guid
+                    : SuperCannonpawsRuntimeGuid;
+
+
+            if (Contexts.sharedInstance.game
                     .hasUnlockedShipSpellTable &&
                 Contexts.sharedInstance.game
                     .unlockedShipSpellTable
@@ -430,7 +512,7 @@ namespace Randomizer.CatQuest3
                         .unlockedShipSpellTable
                         .value
                         .Remove(
-                            config.Guid
+                            runtimeGuid
                         );
 
 
@@ -438,7 +520,39 @@ namespace Randomizer.CatQuest3
                     "STARTING LOADOUT | " +
                     "Removed vanilla ship spell ownership:" +
                     removed +
-                    $" | Guid:{config.Guid}"
+                    $" | Guid:{runtimeGuid}"
+                );
+            }
+
+
+            SaveGameShipSpellData saveData =
+                SaveGameShipSpellData
+                    .currSaveFileInstance;
+
+
+            if (saveData != null &&
+                saveData.shipSpellSaveData != null)
+            {
+                bool removedFromSave =
+                    saveData.shipSpellSaveData
+                        .Remove(
+                            runtimeGuid
+                        );
+
+
+                Plugin.Log.LogInfo(
+                    "STARTING LOADOUT | " +
+                    "Removed vanilla ship spell from save data:" +
+                    removedFromSave +
+                    $" | Guid:{runtimeGuid}"
+                );
+            }
+            else
+            {
+                Plugin.Log.LogWarning(
+                    "STARTING LOADOUT | " +
+                    "Ship spell save data unavailable while " +
+                    "removing vanilla starting ship spell."
                 );
             }
 
