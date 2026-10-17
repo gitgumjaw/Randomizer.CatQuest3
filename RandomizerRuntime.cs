@@ -27,9 +27,7 @@
             int profileIndex,
             RandomizerRunConfiguration configuration)
         {
-            CurrentProfileIndex =
-                profileIndex;
-
+            CurrentProfileIndex = profileIndex;
             CurrentConfiguration =
                 configuration ??
                 CreateVanillaConfiguration();
@@ -54,9 +52,7 @@
         public static void ActivateVanilla(
             int profileIndex)
         {
-            CurrentProfileIndex =
-                profileIndex;
-
+            CurrentProfileIndex = profileIndex;
             CurrentConfiguration =
                 CreateVanillaConfiguration();
 
@@ -78,29 +74,20 @@
                     CurrentConfiguration
                 );
 
-            RandomizerState.Settings =
-                settings;
+            RandomizerState.Settings = settings;
 
             Plugin.Log.LogInfo(
                 "RANDOMIZER SETTINGS | " +
-                "Equipment:" +
-                settings.RandomizeEquipment +
-                " | Spells:" +
-                settings.RandomizeSpells +
-                " | QuestItems:" +
-                settings.RandomizeQuestItems +
-                " | ManaCrystals:" +
-                settings.RandomizeManaCrystals +
-                " | Collectibles:" +
-                settings.RandomizeCollectibles +
-                " | MatchEquipmentLevelToPlayer:" +
-                settings.MatchEquipmentLevelToPlayer +
-                " | ShipKey:" +
-                settings.RandomizeShipKey +
-                " | InfinityKey:" +
-                settings.RandomizeInfinityKey +
-                " | BirdPoop:" +
-                settings.RandomizeBirdPoop
+                "Equipment:" + settings.RandomizeEquipment +
+                " | Spells:" + settings.RandomizeSpells +
+                " | QuestItems:" + settings.RandomizeQuestItems +
+                " | ManaCrystals:" + settings.RandomizeManaCrystals +
+                " | Collectibles:" + settings.RandomizeCollectibles +
+                " | TavernTalesParrots:" + settings.RandomizeTavernTalesParrots +
+                " | MatchEquipmentLevelToPlayer:" + settings.MatchEquipmentLevelToPlayer +
+                " | ShipKey:" + settings.RandomizeShipKey +
+                " | InfinityKey:" + settings.RandomizeInfinityKey +
+                " | BirdPoop:" + settings.RandomizeBirdPoop
             );
 
             if (!CurrentConfiguration.Enabled)
@@ -160,6 +147,10 @@
                     enabled &&
                     configuration.ResourcesCollectibles,
 
+                RandomizeTavernTalesParrots =
+                    enabled &&
+                    configuration.TavernTalesParrots,
+
                 MatchEquipmentLevelToPlayer =
                     enabled &&
                     configuration.MatchPlayerLevel,
@@ -182,6 +173,7 @@
             CreateVanillaConfiguration()
         {
             return new RandomizerRunConfiguration(
+                false,
                 false,
                 false,
                 false,

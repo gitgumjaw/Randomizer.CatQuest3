@@ -6,10 +6,41 @@ using UnityEngine.UI;
 namespace Randomizer.CatQuest3
 {
     [HarmonyPatch]
-    public static class NewGameRandomizerFlowPatch
+    public static class RandomizerMenuBuilder
     {
-        private static RandomizerScreen
-            randomizerScreen;
+        private static RandomizerMenuController randomizerScreen;
+
+        // ------------------------------------------------------------
+        // LAYOUT NUMBERS
+        // ------------------------------------------------------------
+        // These are the main values to tweak once functionality is done.
+
+        private const float TitleY = 425f;
+
+        private const float Column1X = -430f;
+        private const float Column2X = 0f;
+        private const float Column3X = 430f;
+
+        private const float FirstRowY = 275f;
+        private const float RowSpacing = 55f;
+
+        private const float SeedY = -245f;
+        private const float ContinueY = -335f;
+
+        private const float ToggleWidth = 400f;
+        private const float ToggleHeight = 42f;
+
+        // Distance between the hand pointer and the first visible character
+        // of each toggle line.
+        internal const float ToggleHandPadding = -15f;
+        internal const float ToggleHandYOffset = -30;
+
+        // Visual contrast for disabled randomizer options.
+        // 1f = fully opaque; lower values fade OFF rows more.
+        internal const float OffToggleAlpha = 0.65f;
+
+        private const float MasterToggleWidth = 700f;
+        private const float MasterToggleHeight = 76f;
 
 
         [HarmonyPostfix]
@@ -26,11 +57,9 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
-
             UIGenderSelectionScreen genderScreen =
                 __instance.showNextScreen
                     as UIGenderSelectionScreen;
-
 
             if (genderScreen == null)
             {
@@ -42,23 +71,20 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
-
-            RandomizerScreen newScreen =
-                CreateRandomizerScreen(
+            RandomizerMenuController newScreen =
+                CreateRandomizerMenuController(
                     genderScreen
                 );
-
 
             if (newScreen == null)
             {
                 Plugin.Log.LogError(
                     "RANDOMIZER FLOW | " +
-                    "Could not create RandomizerScreen."
+                    "Could not create RandomizerMenuController."
                 );
 
                 return;
             }
-
 
             newScreen.Configure(
                 __instance
@@ -69,10 +95,9 @@ namespace Randomizer.CatQuest3
             randomizerScreen =
                 newScreen;
 
-
             Plugin.Log.LogInfo(
                 "RANDOMIZER FLOW | " +
-                "RandomizerScreen prepared before Difficulty."
+                "RandomizerMenuController prepared before Difficulty."
             );
         }
 
@@ -89,17 +114,14 @@ namespace Randomizer.CatQuest3
             UIDifficultyMenu difficulty =
                 __instance as UIDifficultyMenu;
 
-
             if (difficulty == null ||
                 randomizerScreen == null)
             {
                 return true;
             }
 
-
             SaveLoadPanel saveLoadPanel =
                 GetSaveLoadPanel();
-
 
             if (saveLoadPanel == null ||
                 saveLoadPanel.startingGameMode !=
@@ -108,35 +130,30 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
-
             if (activateBtn == null)
             {
                 return true;
             }
 
-
             randomizerScreen.Show(
                 activateBtn
             );
-
 
             Plugin.Log.LogInfo(
                 "RANDOMIZER FLOW | " +
                 "New Game -> Randomizer."
             );
 
-
             return false;
         }
 
 
-        private static RandomizerScreen
-    CreateRandomizerScreen(
-        UIGenderSelectionScreen genderScreen)
+        private static RandomizerMenuController
+            CreateRandomizerMenuController(
+                UIGenderSelectionScreen genderScreen)
         {
             OptionsControllerPanel optionsController =
                 GetOptionsController();
-
 
             if (optionsController == null)
             {
@@ -148,7 +165,6 @@ namespace Randomizer.CatQuest3
                 return null;
             }
 
-
             GameObject root =
                 new GameObject(
                     "RandomizerMenuRoot",
@@ -158,24 +174,41 @@ namespace Randomizer.CatQuest3
                     typeof(GraphicRaycaster)
                 );
 
-
             root.SetActive(
                 false
             );
-
 
             root.transform.SetParent(
                 genderScreen.transform.parent,
                 false
             );
 
-            CopyRectTransform(
-                genderScreen
-                    .GetComponent<RectTransform>(),
-                root
-                    .GetComponent<RectTransform>()
-            );
+            RectTransform rootRect =
+                root.GetComponent<RectTransform>();
 
+            rootRect.anchorMin =
+                Vector2.zero;
+
+            rootRect.anchorMax =
+                Vector2.one;
+
+            rootRect.pivot =
+                new Vector2(
+                    0.5f,
+                    0.5f
+                );
+
+            rootRect.offsetMin =
+                Vector2.zero;
+
+            rootRect.offsetMax =
+                Vector2.zero;
+
+            rootRect.anchoredPosition =
+                Vector2.zero;
+
+            rootRect.localScale =
+                Vector3.one;
 
             CopyCanvas(
                 genderScreen
@@ -184,7 +217,6 @@ namespace Randomizer.CatQuest3
                     .GetComponent<Canvas>()
             );
 
-
             GameObject display =
                 new GameObject(
                     "Display",
@@ -192,12 +224,10 @@ namespace Randomizer.CatQuest3
                     typeof(CanvasGroup)
                 );
 
-
             display.transform.SetParent(
                 root.transform,
                 false
             );
-
 
             RectTransform displayRect =
                 display.GetComponent<RectTransform>();
@@ -215,306 +245,175 @@ namespace Randomizer.CatQuest3
                 Vector2.zero;
 
 
-            if (!CreateTitle(
-                optionsController,
-                display.transform))
-            {
-                Object.Destroy(root);
-                return null;
-            }
+            // --------------------------------------------------------
+            // TITLE / MASTER TOGGLE
+            // --------------------------------------------------------
 
-
-            Transform titleTransform =
-                display.transform.Find(
-                    "Title"
-                );
-
-            RectTransform titleRect =
-                titleTransform
-                    ?.GetComponent<RectTransform>();
-
-            CenterRect(
-                titleRect,
-                new Vector2(
-                    -120f,
-                    415f // CHANGE POSITION FOR TITLE HERE.
-                )
-            );
-
-
-            // Master Randomizer toggle.
-            // Keep the internal name because RandomizerScreen
-            // already looks for Display/EnableRandomizer.
-            if (!CreateBooleanRow(
+            if (!CreateToggleButton(
                 optionsController,
                 display.transform,
                 "EnableRandomizer",
-                "",
-                415f))
+                "Randomizer",
+                0f,
+                TitleY,
+                MasterToggleWidth,
+                MasterToggleHeight,
+                true))
             {
                 Object.Destroy(root);
                 return null;
             }
 
 
-            Transform enableTransform =
-                display.transform.Find(
-                    "EnableRandomizer"
-                );
+            // --------------------------------------------------------
+            // COLUMN 1 — MAIN RANDOMIZER CATEGORIES
+            // --------------------------------------------------------
 
-
-            // Hide the arrow graphics while leaving the controls
-            // active so the UISlider keeps its normal behavior.
-            Transform enableLeftArrow =
-                enableTransform
-                    ?.Find(
-                        "HorizontalGrp/LeftButton"
-                    );
-
-            Transform enableRightArrow =
-                enableTransform
-                    ?.Find(
-                        "HorizontalGrp/RightButton"
-                    );
-
-            DisableGraphics(
-                enableLeftArrow
-            );
-
-            DisableGraphics(
-                enableRightArrow
-            );
-
-            Transform enableValueBackground =
-    enableTransform
-        ?.Find(
-            "HorizontalGrp/Slider/BG"
-        );
-
-            Graphic enableValueBackgroundGraphic =
-                enableValueBackground
-                    ?.GetComponent<Graphic>();
-
-            if (enableValueBackgroundGraphic != null)
-            {
-                enableValueBackgroundGraphic.enabled =
-                    false;
-            }
-
-
-            // Make Off / On look like part of the title row.
-            Transform enableValueTransform =
-                enableTransform
-                    ?.Find(
-                        "HorizontalGrp/Slider"
-                    );
-
-            RectTransform enableValueRect =
-                enableValueTransform
-                    ?.GetComponent<RectTransform>();
-
-            if (enableValueRect != null)
-            {
-                enableValueRect.sizeDelta =
-                    new Vector2(
-                        180f,
-                        enableValueRect.sizeDelta.y
-                    );
-            }
-
-
-            Transform enableValueTextTransform =
-                enableTransform
-                    ?.Find(
-                        "HorizontalGrp/Slider/BG/Text"
-                    );
-
-            TextMeshProUGUI enableValueText =
-                enableValueTextTransform
-                    ?.GetComponent<TextMeshProUGUI>();
-
-            TextMeshProUGUI titleText =
-                titleTransform
-                    ?.GetComponent<TextMeshProUGUI>();
-
-            if (enableValueText != null &&
-                titleText != null)
-            {
-                enableValueText.font =
-                    titleText.font;
-
-                enableValueText.fontSharedMaterial =
-                    titleText.fontSharedMaterial;
-
-                enableValueText.fontStyle =
-                    titleText.fontStyle;
-
-                enableValueText.enableAutoSizing =
-                    false;
-
-                enableValueText.fontSize =
-                    titleText.fontSize * 0.65f;
-            }
-
-
-            RectTransform enableValueTextRect =
-                enableValueTextTransform
-                    ?.GetComponent<RectTransform>();
-
-            if (enableValueTextRect != null)
-            {
-                enableValueTextRect.sizeDelta =
-                    new Vector2(
-                        180f,
-                        enableValueTextRect.sizeDelta.y
-                    );
-
-                enableValueTextRect.anchoredPosition =
-                    new Vector2(
-                        -65f,
-                        -19f
-                    );
-            }
-
-
-            // Put the selection hand beside the title-row value.
-            Transform enableHandTransform =
-                enableTransform
-                    ?.Find(
-                        "RandomizerHandAnchor"
-                    );
-
-            RectTransform enableHandRect =
-                enableHandTransform
-                    ?.GetComponent<RectTransform>();
-
-            if (enableHandRect != null)
-            {
-                enableHandRect.anchoredPosition =
-                    new Vector2(
-                        75f,
-                        -40f
-                    );
-            }
-
-
-            if (!CreateBooleanRow(
+            if (!CreateToggleButton(
                 optionsController,
                 display.transform,
                 "EquipmentAndBlueprints",
-                "Equipment", // CHANGE NAME PLAYER SEES HERE
-                300f)) // CHANGE POSITION FOR THIS OPTION HERE.
+                "Equipment & Blueprints",
+                Column1X,
+                FirstRowY,
+                ToggleWidth,
+                ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "Spells",
+                    "Spells",
+                    Column1X,
+                    FirstRowY - RowSpacing,
+                    ToggleWidth,
+                    ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "QuestItems",
+                    "Quest Items",
+                    Column1X,
+                    FirstRowY - RowSpacing * 2f,
+                    ToggleWidth,
+                    ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "ManaCrystals",
+                    "Mana Crystals",
+                    Column1X,
+                    FirstRowY - RowSpacing * 3f,
+                    ToggleWidth,
+                    ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "ResourcesCollectibles",
+                    "Gold / Exp / Magic",
+                    Column1X,
+                    FirstRowY - RowSpacing * 4f,
+                    ToggleWidth,
+                    ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "TavernTalesParrots",
+                    "Tavern Tales Parrots",
+                    Column1X,
+                    FirstRowY - RowSpacing * 5f,
+                    ToggleWidth,
+                    ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "MatchPlayerLevel",
+                    "Loot Drops at Player Level",
+                    Column1X,
+                    FirstRowY - RowSpacing * 6.5f,
+                    ToggleWidth,
+                    ToggleHeight))
             {
                 Object.Destroy(root);
                 return null;
             }
 
 
-            if (!CreateBooleanRow(
-                optionsController,
-                display.transform,
-                "Spells",
-                "Spells", // CHANGE NAME PLAYER SEES HERE
-                245f)) // CHANGE POSITION FOR THIS OPTION HERE.
-            {
-                Object.Destroy(root);
-                return null;
-            }
+            // --------------------------------------------------------
+            // COLUMN 2 — SPECIAL / SUPPLEMENTAL OPTIONS
+            // --------------------------------------------------------
 
-
-            if (!CreateBooleanRow(
-                optionsController,
-                display.transform,
-                "QuestItems",
-                "Quest Items", // CHANGE NAME PLAYER SEES HERE
-                190f)) // CHANGE POSITION FOR THIS OPTION HERE.
-            {
-                Object.Destroy(root);
-                return null;
-            }
-
-
-            if (!CreateBooleanRow(
-                optionsController,
-                display.transform,
-                "ManaCrystals",
-                "Mana Crystals", // CHANGE NAME PLAYER SEES HERE
-                135f)) // CHANGE POSITION FOR THIS OPTION HERE.
-            {
-                Object.Destroy(root);
-                return null;
-            }
-
-
-            if (!CreateBooleanRow(
-                optionsController,
-                display.transform,
-                "ResourcesCollectibles",
-                "Gold / Exp / Magic", // CHANGE NAME PLAYER SEES HERE
-                80f)) // CHANGE POSITION FOR THIS OPTION HERE.
-            {
-                Object.Destroy(root);
-                return null;
-            }
-
-
-            if (!CreateBooleanRow(
+            if (!CreateToggleButton(
                 optionsController,
                 display.transform,
                 "ShipKey",
-                "Ship Key", // CHANGE NAME PLAYER SEES HERE
-                5f)) // CHANGE POSITION FOR THIS OPTION HERE.
+                "Ship Key",
+                Column2X,
+                FirstRowY,
+                ToggleWidth,
+                ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "InfinityKey",
+                    "Infinity Key",
+                    Column2X,
+                    FirstRowY - RowSpacing,
+                    ToggleWidth,
+                    ToggleHeight) ||
+
+                !CreateToggleButton(
+                    optionsController,
+                    display.transform,
+                    "BirdPoop",
+                    "Bird Poop",
+                    Column2X,
+                    FirstRowY - RowSpacing * 2f,
+                    ToggleWidth,
+                    ToggleHeight))
             {
                 Object.Destroy(root);
                 return null;
             }
 
 
-            if (!CreateBooleanRow(
+            // --------------------------------------------------------
+            // COLUMN 3 — FUTURE ENEMY RANDOMIZER OPTIONS
+            // --------------------------------------------------------
+
+            if (!CreateToggleButton(
                 optionsController,
                 display.transform,
-                "InfinityKey",
-                "Infinity Key", // CHANGE NAME PLAYER SEES HERE
-                -50f)) // CHANGE POSITION FOR THIS OPTION HERE.
+                "RufferEnemies",
+                "Ruffer Enemies",
+                Column3X,
+                FirstRowY,
+                ToggleWidth,
+                ToggleHeight))
             {
                 Object.Destroy(root);
                 return null;
             }
 
 
-            if (!CreateBooleanRow(
-                optionsController,
-                display.transform,
-                "BirdPoop",
-                "Bird Poop", // CHANGE NAME PLAYER SEES HERE
-                -105f)) // CHANGE POSITION FOR THIS OPTION HERE.
-            {
-                Object.Destroy(root);
-                return null;
-            }
-
-
-            if (!CreateBooleanRow(
-                optionsController,
-                display.transform,
-                "MatchPlayerLevel",
-                "Drop Level = Player Level", // CHANGE NAME PLAYER SEES HERE
-                -180f)) // CHANGE POSITION FOR THIS OPTION HERE.
-            {
-                Object.Destroy(root);
-                return null;
-            }
-
+            // --------------------------------------------------------
+            // SEED / CONTINUE
+            // --------------------------------------------------------
 
             if (!CreateSeedInput(
                 optionsController,
                 display.transform,
-                -255f)) // CHANGE POSITION FOR SEED ROW HERE.
+                SeedY))
             {
                 Object.Destroy(root);
                 return null;
             }
-
 
             if (!CreateContinueButton(
                 optionsController,
@@ -523,7 +422,6 @@ namespace Randomizer.CatQuest3
                 Object.Destroy(root);
                 return null;
             }
-
 
             Transform continueTransform =
                 display.transform.Find(
@@ -534,21 +432,30 @@ namespace Randomizer.CatQuest3
                 continueTransform
                     ?.GetComponent<RectTransform>();
 
+            if (continueRect != null)
+            {
+                continueRect.sizeDelta =
+                    new Vector2(
+                        400f,
+                        84f
+                    );
+            }
+
             CenterRect(
                 continueRect,
                 new Vector2(
                     0f,
-                    -340f // CHANGE POSITION FOR THIS OPTION HERE.
+                    ContinueY
                 )
             );
 
 
+            // Keep the game's normal Back button appearance and position.
             if (genderScreen.backButton == null)
             {
                 Object.Destroy(root);
                 return null;
             }
-
 
             GameObject backObject =
                 Object.Instantiate(
@@ -563,320 +470,232 @@ namespace Randomizer.CatQuest3
                 "BackButton";
 
 
-            RandomizerScreen screen =
+            RandomizerMenuController screen =
                 root.AddComponent
-                    <RandomizerScreen>();
-
+                    <RandomizerMenuController>();
 
             root.SetActive(
                 true
             );
 
-
             return screen;
         }
 
 
-        private static bool CreateTitle(
-            OptionsControllerPanel optionsController,
-            Transform parent)
-        {
-            Transform titleTemplate =
-                optionsController
-                    .anchoringGrp
-                    ?.Find("OptionsTitle");
-
-
-            if (titleTemplate == null)
-            {
-                Plugin.Log.LogError(
-                    "RANDOMIZER FLOW | OptionsTitle template not found."
-                );
-
-                return false;
-            }
-
-
-            GameObject titleObject =
-                Object.Instantiate(
-                    titleTemplate.gameObject,
-                    parent,
-                    false
-                );
-
-            titleObject.name =
-                "Title";
-
-
-            DisableLocalization(
-                titleObject
-            );
-
-
-            TextMeshProUGUI title =
-                titleObject
-                    .GetComponent<TextMeshProUGUI>();
-
-
-            if (title == null)
-            {
-                return false;
-            }
-
-
-            title.text =
-                "Randomizer";
-
-
-            RectTransform rect =
-                titleObject
-                    .GetComponent<RectTransform>();
-
-
-            CenterRect(
-                rect,
-                new Vector2(
-                    0f,
-                    115f
-                )
-            );
-
-
-            return true;
-        }
-
-
-        private static bool CreateBooleanRow(
+        private static bool CreateToggleButton(
             OptionsControllerPanel optionsController,
             Transform parent,
             string objectName,
             string label,
-            float yPosition)
+            float xPosition,
+            float yPosition,
+            float width,
+            float height,
+            bool useTitleStyle = false)
         {
-            Transform optionsRoot =
-                optionsController
-                    .anchoringGrp
-                    ?.Find("OptionsPanelRoot");
-
-
-            if (optionsRoot == null)
-            {
-                Plugin.Log.LogError(
-                    "RANDOMIZER FLOW | OptionsPanelRoot not found."
-                );
-
-                return false;
-            }
-
-
             Transform template =
-                optionsRoot.Find(
-                    "CameraShake"
+                GetRegularButtonTemplate(
+                    optionsController
                 );
-
 
             if (template == null)
             {
                 Plugin.Log.LogError(
-                    "RANDOMIZER FLOW | CameraShake template not found."
+                    "RANDOMIZER FLOW | Regular button template not found."
                 );
 
                 return false;
             }
 
-
-            GameObject rowObject =
+            GameObject buttonObject =
                 Object.Instantiate(
                     template.gameObject,
                     parent,
                     false
                 );
 
-            rowObject.name =
+            buttonObject.name =
                 objectName;
 
-
             DisableLocalization(
-                rowObject
+                buttonObject
             );
 
+            UIButton button =
+                buttonObject
+                    .GetComponent<UIButton>();
 
-            UISlider slider =
-                rowObject.GetComponent<UISlider>();
-
-
-            if (slider == null)
+            if (button == null)
             {
                 Plugin.Log.LogError(
                     "RANDOMIZER FLOW | " +
                     objectName +
-                    " has no UISlider."
+                    " has no UIButton."
+                );
+
+                Object.Destroy(
+                    buttonObject
                 );
 
                 return false;
             }
 
+            button
+                .OnSelectionConfirmed
+                .RemoveAll();
 
-            slider.isTextSlider = true;
-            slider.wrapValue = false;
+            button
+                .OnReselectionConfirmed
+                .RemoveAll();
 
-            slider.textArray =
-                new string[]
-                {
-                    "Off",
-                    "On"
-                };
+            // The ApplyChanges template sizes itself from its content.
+            // That fights our fixed column widths, so remove those layout
+            // controllers entirely for randomizer toggle rows.
+            ContentSizeFitter contentSizeFitter =
+                buttonObject.GetComponent<ContentSizeFitter>();
 
+            if (contentSizeFitter != null)
+            {
+                contentSizeFitter.enabled = false;
+                Object.Destroy(contentSizeFitter);
+            }
 
-            Transform labelTextTransform =
-                rowObject.transform.Find(
-                    "Label/Display/LabelText"
-                );
+            HorizontalLayoutGroup horizontalLayout =
+                buttonObject.GetComponent<HorizontalLayoutGroup>();
 
+            if (horizontalLayout != null)
+            {
+                horizontalLayout.enabled = false;
+                Object.Destroy(horizontalLayout);
+            }
 
-            if (labelTextTransform == null)
+            TextMeshProUGUI text =
+                buttonObject
+                    .GetComponentInChildren
+                        <TextMeshProUGUI>(
+                            true
+                        );
+
+            if (text == null)
             {
                 Plugin.Log.LogError(
                     "RANDOMIZER FLOW | " +
                     objectName +
-                    " LabelText not found."
+                    " has no TextMeshProUGUI."
+                );
+
+                Object.Destroy(
+                    buttonObject
                 );
 
                 return false;
             }
 
-
-            TextMeshProUGUI labelText =
-                labelTextTransform
-                    .GetComponent<TextMeshProUGUI>();
-
-
-            if (labelText == null)
-            {
-                return false;
-            }
-
-
-            labelText.text =
-                label;
-
-
-            Transform hitbox =
-                rowObject.transform.Find(
-                    "Hitbox"
-                );
-
-
-            if (hitbox != null)
-            {
-                TextMeshProUGUI hitboxText =
-                    hitbox.GetComponent<TextMeshProUGUI>();
-
-                if (hitboxText != null)
-                {
-                    hitboxText.text = "";
-                }
-            }
-
-
-            Transform valueTransform =
-                rowObject.transform.Find(
-                    "HorizontalGrp/Slider"
-                );
-
-            Transform leftButtonTransform =
-                rowObject.transform.Find(
-                    "HorizontalGrp/LeftButton"
-                );
-
-            Transform rightButtonTransform =
-                rowObject.transform.Find(
-                    "HorizontalGrp/RightButton"
-                );
-
-
-            RectTransform valueRect =
-                valueTransform
-                    ?.GetComponent<RectTransform>();
-
-            RectTransform leftRect =
-                leftButtonTransform
-                    ?.GetComponent<RectTransform>();
-
-            RectTransform rightRect =
-                rightButtonTransform
-                    ?.GetComponent<RectTransform>();
-
-
-            if (valueRect != null)
-            {
-                valueRect.sizeDelta =
-                    new Vector2(
-                        100f,
-                        valueRect.sizeDelta.y
-                    );
-            }
-
-
-            if (valueRect != null &&
-                leftRect != null)
-            {
-                leftRect.anchoredPosition =
-                    new Vector2(
-                        valueRect.anchoredPosition.x - 85f,
-                        leftRect.anchoredPosition.y
-                    );
-            }
-
-
-            if (valueRect != null &&
-                rightRect != null)
-            {
-                rightRect.anchoredPosition =
-                    new Vector2(
-                        valueRect.anchoredPosition.x + 85f,
-                        rightRect.anchoredPosition.y
-                    );
-            }
-
-
-            Transform valueTextTransform =
-                rowObject.transform.Find(
-                    "HorizontalGrp/Slider/BG/Text"
-                );
-
-            RectTransform valueTextRect =
-                valueTextTransform
-                    ?.GetComponent<RectTransform>();
-
-
-            if (valueTextRect != null)
-            {
-                valueTextRect.anchoredPosition =
-                    new Vector2(
-                        valueTextRect.anchoredPosition.x - 25f,
-                        valueTextRect.anchoredPosition.y
-                    );
-            }
-
-
-            GameObject handAnchorObject =
-                new GameObject(
-                    "RandomizerHandAnchor",
-                    typeof(RectTransform)
-                );
-
-
-            handAnchorObject.transform.SetParent(
-                rowObject.transform,
+            // The ApplyChanges template keeps its text inside its own
+            // nested layout hierarchy. Reparent the text directly under
+            // our button so its RectTransform is measured against the
+            // full toggle width. This makes every ON/OFF endpoint line up.
+            text.transform.SetParent(
+                buttonObject.transform,
                 false
             );
 
+            text.name =
+                "ToggleText";
+
+            text.text =
+                label + ": OFF";
+
+            if (useTitleStyle)
+            {
+                ApplyTitleTextStyle(
+                    optionsController,
+                    text
+                );
+
+                text.alignment =
+                    TextAlignmentOptions.Midline;
+            }
+            else
+            {
+                text.enableAutoSizing =
+                    false;
+
+                text.alignment =
+                    TextAlignmentOptions.MidlineRight;
+            }
+
+            text.enableWordWrapping =
+                false;
+
+            text.overflowMode =
+                TextOverflowModes.Overflow;
+
+            RectTransform textRect =
+                text.GetComponent<RectTransform>();
+
+            if (textRect != null)
+            {
+                textRect.anchorMin =
+                    Vector2.zero;
+
+                textRect.anchorMax =
+                    Vector2.one;
+
+                textRect.offsetMin =
+                    new Vector2(
+                        8f,
+                        0f
+                    );
+
+                textRect.offsetMax =
+                    new Vector2(
+                        -8f,
+                        0f
+                    );
+
+                textRect.anchoredPosition =
+                    Vector2.zero;
+            }
+
+            RectTransform rect =
+                buttonObject
+                    .GetComponent<RectTransform>();
+
+            if (rect != null)
+            {
+                rect.sizeDelta =
+                    new Vector2(
+                        width,
+                        height
+                    );
+            }
+
+            CenterRect(
+                rect,
+                new Vector2(
+                    xPosition,
+                    yPosition
+                )
+            );
+
+            // Give every toggle its own hand anchor. The controller moves
+            // this anchor to sit just left of the first rendered character
+            // whenever the ON/OFF text changes.
+            GameObject handAnchorObject =
+                new GameObject(
+                    "ToggleHandAnchor",
+                    typeof(RectTransform)
+                );
+
+            handAnchorObject.transform.SetParent(
+                buttonObject.transform,
+                false
+            );
 
             RectTransform handAnchor =
                 handAnchorObject
                     .GetComponent<RectTransform>();
-
 
             handAnchor.anchorMin =
                 new Vector2(
@@ -896,39 +715,105 @@ namespace Randomizer.CatQuest3
                     0.5f
                 );
 
-
             handAnchor.anchoredPosition =
                 new Vector2(
-                    -405f,
-                    -40f
+                    -width * 0.5f - ToggleHandPadding,
+                    ToggleHandYOffset
                 );
 
+            button.overrideHandIconPosX =
+                true;
 
-            slider.overrideHandIconPosX = true;
-            slider.overrideHandIconPosY = true;
-            slider.handIconOverridePos = handAnchor;
+            button.overrideHandIconPosY =
+                true;
 
+            button.handIconOverridePos =
+                handAnchor;
 
-            RectTransform rect =
-                rowObject
-                    .GetComponent<RectTransform>();
-
-
-            CenterRect(
-                rect,
-                new Vector2(
-                    75f,
-                    yPosition
-                )
-            );
-
-
-            rowObject.SetActive(
+            buttonObject.SetActive(
                 true
             );
 
-
             return true;
+        }
+
+
+        private static void ApplyTitleTextStyle(
+            OptionsControllerPanel optionsController,
+            TextMeshProUGUI destination)
+        {
+            if (optionsController == null ||
+                destination == null)
+            {
+                return;
+            }
+
+            Transform titleTemplate =
+                optionsController
+                    .anchoringGrp
+                    ?.Find("OptionsTitle");
+
+            TextMeshProUGUI source =
+                titleTemplate
+                    ?.GetComponent<TextMeshProUGUI>();
+
+            if (source == null)
+            {
+                return;
+            }
+
+            destination.font =
+                source.font;
+
+            destination.fontSharedMaterial =
+                source.fontSharedMaterial;
+
+            destination.fontStyle =
+                source.fontStyle;
+
+            destination.color =
+                source.color;
+
+            destination.enableAutoSizing =
+                false;
+
+            destination.fontSize =
+                source.fontSize;
+
+            destination.enableWordWrapping =
+                false;
+
+            destination.overflowMode =
+                TextOverflowModes.Overflow;
+        }
+
+
+        private static Transform GetRegularButtonTemplate(
+            OptionsControllerPanel optionsController)
+        {
+            Transform optionsRoot =
+                optionsController
+                    .anchoringGrp
+                    ?.Find("OptionsPanelRoot");
+
+            if (optionsRoot == null)
+            {
+                return null;
+            }
+
+            Transform buttonsLayout =
+                optionsRoot.Find(
+                    "ButtonsLayoutGrp"
+                );
+
+            if (buttonsLayout == null)
+            {
+                return null;
+            }
+
+            return buttonsLayout.Find(
+                "ApplyChanges"
+            );
         }
 
 
@@ -942,7 +827,6 @@ namespace Randomizer.CatQuest3
                     .anchoringGrp
                     ?.Find("OptionsPanelRoot");
 
-
             if (optionsRoot == null)
             {
                 Plugin.Log.LogError(
@@ -952,12 +836,10 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-
             Transform rowTemplate =
                 optionsRoot.Find(
                     "CameraShake"
                 );
-
 
             Transform labelTemplate =
                 rowTemplate
@@ -969,7 +851,6 @@ namespace Randomizer.CatQuest3
                 labelTemplate
                     ?.GetComponent<TextMeshProUGUI>();
 
-
             if (labelSource == null)
             {
                 Plugin.Log.LogError(
@@ -979,19 +860,16 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-
             GameObject seedObject =
                 new GameObject(
                     "SeedInput",
                     typeof(RectTransform)
                 );
 
-
             seedObject.transform.SetParent(
                 parent,
                 false
             );
-
 
             RectTransform seedRect =
                 seedObject.GetComponent<RectTransform>();
@@ -1005,7 +883,7 @@ namespace Randomizer.CatQuest3
             CenterRect(
                 seedRect,
                 new Vector2(
-                    -75f, // REPOSITION SEED ROW X POSITION HERE.
+                    -75f,
                     yPosition
                 )
             );
@@ -1018,12 +896,10 @@ namespace Randomizer.CatQuest3
                     typeof(TextMeshProUGUI)
                 );
 
-
             labelObject.transform.SetParent(
                 seedObject.transform,
                 false
             );
-
 
             RectTransform labelRect =
                 labelObject.GetComponent<RectTransform>();
@@ -1058,7 +934,6 @@ namespace Randomizer.CatQuest3
                     -2f
                 );
 
-
             TextMeshProUGUI labelText =
                 labelObject.GetComponent<TextMeshProUGUI>();
 
@@ -1085,12 +960,10 @@ namespace Randomizer.CatQuest3
                     typeof(TMP_InputField)
                 );
 
-
             inputObject.transform.SetParent(
                 seedObject.transform,
                 false
             );
-
 
             RectTransform inputRect =
                 inputObject.GetComponent<RectTransform>();
@@ -1125,7 +998,6 @@ namespace Randomizer.CatQuest3
                     0f
                 );
 
-
             Image inputBackground =
                 inputObject.GetComponent<Image>();
 
@@ -1145,12 +1017,10 @@ namespace Randomizer.CatQuest3
                     typeof(RectMask2D)
                 );
 
-
             viewportObject.transform.SetParent(
                 inputObject.transform,
                 false
             );
-
 
             RectTransform viewportRect =
                 viewportObject.GetComponent<RectTransform>();
@@ -1181,12 +1051,10 @@ namespace Randomizer.CatQuest3
                     typeof(TextMeshProUGUI)
                 );
 
-
             placeholderObject.transform.SetParent(
                 viewportObject.transform,
                 false
             );
-
 
             RectTransform placeholderRect =
                 placeholderObject.GetComponent<RectTransform>();
@@ -1204,10 +1072,10 @@ namespace Randomizer.CatQuest3
                 Vector2.zero;
 
             placeholderRect.anchoredPosition =
-            new Vector2(
-                placeholderRect.anchoredPosition.x,
-                -7f // CHANGE POSITION FOR TEXT HERE.
-            );
+                new Vector2(
+                    placeholderRect.anchoredPosition.x,
+                    -7f
+                );
 
             TextMeshProUGUI placeholderText =
                 placeholderObject.GetComponent<TextMeshProUGUI>();
@@ -1243,12 +1111,10 @@ namespace Randomizer.CatQuest3
                     typeof(TextMeshProUGUI)
                 );
 
-
             textObject.transform.SetParent(
                 viewportObject.transform,
                 false
             );
-
 
             RectTransform textRect =
                 textObject.GetComponent<RectTransform>();
@@ -1266,11 +1132,10 @@ namespace Randomizer.CatQuest3
                 Vector2.zero;
 
             textRect.anchoredPosition =
-            new Vector2(
-                textRect.anchoredPosition.x,
-                -7f // CHANGE POSITION FOR TEXT HERE.
-            );
-
+                new Vector2(
+                    textRect.anchoredPosition.x,
+                    -7f
+                );
 
             TextMeshProUGUI inputText =
                 textObject.GetComponent<TextMeshProUGUI>();
@@ -1288,7 +1153,6 @@ namespace Randomizer.CatQuest3
 
             inputText.raycastTarget =
                 false;
-
 
             TMP_InputField inputField =
                 inputObject.GetComponent<TMP_InputField>();
@@ -1326,7 +1190,6 @@ namespace Randomizer.CatQuest3
             inputField.caretWidth =
                 3;
 
-
             if (!CreateGenerateSeedButton(
                 optionsController,
                 seedObject.transform))
@@ -1335,59 +1198,27 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-
             seedObject.SetActive(
                 true
             );
-
 
             return true;
         }
 
 
         private static bool CreateGenerateSeedButton(
-    OptionsControllerPanel optionsController,
-    Transform parent)
+            OptionsControllerPanel optionsController,
+            Transform parent)
         {
-            Transform optionsRoot =
-                optionsController
-                    .anchoringGrp
-                    ?.Find("OptionsPanelRoot");
-
-
-            if (optionsRoot == null)
-            {
-                return false;
-            }
-
-
-            Transform buttonsLayout =
-                optionsRoot.Find(
-                    "ButtonsLayoutGrp"
-                );
-
-
-            if (buttonsLayout == null)
-            {
-                return false;
-            }
-
-
             Transform template =
-                buttonsLayout.Find(
-                    "ApplyChanges"
+                GetRegularButtonTemplate(
+                    optionsController
                 );
-
 
             if (template == null)
             {
-                Plugin.Log.LogError(
-                    "RANDOMIZER FLOW | Generate button template not found."
-                );
-
                 return false;
             }
-
 
             GameObject buttonObject =
                 Object.Instantiate(
@@ -1399,22 +1230,18 @@ namespace Randomizer.CatQuest3
             buttonObject.name =
                 "Generate";
 
-
             DisableLocalization(
                 buttonObject
             );
-
 
             UIButton button =
                 buttonObject
                     .GetComponent<UIButton>();
 
-
             if (button == null)
             {
                 return false;
             }
-
 
             TextMeshProUGUI text =
                 buttonObject
@@ -1423,13 +1250,11 @@ namespace Randomizer.CatQuest3
                             true
                         );
 
-
             if (text != null)
             {
                 text.text =
                     "Generate";
             }
-
 
             button
                 .OnSelectionConfirmed
@@ -1439,11 +1264,9 @@ namespace Randomizer.CatQuest3
                 .OnReselectionConfirmed
                 .RemoveAll();
 
-
             RectTransform rect =
                 buttonObject
                     .GetComponent<RectTransform>();
-
 
             if (rect != null)
             {
@@ -1454,35 +1277,28 @@ namespace Randomizer.CatQuest3
                     );
             }
 
-
             CenterRect(
                 rect,
                 new Vector2(
-                    248f, // CHANGE GENERATE BUTTON X POSITION HERE.
+                    248f,
                     0f
                 )
             );
 
-
-            // Use the Seed row itself as the coordinate system
-            // for the Generate selection hand.
             GameObject handAnchorObject =
                 new GameObject(
                     "GenerateHandAnchor",
                     typeof(RectTransform)
                 );
 
-
             handAnchorObject.transform.SetParent(
                 parent,
                 false
             );
 
-
             RectTransform handAnchor =
                 handAnchorObject
                     .GetComponent<RectTransform>();
-
 
             handAnchor.anchorMin =
                 new Vector2(
@@ -1502,13 +1318,11 @@ namespace Randomizer.CatQuest3
                     0.5f
                 );
 
-
             handAnchor.anchoredPosition =
                 new Vector2(
-                    175f, // CHANGE GENERATE HAND X POSITION HERE.
-                    -40f  // CHANGE GENERATE HAND Y POSITION HERE.
+                    175f,
+                    -40f
                 );
-
 
             button.overrideHandIconPosX =
                 true;
@@ -1519,11 +1333,79 @@ namespace Randomizer.CatQuest3
             button.handIconOverridePos =
                 handAnchor;
 
-
             buttonObject.SetActive(
                 true
             );
 
+            return true;
+        }
+
+
+        private static bool CreateContinueButton(
+            OptionsControllerPanel optionsController,
+            Transform parent)
+        {
+            Transform template =
+                GetRegularButtonTemplate(
+                    optionsController
+                );
+
+            if (template == null)
+            {
+                Plugin.Log.LogError(
+                    "RANDOMIZER FLOW | ApplyChanges template not found."
+                );
+
+                return false;
+            }
+
+            GameObject buttonObject =
+                Object.Instantiate(
+                    template.gameObject,
+                    parent,
+                    false
+                );
+
+            buttonObject.name =
+                "Continue";
+
+            DisableLocalization(
+                buttonObject
+            );
+
+            UIButton button =
+                buttonObject
+                    .GetComponent<UIButton>();
+
+            if (button == null)
+            {
+                return false;
+            }
+
+            TextMeshProUGUI text =
+                buttonObject
+                    .GetComponentInChildren
+                        <TextMeshProUGUI>(
+                            true
+                        );
+
+            if (text != null)
+            {
+                text.text =
+                    "Continue";
+            }
+
+            button
+                .OnSelectionConfirmed
+                .RemoveAll();
+
+            button
+                .OnReselectionConfirmed
+                .RemoveAll();
+
+            buttonObject.SetActive(
+                true
+            );
 
             return true;
         }
@@ -1538,7 +1420,6 @@ namespace Randomizer.CatQuest3
             {
                 return;
             }
-
 
             destination.font =
                 source.font;
@@ -1566,159 +1447,6 @@ namespace Randomizer.CatQuest3
         }
 
 
-        private static bool CreateContinueButton(
-            OptionsControllerPanel optionsController,
-            Transform parent)
-        {
-            Transform optionsRoot =
-                optionsController
-                    .anchoringGrp
-                    ?.Find("OptionsPanelRoot");
-
-
-            if (optionsRoot == null)
-            {
-                return false;
-            }
-
-
-            Transform buttonsLayout =
-                optionsRoot.Find(
-                    "ButtonsLayoutGrp"
-                );
-
-
-            if (buttonsLayout == null)
-            {
-                return false;
-            }
-
-
-            Transform template =
-                buttonsLayout.Find(
-                    "ApplyChanges"
-                );
-
-
-            if (template == null)
-            {
-                Plugin.Log.LogError(
-                    "RANDOMIZER FLOW | ApplyChanges template not found."
-                );
-
-                return false;
-            }
-
-
-            GameObject buttonObject =
-                Object.Instantiate(
-                    template.gameObject,
-                    parent,
-                    false
-                );
-
-            buttonObject.name =
-                "Continue";
-
-
-            DisableLocalization(
-                buttonObject
-            );
-
-
-            UIButton button =
-                buttonObject
-                    .GetComponent<UIButton>();
-
-
-            if (button == null)
-            {
-                return false;
-            }
-
-
-            TextMeshProUGUI text =
-                buttonObject
-                    .GetComponentInChildren
-                        <TextMeshProUGUI>(
-                            true
-                        );
-
-
-            if (text != null)
-            {
-                text.text =
-                    "Continue";
-            }
-
-
-            button
-                .OnSelectionConfirmed
-                .RemoveAll();
-
-            button
-                .OnReselectionConfirmed
-                .RemoveAll();
-
-
-            RectTransform rect =
-                buttonObject
-                    .GetComponent<RectTransform>();
-
-
-            CenterRect(
-                rect,
-                new Vector2(
-                    0f,
-                    -140f
-                )
-            );
-
-
-            buttonObject.SetActive(
-                true
-            );
-
-
-            return true;
-        }
-
-
-        private static void SetGraphicsVisible(
-            Transform root,
-            bool visible)
-        {
-            if (root == null)
-            {
-                return;
-            }
-
-
-            Graphic[] graphics =
-                root.GetComponentsInChildren
-                    <Graphic>(
-                        true
-                    );
-
-
-            for (int i = 0;
-                 i < graphics.Length;
-                 i++)
-            {
-                Color color =
-                    graphics[i].color;
-
-                color.a =
-                    visible
-                        ? 1f
-                        : 0f;
-
-                graphics[i].color =
-                    color;
-            }
-        }
-
-
         private static void CenterRect(
             RectTransform rect,
             Vector2 position)
@@ -1727,7 +1455,6 @@ namespace Randomizer.CatQuest3
             {
                 return;
             }
-
 
             rect.anchorMin =
                 new Vector2(
@@ -1762,7 +1489,6 @@ namespace Randomizer.CatQuest3
                 return null;
             }
 
-
             return Contexts.sharedInstance
                 .gUI
                 .optionsPanel
@@ -1780,45 +1506,10 @@ namespace Randomizer.CatQuest3
                 return null;
             }
 
-
             return Contexts.sharedInstance
                 .gUI
                 .saveLoadPanel
                 .value;
-        }
-
-
-        private static void CopyRectTransform(
-            RectTransform source,
-            RectTransform destination)
-        {
-            if (source == null ||
-                destination == null)
-            {
-                return;
-            }
-
-
-            destination.anchorMin =
-                source.anchorMin;
-
-            destination.anchorMax =
-                source.anchorMax;
-
-            destination.pivot =
-                source.pivot;
-
-            destination.anchoredPosition =
-                source.anchoredPosition;
-
-            destination.sizeDelta =
-                source.sizeDelta;
-
-            destination.localScale =
-                source.localScale;
-
-            destination.localRotation =
-                source.localRotation;
         }
 
 
@@ -1831,7 +1522,6 @@ namespace Randomizer.CatQuest3
             {
                 return;
             }
-
 
             destination.renderMode =
                 source.renderMode;
@@ -1867,13 +1557,11 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
-
             Component[] components =
                 obj.GetComponentsInChildren
                     <Component>(
                         true
                     );
-
 
             for (int i = 0;
                  i < components.Length;
@@ -1882,7 +1570,6 @@ namespace Randomizer.CatQuest3
                 Component component =
                     components[i];
 
-
                 if (component == null ||
                     component.GetType().Name !=
                     "LocalizeStringEvent")
@@ -1890,41 +1577,14 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
-
                 Behaviour behaviour =
                     component as Behaviour;
-
 
                 if (behaviour != null)
                 {
                     behaviour.enabled =
                         false;
                 }
-            }
-        }
-
-        private static void DisableGraphics(
-    Transform root)
-        {
-            if (root == null)
-            {
-                return;
-            }
-
-
-            Graphic[] graphics =
-                root.GetComponentsInChildren
-                    <Graphic>(
-                        true
-                    );
-
-
-            for (int i = 0;
-                 i < graphics.Length;
-                 i++)
-            {
-                graphics[i].enabled =
-                    false;
             }
         }
     }

@@ -32,7 +32,7 @@ namespace Randomizer.CatQuest3
                 SaveLoadPanel.StartingGameMode.NEW)
             {
                 RandomizerRunConfiguration pending =
-                    RandomizerScreen.PendingConfiguration;
+                    RandomizerMenuController.PendingConfiguration;
 
 
                 if (pending != null)

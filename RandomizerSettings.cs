@@ -8,6 +8,7 @@
         public bool RandomizeQuestItems { get; set; }
         public bool RandomizeManaCrystals { get; set; }
         public bool RandomizeCollectibles { get; set; }
+        public bool RandomizeTavernTalesParrots { get; set; }
 
         // Equipment options
         public bool MatchEquipmentLevelToPlayer { get; set; }

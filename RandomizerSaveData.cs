@@ -22,7 +22,6 @@ namespace Randomizer.CatQuest3
             }
         }
 
-
         public static bool SaveConfiguration(
             int profileIndex,
             RandomizerRunConfiguration configuration)
@@ -38,7 +37,6 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-
             if (configuration == null)
             {
                 Plugin.Log.LogWarning(
@@ -51,19 +49,16 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-
             try
             {
                 Directory.CreateDirectory(
                     SaveDirectory
                 );
 
-
                 string path =
                     GetProfilePath(
                         profileIndex
                     );
-
 
                 string encodedSeed =
                     Convert.ToBase64String(
@@ -72,59 +67,30 @@ namespace Randomizer.CatQuest3
                         )
                     );
 
-
                 string[] lines =
                     new string[]
                     {
-                        "Version=" +
-                            CurrentVersion,
-
-                        "ProfileIndex=" +
-                            profileIndex,
-
-                        "Enabled=" +
-                            configuration.Enabled,
-
-                        "Equipment=" +
-                            configuration.Equipment,
-
-                        "Spells=" +
-                            configuration.Spells,
-
-                        "QuestItems=" +
-                            configuration.QuestItems,
-
-                        "ManaCrystals=" +
-                            configuration.ManaCrystals,
-
-                        "ResourcesCollectibles=" +
-                            configuration.ResourcesCollectibles,
-
-                        "ShipKey=" +
-                            configuration.ShipKey,
-
-                        "InfinityKey=" +
-                            configuration.InfinityKey,
-
-                        "BirdPoop=" +
-                            configuration.BirdPoop,
-
-                        "MatchPlayerLevel=" +
-                            configuration.MatchPlayerLevel,
-
-                        "SeedTextBase64=" +
-                            encodedSeed,
-
-                        "SeedValue=" +
-                            configuration.SeedValue
+                        "Version=" + CurrentVersion,
+                        "ProfileIndex=" + profileIndex,
+                        "Enabled=" + configuration.Enabled,
+                        "Equipment=" + configuration.Equipment,
+                        "Spells=" + configuration.Spells,
+                        "QuestItems=" + configuration.QuestItems,
+                        "ManaCrystals=" + configuration.ManaCrystals,
+                        "ResourcesCollectibles=" + configuration.ResourcesCollectibles,
+                        "TavernTalesParrots=" + configuration.TavernTalesParrots,
+                        "ShipKey=" + configuration.ShipKey,
+                        "InfinityKey=" + configuration.InfinityKey,
+                        "BirdPoop=" + configuration.BirdPoop,
+                        "MatchPlayerLevel=" + configuration.MatchPlayerLevel,
+                        "SeedTextBase64=" + encodedSeed,
+                        "SeedValue=" + configuration.SeedValue
                     };
-
 
                 File.WriteAllLines(
                     path,
                     lines
                 );
-
 
                 Plugin.Log.LogInfo(
                     "RANDOMIZER SAVE | " +
@@ -133,7 +99,6 @@ namespace Randomizer.CatQuest3
                     " | Path:" +
                     path
                 );
-
 
                 return true;
             }
@@ -147,31 +112,25 @@ namespace Randomizer.CatQuest3
                     ex
                 );
 
-
                 return false;
             }
         }
-
 
         public static bool TryLoadConfiguration(
             int profileIndex,
             out RandomizerRunConfiguration configuration)
         {
-            configuration =
-                null;
-
+            configuration = null;
 
             if (profileIndex < 0)
             {
                 return false;
             }
 
-
             string path =
                 GetProfilePath(
                     profileIndex
                 );
-
 
             if (!File.Exists(path))
             {
@@ -184,14 +143,12 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-
             try
             {
                 Dictionary<string, string> values =
                     ReadValues(
                         path
                     );
-
 
                 int version;
                 if (!TryGetInt(
@@ -209,7 +166,6 @@ namespace Randomizer.CatQuest3
                     return false;
                 }
 
-
                 if (version != CurrentVersion)
                 {
                     Plugin.Log.LogWarning(
@@ -223,7 +179,6 @@ namespace Randomizer.CatQuest3
                     return false;
                 }
 
-
                 bool enabled;
                 bool equipment;
                 bool spells;
@@ -235,7 +190,6 @@ namespace Randomizer.CatQuest3
                 bool birdPoop;
                 bool matchPlayerLevel;
                 int seedValue;
-
 
                 if (!TryGetBool(values, "Enabled", out enabled) ||
                     !TryGetBool(values, "Equipment", out equipment) ||
@@ -259,6 +213,23 @@ namespace Randomizer.CatQuest3
                     return false;
                 }
 
+                bool tavernTalesParrots = false;
+
+                string tavernTalesParrotsText;
+                if (values.TryGetValue(
+                        "TavernTalesParrots",
+                        out tavernTalesParrotsText))
+                {
+                    bool parsedValue;
+
+                    if (bool.TryParse(
+                        tavernTalesParrotsText,
+                        out parsedValue))
+                    {
+                        tavernTalesParrots =
+                            parsedValue;
+                    }
+                }
 
                 string encodedSeed;
                 if (!values.TryGetValue(
@@ -275,14 +246,12 @@ namespace Randomizer.CatQuest3
                     return false;
                 }
 
-
                 string seedText =
                     Encoding.UTF8.GetString(
                         Convert.FromBase64String(
                             encodedSeed
                         )
                     );
-
 
                 configuration =
                     new RandomizerRunConfiguration(
@@ -292,6 +261,7 @@ namespace Randomizer.CatQuest3
                         questItems,
                         manaCrystals,
                         resourcesCollectibles,
+                        tavernTalesParrots,
                         shipKey,
                         infinityKey,
                         birdPoop,
@@ -299,7 +269,6 @@ namespace Randomizer.CatQuest3
                         seedText,
                         seedValue
                     );
-
 
                 return true;
             }
@@ -313,14 +282,10 @@ namespace Randomizer.CatQuest3
                     ex
                 );
 
-
-                configuration =
-                    null;
-
+                configuration = null;
                 return false;
             }
         }
-
 
         private static Dictionary<string, string> ReadValues(
             string path)
@@ -330,12 +295,10 @@ namespace Randomizer.CatQuest3
                     StringComparer.OrdinalIgnoreCase
                 );
 
-
             string[] lines =
                 File.ReadAllLines(
                     path
                 );
-
 
             for (int i = 0;
                  i < lines.Length;
@@ -344,22 +307,18 @@ namespace Randomizer.CatQuest3
                 string line =
                     lines[i];
 
-
                 if (string.IsNullOrWhiteSpace(line))
                 {
                     continue;
                 }
 
-
                 int separatorIndex =
                     line.IndexOf('=');
-
 
                 if (separatorIndex <= 0)
                 {
                     continue;
                 }
-
 
                 string key =
                     line.Substring(
@@ -374,24 +333,18 @@ namespace Randomizer.CatQuest3
                     )
                     .Trim();
 
-
-                values[key] =
-                    value;
+                values[key] = value;
             }
-
 
             return values;
         }
-
 
         private static bool TryGetBool(
             Dictionary<string, string> values,
             string key,
             out bool result)
         {
-            result =
-                false;
-
+            result = false;
 
             string value;
             if (!values.TryGetValue(
@@ -400,7 +353,6 @@ namespace Randomizer.CatQuest3
             {
                 return false;
             }
-
 
             return bool.TryParse(
                 value,
@@ -408,15 +360,12 @@ namespace Randomizer.CatQuest3
             );
         }
 
-
         private static bool TryGetInt(
             Dictionary<string, string> values,
             string key,
             out int result)
         {
-            result =
-                0;
-
+            result = 0;
 
             string value;
             if (!values.TryGetValue(
@@ -426,13 +375,11 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
-
             return int.TryParse(
                 value,
                 out result
             );
         }
-
 
         private static string GetProfilePath(
             int profileIndex)
