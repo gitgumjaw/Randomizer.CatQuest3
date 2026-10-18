@@ -81,6 +81,13 @@ namespace Randomizer.CatQuest3
                     callback?.Invoke();
                     return;
 
+                case RewardType.Companion:
+                    CompanionRewardGranter.Grant(
+                        reward,
+                        callback
+                    );
+                    return;
+
                 default:
                     Plugin.Log.LogError(
                         $"RewardGranter does not yet support " +

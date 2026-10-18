@@ -8,6 +8,7 @@
         ShipSpell,
         QuestItem,
         ManaCrystal,
-        Collectible
+        Collectible,
+        Companion
     }
 }
