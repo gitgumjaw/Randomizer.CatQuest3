@@ -194,3 +194,10 @@ QuestItem|eeb66a3cf17d7ee4898f93f452cc8c10|Twin Dining Hall Key
 QuestItem|ce43f985f70b1f946b6cd7d2449e2264|Twin Main Entrance Key
 QuestItem|8cd504f5730445840b225e33fc79ee52|Twin Master Room Key
 QuestItem|3680762945d570b4ab6d6cee59e7bfcf|Voodoo Doll
+
+# Companions
+Companion|5a855371377284baa94f29916ca93f61|Beakon
+Companion|09525eba5b6fd8a4b89c969b2032d17a|Thunderbirb
+Companion|5c1ea0c570901904c8b3916fd21c3833|Omu-chan
+Companion|5c26ee3b0ef6f8e41bd53bdf73b208f6|Skellywing
+Companion|615915087dc6bd74db8fa0578a228c08|Error Fowl Not Found

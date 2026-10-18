@@ -68,6 +68,9 @@ namespace Randomizer.CatQuest3
                 case RewardType.Collectible:
                     return settings.RandomizeCollectibles;
 
+                case RewardType.Companion:
+                    return settings.RandomizeTavernTalesParrots;
+
                 default:
                     return false;
             }
