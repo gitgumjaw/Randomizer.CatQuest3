@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Randomizer.CatQuest3
 {
-    // Suppress all five vanilla Tavern Tales bird unlocks while companion
-    // randomization is enabled, without interfering with vanilla clear records.
+    // Suppress all five vanilla Tavern Tales bird unlocks and presentations
+    // without interfering with vanilla clear records.
     [HarmonyPatch(typeof(TavernTalesUpdateStatsOnClear), "OnEnter")]
     public static class TavernTalesCompanionSuppressionPatch
     {
@@ -75,13 +75,12 @@ namespace Randomizer.CatQuest3
             else levels.Remove(__state.CompanionGuid);
 
             var info = contexts.game.latestTavernTalesEncounterInfo;
-            // Do not clear companionNewlyInspired here: vanilla uses it to
-            // reach TavernTalesShowCompanionReward after leaving the arena.
-            // That action is intercepted by TavernTalesRewardPatch before its UI runs.
+            info.companionNewlyInspired = false;
+            info.previousCompanionLevel = 0;
 
             Plugin.Log.LogInfo("TAVERN SUPPRESSION | Restored companion:" + __state.CompanionGuid +
                 " | Level:" + (__state.HadCompanion ? __state.Level.ToString() : "NOT_IN_SAVE") +
-                " | Vanilla clear records unchanged");
+                " | Vanilla clear records unchanged | Vanilla presentation suppressed");
         }
     }
 }

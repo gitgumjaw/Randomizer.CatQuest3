@@ -2671,100 +2671,100 @@ OPTION|Spell|7a4e22db244714a6682b58f11e45b26c|Weight:1
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_BoarBoss|1
 LABEL|Tavern Tales — Boar King — Difficulty 1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5a855371377284baa94f29916ca93f61|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_BoarBoss|2
 LABEL|Tavern Tales — Boar King — Difficulty 2
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_BoarBoss|1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5a855371377284baa94f29916ca93f61|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_BoarBoss|3
 LABEL|Tavern Tales — Boar King — Difficulty 3
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_BoarBoss|2
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5a855371377284baa94f29916ca93f61|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_MewtallicaBoss|1
 LABEL|Tavern Tales — Meowtallika — Difficulty 1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|09525eba5b6fd8a4b89c969b2032d17a|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_MewtallicaBoss|2
 LABEL|Tavern Tales — Meowtallika — Difficulty 2
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_MewtallicaBoss|1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|09525eba5b6fd8a4b89c969b2032d17a|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_MewtallicaBoss|3
 LABEL|Tavern Tales — Meowtallika — Difficulty 3
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_MewtallicaBoss|2
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|09525eba5b6fd8a4b89c969b2032d17a|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_SpicySquidTakomeowkiBoss|1
 LABEL|Tavern Tales — Takemeowki — Difficulty 1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5c1ea0c570901904c8b3916fd21c3833|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_SpicySquidTakomeowkiBoss|2
 LABEL|Tavern Tales — Takemeowki — Difficulty 2
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_SpicySquidTakomeowkiBoss|1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5c1ea0c570901904c8b3916fd21c3833|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_SpicySquidTakomeowkiBoss|3
 LABEL|Tavern Tales — Takemeowki — Difficulty 3
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_SpicySquidTakomeowkiBoss|2
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5c1ea0c570901904c8b3916fd21c3833|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_PirateKing|1
 LABEL|Tavern Tales — Pi-rat King — Difficulty 1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5c26ee3b0ef6f8e41bd53bdf73b208f6|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_PirateKing|2
 LABEL|Tavern Tales — Pi-rat King — Difficulty 2
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_PirateKing|1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5c26ee3b0ef6f8e41bd53bdf73b208f6|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_PirateKing|3
 LABEL|Tavern Tales — Pi-rat King — Difficulty 3
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_PirateKing|2
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|5c26ee3b0ef6f8e41bd53bdf73b208f6|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_Gentlebros|1
 LABEL|Tavern Tales — Gentlebros — Difficulty 1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|615915087dc6bd74db8fa0578a228c08|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_Gentlebros|2
 LABEL|Tavern Tales — Gentlebros — Difficulty 2
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_Gentlebros|1
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|615915087dc6bd74db8fa0578a228c08|Weight:1
 
 LOCATION|RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_Gentlebros|3
 LABEL|Tavern Tales — Gentlebros — Difficulty 3
 LOGIC|Location:RANDOMIZER|TAVERN_TALES|TavernTalesEncounter_Gentlebros|2
 CATEGORY|Tavern Tales Parrots
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|Companion|615915087dc6bd74db8fa0578a228c08|Weight:1
 
