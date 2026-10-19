@@ -860,31 +860,16 @@ namespace Randomizer.CatQuest3
 
 
         private static int GetUpgradeCost(
-            Spell spell,
-            int tier)
+    Spell spell,
+    int tier)
         {
-            if (
-                spell == null ||
-                spell.spellConfig == null
-            )
+            if (spell == null ||
+                spell.spellConfig == null)
             {
                 return int.MaxValue;
             }
 
-
-            int virtualCurrentLevel =
-                tier - 1;
-
-
-            return UpgradeCostFormula
-                .GetSpellUpgradeCost(
-                    virtualCurrentLevel,
-                    spell.spellConfig
-                        .baseUpgradeCost,
-                    1,
-                    spell.spellConfig
-                        .incrementBaseUpgradeCostMultiplier
-                );
+            return 150;
         }
 
 
