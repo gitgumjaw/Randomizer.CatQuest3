@@ -340,7 +340,7 @@ namespace Randomizer.CatQuest3
 
 
         private static void ShowContent(
-    UpgradeStatsPanelBase panel)
+            UpgradeStatsPanelBase panel)
         {
             if (panel.contentRoot != null)
             {
@@ -840,8 +840,8 @@ namespace Randomizer.CatQuest3
 
 
         private static int GetUpgradeCost(
-    Spell spell,
-    int tier)
+            Spell spell,
+            int tier)
         {
             if (spell == null ||
                 spell.spellConfig == null)
@@ -932,6 +932,19 @@ namespace Randomizer.CatQuest3
         }
 
         // ============================================================
+        // CONFIRMATION PANEL HELPERS
+        // ============================================================
+
+        private static Spell GetPreviewSpell(
+            MagicUpgradeConfirmPanel panel)
+        {
+            return Traverse.Create(panel)
+                .Field<InventoryItemBase>("previewItem")
+                .Value as Spell;
+        }
+
+
+        // ============================================================
         // CONFIRMATION BUTTON AFFORDABILITY
         // ============================================================
 
@@ -949,9 +962,7 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
-            Spell spell = Traverse.Create(magicPanel)
-                .Field<InventoryItemBase>("previewItem")
-                .Value as Spell;
+            Spell spell = GetPreviewSpell(magicPanel);
 
             if (spell == null || spell.spellConfig == null)
                 return;
@@ -991,9 +1002,7 @@ namespace Randomizer.CatQuest3
                 !(__instance is MagicUpgradeConfirmPanel magicPanel))
                 return;
 
-            Spell spell = Traverse.Create(magicPanel)
-                .Field<InventoryItemBase>("previewItem")
-                .Value as Spell;
+            Spell spell = GetPreviewSpell(magicPanel);
 
             if (spell == null || spell.spellConfig == null)
                 return;
@@ -1034,9 +1043,6 @@ namespace Randomizer.CatQuest3
             InventoryItemBase item)
         {
             if (!IsActive())
-                return;
-
-            if (!(__instance is MagicUpgradeStatsPanel))
                 return;
 
             if (!(item is Spell spell) ||
