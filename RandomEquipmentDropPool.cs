@@ -35,6 +35,20 @@ namespace Randomizer.CatQuest3
                 return;
             }
 
+            // Mew Game equipment is part of the normal reward
+            // shuffle, but must not appear in repeatable bag drops.
+            HashSet<string> excludedIds =
+                new HashSet<string>();
+
+            foreach (Reward reward in MewGameRewards.GetAll())
+            {
+                if (reward != null &&
+                    !string.IsNullOrEmpty(reward.Id))
+                {
+                    excludedIds.Add(reward.Id);
+                }
+            }
+
             IReadOnlyList<string>
                 allowedEquipmentIds =
                     RewardNameResolver.GetIds(
@@ -47,6 +61,11 @@ namespace Randomizer.CatQuest3
             {
                 if (string.IsNullOrWhiteSpace(
                         equipmentId))
+                {
+                    continue;
+                }
+
+                if (excludedIds.Contains(equipmentId))
                 {
                     continue;
                 }
@@ -99,7 +118,7 @@ namespace Randomizer.CatQuest3
                 "Built random equipment drop pool " +
                 "from RewardNames whitelist: " +
                 equipment.Count +
-                " items."
+                " items (Mew Game equipment excluded)."
             );
         }
 
