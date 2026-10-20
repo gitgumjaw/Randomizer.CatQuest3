@@ -127,7 +127,7 @@ namespace Randomizer.CatQuest3
             );
         }
 
-        private static string FormatReward(
+        public static string FormatReward(
             Reward reward)
         {
             if (reward == null)

@@ -77,71 +77,53 @@ namespace Randomizer.CatQuest3
 
 
 
+
         // ============================================================
         // GRID SELECTION
         // ============================================================
 
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         [HarmonyPatch(
             typeof(MagicUpgradeGridCell),
             "CanSelectConfirm"
         )]
-        public static void CanSelectConfirmPostfix(
+        public static bool CanSelectConfirmPrefix(
             MagicUpgradeGridCell __instance,
             ref bool __result)
         {
+            // Preserve vanilla behavior when spell randomization is off.
             if (!IsActive())
-            {
-                return;
-            }
+                return true;
 
-
-            if (
-                __instance == null ||
+            if (__instance == null ||
                 __instance.cachedSpell == null ||
-                __instance.cachedSpell.spellConfig == null
-            )
-            {
-                return;
-            }
+                __instance.cachedSpell.spellConfig == null)
+                return true;
 
+            Spell spell = __instance.cachedSpell;
 
-            Spell spell =
-                __instance.cachedSpell;
-
-
-            int nextTier =
-                MagicShopProgress.GetNextTier(
-                    spell.spellConfig.Guid
-                );
-
+            int nextTier = MagicShopProgress.GetNextTier(
+                spell.spellConfig.Guid);
 
             if (nextTier == 0)
             {
                 __result = false;
-
-                return;
+                return false;
             }
 
+            int crystalCost = GetUpgradeCost(
+                spell,
+                nextTier);
 
-            int crystalCost =
-                GetUpgradeCost(
-                    spell,
-                    nextTier
-                );
+            int currentCrystals = Contexts.sharedInstance
+                .gameState.crystal.value.currValue;
 
+            __result = currentCrystals >= crystalCost;
 
-            int currentCrystals =
-                Contexts.sharedInstance
-                    .gameState
-                    .crystal
-                    .value
-                    .currValue;
-
-
-            __result =
-                currentCrystals >= crystalCost;
+            // Skip vanilla affordability and max-level checks.
+            return false;
         }
+
 
 
         // ============================================================
@@ -292,9 +274,7 @@ namespace Randomizer.CatQuest3
 
             string rewardName =
                 reward != null
-                    ? RewardNameResolver.GetName(
-                        reward
-                    )
+                    ? SpoilerLogWriter.FormatReward(reward)
                     : "Unknown";
 
 
@@ -950,5 +930,124 @@ namespace Randomizer.CatQuest3
                     realLevel;
             }
         }
+
+        // ============================================================
+        // CONFIRMATION BUTTON AFFORDABILITY
+        // ============================================================
+
+        [HarmonyPostfix]
+        [HarmonyPatch(
+            typeof(UpgradeConfirmationPanel),
+            "RefreshUIButtons"
+        )]
+        private static void RefreshUIButtonsPostfix(
+            UpgradeConfirmationPanel __instance)
+        {
+            if (!IsActive() ||
+                !(__instance is MagicUpgradeConfirmPanel magicPanel))
+            {
+                return;
+            }
+
+            Spell spell = Traverse.Create(magicPanel)
+                .Field<InventoryItemBase>("previewItem")
+                .Value as Spell;
+
+            if (spell == null || spell.spellConfig == null)
+                return;
+
+            int nextTier = MagicShopProgress.GetNextTier(
+                spell.spellConfig.Guid);
+
+            if (nextTier == 0)
+            {
+                magicPanel.upgradeConfirmBtn.Disable(0f);
+                return;
+            }
+
+            int currentCrystals = Contexts.sharedInstance
+                .gameState.crystal.value.currValue;
+
+            if (currentCrystals >= GetUpgradeCost(spell, nextTier))
+                magicPanel.upgradeConfirmBtn.Enable(0f);
+            else
+                magicPanel.upgradeConfirmBtn.Disable(0f);
+        }
+
+
+        // ============================================================
+        // CONFIRMATION PANEL LOCKBOX PREVIEW
+        // ============================================================
+
+        [HarmonyPostfix]
+        [HarmonyPatch(
+            typeof(UpgradeConfirmationPanel),
+            "UpdatePotentialUpgradePanel"
+        )]
+        private static void ConfirmationPreviewPostfix(
+            UpgradeConfirmationPanel __instance)
+        {
+            if (!IsActive() ||
+                !(__instance is MagicUpgradeConfirmPanel magicPanel))
+                return;
+
+            Spell spell = Traverse.Create(magicPanel)
+                .Field<InventoryItemBase>("previewItem")
+                .Value as Spell;
+
+            if (spell == null || spell.spellConfig == null)
+                return;
+
+            int nextTier = MagicShopProgress.GetNextTier(
+                spell.spellConfig.Guid);
+
+            if (nextTier == 0)
+                return;
+
+            // Update the existing stats panel using the same
+            // randomized reward preview as the shop grid.
+            if (magicPanel.statsPanel != null)
+                ShowLockboxPreview(magicPanel.statsPanel, spell);
+
+            // The confirmation panel has its own level label.
+            magicPanel.levelValue.text =
+                "Lockbox #" + (nextTier - 1);
+
+            // It also has its own cost text.
+            if (magicPanel.costText != null)
+                magicPanel.costText.text =
+                    GetUpgradeCost(spell, nextTier).ToString();
+        }
+
+
+        // ============================================================
+        // CONFIRMATION PANEL PREVIEW OVERRIDE
+        // ============================================================
+
+        [HarmonyPostfix]
+        [HarmonyPatch(
+            typeof(MagicUpgradeStatsPanel),
+            "PreviewItem"
+        )]
+        private static void PreviewItemPostfix(
+            UpgradeStatsPanelBase __instance,
+            InventoryItemBase item)
+        {
+            if (!IsActive())
+                return;
+
+            if (!(__instance is MagicUpgradeStatsPanel))
+                return;
+
+            if (!(item is Spell spell) ||
+                spell.spellConfig == null)
+                return;
+
+            // Reapply the randomized lockbox display after
+            // vanilla finishes populating the panel.
+            ShowLockboxPreview(__instance, spell);
+        }
+
+
     }
 }
