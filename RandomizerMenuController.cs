@@ -1321,6 +1321,7 @@ namespace Randomizer.CatQuest3
             EnsureSeedExists();
             RestoreSeedText();
 
+
             PendingConfiguration =
                 new RandomizerRunConfiguration(
                     PendingRandomizerEnabled,
@@ -1335,7 +1336,8 @@ namespace Randomizer.CatQuest3
                     PendingBirdPoopEnabled,
                     PendingMatchPlayerLevelEnabled,
                     PendingSeedText,
-                    PendingSeedValue
+                    PendingSeedValue,
+                    PendingRufferEnemiesEnabled
                 );
 
             Plugin.Log.LogInfo(
@@ -1358,8 +1360,10 @@ namespace Randomizer.CatQuest3
                 " | ShipKey:" + PendingConfiguration.ShipKey +
                 " | InfinityKey:" + PendingConfiguration.InfinityKey +
                 " | BirdPoop:" + PendingConfiguration.BirdPoop +
-                " | MatchPlayerLevel:" + PendingConfiguration.MatchPlayerLevel
+                " | MatchPlayerLevel:" + PendingConfiguration.MatchPlayerLevel +
+                " | RufferEnemies:" + PendingConfiguration.RufferEnemies
             );
+
 
             RestoreTitleKeyArt();
             Hide();

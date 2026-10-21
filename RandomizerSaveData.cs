@@ -22,43 +22,25 @@ namespace Randomizer.CatQuest3
             }
         }
 
+
         public static bool SaveConfiguration(
             int profileIndex,
             RandomizerRunConfiguration configuration)
         {
-            if (profileIndex < 0)
+            if (profileIndex < 0 || configuration == null)
             {
                 Plugin.Log.LogWarning(
-                    "RANDOMIZER SAVE | " +
-                    "Cannot save configuration for invalid profile index:" +
-                    profileIndex
+                    "RANDOMIZER SAVE | Cannot save configuration. " +
+                    "Invalid profile or null configuration."
                 );
-
-                return false;
-            }
-
-            if (configuration == null)
-            {
-                Plugin.Log.LogWarning(
-                    "RANDOMIZER SAVE | " +
-                    "Cannot save configuration because it is null. " +
-                    "Profile index:" +
-                    profileIndex
-                );
-
                 return false;
             }
 
             try
             {
-                Directory.CreateDirectory(
-                    SaveDirectory
-                );
+                Directory.CreateDirectory(SaveDirectory);
 
-                string path =
-                    GetProfilePath(
-                        profileIndex
-                    );
+                string path = GetProfilePath(profileIndex);
 
                 string encodedSeed =
                     Convert.ToBase64String(
@@ -67,37 +49,34 @@ namespace Randomizer.CatQuest3
                         )
                     );
 
-                string[] lines =
-                    new string[]
-                    {
-                        "Version=" + CurrentVersion,
-                        "ProfileIndex=" + profileIndex,
-                        "Enabled=" + configuration.Enabled,
-                        "Equipment=" + configuration.Equipment,
-                        "Spells=" + configuration.Spells,
-                        "QuestItems=" + configuration.QuestItems,
-                        "ManaCrystals=" + configuration.ManaCrystals,
-                        "ResourcesCollectibles=" + configuration.ResourcesCollectibles,
-                        "TavernTalesParrots=" + configuration.TavernTalesParrots,
-                        "ShipKey=" + configuration.ShipKey,
-                        "InfinityKey=" + configuration.InfinityKey,
-                        "BirdPoop=" + configuration.BirdPoop,
-                        "MatchPlayerLevel=" + configuration.MatchPlayerLevel,
-                        "SeedTextBase64=" + encodedSeed,
-                        "SeedValue=" + configuration.SeedValue
-                    };
+                string[] lines = new string[]
+                {
+                    "Version=" + CurrentVersion,
+                    "ProfileIndex=" + profileIndex,
+                    "Enabled=" + configuration.Enabled,
+                    "Equipment=" + configuration.Equipment,
+                    "Spells=" + configuration.Spells,
+                    "QuestItems=" + configuration.QuestItems,
+                    "ManaCrystals=" + configuration.ManaCrystals,
+                    "ResourcesCollectibles=" + configuration.ResourcesCollectibles,
+                    "TavernTalesParrots=" + configuration.TavernTalesParrots,
+                    "ShipKey=" + configuration.ShipKey,
+                    "InfinityKey=" + configuration.InfinityKey,
+                    "BirdPoop=" + configuration.BirdPoop,
+                    "MatchPlayerLevel=" + configuration.MatchPlayerLevel,
+                    "RufferEnemies=" + configuration.RufferEnemies,
+                    "SeedTextBase64=" + encodedSeed,
+                    "SeedValue=" + configuration.SeedValue
+                };
 
-                File.WriteAllLines(
-                    path,
-                    lines
-                );
+                File.WriteAllLines(path, lines);
 
                 Plugin.Log.LogInfo(
                     "RANDOMIZER SAVE | " +
                     "Configuration persisted for profile index:" +
                     profileIndex +
-                    " | Path:" +
-                    path
+                    " | Path:" + path +
+                    " | RufferEnemies:" + configuration.RufferEnemies
                 );
 
                 return true;
@@ -107,11 +86,8 @@ namespace Randomizer.CatQuest3
                 Plugin.Log.LogError(
                     "RANDOMIZER SAVE | " +
                     "Failed to persist configuration for profile index:" +
-                    profileIndex +
-                    " | " +
-                    ex
+                    profileIndex + " | " + ex
                 );
-
                 return false;
             }
         }
@@ -123,14 +99,9 @@ namespace Randomizer.CatQuest3
             configuration = null;
 
             if (profileIndex < 0)
-            {
                 return false;
-            }
 
-            string path =
-                GetProfilePath(
-                    profileIndex
-                );
+            string path = GetProfilePath(profileIndex);
 
             if (!File.Exists(path))
             {
@@ -139,30 +110,23 @@ namespace Randomizer.CatQuest3
                     "No stored configuration for profile index:" +
                     profileIndex
                 );
-
                 return false;
             }
 
             try
             {
                 Dictionary<string, string> values =
-                    ReadValues(
-                        path
-                    );
+                    ReadValues(path);
 
                 int version;
-                if (!TryGetInt(
-                    values,
-                    "Version",
-                    out version))
+
+                if (!TryGetInt(values, "Version", out version))
                 {
                     Plugin.Log.LogWarning(
                         "RANDOMIZER SAVE | " +
                         "Configuration has no valid version. " +
-                        "Profile index:" +
-                        profileIndex
+                        "Profile index:" + profileIndex
                     );
-
                     return false;
                 }
 
@@ -172,10 +136,8 @@ namespace Randomizer.CatQuest3
                         "RANDOMIZER SAVE | " +
                         "Unsupported configuration version:" +
                         version +
-                        " | Profile index:" +
-                        profileIndex
+                        " | Profile index:" + profileIndex
                     );
-
                     return false;
                 }
 
@@ -206,51 +168,51 @@ namespace Randomizer.CatQuest3
                     Plugin.Log.LogWarning(
                         "RANDOMIZER SAVE | " +
                         "Configuration is missing or has invalid values. " +
-                        "Profile index:" +
-                        profileIndex
+                        "Profile index:" + profileIndex
                     );
-
                     return false;
                 }
 
+                // Optional setting from an earlier update.
                 bool tavernTalesParrots = false;
+                string tavernText;
 
-                string tavernTalesParrotsText;
                 if (values.TryGetValue(
-                        "TavernTalesParrots",
-                        out tavernTalesParrotsText))
+                    "TavernTalesParrots", out tavernText))
                 {
-                    bool parsedValue;
+                    bool parsed;
+                    if (bool.TryParse(tavernText, out parsed))
+                        tavernTalesParrots = parsed;
+                }
 
-                    if (bool.TryParse(
-                        tavernTalesParrotsText,
-                        out parsedValue))
-                    {
-                        tavernTalesParrots =
-                            parsedValue;
-                    }
+                // Optional for compatibility with older save configurations.
+                bool rufferEnemies = false;
+                string rufferText;
+
+                if (values.TryGetValue(
+                    "RufferEnemies", out rufferText))
+                {
+                    bool parsed;
+                    if (bool.TryParse(rufferText, out parsed))
+                        rufferEnemies = parsed;
                 }
 
                 string encodedSeed;
+
                 if (!values.TryGetValue(
-                    "SeedTextBase64",
-                    out encodedSeed))
+                    "SeedTextBase64", out encodedSeed))
                 {
                     Plugin.Log.LogWarning(
                         "RANDOMIZER SAVE | " +
                         "Configuration has no seed text. " +
-                        "Profile index:" +
-                        profileIndex
+                        "Profile index:" + profileIndex
                     );
-
                     return false;
                 }
 
                 string seedText =
                     Encoding.UTF8.GetString(
-                        Convert.FromBase64String(
-                            encodedSeed
-                        )
+                        Convert.FromBase64String(encodedSeed)
                     );
 
                 configuration =
@@ -267,7 +229,8 @@ namespace Randomizer.CatQuest3
                         birdPoop,
                         matchPlayerLevel,
                         seedText,
-                        seedValue
+                        seedValue,
+                        rufferEnemies
                     );
 
                 return true;
@@ -277,15 +240,13 @@ namespace Randomizer.CatQuest3
                 Plugin.Log.LogError(
                     "RANDOMIZER SAVE | " +
                     "Failed to load configuration for profile index:" +
-                    profileIndex +
-                    " | " +
-                    ex
+                    profileIndex + " | " + ex
                 );
-
                 configuration = null;
                 return false;
             }
         }
+
 
         private static Dictionary<string, string> ReadValues(
             string path)

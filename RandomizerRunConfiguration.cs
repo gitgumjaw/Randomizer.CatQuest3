@@ -1,4 +1,5 @@
-﻿namespace Randomizer.CatQuest3
+﻿
+namespace Randomizer.CatQuest3
 {
     public sealed class RandomizerRunConfiguration
     {
@@ -13,6 +14,7 @@
         public bool InfinityKey { get; private set; }
         public bool BirdPoop { get; private set; }
         public bool MatchPlayerLevel { get; private set; }
+        public bool RufferEnemies { get; private set; }
         public string SeedText { get; private set; }
         public int SeedValue { get; private set; }
 
@@ -29,7 +31,8 @@
             bool birdPoop,
             bool matchPlayerLevel,
             string seedText,
-            int seedValue)
+            int seedValue,
+            bool rufferEnemies = false)
         {
             Enabled = enabled;
             Equipment = equipment;
@@ -42,6 +45,7 @@
             InfinityKey = infinityKey;
             BirdPoop = birdPoop;
             MatchPlayerLevel = matchPlayerLevel;
+            RufferEnemies = enabled && rufferEnemies;
             SeedText = seedText ?? "";
             SeedValue = seedValue;
         }
