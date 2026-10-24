@@ -1,0 +1,58 @@
+Catalog Sources: 14
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Interactable_BoatMessage_PawtPurvanna
+LABEL|Pawt Purvanna — Belmont Boat
+TRIGGER|Dialogue|Spirit notices note
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Interactable_BoatMessage_Purvanna
+LABEL|Purvanna — Belmont Boat
+TRIGGER|Dialogue|Spirit notices note
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Interactable_BoatMessage_TwilightIsles
+LABEL|Twilight Isles — Belmont Boat
+TRIGGER|Dialogue|Spirit notices note
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Interactable_BoatMessage_Sunset
+LABEL|Sunset — Belmont Boat
+TRIGGER|Dialogue|Spirit notices note
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Interactable_BoatMessage_GoldenTower
+LABEL|Golden Tower — Belmont Boat
+TRIGGER|Dialogue|Spirit notices note
+
+LOCATION|Ruins_Antares|SceneController/InteractableTriggers/Interactable_AntaresMessage
+LABEL|Antares Ruins — Seeker Inscription
+TRIGGER|Message|Read Message
+
+LOCATION|Ruins_Orion|SceneController/InteractableTriggers/Interactable_OrionMessage
+LABEL|Orion Ruins — Seeker Inscription
+TRIGGER|Message|Read message
+
+LOCATION|Ruins_Polaris|SceneController/InteractableTriggers/Interactable_PolarisMessage
+LABEL|Polaris Ruins — Seeker Inscription
+TRIGGER|Message|Read message
+
+LOCATION|Ruins_Centauri|SceneController/InteractableTriggers/Interactable_StairsDown
+LABEL|Centauri Ruins — Stairs Mural
+TRIGGER|Dialogue|Spirit tells you stairs down
+
+LOCATION|Ruins_Polaris|SceneController/InteractableTriggers/Interactable_Skeleton
+LABEL|Polaris Ruins — Skeleton Letter
+TRIGGER|Message|Spirit comments on mural|1589833936
+
+LOCATION|MainOverworld|SceneController/Quests/WQ/WorldQuest_LostItem_PurrierReefTreasure/Interactable_PurrierReef_MessageStone
+LABEL|Purrier Reef — Treasure Clue Stone
+TRIGGER|Message|Treasure hint|410509992
+
+LOCATION|MainOverworld|SceneController/Quests/WQ/WorldQuest_LostItem_TwilightTreasure/Interactable_Twilight_MessageStone
+LABEL|Twilight Isles — Treasure Clue Stone
+TRIGGER|Message|Treasure hint|352317187
+
+LOCATION|MainOverworld|SceneController/Quests/WQ/WorldQuest_PuzzleStone_Straits/Interactable_StraitsPuzzleClue
+LABEL|Straits — Puzzle Clue Stone
+TRIGGER|Message|Read message|2114004071
+
+LOCATION|MainOverworld|SceneController/Quests/WQ/WorldQuest_LostItem_SunsetTreasure/Interactable_Sunset_MessageStone
+LABEL|Sunset — Treasure Clue Stone
+TRIGGER|Message|Treasure hint|2028661138
+
