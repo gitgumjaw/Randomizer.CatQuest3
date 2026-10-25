@@ -4,13 +4,26 @@ using UnityEngine;
 
 namespace Randomizer.CatQuest3
 {
-    // Temporary catalog-driven test adapter.
-    // Currently supports dialogue-first hint sources.
+    // HintSystemMessagePatch.cs
+    //
+    // Handles message-first sources registered in
+    // HintSystemCatalog.txt.
+    //
+    // Supports both:
+    //
+    // TRIGGER|Message|StateName
+    //
+    // and:
+    //
+    // TRIGGER|Message|StateName|MessageUniqueID
+    //
+    // The second format allows us to identify just the
+    // first message in a multi-message interaction.
 
     [HarmonyPatch(
-        typeof(AddDialogueFocus),
-        "StartDialogue")]
-    internal static class HintSystemPopupProof
+        typeof(ShowMessagePanel),
+        "OnEnter")]
+    internal static class HintSystemMessagePanelPatch
     {
         private const string SpoilerText =
             "<b>You found a</b>\n" +
@@ -21,7 +34,7 @@ namespace Randomizer.CatQuest3
 
         [HarmonyPrefix]
         private static bool Prefix(
-            AddDialogueFocus __instance)
+            ShowMessagePanel __instance)
         {
             if (HintSystemPopupController.IsResumingVanilla ||
                 HintSystemPopupController.IsPopupActive)
@@ -42,21 +55,40 @@ namespace Randomizer.CatQuest3
                 owner.scene.name + "|" +
                 GetHierarchyPath(owner.transform);
 
+            string state =
+                __instance.Fsm.ActiveStateName;
+
+            // First, try matching an exact message ID.
+            // This is useful when multiple messages share
+            // the same FSM state.
             HintSystemSource source =
                 HintSystemCatalog.Get(
                     key,
-                    "Dialogue",
-                    __instance.Fsm.ActiveStateName);
+                    "Message",
+                    state + "|" + __instance.uniqueID);
+
+            // If there is no message-specific entry,
+            // continue supporting our existing murals,
+            // which are registered by FSM state only.
+            if (source == null)
+            {
+                source = HintSystemCatalog.Get(
+                    key,
+                    "Message",
+                    state);
+            }
 
             if (source == null)
                 return true;
 
             Plugin.Log.LogInfo(
-                "HINT SYSTEM PROOF | Catalog matched: " +
-                source.Key);
+                "HINT SYSTEM | Message source matched: " +
+                source.Key +
+                " | Message ID: " +
+                __instance.uniqueID);
 
             bool intercepted =
-                HintSystemPopupController.TryShowBeforeDialogue(
+                HintSystemPopupController.TryShowBeforeMessage(
                     __instance,
                     SpoilerText);
 
@@ -72,8 +104,7 @@ namespace Randomizer.CatQuest3
             {
                 transform = transform.parent;
 
-                path =
-                    transform.name + "/" + path;
+                path = transform.name + "/" + path;
             }
 
             return path;

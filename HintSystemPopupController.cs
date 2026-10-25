@@ -1,10 +1,8 @@
 ﻿
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
-using HutongGames.PlayMaker;
 using UnityEngine;
 
 namespace Randomizer.CatQuest3
@@ -126,131 +124,29 @@ namespace Randomizer.CatQuest3
             }
         }
 
+
         private static MessageUIInfo CreateHintMessage(
             AddDialogueFocus dialogueAction,
             string spoilerText)
         {
-            MessageUIInfo originalNote =
-                FindOriginalNote(dialogueAction);
-
-            MessageUIInfo hint =
-                new MessageUIInfo
-                {
-                    contentMessage =
-                        new Line
-                        {
-                            content = spoilerText,
-                            translateID = "",
-                            duration = 1f,
-                            textVibrationEffect = false
-                        },
-
-                    showChoicePrompts = false,
-                    showOnlyCancelPrompt = false,
-                    allowMouseInput = true,
-                    initiatorPlayerID = -1,
-                    displaySpriteSizeFactor = 1f
-                };
-
-            if (originalNote != null)
+            return new MessageUIInfo
             {
-                hint.displaySprite =
-                    originalNote.displaySprite;
+                displaySprite = null,
+                displaySpriteSizeFactor = 1f,
 
-                hint.displaySpriteSizeFactor =
-                    originalNote.displaySpriteSizeFactor;
-
-                hint.allowMouseInput =
-                    originalNote.allowMouseInput;
-
-                hint.initiatorPlayerID =
-                    originalNote.initiatorPlayerID;
-
-                Plugin.Log.LogInfo(
-                    "HINT SYSTEM | Reused original note artwork.");
-            }
-            else
-            {
-                Plugin.Log.LogWarning(
-                    "HINT SYSTEM | Original note artwork not found.");
-            }
-
-            return hint;
-        }
-
-        private static MessageUIInfo FindOriginalNote(
-            AddDialogueFocus dialogueAction)
-        {
-            try
-            {
-                object fsm = dialogueAction.Fsm;
-
-                if (fsm == null)
-                    return null;
-
-                PropertyInfo statesProperty =
-                    AccessTools.Property(
-                        fsm.GetType(),
-                        "States");
-
-                FieldInfo statesField =
-                    AccessTools.Field(
-                        fsm.GetType(),
-                        "states");
-
-                object statesObject = null;
-
-                if (statesProperty != null)
+                contentMessage = new Line
                 {
-                    statesObject =
-                        statesProperty.GetValue(
-                            fsm,
-                            null);
-                }
-                else if (statesField != null)
-                {
-                    statesObject =
-                        statesField.GetValue(fsm);
-                }
+                    content = spoilerText,
+                    translateID = "",
+                    duration = 1f,
+                    textVibrationEffect = false
+                },
 
-                IEnumerable states =
-                    statesObject as IEnumerable;
-
-                if (states == null)
-                    return null;
-
-                foreach (object state in states)
-                {
-                    FsmState fsmState =
-                        state as FsmState;
-
-                    if (fsmState == null ||
-                        fsmState.Actions == null)
-                        continue;
-
-                    foreach (
-                        FsmStateAction action
-                        in fsmState.Actions)
-                    {
-                        ShowMessagePanel messageAction =
-                            action as ShowMessagePanel;
-
-                        if (messageAction != null &&
-                            messageAction.displayInfo != null)
-                        {
-                            return messageAction.displayInfo;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Plugin.Log.LogWarning(
-                    "HINT SYSTEM | Note lookup failed: " +
-                    ex.Message);
-            }
-
-            return null;
+                showChoicePrompts = false,
+                showOnlyCancelPrompt = false,
+                allowMouseInput = true,
+                initiatorPlayerID = -1
+            };
         }
 
         private static IEnumerator ResumeOriginalDialogue(
@@ -313,9 +209,8 @@ namespace Randomizer.CatQuest3
 
             MessageUIInfo hintInfo = new MessageUIInfo
             {
-                displaySprite = originalInfo.displaySprite,
-                displaySpriteSizeFactor =
-                    originalInfo.displaySpriteSizeFactor,
+                displaySprite = null,
+                displaySpriteSizeFactor = 1f,
 
                 contentMessage = new Line
                 {

@@ -1,4 +1,4 @@
-Catalog Sources: 14
+Catalog Sources: 39
 
 LOCATION|MainOverworld|SceneController/InteractableTriggers/Interactable_BoatMessage_PawtPurvanna
 LABEL|Pawt Purvanna — Belmont Boat
@@ -55,4 +55,124 @@ TRIGGER|Message|Read message|2114004071
 LOCATION|MainOverworld|SceneController/Quests/WQ/WorldQuest_LostItem_SunsetTreasure/Interactable_Sunset_MessageStone
 LABEL|Sunset — Treasure Clue Stone
 TRIGGER|Message|Treasure hint|2028661138
+
+LOCATION|Cave_UnknownCave|SceneController/InteractableTriggers/Interactable_Puzzle_01
+LABEL|Doggy Jones — Riddle 1
+TRIGGER|Message|Riddle|1799701846
+
+LOCATION|Cave_UnknownCave|SceneController/InteractableTriggers/Interactable_Puzzle_02
+LABEL|Doggy Jones — Riddle 2
+TRIGGER|Message|Riddle|1799701846
+
+LOCATION|Cave_UnknownCave|SceneController/InteractableTriggers/Interactable_Puzzle_03
+LABEL|Doggy Jones — Riddle 3
+TRIGGER|Message|Riddle|1799701846
+
+LOCATION|Cave_UnknownCave|SceneController/InteractableTriggers/Interactable_Puzzle_04
+LABEL|Doggy Jones — Riddle 4
+TRIGGER|Message|Riddle|1799701846
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/NPC/NPC_Lightmouse/Interactable_NPC_Lightmouse
+LABEL|Lightmouse — Information NPC
+TRIGGER|Dialogue|*
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide
+LABEL|Star Guide — Unnumbered Marker
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (11)
+LABEL|Star Guide — Marker 11
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (16)
+LABEL|Star Guide — Marker 16
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (1)
+LABEL|Star Guide — Marker 1
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (2)
+LABEL|Star Guide — Marker 2
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (3)
+LABEL|Star Guide — Marker 3
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (4)
+LABEL|Star Guide — Marker 4
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (5)
+LABEL|Star Guide — Marker 5
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (6)
+LABEL|Star Guide — Marker 6
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (7)
+LABEL|Star Guide — Marker 7
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (8)
+LABEL|Star Guide — Marker 8
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (9)
+LABEL|Star Guide — Marker 9
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (10)
+LABEL|Star Guide — Marker 10
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (12)
+LABEL|Star Guide — Marker 12
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (13)
+LABEL|Star Guide — Marker 13
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (14)
+LABEL|Star Guide — Marker 14
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (15)
+LABEL|Star Guide — Marker 15
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (17)
+LABEL|Star Guide — Marker 17
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (18)
+LABEL|Star Guide — Marker 18
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
+
+LOCATION|MainOverworld|SceneController/InteractableTriggers/Star Guide/Interactable_StarGuide (19)
+LABEL|Star Guide — Marker 19
+TRIGGER|Dialogue|Spirit explains about Star Guides
+TRIGGER|Dialogue|Spirit tells you to follow it
 

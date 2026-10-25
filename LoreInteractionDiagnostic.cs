@@ -38,6 +38,8 @@ namespace Randomizer.CatQuest3
             {
                 if (Capturing) Stop();
                 else Start();
+
+                HintSystemStarGuideScan.Dump();
             }
             if (Capturing && Time.unscaledTime >= stopAt) Stop();
         }
