@@ -7,6 +7,7 @@ namespace Randomizer.CatQuest3
         public string Key { get; }
 
         public string Label { get; }
+        public string Area { get; }
 
         public List<string> Triggers { get; }
 
@@ -28,11 +29,14 @@ namespace Randomizer.CatQuest3
             IEnumerable<string> triggers = null,
             string label = null,
             IEnumerable<bool> isVanillaRandomBySlot = null,
-            LogicRequirements logicRequirements = null)
+            LogicRequirements logicRequirements = null,
+            string area = null)
         {
             Key = key;
 
             Label = label;
+
+            Area = area;
 
             LogicRequirements =
                 logicRequirements ??

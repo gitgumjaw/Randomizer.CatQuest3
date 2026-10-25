@@ -91,5 +91,9 @@
 
         public const string StarRuneGuid =
             "fd36ba1341aa4d24692cc3eedea20405";
+
+        public const string ShellPhoneGuid =
+        "5d0d4fedc9f879849975b130aa0834db";
     }
+
 }

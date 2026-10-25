@@ -7,6 +7,7 @@ namespace Randomizer.CatQuest3
         public string Key { get; }
 
         public string Label { get; set; }
+        public string Area { get; set; }
         public LogicRequirements LogicRequirements { get; set; }
 
         public List<string> Triggers { get; }
@@ -20,6 +21,8 @@ namespace Randomizer.CatQuest3
             Key = key;
 
             Label = null;
+
+            Area = null;
 
             Triggers =
                 new List<string>();
@@ -36,6 +39,8 @@ namespace Randomizer.CatQuest3
             Key = key;
 
             Label = null;
+
+            Area = null;
 
             Triggers =
                 new List<string>();

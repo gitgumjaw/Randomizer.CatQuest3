@@ -7,6 +7,8 @@ namespace Randomizer.CatQuest3
     {
         public bool HasShipKey { get; set; }
 
+        public bool HasShellPhone { get; set; }
+
         public bool HasTwinCastleKey { get; set; }
 
         public int TentakeyCount { get; set; }
@@ -18,7 +20,6 @@ namespace Randomizer.CatQuest3
         public bool HasInfinityKey { get; set; }
 
         public bool HasNorthStarEssence { get; set; }
-
 
         public bool HasVoodooDoll { get; set; }
 
@@ -66,6 +67,7 @@ namespace Randomizer.CatQuest3
 
             HasNorthStarEssence = false;
 
+            HasShellPhone = false;
 
             HasVoodooDoll = false;
 

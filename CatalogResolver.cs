@@ -100,12 +100,14 @@ namespace Randomizer.CatQuest3
                         catalogLocation.Triggers,
                         catalogLocation.Label,
                         isVanillaRandomBySlot,
-                        catalogLocation.LogicRequirements
+                        catalogLocation.LogicRequirements,
+                        catalogLocation.Area
                     );
 
                 RewardCatalog.Add(
                     resolvedLocation
                 );
+
             }
 
 

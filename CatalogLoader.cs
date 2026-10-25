@@ -104,6 +104,21 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
+                if (line.StartsWith(
+                    "AREA|",
+                    StringComparison.Ordinal))
+                {
+                    if (currentLocation == null)
+                    {
+                        continue;
+                    }
+
+                    currentLocation.Area =
+                        line.Substring("AREA|".Length).Trim();
+
+                    continue;
+                }
+
 
                 if (line.StartsWith(
                     "TRIGGER|",
@@ -242,6 +257,7 @@ namespace Randomizer.CatQuest3
 
             bool requiresNorthStarEssence = false;
 
+            bool requiresShellPhone = false;
 
             bool requiresVoodooDoll = false;
 
@@ -285,6 +301,11 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
+                if (requirement == "ShellPhone")
+                {
+                    requiresShellPhone = true;
+                    continue;
+                }
 
                 if (requirement == "TwinCastleKey")
                 {
@@ -450,7 +471,8 @@ namespace Randomizer.CatQuest3
                 requiresDragonbone,
                 requiredCatfish,
                 requiredSpells,
-                requiredLocations
+                requiredLocations,
+                requiresShellPhone
             );
         }
 

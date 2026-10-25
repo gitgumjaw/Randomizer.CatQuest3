@@ -79,6 +79,7 @@ namespace Randomizer.CatQuest3
                     $"Attempts:{attempt + 1}"
                 );
 
+                LogicValidator.LogRequiredQuestItems();
 
                 return;
             }

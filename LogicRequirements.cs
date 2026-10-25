@@ -18,6 +18,7 @@ namespace Randomizer.CatQuest3
 
         public bool RequiresNorthStarEssence { get; }
 
+        public bool RequiresShellPhone { get; }
 
         public bool RequiresVoodooDoll { get; }
 
@@ -69,7 +70,8 @@ namespace Randomizer.CatQuest3
             bool requiresDragonbone = false,
             int requiredCatfish = 0,
             IEnumerable<string> requiredSpells = null,
-            IEnumerable<string> requiredLocations = null)
+            IEnumerable<string> requiredLocations = null,
+            bool requiresShellPhone = false)
         {
             RequiresShipKey =
                 requiresShipKey;
@@ -92,6 +94,8 @@ namespace Randomizer.CatQuest3
             RequiresNorthStarEssence =
                 requiresNorthStarEssence;
 
+            RequiresShellPhone =
+                requiresShellPhone;
 
             RequiresVoodooDoll =
                 requiresVoodooDoll;
@@ -142,6 +146,11 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+            if (RequiresShellPhone &&
+                !state.HasShellPhone)
+            {
+                return false;
+            }
 
             if (
                 RequiresShipKey &&

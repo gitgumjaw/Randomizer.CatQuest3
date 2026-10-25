@@ -63,6 +63,59 @@ namespace Randomizer.CatQuest3
         }
 
 
+        public static void LogRequiredQuestItems()
+        {
+            List<RewardSlot> slots = GetCurrentSlots();
+
+            int tested = 0;
+            int required = 0;
+
+            foreach (RewardSlot slot in slots)
+            {
+                Reward reward = slot.RandomizedReward;
+
+                if (reward == null ||
+                    reward.Type != RewardType.QuestItem)
+                {
+                    continue;
+                }
+
+                tested++;
+
+                LogicState state;
+                HashSet<RewardSlot> collectedSlots;
+
+                bool canStillWin = Evaluate(
+                    slots,
+                    out state,
+                    out collectedSlots,
+                    slot
+                );
+
+                if (canStillWin)
+                {
+                    continue;
+                }
+
+                required++;
+
+                Plugin.Log.LogInfo(
+                    "HINT IMPORTANCE | REQUIRED | " +
+                    RewardNameResolver.GetName(reward) +
+                    " | Location: " +
+                    (slot.Location.Label ?? slot.Location.Key) +
+                    " | Slot: " + slot.RewardIndex
+                );
+            }
+
+            Plugin.Log.LogInfo(
+                "HINT IMPORTANCE | " +
+                "Quest items tested: " + tested +
+                " | Required: " + required
+            );
+        }
+
+
         private static List<RewardSlot> GetCurrentSlots()
         {
             List<RewardSlot> slots =
@@ -96,7 +149,8 @@ namespace Randomizer.CatQuest3
         private static bool Evaluate(
             List<RewardSlot> slots,
             out LogicState state,
-            out HashSet<RewardSlot> collectedSlots)
+            out HashSet<RewardSlot> collectedSlots,
+            RewardSlot suppressedRewardSlot = null)
         {
             state =
                 new LogicState();
@@ -155,13 +209,14 @@ namespace Randomizer.CatQuest3
                         madeProgress = true;
                     }
 
-
-                    if (ApplyReward(
+                    if (slot != suppressedRewardSlot &&
+                        ApplyReward(
                             slot.RandomizedReward,
                             state))
                     {
                         madeProgress = true;
                     }
+
                 }
             }
             while (madeProgress);
@@ -1555,6 +1610,17 @@ namespace Randomizer.CatQuest3
                 return false;
             }
 
+            if (reward.Id ==
+               SpecialRewards.ShellPhoneGuid)
+            {
+                if (state.HasShellPhone)
+                {
+                    return false;
+                }
+
+                state.HasShellPhone = true;
+                return true;
+            }
 
             if (reward.Id ==
                 SpecialRewards.ShipKeyGuid)
@@ -1793,6 +1859,9 @@ namespace Randomizer.CatQuest3
 
                 reward.Id ==
                     SpecialRewards.ConcertTicketGuid ||
+
+                reward.Id ==
+                    SpecialRewards.ShellPhoneGuid ||
 
                 IsCatfish(
                     reward.Id
