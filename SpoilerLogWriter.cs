@@ -193,7 +193,7 @@ namespace Randomizer.CatQuest3
             }
         }
 
-        private static void GetCollectibleAmountRange(
+        public static void GetCollectibleAmountRange(
             CollectibleRewardData data,
             out long minimum,
             out long maximum)

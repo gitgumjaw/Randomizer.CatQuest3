@@ -247,7 +247,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|1a560e2024cc4544b9088b89d3438ceb
 LABEL|Fishercat — Fish Sunset Chest
-AREA|Sunset Maze; Sunset Islands; a Fish
+AREA|a Fish; Sunset Maze; Sunset Islands
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|7b91d604cdaea5041a23fa0f960eff3e|Weight:1
@@ -337,7 +337,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|29c1fe796bb21604cb38c8490b9403a7
 LABEL|Fishercat — Fish Ghost Chest
-AREA|Furggy Island; a Fish
+AREA|a Fish; Furggy Island
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|5e7fae7d2a4801241958b53f5dfd0950|Weight:1
@@ -523,7 +523,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 
 LOCATION|41e8fc856247df649b91d4feab8ab5ea
 LABEL|Fishercat — Fish Rock Chest
-AREA|Purvanna; a Fish
+AREA|a Fish; Purvanna
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|7b91d604cdaea5041a23fa0f960eff3e|Weight:1
@@ -860,7 +860,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 
 LOCATION|673c1ba89895c1044a67380b86e1aa93
 LABEL|Fishercat — Fish Blue Chest
-AREA|Straits Island; a Fish
+AREA|a Fish; Straits Island
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|5e7fae7d2a4801241958b53f5dfd0950|Weight:1
@@ -1629,14 +1629,14 @@ OPTION|ShipSpell|90482cd1a280aba4dbd0b76e5831b30f|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_Fishercat_FishGhost|FSM|CAUGHT FISH CHEST SPAWN
 LABEL|Catch Ghost Fish
-AREA|Furggy Island; a Fish
+AREA|a Fish; Furggy Island
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|2e77d136d66e9dd49be96381876913eb|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_Fishercat_FishLove|FSM|CAUGHT FISH CHEST SPAWN
 LABEL|Catch Love Fish
-AREA|Lovepurr Islands; a Fish
+AREA|a Fish; Lovepurr Islands
 LOGIC|ShipKey
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
@@ -1644,14 +1644,14 @@ OPTION|QuestItem|89857728d1996e94b8770a6732b134b3|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_Fishercat_FishRock|FSM|CAUGHT FISH CHEST SPAWN
 LABEL|Catch Rock Fish
-AREA|Purvanna; a Fish
+AREA|a Fish; Purvanna
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|767cfb45c04cd3c469e8aa48f9e5e646|Weight:1
 
 LOCATION|MainOverworld|WorldQuest_Fishercat_FishSunset|FSM|CAUGHT FISH CHEST SPAWN
 LABEL|Catch Sunset Fish
-AREA|Sunset Maze; Sunset Islands; a Fish
+AREA|a Fish; Sunset Maze; Sunset Islands
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|28e45dd16af5e964c893fe7297d6a504|Weight:1
@@ -1884,6 +1884,7 @@ OPTION|QuestItem|2604e87ce825cb240964fce931cd7e2c|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Catuga|FSM|Get Reward
 LABEL|Purrmaid Pool Catuga
 AREA|Catuga
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
@@ -1895,6 +1896,7 @@ OPTION|Equipment|c351f25f947081b4e800a28c00837a39|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Furggy|FSM|Get Reward
 LABEL|Purrmaid Pool Furggy
 AREA|Furggy Island
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
@@ -1906,6 +1908,7 @@ OPTION|Equipment|26958f850750eb0479a3a8bc1852deaf|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Furtigua|FSM|Get Reward
 LABEL|Purrmaid Pool Furtigua
 AREA|Furtigua
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:1
@@ -1917,6 +1920,7 @@ OPTION|Equipment|26958f850750eb0479a3a8bc1852deaf|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_PawtPurvanna|FSM|Get Reward
 LABEL|Purrmaid Pool PawtPurvanna
 AREA|Pawt Purvanna; Purvanna
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
@@ -1928,6 +1932,7 @@ OPTION|Equipment|c351f25f947081b4e800a28c00837a39|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Purvanna|FSM|Get Reward
 LABEL|Purrmaid Pool Purvanna
 AREA|Purvanna
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
@@ -1939,6 +1944,7 @@ OPTION|Equipment|fe839ed1e2e988545a0f40899439a213|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Sunset|FSM|Get Reward
 LABEL|Purrmaid Pool Sunset
 AREA|Sunset Islands
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
@@ -1950,6 +1956,7 @@ OPTION|Equipment|fe839ed1e2e988545a0f40899439a213|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Twilight|FSM|Get Reward
 LABEL|Purrmaid Pool Twilight
 AREA|Twilight Isles
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:13
@@ -1961,6 +1968,7 @@ OPTION|Equipment|fe839ed1e2e988545a0f40899439a213|Weight:1
 LOCATION|MainOverworld|WorldQuest_PurrmaidTreasure_Twin|FSM|Get Reward
 LABEL|Purrmaid Pool Twin Castle
 AREA|Twin Islands
+LOGIC|ShellPhone
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantity:5|Value:80|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:18
@@ -2294,7 +2302,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 
 LOCATION|b272609e38d2da641b02478112f3dc2a
 LABEL|Fishercat — Fish Love Chest
-AREA|Lovepurr Islands; a Fish
+AREA|a Fish; Lovepurr Islands
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:2
 OPTION|Equipment|7b91d604cdaea5041a23fa0f960eff3e|Weight:1

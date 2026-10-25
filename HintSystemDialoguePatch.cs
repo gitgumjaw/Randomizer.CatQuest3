@@ -21,12 +21,6 @@ namespace Randomizer.CatQuest3
         "StartDialogue")]
     internal static class HintSystemDialoguePatch
     {
-        private const string SpoilerText =
-            "<b>You found a</b>\n" +
-            "<b>Secret Spoiler!</b>\n\n" +
-            "Tentakey\n" +
-            "is in\n" +
-            "Eight Bit Castle\n";
 
         [HarmonyPrefix]
         private static bool Prefix(
@@ -91,10 +85,14 @@ namespace Randomizer.CatQuest3
                 source.Key +
                 " | State: " + state);
 
+            string hintText =
+                HintSystemAssignments.GetText(source.Key);
+
             bool intercepted =
                 HintSystemPopupController.TryShowBeforeDialogue(
                     __instance,
-                    SpoilerText);
+                    hintText);
+
 
             return !intercepted;
         }

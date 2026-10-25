@@ -13,6 +13,8 @@ namespace Randomizer.CatQuest3
             RandomizerSettings settings,
             int seed)
         {
+            HintSystemAssignments.Clear();
+
             for (
                 int attempt = 0;
                 attempt < MaxLogicAttempts;
@@ -80,6 +82,30 @@ namespace Randomizer.CatQuest3
                 );
 
                 LogicValidator.LogRequiredQuestItems();
+                
+                HintSystemAreaClues.LogAreaCounts(
+                    eligibleSlots
+                );
+
+                HintSystemAreaClues.LogAreaSelection(
+                    eligibleSlots,
+                    seed
+                );
+
+                HintSystemSpoilers.LogEligibleSlots(
+                    eligibleSlots
+                );
+
+                HintSystemSpoilers.LogSpoilerSelection(
+                    eligibleSlots,
+                    seed
+                );
+
+                HintSystemAssignments.Generate(
+                    eligibleSlots,
+                    settings,
+                    seed
+                );
 
                 return;
             }

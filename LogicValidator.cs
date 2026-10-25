@@ -63,12 +63,13 @@ namespace Randomizer.CatQuest3
         }
 
 
-        public static void LogRequiredQuestItems()
+
+        public static List<RewardSlot> GetRequiredQuestItemSlots()
         {
             List<RewardSlot> slots = GetCurrentSlots();
 
-            int tested = 0;
-            int required = 0;
+            List<RewardSlot> requiredSlots =
+                new List<RewardSlot>();
 
             foreach (RewardSlot slot in slots)
             {
@@ -80,8 +81,6 @@ namespace Randomizer.CatQuest3
                     continue;
                 }
 
-                tested++;
-
                 LogicState state;
                 HashSet<RewardSlot> collectedSlots;
 
@@ -92,16 +91,28 @@ namespace Randomizer.CatQuest3
                     slot
                 );
 
-                if (canStillWin)
+                if (!canStillWin)
                 {
-                    continue;
+                    requiredSlots.Add(slot);
                 }
+            }
 
-                required++;
+            return requiredSlots;
+        }
 
+
+        public static void LogRequiredQuestItems()
+        {
+            List<RewardSlot> requiredSlots =
+                GetRequiredQuestItemSlots();
+
+            foreach (RewardSlot slot in requiredSlots)
+            {
                 Plugin.Log.LogInfo(
                     "HINT IMPORTANCE | REQUIRED | " +
-                    RewardNameResolver.GetName(reward) +
+                    RewardNameResolver.GetName(
+                        slot.RandomizedReward
+                    ) +
                     " | Location: " +
                     (slot.Location.Label ?? slot.Location.Key) +
                     " | Slot: " + slot.RewardIndex
@@ -110,10 +121,10 @@ namespace Randomizer.CatQuest3
 
             Plugin.Log.LogInfo(
                 "HINT IMPORTANCE | " +
-                "Quest items tested: " + tested +
-                " | Required: " + required
+                "Required: " + requiredSlots.Count
             );
         }
+
 
 
         private static List<RewardSlot> GetCurrentSlots()

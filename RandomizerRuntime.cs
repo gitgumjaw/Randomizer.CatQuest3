@@ -93,10 +93,11 @@
             if (!CurrentConfiguration.Enabled)
             {
                 RewardCatalog.Clear();
+                HintSystemAssignments.Clear();
 
                 Plugin.Log.LogInfo(
                     "RANDOMIZER RUNTIME | " +
-                    "Randomizer disabled; reward catalog cleared."
+                    "Randomizer disabled; reward catalog cleared; hint assignments cleared."
                 );
 
                 return;
