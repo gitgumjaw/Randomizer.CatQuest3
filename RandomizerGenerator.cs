@@ -81,26 +81,6 @@ namespace Randomizer.CatQuest3
                     $"Attempts:{attempt + 1}"
                 );
 
-                LogicValidator.LogRequiredQuestItems();
-                
-                HintSystemAreaClues.LogAreaCounts(
-                    eligibleSlots
-                );
-
-                HintSystemAreaClues.LogAreaSelection(
-                    eligibleSlots,
-                    seed
-                );
-
-                HintSystemSpoilers.LogEligibleSlots(
-                    eligibleSlots
-                );
-
-                HintSystemSpoilers.LogSpoilerSelection(
-                    eligibleSlots,
-                    seed
-                );
-
                 HintSystemAssignments.Generate(
                     eligibleSlots,
                     settings,

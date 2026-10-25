@@ -95,12 +95,6 @@ namespace Randomizer.CatQuest3
 
                     clueCount++;
 
-                    Plugin.Log.LogInfo(
-                        "HINT ASSIGNMENT | CLUE | " +
-                        source.Label +
-                        " | " + clue.Area +
-                        " | Important: " +
-                        clue.ImportantItems);
                 }
                 else
                 {
@@ -140,13 +134,6 @@ namespace Randomizer.CatQuest3
 
                     spoilerCount++;
 
-                    Plugin.Log.LogInfo(
-                        "HINT ASSIGNMENT | SPOILER | " +
-                        source.Label +
-                        " | " +
-                        SpoilerLogWriter.FormatReward(
-                            slot.RandomizedReward) +
-                        " | " + area);
                 }
 
                 assignedHints[source.Key] = text;

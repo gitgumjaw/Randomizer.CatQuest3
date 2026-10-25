@@ -85,7 +85,7 @@ namespace Randomizer.CatQuest3
                         delegate
                         {
                             Plugin.Log.LogInfo(
-                                "HINT SYSTEM | Spoiler dismissed.");
+                                "HINT SYSTEM | Hint dismissed.");
 
                             Plugin.Instance.StartCoroutine(
                                 ResumeOriginalDialogue(
@@ -93,7 +93,7 @@ namespace Randomizer.CatQuest3
                         });
 
                 Plugin.Log.LogInfo(
-                    "HINT SYSTEM | Spoiler opened.");
+                    "HINT SYSTEM | Hint opened.");
 
                 return true;
             }
@@ -245,14 +245,14 @@ namespace Randomizer.CatQuest3
                         delegate
                         {
                             Plugin.Log.LogInfo(
-                                "HINT SYSTEM | Message-first spoiler dismissed.");
+                                "HINT SYSTEM | Message-first hint dismissed.");
 
                             Plugin.Instance.StartCoroutine(
                                 ResumeOriginalMessage(messageAction));
                         });
 
                 Plugin.Log.LogInfo(
-                    "HINT SYSTEM | Message-first spoiler opened.");
+                    "HINT SYSTEM | Message-first hint opened.");
 
                 return true;
             }
