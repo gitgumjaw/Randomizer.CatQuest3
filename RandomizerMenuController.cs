@@ -3,6 +3,7 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static Randomizer.CatQuest3.RandomizerRunConfiguration;
 
 namespace Randomizer.CatQuest3
 {
@@ -108,11 +109,15 @@ namespace Randomizer.CatQuest3
             private set;
         } = false;
 
-        public static bool PendingRufferEnemiesEnabled
+        public static EnemySpawnMode PendingEnemyMode
         {
             get;
             private set;
-        } = false;
+        } = EnemySpawnMode.Normal;
+
+        public static bool PendingRufferEnemiesEnabled =>
+            PendingEnemyMode == EnemySpawnMode.Ruffer;
+
 
         public static string PendingSeedText
         {
@@ -584,18 +589,39 @@ namespace Randomizer.CatQuest3
         }
 
 
+
         private void ToggleRufferEnemies(
             UIButton button,
             int playerIndex)
         {
-            PendingRufferEnemiesEnabled =
-                !PendingRufferEnemiesEnabled;
+            switch (PendingEnemyMode)
+            {
+                case EnemySpawnMode.Normal:
+                    PendingEnemyMode = EnemySpawnMode.Ruffer;
+                    break;
 
-            FinishOptionToggle(
-                rufferEnemiesButton,
-                PendingRufferEnemiesEnabled
+                case EnemySpawnMode.Ruffer:
+                    PendingEnemyMode = EnemySpawnMode.Random;
+                    break;
+
+                default:
+                    PendingEnemyMode = EnemySpawnMode.Normal;
+                    break;
+            }
+
+            if (PendingEnemyMode != EnemySpawnMode.Normal)
+            {
+                EnsureRandomizerEnabled();
+            }
+
+            RefreshAllToggleDisplays();
+
+            Plugin.Log.LogInfo(
+                "RANDOMIZER SETTING | Enemy Mode:" +
+                PendingEnemyMode
             );
         }
+
 
 
         private void FinishOptionToggle(
@@ -648,7 +674,7 @@ namespace Randomizer.CatQuest3
             PendingBirdPoopEnabled = false;
             PendingMatchPlayerLevelEnabled = false;
 
-            PendingRufferEnemiesEnabled = false;
+            PendingEnemyMode = EnemySpawnMode.Normal;
         }
 
 
@@ -713,10 +739,25 @@ namespace Randomizer.CatQuest3
                 PendingMatchPlayerLevelEnabled
             );
 
+
             SetToggleState(
                 rufferEnemiesButton,
-                PendingRufferEnemiesEnabled
+                PendingEnemyMode != EnemySpawnMode.Normal
             );
+
+            if (rufferEnemiesButton != null)
+            {
+                TextMeshProUGUI enemyModeText =
+                    rufferEnemiesButton.GetComponentInChildren
+                        <TextMeshProUGUI>(true);
+
+                if (enemyModeText != null)
+                {
+                    enemyModeText.text =
+                        "Enemies: " + PendingEnemyMode;
+                }
+            }
+
         }
 
 
@@ -793,10 +834,13 @@ namespace Randomizer.CatQuest3
         }
 
 
-        private static void UpdateToggleHandPosition(
+        private void UpdateToggleHandPosition(
             UIButton button,
             TextMeshProUGUI text)
         {
+            if (button == rufferEnemiesButton)
+                return;
+
             if (button == null ||
                 text == null ||
                 button.handIconOverridePos == null)

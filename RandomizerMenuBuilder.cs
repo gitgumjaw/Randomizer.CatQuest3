@@ -614,7 +614,9 @@ namespace Randomizer.CatQuest3
                 );
 
                 text.alignment =
-                    TextAlignmentOptions.Midline;
+                    objectName == "RufferEnemies"
+                        ? TextAlignmentOptions.MidlineLeft
+                        : TextAlignmentOptions.MidlineRight;
             }
             else
             {
@@ -717,7 +719,9 @@ namespace Randomizer.CatQuest3
 
             handAnchor.anchoredPosition =
                 new Vector2(
-                    -width * 0.5f - ToggleHandPadding,
+                    objectName == "RufferEnemies"
+                        ? -width * 0.5f - 18f
+                        : -width * 0.5f - ToggleHandPadding,
                     ToggleHandYOffset
                 );
 

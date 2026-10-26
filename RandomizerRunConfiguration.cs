@@ -14,9 +14,12 @@ namespace Randomizer.CatQuest3
         public bool InfinityKey { get; private set; }
         public bool BirdPoop { get; private set; }
         public bool MatchPlayerLevel { get; private set; }
-        public bool RufferEnemies { get; private set; }
         public string SeedText { get; private set; }
         public int SeedValue { get; private set; }
+        public EnemySpawnMode EnemyMode { get; private set; }
+        public bool RufferEnemies =>
+            EnemyMode == EnemySpawnMode.Ruffer;
+
 
         public RandomizerRunConfiguration(
             bool enabled,
@@ -45,9 +48,20 @@ namespace Randomizer.CatQuest3
             InfinityKey = infinityKey;
             BirdPoop = birdPoop;
             MatchPlayerLevel = matchPlayerLevel;
-            RufferEnemies = enabled && rufferEnemies;
             SeedText = seedText ?? "";
             SeedValue = seedValue;
+            EnemyMode = enabled && rufferEnemies
+                ? EnemySpawnMode.Ruffer
+                : EnemySpawnMode.Normal;
+
         }
+
+        public enum EnemySpawnMode
+        {
+            Normal,
+            Ruffer,
+            Random
+        }
+
     }
 }
