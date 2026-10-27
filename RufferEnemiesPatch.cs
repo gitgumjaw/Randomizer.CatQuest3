@@ -1,6 +1,4 @@
 ﻿
-// RufferEnemiesPatch.cs
-// Integration: 2026-10-21
 using HarmonyLib;
 
 namespace Randomizer.CatQuest3
@@ -24,13 +22,16 @@ namespace Randomizer.CatQuest3
                 RandomizerRuntime.CurrentConfiguration;
 
             if (configuration == null ||
-                !configuration.Enabled ||
-                !configuration.RufferEnemies)
+                !configuration.Enabled)
             {
                 return;
             }
 
-            __result = true;
+            if (configuration.EnemyMode ==
+                RandomizerRunConfiguration.EnemySpawnMode.Ruffer)
+            {
+                __result = true;
+            }
         }
     }
 }

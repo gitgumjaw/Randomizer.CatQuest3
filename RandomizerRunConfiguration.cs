@@ -3,6 +3,13 @@ namespace Randomizer.CatQuest3
 {
     public sealed class RandomizerRunConfiguration
     {
+        public enum EnemySpawnMode
+        {
+            Normal,
+            Ruffer,
+            Random
+        }
+
         public bool Enabled { get; private set; }
         public bool Equipment { get; private set; }
         public bool Spells { get; private set; }
@@ -14,12 +21,11 @@ namespace Randomizer.CatQuest3
         public bool InfinityKey { get; private set; }
         public bool BirdPoop { get; private set; }
         public bool MatchPlayerLevel { get; private set; }
+
+        public EnemySpawnMode EnemyMode { get; private set; }
+
         public string SeedText { get; private set; }
         public int SeedValue { get; private set; }
-        public EnemySpawnMode EnemyMode { get; private set; }
-        public bool RufferEnemies =>
-            EnemyMode == EnemySpawnMode.Ruffer;
-
 
         public RandomizerRunConfiguration(
             bool enabled,
@@ -35,7 +41,7 @@ namespace Randomizer.CatQuest3
             bool matchPlayerLevel,
             string seedText,
             int seedValue,
-            bool rufferEnemies = false)
+            EnemySpawnMode enemyMode)
         {
             Enabled = enabled;
             Equipment = equipment;
@@ -48,20 +54,13 @@ namespace Randomizer.CatQuest3
             InfinityKey = infinityKey;
             BirdPoop = birdPoop;
             MatchPlayerLevel = matchPlayerLevel;
-            SeedText = seedText ?? "";
-            SeedValue = seedValue;
-            EnemyMode = enabled && rufferEnemies
-                ? EnemySpawnMode.Ruffer
+
+            EnemyMode = enabled
+                ? enemyMode
                 : EnemySpawnMode.Normal;
 
+            SeedText = seedText ?? "";
+            SeedValue = seedValue;
         }
-
-        public enum EnemySpawnMode
-        {
-            Normal,
-            Ruffer,
-            Random
-        }
-
     }
 }

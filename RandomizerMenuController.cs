@@ -26,7 +26,7 @@ namespace Randomizer.CatQuest3
         private UIButton matchPlayerLevelButton;
 
         // UI-only placeholder for future enemy randomizer work.
-        private UIButton rufferEnemiesButton;
+        private UIButton enemyModeButton;
 
         private TMP_InputField seedInput;
         private UIButton generateSeedButton;
@@ -115,9 +115,6 @@ namespace Randomizer.CatQuest3
             private set;
         } = EnemySpawnMode.Normal;
 
-        public static bool PendingRufferEnemiesEnabled =>
-            PendingEnemyMode == EnemySpawnMode.Ruffer;
-
 
         public static string PendingSeedText
         {
@@ -191,8 +188,8 @@ namespace Randomizer.CatQuest3
             matchPlayerLevelButton =
                 FindButton("MatchPlayerLevel");
 
-            rufferEnemiesButton =
-                FindButton("RufferEnemies");
+            enemyModeButton =
+                FindButton("EnemyMode");
 
             seedInput =
                 transform.Find(
@@ -311,8 +308,8 @@ namespace Randomizer.CatQuest3
             );
 
             ConfigureToggleButton(
-                rufferEnemiesButton,
-                ToggleRufferEnemies
+                enemyModeButton,
+                CycleEnemyMode
             );
 
             if (seedInput != null)
@@ -590,7 +587,7 @@ namespace Randomizer.CatQuest3
 
 
 
-        private void ToggleRufferEnemies(
+        private void CycleEnemyMode(
             UIButton button,
             int playerIndex)
         {
@@ -741,14 +738,14 @@ namespace Randomizer.CatQuest3
 
 
             SetToggleState(
-                rufferEnemiesButton,
+                enemyModeButton,
                 PendingEnemyMode != EnemySpawnMode.Normal
             );
 
-            if (rufferEnemiesButton != null)
+            if (enemyModeButton != null)
             {
                 TextMeshProUGUI enemyModeText =
-                    rufferEnemiesButton.GetComponentInChildren
+                    enemyModeButton.GetComponentInChildren
                         <TextMeshProUGUI>(true);
 
                 if (enemyModeText != null)
@@ -834,12 +831,10 @@ namespace Randomizer.CatQuest3
         }
 
 
-        private void UpdateToggleHandPosition(
+        private static void UpdateToggleHandPosition(
             UIButton button,
             TextMeshProUGUI text)
         {
-            if (button == rufferEnemiesButton)
-                return;
 
             if (button == null ||
                 text == null ||
@@ -1018,7 +1013,7 @@ namespace Randomizer.CatQuest3
             SetNavigation(
                 shipKeyButton,
                 equipmentButton,
-                rufferEnemiesButton,
+                enemyModeButton,
                 enableRandomizerButton,
                 infinityKeyButton
             );
@@ -1026,7 +1021,7 @@ namespace Randomizer.CatQuest3
             SetNavigation(
                 infinityKeyButton,
                 spellsButton,
-                rufferEnemiesButton,
+                enemyModeButton,
                 shipKeyButton,
                 birdPoopButton
             );
@@ -1034,14 +1029,14 @@ namespace Randomizer.CatQuest3
             SetNavigation(
                 birdPoopButton,
                 questItemsButton,
-                rufferEnemiesButton,
+                enemyModeButton,
                 infinityKeyButton,
                 generateSeedButton
             );
 
             // Column 3
             SetNavigation(
-                rufferEnemiesButton,
+                enemyModeButton,
                 shipKeyButton,
                 null,
                 enableRandomizerButton,
@@ -1069,7 +1064,7 @@ namespace Randomizer.CatQuest3
                 backButton,
                 continueButton,
                 null,
-                rufferEnemiesButton,
+                enemyModeButton,
                 null
             );
         }
@@ -1168,7 +1163,7 @@ namespace Randomizer.CatQuest3
                 infinityKeyButton,
                 birdPoopButton,
                 matchPlayerLevelButton,
-                rufferEnemiesButton
+                enemyModeButton
             };
 
             for (int i = 0;
@@ -1381,7 +1376,7 @@ namespace Randomizer.CatQuest3
                     PendingMatchPlayerLevelEnabled,
                     PendingSeedText,
                     PendingSeedValue,
-                    PendingRufferEnemiesEnabled
+                    PendingEnemyMode
                 );
 
             Plugin.Log.LogInfo(
@@ -1405,7 +1400,7 @@ namespace Randomizer.CatQuest3
                 " | InfinityKey:" + PendingConfiguration.InfinityKey +
                 " | BirdPoop:" + PendingConfiguration.BirdPoop +
                 " | MatchPlayerLevel:" + PendingConfiguration.MatchPlayerLevel +
-                " | RufferEnemies:" + PendingConfiguration.RufferEnemies
+                " | EnemyMode:" + PendingConfiguration.EnemyMode
             );
 
 

@@ -288,6 +288,8 @@ namespace Randomizer.CatQuest3
                 configuration.BirdPoop +
                 " | MatchPlayerLevel:" +
                 configuration.MatchPlayerLevel +
+                " | EnemyMode:" +
+                configuration.EnemyMode +
                 " | Seed:" +
                 configuration.SeedText +
                 " | Hash:" +

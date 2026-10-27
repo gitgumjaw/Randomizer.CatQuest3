@@ -20,7 +20,8 @@ namespace Randomizer.CatQuest3
 
             if (configuration == null ||
                 !configuration.Enabled ||
-                !configuration.RufferEnemies)
+                configuration.EnemyMode !=
+    RandomizerRunConfiguration.EnemySpawnMode.Ruffer)
             {
                 return;
             }

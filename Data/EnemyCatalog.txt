@@ -1,0 +1,1042 @@
+# CAT QUEST III | ENEMY RANDOMIZER CATALOG
+# Each entry starts with UNITCONFIG and ends after NOTES.
+# Entries are separated by a blank line.
+# Variation group is the shared identity used to weight enemy families equally.
+# Names and variation group assignments are proposed for review.
+# UNITCONFIG asset identifiers and all other values preserved from prior review.
+
+UNITCONFIG|8Bit_Bat_XAxis_MonsterConfig
+NAME|8Bit Bat (X-Axis)
+VARIATION|8BitBat
+ENVIRONMENT|X_Only
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|8Bit_Dratcula_Boss_XAxis_MonsterConfig
+NAME|Dratcula (X-Axis)
+VARIATION|Dratcula
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|8Bit_VampireRat_XAxis_MonsterConfig
+NAME|Vampire Rat (X-Axis)
+VARIATION|Vampire Rat
+ENVIRONMENT|X_Only
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_SpicySquid_Dungeon_Boss_TavernTales_MonsterConfig
+NAME|Spiciest Squid (Tavern Tales)
+VARIATION|SpiciestSquid
+ENVIRONMENT|Aquatic
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_SpicySquid_Dungeon_MonsterConfig
+NAME|Squid
+VARIATION|Squid
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_SpicySquid_Dungeon_Ruffer_MonsterConfig
+NAME|Spiciest Squid (Ruffer)
+VARIATION|SpiciestSquid
+ENVIRONMENT|Aquatic
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_SpicySquid_Dungeon_TavernTales_MonsterConfig
+NAME|Squid (Tavern Tales)
+VARIATION|Squid
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_SpicySquid_Overworld_Boss_MonsterConfig
+NAME|Spiciest Squid
+VARIATION|SpiciestSquid
+ENVIRONMENT|Aquatic
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig
+NAME|Spicy Squid Bomber Mole Homing (Homing Mole)
+VARIATION|Squid
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|Not a water enemy, despite aquatic config tag.
+
+
+UNITCONFIG|Aquatic_SpicySquid_Overworld_MonsterConfig
+NAME|Squid
+VARIATION|Squid
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_SpicySquid_Overworld_Ruffer_MonsterConfig
+NAME|Spiciest Squid (Ruffer)
+VARIATION|SpiciestSquid
+ENVIRONMENT|Aquatic
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Aquatic_Trident_Boss_MonsterConfig
+NAME|Purrseidon's Trident
+VARIATION|PurrseidonsTrident
+ENVIRONMENT|Aquatic
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|AquaticBoss_SpicySquidBoss_MonsterConfig
+NAME|Captain Takomeowki
+VARIATION|CaptainTakomeowki
+ENVIRONMENT|Aquatic
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|AquaticBoss_SpicySquidTakomeowkiBoss_TavernTales_MonsterConfig
+NAME|Captain Takomeowki (Tavern Tales)
+VARIATION|CaptainTakomeowki
+ENVIRONMENT|Aquatic
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|CathuluBoss_Cathulu_MonsterConfig
+NAME|The Cathulhu
+VARIATION|Cathulhu
+ENVIRONMENT|Special
+CATEGORY|SuperBoss
+RANDOMIZE|No
+RESTRICTIONS|None
+NOTES|Very unique boss. Cannot shuffle. Could theoretically be swapped with North Star  but that's not a priority.
+
+UNITCONFIG|Chest_GoldenChestBoss_MonsterConfig
+NAME|The Golden One
+VARIATION|TheGoldenOne
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_Boss_RoguePatchy_MonsterConfig
+NAME|Patchy
+VARIATION|Patchy
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_Mewtallica_MonsterConfig
+NAME|Mewtallica Axeman
+VARIATION|Mewtallica Axeman
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_RatSwordsmen_Lv40_Boss_MonsterConfig
+NAME|A Generic Pi-rat who claims to be Level 40 (Level 40)
+VARIATION|L40Rat
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_RatSwordsmen_MonsterConfig
+NAME|Rat Swordsmen
+VARIATION|Rat Swordsmen
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_SkeletonRat_Arcane_LongRange_MonsterConfig
+NAME|Rat Skeleton Arcane(Long Range)
+VARIATION|ArcaneRatSkeleton
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig
+NAME|Rat Skeleton Arcane
+VARIATION|ArcaneRatSkeleton
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_SkeletonRat_Arcane_TavernTales_MonsterConfig
+NAME|Rat Skeleton Arcane (Tavern Tales)
+VARIATION|ArcaneRatSkeleton
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_SkeletonRat_Arcane_Xaxis_MonsterConfig
+NAME|Rat Skeleton Arcane (X-Axis)
+VARIATION|ArcaneRatSkeleton
+ENVIRONMENT|X_Only
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_SkeletonRat_LongRange_MonsterConfig
+NAME|Rat Skeleton (Long Range)
+VARIATION|RatSkeleton
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Humanoid_SkeletonRat_MonsterConfig
+NAME|Rat Skeleton
+VARIATION|RatSkeleton
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_HumanoidBoss_GentlebroBoss_CloseRange_MonsterConfig
+NAME|Gentlebro (Close Range)
+VARIATION|Gentlebro
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|These are technically bosses but they spawn as a group usually soI want them to spawn as MiniBosses and see if they are too strong first
+
+UNITCONFIG|Enemy_HumanoidBoss_GentlebroBoss_Flee_MonsterConfig
+NAME|Gentlebro (Flee)
+VARIATION|Gentlebro
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|These are technically bosses but they spawn as a group usually soI want them to spawn as MiniBosses and see if they are too strong first
+
+UNITCONFIG|Enemy_HumanoidBoss_GentlebroBoss_Ranged_MonsterConfig
+NAME|Gentlebro (Ranged)
+VARIATION|Gentlebro
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|These are technically bosses but they spawn as a group usually soI want them to spawn as MiniBosses and see if they are too strong first
+
+UNITCONFIG|Enemy_HumanoidBoss_Mewtallica_BossFight_MonsterConfig
+NAME|Captain Meowtallika
+VARIATION|CaptainMeowtallika
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_HumanoidBoss_Mewtallica_MonsterConfig
+NAME|Captain Meowtallika
+VARIATION|CaptainMeowtallika
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_HumanoidBoss_PirateKing_Injured_MonsterConfig
+NAME|The Pi-rat King (Injured)
+VARIATION|Pi-ratKing
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|This is a weak /injured version of a boss that is fine in this MiniBoss role.
+
+UNITCONFIG|Enemy_HumanoidBoss_PirateKing_MonsterConfig
+NAME|The Pi-rat King
+VARIATION|Pi-ratKing
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_HumanoidBoss_PirateKing_TavernTales_MonsterConfig
+NAME|The Pi-rat King (Tavern Tales)
+VARIATION|Pi-ratKing
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_Mewtallica_AlwaysAggro_MonsterConfig
+NAME|Mewtallica Ship (Always Aggro)
+VARIATION|MewtallicaShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_Mewtallica_MonsterConfig
+NAME|Mewtallica Ship
+VARIATION|MewtallicaShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_MewtallicaBoss_MonsterConfig
+NAME|The Meowtallicurse
+VARIATION|TheMeowtallicurse
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_MewtallicaBoss_Ruffer_MonsterConfig
+NAME|The Meowtallicurse (Ruffer)
+VARIATION|TheMeowtallicurse
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_PirateKingBoss_MonsterConfig
+NAME|The Undying
+VARIATION|TheUndying
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_PirateKingBoss_Ruffer_MonsterConfig
+NAME|The Undying (Ruffer)
+VARIATION|TheUndying
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_RubberDuckyBoss_MonsterConfig
+NAME|Duck of Doom
+VARIATION|Duck of Doom
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_SpicySquidBoss_MonsterConfig
+NAME|The Meowkoyakuza
+VARIATION|TheMeowkoyakuza
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_SpicySquidBoss_Ruffer_MonsterConfig
+NAME|The Meowkoyakuza (Ruffer)
+VARIATION|TheMeowkoyakuza
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_SpicySquids_AlwaysAggro_MonsterConfig
+NAME|Spicy Squid Ship (Always Aggro)
+VARIATION|SpicySquidShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_SpicySquids_MonsterConfig
+NAME|Spicy Squid Ship
+VARIATION|SpicySquidShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_SpicySquids_Ruffer_MonsterConfig
+NAME|Spicy Squid Ship (Ruffer)
+VARIATION|SpicySquidShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_Standard_Boss_MonsterConfig
+NAME|Pi-rat Ship
+VARIATION|Pi-ratShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|BossShip
+NOTES|
+
+UNITCONFIG|Enemy_Ship_Standard_Double_AlwaysAggro_MonsterConfig
+NAME|Double Pi-rat Ship (Always Aggro)
+VARIATION|DoublePi-ratShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_Standard_Double_MonsterConfig
+NAME|Double Pi-rat Ship
+VARIATION|DoublePi-ratShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_Standard_LongAggro_MonsterConfig
+NAME|Pi-rat Ship (Long Aggro)
+VARIATION|Pi-ratShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Enemy_Ship_Standard_MonsterConfig
+NAME|Pi-rat Ship
+VARIATION|Pi-ratShip
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Fish_ZeroDimension_Jellyfish_Boss_MonsterConfig
+NAME|Zero Jellyfish (Zero Dimension)
+VARIATION|Jellyfish
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|Unkillable
+NOTES|Cannot spawn in placed where it needs to die.
+
+UNITCONFIG|Fish_ZeroDimension_Jellyfish_MonsterConfig
+NAME|Zero Jellyfish (Zero Dimension)
+VARIATION|Jellyfish
+ENVIRONMENT|Aquatic
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|Unkillable
+NOTES|Cannot spawn in placed where it needs to die.
+
+UNITCONFIG|Flat_Starfish_AggroLargeAmbush_MonsterConfig
+NAME|Starfish (Large Ambush)
+VARIATION|Starfish
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Flat_Starfish_MonsterConfig
+NAME|Starfish
+VARIATION|Starfish
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Flying_Parrot_MonsterConfig
+NAME|Parrot
+VARIATION|Parrot
+ENVIRONMENT|All
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Flying_Parrot_TavernTales_MonsterConfig
+NAME|Parrot (Tavern Tales)
+VARIATION|Parrot
+ENVIRONMENT|All
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Ghost_Boss_Clawford_MonsterConfig
+NAME|Clawford
+VARIATION|Clawford
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Chubby_Boss_Rat_MonsterConfig
+NAME|Pi-rat Boss
+VARIATION|Pi-ratBoss
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Chubby_ChimeowraBoss_MonsterConfig
+NAME|Dr. Chimeowra
+VARIATION|DrChimeowra
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Chubby_Rat_MonsterConfig
+NAME|Chubby Rat
+VARIATION|ChubbyRat
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_ChubbyBoss_Clean_Infinity_MonsterConfig
+NAME|Mister Clean (Infinity)
+VARIATION|MisterClean
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_ChubbyBoss_Clean_Polaris_MonsterConfig
+NAME|Mister Clean
+VARIATION|MisterClean
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_ChubbyBoss_Clean_Polaris_Ruffer_MonsterConfig
+NAME|Mister Clean (Ruffer)
+VARIATION|MisterClean
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_ChubbyBoss_Clean_TavernTales_MonsterConfig
+NAME|Mister Clean (Tavern Tales)
+VARIATION|MisterClean
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_ChubbyBoss_Clean_Tutorial_MonsterConfig
+NAME|Mister Clean (Tutorial)
+VARIATION|MisterClean
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_ChubbyBoss_Clean_ZeroDimension_MonsterConfig
+NAME|Mister Clean (Zero Dimension)
+VARIATION|MisterClean
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_ChubbyBoss_PigBoss_MonsterConfig
+NAME|Oinker Chief, the Pigment of Enlightenment
+VARIATION|OinkerChief
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mage_Arcane_MonsterConfig
+NAME|Arcane Mage
+VARIATION|ArcaneMage
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mage_Arcane_XAxis__MonsterConfig
+NAME|Arcane Mage (X-Axis)
+VARIATION|ArcaneMage
+ENVIRONMENT|X_Only
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mage_Fire_MonsterConfig
+NAME|Fire Mage
+VARIATION|FireMage
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mage_Fire_XAxis_MonsterConfig
+NAME|Fire Mage (X-Axis)
+VARIATION|FireMage
+ENVIRONMENT|X_Only
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mage_Ice_MonsterConfig
+NAME|Mage Ice
+VARIATION|IceMage
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mage_Ice_XAxis_MonsterConfig
+NAME|Mage Ice (X-Axis)
+VARIATION|IceMage
+ENVIRONMENT|X_Only
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_MageBoss_Arcane_Necromouser_XAxis_MonsterConfig
+NAME|The Necromouser (X-Axis)
+VARIATION|TheNecromouser
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_MageBoss_Fire_Xaxis_MonsterConfig
+NAME|Fire Pi-rat Captain (X-Axis)
+VARIATION|FirePi-ratCaptain
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_MageBoss_Ice_MonsterConfig
+NAME|Ice Pi-rat Captain
+VARIATION|IcePi-ratCaptain
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_MageBoss_Ice_Xaxis_MonsterConfig
+NAME|Ice Pi-rat Captain (X-Axis)
+VARIATION|IcePi-ratCaptain
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mewtallica_LongAggro_MonsterConfig
+NAME|Mewtallica Grunt (Long Aggro)
+VARIATION|MewtallicaGrunt
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Mewtallica_MonsterConfig
+NAME|Mewtallica Grunt
+VARIATION|MewtallicaGrunt
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Pig_Ambush_MonsterConfig
+NAME|Pig Grunt (Ambush)
+VARIATION|Oinker
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Pig_Maze_MonsterConfig
+NAME|Pig Grunt (Maze)
+VARIATION|Oinker
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Pig_MonsterConfig
+NAME|Pig Grunt
+VARIATION|Oinker
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Pig_TavernTales_MonsterConfig
+NAME|Pig Grunt (Tavern Tales)
+VARIATION|Oinker
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Rat_MonsterConfig
+NAME|Rat Grunt
+VARIATION|RatGrunt
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_RatBomber_LongThrow_MonsterConfig
+NAME|Rat Bomber (Long Throw)
+VARIATION|RatBomber
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_RatBomber_LongThrow_Xaxis_MonsterConfig
+NAME|Rat Bomber (Long Throw, X-Axis)
+VARIATION|RatBomber
+ENVIRONMENT|X_Only
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_RatBomber_MonsterConfig
+NAME|Rat Bomber
+VARIATION|RatBomber
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_RatBomber_Ruffer_MonsterConfig
+NAME|Rat Bomber (Ruffer)
+VARIATION|RatBomber
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_RatBomber_Stationary_MonsterConfig
+NAME|Rat Bomber (Stationary)
+VARIATION|RatBomber
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_RatBomber_Tower_MonsterConfig
+NAME|Rat Bomber Tower
+VARIATION|RatBomberTower
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_RatBomber_Tower_Ruffer_MonsterConfig
+NAME|Rat Bomber Tower (Ruffer)
+VARIATION|RatBomberTower
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Squeaky_Boss_Buffed_TavernTales_MonsterConfig
+NAME|Squeaky (Tavern Tales, Buffed)
+VARIATION|Squeaky
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Squeaky_Boss_Infinity_MonsterConfig
+NAME|Squeaky (Infinity)
+VARIATION|Squeaky
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Squeaky_Boss_MonsterConfig
+NAME|Squeaky
+VARIATION|Squeaky
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Squeaky_Boss_TavernTales_MonsterConfig
+NAME|Squeaky (Tavern Tales)
+VARIATION|Squeaky
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_Squeaky_Boss_ZeroDimension_MonsterConfig
+NAME|Squeaky (Zero Dimension)
+VARIATION|Squeaky
+ENVIRONMENT|Ground
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Grunt_WispFire_MonsterConfig
+NAME|Fire Wisp
+VARIATION|FireWisp
+ENVIRONMENT|All
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|HumanoidBoss_Mewtallica_Boss_TavernTales_MonsterConfig
+NAME|Captain Meowtallika (Tavern Tales)
+VARIATION|CaptainMeowtallika
+ENVIRONMENT|X_Only
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|MachoDog_Boss_MonsterConfig
+NAME|Macho Dog
+VARIATION|MachoDog
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|NorthStarBoss_MonsterConfig
+NAME|The North Star
+VARIATION|NorthStar
+ENVIRONMENT|Special
+CATEGORY|SuperBoss
+RANDOMIZE|No
+RESTRICTIONS|None
+NOTES|Very unique boss. Cannot shuffle. Could theoretically be swapped with Cathulhu  but that's not a priority.
+
+UNITCONFIG|Quadruped_Boar_MonsterConfig
+NAME|Boar
+VARIATION|Boar
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Quadruped_Boar_TavernTales_Minion_MonsterConfig
+NAME|Boar (Tavern Tales, Minion)
+VARIATION|Boar
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Quadruped_BoarBoss_Finite_MonsterConfig
+NAME|The Boar King (Finite)
+VARIATION|BoarKing
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Quadruped_BoarBoss_Infinity_MonsterConfig
+NAME|The Boar King (Infinity)
+VARIATION|BoarKing
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Quadruped_BoarBoss_MonsterConfig
+NAME|The Boar King
+VARIATION|BoarKing
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Quadruped_BoarBoss_Ruffer_MonsterConfig
+NAME|The Boar King (Ruffer)
+VARIATION|BoarKing
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Quadruped_BoarBoss_TavernTales_MonsterConfig
+NAME|The Boar King (Tavern Tales)
+VARIATION|BoarKing
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Quadruped_BoarLonelyOne_MonsterConfig
+NAME|The Dragon Boar
+VARIATION|DragonBoar
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Seeker_Boss_Antares_Infinity_MonsterConfig
+NAME|Seeker of Antares, Warden of the North Star (Infinity)
+VARIATION|SeekerAntares
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Seeker_Boss_Antares_MonsterConfig
+NAME|Seeker of Antares, Warden of the North Star
+VARIATION|SeekerAntares
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Seeker_Boss_Orion_MonsterConfig
+NAME|Seeker Orion, Warden of the North Star
+VARIATION|SeekerOrion
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Seeker_Boss_Orion_TavernTales_MonsterConfig
+NAME|Seeker Orion, Warden of the North Star (Tavern Tales)
+VARIATION|SeekerOrion
+ENVIRONMENT|Ground
+CATEGORY|Boss
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Spherical_Spikeball_MonsterConfig
+NAME|The Heartpurroken
+VARIATION|Heartpurroken
+ENVIRONMENT|Ground
+CATEGORY|Ordinary
+RANDOMIZE|Yes
+RESTRICTIONS|None
+NOTES|
+
+UNITCONFIG|Spherical_SpikeballBoss_MonsterConfig
+NAME|The Heartpurroken
+VARIATION|Heartpurroken Boss
+ENVIRONMENT|All
+CATEGORY|MiniBoss
+RANDOMIZE|Yes
+RESTRICTIONS|NeedsSpikes
+NOTES|

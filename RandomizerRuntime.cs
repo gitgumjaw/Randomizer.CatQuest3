@@ -170,6 +170,7 @@
             };
         }
 
+
         private static RandomizerRunConfiguration
             CreateVanillaConfiguration()
         {
@@ -186,8 +187,10 @@
                 false,
                 false,
                 "",
-                0
+                0,
+                RandomizerRunConfiguration.EnemySpawnMode.Normal
             );
         }
+
     }
 }

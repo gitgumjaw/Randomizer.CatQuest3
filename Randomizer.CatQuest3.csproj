@@ -5,12 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\EnemyCatalog.txt" />
     <None Remove="Data\HintSystemCatalog.txt" />
     <None Remove="Data\RewardCatalog.txt" />
     <None Remove="Data\RewardNames.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data\EnemyCatalog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\HintSystemCatalog.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

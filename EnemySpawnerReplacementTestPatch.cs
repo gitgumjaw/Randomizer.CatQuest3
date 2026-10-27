@@ -19,7 +19,7 @@ namespace Randomizer.CatQuest3
         private const string ReplacementName =
             "Flying_Parrot_MonsterConfig";
 
-        [HarmonyPrefix]
+
         public static void Prefix(UnitSpawner __instance)
         {
             RandomizerRunConfiguration configuration =
@@ -27,7 +27,8 @@ namespace Randomizer.CatQuest3
 
             if (configuration == null ||
                 !configuration.Enabled ||
-                !configuration.RufferEnemies)
+                configuration.EnemyMode !=
+                    RandomizerRunConfiguration.EnemySpawnMode.Ruffer)
             {
                 return;
             }

@@ -8,7 +8,7 @@ namespace Randomizer.CatQuest3
 {
     public static class RandomizerSaveData
     {
-        private const int CurrentVersion = 1;
+        private const int CurrentVersion = 2;
 
         private static string SaveDirectory
         {
@@ -64,7 +64,7 @@ namespace Randomizer.CatQuest3
                     "InfinityKey=" + configuration.InfinityKey,
                     "BirdPoop=" + configuration.BirdPoop,
                     "MatchPlayerLevel=" + configuration.MatchPlayerLevel,
-                    "RufferEnemies=" + configuration.RufferEnemies,
+                    "EnemyMode=" + configuration.EnemyMode,
                     "SeedTextBase64=" + encodedSeed,
                     "SeedValue=" + configuration.SeedValue
                 };
@@ -76,7 +76,7 @@ namespace Randomizer.CatQuest3
                     "Configuration persisted for profile index:" +
                     profileIndex +
                     " | Path:" + path +
-                    " | RufferEnemies:" + configuration.RufferEnemies
+                    " | EnemyMode:" + configuration.EnemyMode
                 );
 
                 return true;
@@ -185,17 +185,27 @@ namespace Randomizer.CatQuest3
                         tavernTalesParrots = parsed;
                 }
 
-                // Optional for compatibility with older save configurations.
-                bool rufferEnemies = false;
-                string rufferText;
 
-                if (values.TryGetValue(
-                    "RufferEnemies", out rufferText))
+                RandomizerRunConfiguration.EnemySpawnMode enemyMode;
+                string enemyModeText;
+
+                if (!values.TryGetValue(
+                        "EnemyMode", out enemyModeText) ||
+                    !Enum.TryParse(
+                        enemyModeText, out enemyMode) ||
+                    !Enum.IsDefined(
+                        typeof(RandomizerRunConfiguration.EnemySpawnMode),
+                        enemyMode))
                 {
-                    bool parsed;
-                    if (bool.TryParse(rufferText, out parsed))
-                        rufferEnemies = parsed;
+                    Plugin.Log.LogWarning(
+                        "RANDOMIZER SAVE | " +
+                        "Missing or invalid EnemyMode. " +
+                        "Profile index:" + profileIndex
+                    );
+
+                    return false;
                 }
+
 
                 string encodedSeed;
 
@@ -230,7 +240,7 @@ namespace Randomizer.CatQuest3
                         matchPlayerLevel,
                         seedText,
                         seedValue,
-                        rufferEnemies
+                        enemyMode
                     );
 
                 return true;
