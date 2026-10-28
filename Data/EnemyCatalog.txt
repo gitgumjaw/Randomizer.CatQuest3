@@ -37,7 +37,7 @@ NAME|Spiciest Squid (Tavern Tales)
 VARIATION|SpiciestSquid
 ENVIRONMENT|Aquatic
 CATEGORY|MiniBoss
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -64,7 +64,7 @@ NAME|Squid (Tavern Tales)
 VARIATION|Squid
 ENVIRONMENT|Aquatic
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -209,7 +209,7 @@ NAME|Rat Skeleton Arcane (Tavern Tales)
 VARIATION|ArcaneRatSkeleton
 ENVIRONMENT|Ground
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -317,7 +317,7 @@ NAME|Mewtallica Ship (Always Aggro)
 VARIATION|MewtallicaShip
 ENVIRONMENT|Aquatic
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -398,7 +398,7 @@ NAME|Spicy Squid Ship (Always Aggro)
 VARIATION|SpicySquidShip
 ENVIRONMENT|Aquatic
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -434,7 +434,7 @@ NAME|Double Pi-rat Ship (Always Aggro)
 VARIATION|DoublePi-ratShip
 ENVIRONMENT|Aquatic
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -515,7 +515,7 @@ NAME|Parrot (Tavern Tales)
 VARIATION|Parrot
 ENVIRONMENT|All
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -758,7 +758,7 @@ NAME|Pig Grunt (Tavern Tales)
 VARIATION|Oinker
 ENVIRONMENT|Ground
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -900,7 +900,7 @@ NOTES|
 UNITCONFIG|MachoDog_Boss_MonsterConfig
 NAME|Macho Dog
 VARIATION|MachoDog
-ENVIRONMENT|Ground
+ENVIRONMENT|All
 CATEGORY|Boss
 RANDOMIZE|Yes
 RESTRICTIONS|None
@@ -929,7 +929,7 @@ NAME|Boar (Tavern Tales, Minion)
 VARIATION|Boar
 ENVIRONMENT|Ground
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|None
 NOTES|
 
@@ -1026,17 +1026,17 @@ NOTES|
 UNITCONFIG|Spherical_Spikeball_MonsterConfig
 NAME|The Heartpurroken
 VARIATION|Heartpurroken
-ENVIRONMENT|Ground
+ENVIRONMENT|Aquatic
 CATEGORY|Ordinary
 RANDOMIZE|Yes
 RESTRICTIONS|None
-NOTES|
+NOTES|NeedsSpikes - Aquatic should cover it.
 
 UNITCONFIG|Spherical_SpikeballBoss_MonsterConfig
 NAME|The Heartpurroken
 VARIATION|Heartpurroken Boss
-ENVIRONMENT|All
+ENVIRONMENT|Ground
 CATEGORY|MiniBoss
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|NeedsSpikes
-NOTES|
+NOTES|Can't swim like smaller cousin.
