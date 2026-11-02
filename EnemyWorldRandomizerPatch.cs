@@ -1,9 +1,10 @@
 ﻿// Cat Quest III Randomizer | EnemyWorldRandomizerPatch.cs
-// Generated: 20261028_092908_UTC | Revision: 09
-// Loader baseline: EnemyCatalogLoader_20261028_090955_UTC_v07.cs (unchanged)
-// Changes: Macho Dog cannot replace Boar King, Pi-rat King, Meowtallika, or Mister Clean. BossShip weighting preserved.
-// Retains MoleHoming restriction, BossShip-slot filtering, Unkillable, all-spawner logic.
-// Copy contents into existing EnemyWorldRandomizerPatch.cs class in Visual Studio.
+// Generated: 20261102_082520_UTC | Revision: 10 (distribution experiment)
+// Baseline: committed v09; EnemyCatalogLoader v07 unchanged.
+// Changes: shared ground Boss+MiniBoss non-repeating variation distribution;
+//          X_Only bosses allowed into Ground; non-repeating dedicated BossShip slots.
+//          Existing restrictions, normal-ship weighting and WORLD-only guards retained.
+// Copy contents into existing EnemyWorldRandomizerPatch.cs in Visual Studio.
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,12 @@ namespace Randomizer.CatQuest3
     {
         // Prevent editing the same spawner's already-randomized list twice.
         private static readonly HashSet<int> processed = new HashSet<int>();
+        // The usage counts are shared across all spawners during one loaded run.
+        // Variation is the identity: multiple UnitConfigs do not get extra copies.
+        private static readonly Dictionary<string, int> landBossUses = new Dictionary<string, int>(StringComparer.Ordinal);
+        private static readonly Dictionary<string, int> bossShipUses = new Dictionary<string, int>(StringComparer.Ordinal);
+        private static RandomizerRunConfiguration currentRun;
+        private static int currentSeed;
 
         [HarmonyPrefix]
         public static void Prefix(UnitSpawner __instance)
@@ -27,6 +34,16 @@ namespace Randomizer.CatQuest3
             if (__instance == null ||
                 __instance.spawnList == null || __instance.spawnList.Count == 0)
                 return;
+            // Reset state when a new profile/configuration becomes active.
+            if (!object.ReferenceEquals(currentRun, run) || currentSeed != run.SeedValue)
+            {
+                processed.Clear();
+                landBossUses.Clear();
+                bossShipUses.Clear();
+                currentRun = run;
+                currentSeed = run.SeedValue;
+                Plugin.Log.LogInfo("ENEMY DISTRIBUTION | Reset for seed:" + run.SeedValue.ToString("X8"));
+            }
             int instanceId = __instance.GetInstanceID();
             if (processed.Contains(instanceId)) return;
 
@@ -62,8 +79,28 @@ namespace Randomizer.CatQuest3
                 bool aquaticWorldSpawn =
                     string.Equals(environment, "Aquatic", StringComparison.OrdinalIgnoreCase) &&
                     string.Equals(__instance.spawnType.ToString(), "WORLD_SPAWN", StringComparison.OrdinalIgnoreCase);
-                List<EnemyCatalogEntry> pool = EnemyCatalogLoader.EligibleFor(
-                    environment, originalEntry.Category, originalBossShipSlot, aquaticWorldSpawn);
+                bool isLandBoss =
+                    (string.Equals(originalEntry.Category, "Boss", StringComparison.OrdinalIgnoreCase) ||
+                     string.Equals(originalEntry.Category, "MiniBoss", StringComparison.OrdinalIgnoreCase)) &&
+                    (string.Equals(environment, "Ground", StringComparison.OrdinalIgnoreCase) ||
+                     string.Equals(environment, "X_Only", StringComparison.OrdinalIgnoreCase));
+                bool isDedicatedBossShip = originalBossShipSlot &&
+                    string.Equals(originalEntry.Category, "Ordinary", StringComparison.OrdinalIgnoreCase) &&
+                    string.Equals(environment, "Aquatic", StringComparison.OrdinalIgnoreCase);
+
+                List<EnemyCatalogEntry> pool;
+                if (isLandBoss)
+                {
+                    // X_Only lookup contains both Ground and X_Only candidates.
+                    // Combine categories, including in 3D Ground boss slots, as a test.
+                    pool = EnemyCatalogLoader.EligibleFor("X_Only", "Boss");
+                    pool.AddRange(EnemyCatalogLoader.EligibleFor("X_Only", "MiniBoss"));
+                }
+                else
+                {
+                    pool = EnemyCatalogLoader.EligibleFor(
+                        environment, originalEntry.Category, originalBossShipSlot, aquaticWorldSpawn);
+                }
                 // Mole Squid and both Heartpurroken variants are unsuitable for
                 // scripted non-world slots. Only select them for WORLD_SPAWN.
                 if (__instance.spawnType != SpawnType.WORLD_SPAWN)
@@ -73,9 +110,7 @@ namespace Randomizer.CatQuest3
                          string.Equals(candidate.UnitConfigName, "Spherical_Spikeball_MonsterConfig", StringComparison.Ordinal) ||
                          string.Equals(candidate.UnitConfigName, "Spherical_SpikeballBoss_MonsterConfig", StringComparison.Ordinal)));
                 }
-                // Macho Dog cannot move, so exclude him from encounters that
-                // require movement: Boar King, Pi-rat King, Meowtallika, Mr. Clean.
-                // Apply BEFORE variation-group selection.
+                // Macho Dog cannot move; preserve v09's source-specific exclusions.
                 string sourceName = original.spawnConfig.name;
                 bool requiresMobileBoss =
                     sourceName.StartsWith("Quadruped_BoarBoss_", StringComparison.OrdinalIgnoreCase) ||
@@ -105,6 +140,34 @@ namespace Randomizer.CatQuest3
                 groupNames.Sort(StringComparer.Ordinal);
                 uint seed = Hash(run.SeedValue.ToString("X8") + "|" + originalEntry.Category + "|" + scene + "|" +
                                  __instance.spawnerId + "|" + i);
+                // For the two special pools, pick among the least-used *eligible*
+                // identities. With unrestricted slots, every identity gets one turn
+                // before any repeat. Restricted slots may need an already-used one.
+                Dictionary<string, int> usage = isLandBoss ? landBossUses :
+                    (isDedicatedBossShip ? bossShipUses : null);
+                string distributionGroup = null;
+                if (usage != null)
+                {
+                    int minimum = int.MaxValue;
+                    List<string> leastUsed = new List<string>();
+                    foreach (string name in groupNames)
+                    {
+                        int used;
+                        if (!usage.TryGetValue(name, out used)) used = 0;
+                        if (used < minimum)
+                        {
+                            minimum = used;
+                            leastUsed.Clear();
+                            leastUsed.Add(name);
+                        }
+                        else if (used == minimum) leastUsed.Add(name);
+                    }
+                    uint draw = Hash(run.SeedValue.ToString("X8") + "|DISTRIBUTE|" +
+                                     (isLandBoss ? "LAND_BOSS" : "BOSS_SHIP") + "|" +
+                                     scene + "|" + __instance.spawnerId + "|" + i +
+                                     "|" + minimum);
+                    distributionGroup = leastUsed[(int)(draw % (uint)leastUsed.Count)];
+                }
                 // Only non-BossShip Ordinary aquatic slots discount BossShip candidates.
                 // Weight *variation groups*, not individual configs: regular=4 tickets,
                 // BossShip=1 ticket. Dedicated BossShip slots retain uniform weights.
@@ -113,7 +176,11 @@ namespace Randomizer.CatQuest3
                     string.Equals(environment, "Aquatic", StringComparison.OrdinalIgnoreCase) &&
                     !originalBossShipSlot;
                 string group;
-                if (discountBossShips)
+                if (distributionGroup != null)
+                {
+                    group = distributionGroup;
+                }
+                else if (discountBossShips)
                 {
                     int totalTickets = 0;
                     foreach (string name in groupNames)
@@ -152,6 +219,18 @@ namespace Randomizer.CatQuest3
                 replacement.spawnCount = original.spawnCount;
                 updated[i] = replacement;
                 changes++;
+                if (usage != null)
+                {
+                    int previous;
+                    if (!usage.TryGetValue(group, out previous)) previous = 0;
+                    usage[group] = previous + 1;
+                    Plugin.Log.LogInfo("ENEMY DISTRIBUTION | Pool:" +
+                        (isLandBoss ? "LandBoss" : "BossShip") +
+                        " | Identity:" + group + " | Uses:" + usage[group] +
+                        " | EligibleIdentities:" + groupNames.Count +
+                        " | Scene:" + scene + " | Spawner:" + __instance.spawnerId +
+                        " | Entry:" + i);
+                }
                 Plugin.Log.LogInfo("ENEMY RANDOM | " + scene + " | " + __instance.spawnerId +
                     " | SpawnType:" + __instance.spawnType + " | Category:" + originalEntry.Category + " | Entry:" + i + " | " + original.spawnConfig.name +
                     " -> " + selected.UnitConfigName + " | Count:" + original.spawnCount);
