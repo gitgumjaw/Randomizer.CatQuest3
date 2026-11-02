@@ -49,6 +49,7 @@ namespace Randomizer.CatQuest3
             harmony.PatchAll();
 
             LoreDiagnosticController.Initialize();
+            PlayerControlEntitasDiagnostic.Initialize();
 
             /*
              * Do not create RandomizerSettings or generate a

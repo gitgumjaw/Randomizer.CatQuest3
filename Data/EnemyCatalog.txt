@@ -470,7 +470,7 @@ NAME|Zero Jellyfish (Zero Dimension)
 VARIATION|Jellyfish
 ENVIRONMENT|Aquatic
 CATEGORY|Ordinary
-RANDOMIZE|Yes
+RANDOMIZE|No
 RESTRICTIONS|Unkillable
 NOTES|Cannot spawn in placed where it needs to die.
 
@@ -504,7 +504,7 @@ NOTES|
 UNITCONFIG|Flying_Parrot_MonsterConfig
 NAME|Parrot
 VARIATION|Parrot
-ENVIRONMENT|All
+ENVIRONMENT|Ground
 CATEGORY|Ordinary
 RANDOMIZE|Yes
 RESTRICTIONS|None
@@ -882,7 +882,7 @@ NOTES|
 UNITCONFIG|Grunt_WispFire_MonsterConfig
 NAME|Fire Wisp
 VARIATION|FireWisp
-ENVIRONMENT|All
+ENVIRONMENT|Ground
 CATEGORY|Ordinary
 RANDOMIZE|Yes
 RESTRICTIONS|None
@@ -900,10 +900,10 @@ NOTES|
 UNITCONFIG|MachoDog_Boss_MonsterConfig
 NAME|Macho Dog
 VARIATION|MachoDog
-ENVIRONMENT|All
+ENVIRONMENT|Ground
 CATEGORY|Boss
-RANDOMIZE|Yes
-RESTRICTIONS|None
+RANDOMIZE|No
+RESTRICTIONS|CannotMove
 NOTES|
 
 UNITCONFIG|NorthStarBoss_MonsterConfig

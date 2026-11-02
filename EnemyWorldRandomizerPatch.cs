@@ -215,6 +215,10 @@ namespace Randomizer.CatQuest3
                                         "|" + __instance.spawnerId + "|" + i);
                 EnemyCatalogEntry selected = variationsForGroup[(int)(variantSeed % (uint)variationsForGroup.Count)];
                 if (selected.Asset == null) continue;
+
+                // Apply experimental aggro settings to every selected enemy.
+                NormalizeAggroForTest(selected.Asset);
+
                 SpawnTableItem replacement = new SpawnTableItem(selected.Asset, original.probability);
                 replacement.spawnCount = original.spawnCount;
                 updated[i] = replacement;
@@ -253,5 +257,95 @@ namespace Randomizer.CatQuest3
                 return hash;
             }
         }
+
+
+
+        // =========================================================
+        // TEMPORARY EXPERIMENT: UNIVERSAL ENEMY AGGRO
+        // =========================================================
+
+        private static readonly HashSet<int> AggroTestProcessed =
+            new HashSet<int>();
+
+        private static void NormalizeAggroForTest(UnitConfig config)
+        {
+            if (config == null)
+                return;
+
+            // Only modify each shared UnitConfig once.
+            if (!AggroTestProcessed.Add(config.GetInstanceID()))
+                return;
+
+            bool sensor = TrySetAggroField(
+                config, "sensorRadius", 15f);
+
+            bool aggro = TrySetAggroField(
+                config, "aggroRadius", 10f);
+
+            bool los = TrySetAggroField(
+                config, "overrideAggroLineOfSight", 0);
+
+            bool dontCheckLos = TrySetAggroField(
+                config, "dontCheckForLineOfSightAggro", 0);
+
+            Plugin.Log.LogWarning(
+                "UNIVERSAL AGGRO TEST | Config:" + config.name +
+                " | Sensor:" + sensor +
+                " | Aggro:" + aggro +
+                " | OverrideLOS:" + los +
+                " | DontCheckLOS:" + dontCheckLos
+            );
+        }
+
+
+        private static bool TrySetAggroField(
+            UnitConfig config,
+            string fieldName,
+            object value)
+        {
+            try
+            {
+                System.Type type = config.GetType();
+
+                while (type != null)
+                {
+                    var field = type.GetField(
+                        fieldName,
+                        System.Reflection.BindingFlags.Instance |
+                        System.Reflection.BindingFlags.Public |
+                        System.Reflection.BindingFlags.NonPublic |
+                        System.Reflection.BindingFlags.DeclaredOnly
+                    );
+
+                    if (field != null)
+                    {
+                        object converted = field.FieldType.IsEnum
+                            ? System.Enum.ToObject(field.FieldType, value)
+                            : System.Convert.ChangeType(
+                                value, field.FieldType);
+
+                        field.SetValue(config, converted);
+
+                        return true;
+                    }
+
+                    type = type.BaseType;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Plugin.Log.LogWarning(
+                    "AGGRO TEST ERROR | Field:" + fieldName +
+                    " | Error:" + ex.Message
+                );
+            }
+
+            return false;
+        }
+
+        // =========================================================
+        // END AGGRO NORMALIZATION EXPERIMENT
+        // =========================================================
+
     }
 }
