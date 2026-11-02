@@ -92,7 +92,6 @@ namespace Randomizer.CatQuest3
                 return true;
             }
 
-
             if (lootTable.list.Count !=
                 collectibleSlots.Count)
             {

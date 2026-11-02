@@ -1,4 +1,4 @@
-Catalog Locations: 319
+Catalog Locations: 317
 
 LOCATION|RANDOMIZER|STARTING|MELEE
 LABEL|Starting Loadout — Melee
@@ -2067,15 +2067,6 @@ CATEGORY|Spells
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Spell|d55a7ad9dc89ae649834882278fc0ef5|Weight:1
 
-LOCATION|Ruins_Antares|MainQuest_04_AntaresRuins|FSM|Spawn Loot
-LABEL|Defeat Antares - Loot
-AREA|Antares Ruins
-CATEGORY|Resources/Collectibles
-SLOT|0|AllowCollectibles:True|Options:1
-OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
-SLOT|1|AllowCollectibles:True|Options:1
-OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:20|Value:200|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:False|QuantityMultiplier:1|ValueMultiplier:5
-
 LOCATION|Ruins_Centauri|DungeonQuest_GoingPostal_OinkerChief|FSM|GET REWARD
 LABEL|Delivery to Oinker
 AREA|The Mail; Centauri Ruins; Twilight Isles
@@ -2115,13 +2106,6 @@ AREA|Orion Ruins; Furtigua
 CATEGORY|Spells
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Spell|1fafd3cbec8754e359dbb8ef5e643196|Weight:1
-
-LOCATION|Ruins_Orion|MainQuest_03_OrionRuins|FSM|Spawn Boss Chest
-LABEL|Defeat Orion - Loot
-AREA|Orion Ruins; Furtigua
-CATEGORY|Resources/Collectibles
-SLOT|0|AllowCollectibles:True|Options:1
-OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Quantity:10|Value:100|RandomQuantity:False|QuantityMin:1|QuantityMax:1|RandomValue:False|ValueMin:1|ValueMax:1|IgnoreCollectibleMultiplier:True|QuantityMultiplier:1|ValueMultiplier:1
 
 LOCATION|Ruins_Polaris|MainQuest_06_PolarisRuins|FSM|Get Infinity Key
 LABEL|Polaris Mural - Infinity Key
