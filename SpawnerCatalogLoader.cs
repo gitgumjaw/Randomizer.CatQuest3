@@ -1,7 +1,9 @@
 ﻿// Cat Quest III Randomizer
 // File: SpawnerCatalogLoader.cs
-// Version: SpawnerCatalogLoader_20261105_2301_EST_v04
+// Version: SpawnerCatalogLoader_20261106_v05
 // Read-only catalog with fail-closed eligibility and encounter restrictions.
+// v05: 2DLocation permits XOnly enemies even when MovementRequired is present;
+// CannotMove remains excluded from MovementRequired spawners.
 // Place SpawnerCatalog.txt in Data beside EnemyCatalog.txt.
 using System;
 using System.Collections.Generic;
@@ -60,10 +62,14 @@ namespace Randomizer.CatQuest3
                 HasRestriction(spawner, "KillRequired"))
                 return false;
 
-            if (HasRestriction(spawner, "MovementRequired") &&
-                (EnemyCatalogLoader.HasRestriction(enemy, "CannotMove") ||
-                 EnemyCatalogLoader.HasRestriction(enemy, "XOnly")))
-                return false;
+            if (HasRestriction(spawner, "MovementRequired"))
+            {
+                if (EnemyCatalogLoader.HasRestriction(enemy, "CannotMove"))
+                    return false;
+                if (EnemyCatalogLoader.HasRestriction(enemy, "XOnly") &&
+                    !HasRestriction(spawner, "2DLocation"))
+                    return false;
+            }
 
             // Old special-case exclusions remain encoded in enemy eligibility.
             return true;
