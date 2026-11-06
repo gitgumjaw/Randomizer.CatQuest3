@@ -48,8 +48,9 @@ namespace Randomizer.CatQuest3
 
             harmony.PatchAll();
 
-            LoreDiagnosticController.Initialize();
+            PlayerTestStats.Initialize();
             PlayerControlEntitasDiagnostic.Initialize();
+            PlayerCoordinateTracker.Initialize();
 
             /*
              * Do not create RandomizerSettings or generate a

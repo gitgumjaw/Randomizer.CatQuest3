@@ -1,0 +1,1967 @@
+# CAT QUEST III | SPAWNER CATALOG | Coordinate proximity review order | v02
+# Format: SPAWNER, NAME, SCENE, POSITION, TYPE, TERRAIN, RESTRICTIONS, RANDOMIZE, NOTES.
+# Grouped by SCENE; within each scene, ordered by nearest-neighbor distance in X/Z.
+# Starts at the southernmost (lowest Z) spawner in each scene. This is a review route, not a gameplay path.
+# Position is informational. Runtime identity is the exact SCENE + SPAWNER ID.
+# TYPE/TERRAIN are provisional. Restrictions still need manual review.
+# Preserves the source catalog RANDOMIZE settings (5 disabled).
+
+SPAWNER|1290235619-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner - Long Island Patrol (1)
+SCENE|MainOverworld
+POSITION|-10.180,0.000,-74.840
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|621794460-8ba0fbd11d84e144c87311f29eadee97
+NAME|LongIsland_EnemySpawner_Tower_01 (2)
+SCENE|MainOverworld
+POSITION|-15.784,0.000,-69.382
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|562352830-8ba0fbd11d84e144c87311f29eadee97
+NAME|LongIsland_EnemySpawner_Tower_01 (1)
+SCENE|MainOverworld
+POSITION|-14.367,0.000,-65.050
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1656662171-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner - Long Island Patrol (2)
+SCENE|MainOverworld
+POSITION|-10.660,0.000,-65.000
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1923581041-8ba0fbd11d84e144c87311f29eadee97
+NAME|LongIsland_EnemySpawner_01
+SCENE|MainOverworld
+POSITION|-15.410,0.000,-59.240
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|298777098-8ba0fbd11d84e144c87311f29eadee97
+NAME|LongIsland_EnemySpawner_02
+SCENE|MainOverworld
+POSITION|-11.850,0.000,-55.910
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:QUEST_SPAWN; vanilla/Ruffer classifications differ
+
+SPAWNER|16396898-8ba0fbd11d84e144c87311f29eadee97
+NAME|LongIsland_EnemySpawner_03
+SCENE|MainOverworld
+POSITION|-10.680,0.000,-54.970
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|755839461-8ba0fbd11d84e144c87311f29eadee97
+NAME|LongIsland_EnemySpawner_05
+SCENE|MainOverworld
+POSITION|-14.540,0.000,-48.630
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1266874938-8ba0fbd11d84e144c87311f29eadee97
+NAME|LongIsland_EnemySpawner_04
+SCENE|MainOverworld
+POSITION|-15.400,0.000,-49.070
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|981675797-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_ShipBoss - Long Island Ambush
+SCENE|MainOverworld
+POSITION|-13.310,0.000,-45.620
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|869216123-8ba0fbd11d84e144c87311f29eadee97
+NAME|Pawman_EnemySpawner_Starfish_05 - Long Island Upper Beach
+SCENE|MainOverworld
+POSITION|-12.036,0.000,-36.600
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1223219971-8ba0fbd11d84e144c87311f29eadee97
+NAME|Pawman_EnemySpawner_Starfish_06 - Long Island Upper Beach
+SCENE|MainOverworld
+POSITION|-11.510,0.000,-35.430
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2140572005-8ba0fbd11d84e144c87311f29eadee97
+NAME|SkinnyIsland_EnemySpawner_03 - Furst Island
+SCENE|MainOverworld
+POSITION|-23.570,0.000,-24.430
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1456324288-8ba0fbd11d84e144c87311f29eadee97
+NAME|SkinnyIsland_EnemySpawner_02 - Furst Island
+SCENE|MainOverworld
+POSITION|-24.910,0.000,-23.990
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|277012865-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_EnemyShip - Furst Island Ambush
+SCENE|MainOverworld
+POSITION|-24.870,0.000,-20.320
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_LongAggro_MonsterConfig; SpawnType:QUEST_SPAWN;
+
+SPAWNER|885378714-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Purribean_02
+SCENE|MainOverworld
+POSITION|-41.240,0.000,-27.320
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|None
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|44884333-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Squeaky - Catuga Tutorial Cutscene
+SCENE|MainOverworld
+POSITION|-43.690,0.000,-44.810
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_Squeaky_Boss_MonsterConfig; SpawnType:QUEST_SPAWN; Dialogue only.
+
+SPAWNER|2076818164-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Clean_Boss - Catuga Tutorial Boss
+SCENE|MainOverworld
+POSITION|-44.690,0.000,-45.950
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_ChubbyBoss_Clean_Tutorial_MonsterConfig; SpawnType:QUEST_SPAWN;
+
+SPAWNER|464264777-8ba0fbd11d84e144c87311f29eadee97
+NAME|Catuga_EnemySpawner_03 - Gun Tutorial
+SCENE|MainOverworld
+POSITION|-45.860,0.000,-49.360
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|None
+RANDOMIZE|No
+NOTES|Original:Grunt_RatBomber_Tutorial_MonsterConfig; SpawnType:WORLD_SPAWN;
+
+SPAWNER|207476120-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Grunts_group - Catuga Tutorial Ambush - 2 enemies
+SCENE|MainOverworld
+POSITION|-53.610,0.000,-44.940
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN; REVIEW:scripted encounter restrictions
+
+SPAWNER|966373166-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Grunts_bomber - Catuga Tutorial Ambush
+SCENE|MainOverworld
+POSITION|-54.880,0.000,-44.470
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_MonsterConfig; SpawnType:QUEST_SPAWN; REVIEW:scripted encounter restrictions
+
+SPAWNER|1556522266-8ba0fbd11d84e144c87311f29eadee97
+NAME|Catuga_EnemySpawner_02
+SCENE|MainOverworld
+POSITION|-57.040,0.000,-53.160
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|None
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2020880029-8ba0fbd11d84e144c87311f29eadee97
+NAME|Catuga_EnemySpawner_01
+SCENE|MainOverworld
+POSITION|-45.500,0.000,-60.560
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|None
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|12700572-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_Tower_02
+SCENE|MainOverworld
+POSITION|-74.339,0.000,-32.826
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1249133027-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_Tower_04 (2)
+SCENE|MainOverworld
+POSITION|-73.030,0.000,-30.850
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Stationary_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1529932697-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_Tower_03
+SCENE|MainOverworld
+POSITION|-77.293,0.000,-33.840
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|19931102-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_Tower_04 (1)
+SCENE|MainOverworld
+POSITION|-79.880,0.000,-32.866
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Stationary_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1851447207-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_Tower_04
+SCENE|MainOverworld
+POSITION|-83.768,0.000,-26.836
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1716897318-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_01
+SCENE|MainOverworld
+POSITION|-78.320,0.000,-25.270
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|141534314-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_03
+SCENE|MainOverworld
+POSITION|-76.700,0.000,-25.750
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Boss_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1518381980-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_02
+SCENE|MainOverworld
+POSITION|-75.040,0.000,-25.160
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|286304175-8ba0fbd11d84e144c87311f29eadee97
+NAME|PurricadeIsland_EnemySpawner_Tower_01
+SCENE|MainOverworld
+POSITION|-70.900,0.000,-26.010
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1522986279-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Purribean_03
+SCENE|MainOverworld
+POSITION|-57.310,0.000,3.660
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|794694128-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Purribean_01
+SCENE|MainOverworld
+POSITION|-40.980,0.000,-9.320
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|None
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|258909343-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_PirateKing - Tavern Cutscene
+SCENE|MainOverworld
+POSITION|-14.012,0.000,1.668
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_HumanoidBoss_PirateKing_MonsterConfig; SpawnType:QUEST_SPAWN;
+
+SPAWNER|582786501-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Rat_01 - Tavern Intro Cutscene
+SCENE|MainOverworld
+POSITION|-12.522,0.000,1.618
+TYPE|Grunt, Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN;
+
+SPAWNER|551768447-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Patchy
+SCENE|MainOverworld
+POSITION|-4.547,0.000,-0.440
+TYPE|Boss, Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_Boss_RoguePatchy_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|943024527-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Boar_03
+SCENE|MainOverworld
+POSITION|13.850,0.000,16.630
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Quadruped_Boar_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|634052254-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Boar_02
+SCENE|MainOverworld
+POSITION|15.170,0.000,16.670
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Quadruped_Boar_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|135072298-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Boar_01
+SCENE|MainOverworld
+POSITION|13.330,0.000,17.930
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Quadruped_Boar_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|639875857-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Boar_02 - Leave for Chimeowra Quest
+SCENE|MainOverworld
+POSITION|24.820,0.000,16.100
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|No
+NOTES|Original:Quadruped_Boar_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1724078896-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_BoarBoss
+SCENE|MainOverworld
+POSITION|32.490,0.000,13.170
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Quadruped_BoarBoss_MonsterConfig; SpawnType:QUEST_SPAWN;
+
+SPAWNER|196863023-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Boar_01 - 2 enemies
+SCENE|MainOverworld
+POSITION|33.430,0.000,1.480
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Quadruped_Boar_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|271138169-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_enemy_02
+SCENE|MainOverworld
+POSITION|43.260,0.000,1.160
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|155625048-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_enemy_01
+SCENE|MainOverworld
+POSITION|43.170,0.000,-0.690
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1374144095-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_enemy_03
+SCENE|MainOverworld
+POSITION|45.170,0.000,0.120
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1555851091-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Chubby_Respawn_01
+SCENE|MainOverworld
+POSITION|48.490,0.000,7.410
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|982248906-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_MewtallicaGrunt_01 - NPC Concert Guards 
+SCENE|MainOverworld
+POSITION|52.462,0.000,3.736
+TYPE|Grunt,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|None
+RANDOMIZE|No
+NOTES|Original:Grunt_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1579032338-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_MewtallicaGrunt_02 - NPC Concert Guards 
+SCENE|MainOverworld
+POSITION|53.932,0.000,3.736
+TYPE|Grunt,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|None
+RANDOMIZE|No
+NOTES|Original:Grunt_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|565584918-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_MewtallicaShip_Boss
+SCENE|MainOverworld
+POSITION|55.380,0.000,-1.290
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_MewtallicaBoss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1826978970-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Mewtallica
+SCENE|MainOverworld
+POSITION|56.140,0.000,-4.550
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Mewtallica_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1750810917-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Mewtallica (2)
+SCENE|MainOverworld
+POSITION|63.430,0.000,-3.150
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Mewtallica_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1724931964-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_03 - Mewtallica Orion Tower Guard
+SCENE|MainOverworld
+POSITION|81.640,0.000,-11.080
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1357787872-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_MewtallicaBoss
+SCENE|MainOverworld
+POSITION|82.810,0.000,-13.740
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_HumanoidBoss_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|365899017-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_01 - Mewtallica Orion Tower Guard
+SCENE|MainOverworld
+POSITION|81.980,0.000,-15.570
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN; REVIEW:scripted encounter restrictions
+
+SPAWNER|1616169305-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_02 - Mewtallica Orion Tower Guard
+SCENE|MainOverworld
+POSITION|85.270,0.000,-11.930
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN; REVIEW:scripted encounter restrictions
+
+SPAWNER|1371141879-8ba0fbd11d84e144c87311f29eadee97
+NAME|Furtigua_EnemySpawner_04
+SCENE|MainOverworld
+POSITION|74.260,0.000,-20.040
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Mewtallica_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|966997838-8ba0fbd11d84e144c87311f29eadee97
+NAME|Furtigua_EnemySpawner_05
+SCENE|MainOverworld
+POSITION|73.490,0.000,-24.560
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Mewtallica_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1427883566-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Mewtallica (3) - South of Orion
+SCENE|MainOverworld
+POSITION|94.980,0.000,-24.010
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Mewtallica_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1389448960-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lovepur_EnemySpawner (4) - Offspring Island
+SCENE|MainOverworld
+POSITION|92.850,0.000,3.930
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1033259874-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Rat_02 - Offspring Island
+SCENE|MainOverworld
+POSITION|96.579,0.000,4.840
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|322843345-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Rat_01 - Offspring Island
+SCENE|MainOverworld
+POSITION|96.330,0.000,5.850
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|818965504-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lovepur_EnemySpawner (3) - Offspring Island
+SCENE|MainOverworld
+POSITION|91.450,0.000,8.250
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1908317287-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lovepur_EnemySpawner (2) - Offspring Island
+SCENE|MainOverworld
+POSITION|92.910,0.000,10.230
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1205427468-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Chubby - Chimeowra Chubby
+SCENE|MainOverworld
+POSITION|75.080,0.000,18.940
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|None
+RANDOMIZE|No
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|219879922-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Grunt
+SCENE|MainOverworld
+POSITION|75.080,0.000,18.940
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1807469728-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Chimeowra
+SCENE|MainOverworld
+POSITION|68.110,0.000,17.560
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_ChimeowraBoss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1247447897-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Chubby_Respawn_03
+SCENE|MainOverworld
+POSITION|48.820,0.000,15.330
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|75763556-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Chubby_02 - Polaris Guards
+SCENE|MainOverworld
+POSITION|44.522,0.000,27.608
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1579712771-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Clean_Boss
+SCENE|MainOverworld
+POSITION|43.232,0.000,27.438
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_ChubbyBoss_Clean_Polaris_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2144531214-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Grunts_02 - Polaris guards
+SCENE|MainOverworld
+POSITION|42.742,0.000,27.108
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2105647565-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Grunts_Start_02
+SCENE|MainOverworld
+POSITION|42.482,0.000,27.498
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1486531699-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Grunts_Start_01
+SCENE|MainOverworld
+POSITION|40.802,0.000,27.498
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1975310561-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Chubby_01
+SCENE|MainOverworld
+POSITION|39.542,0.000,27.018
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1554278139-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Grunts_01
+SCENE|MainOverworld
+POSITION|39.972,0.000,25.698
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2012760734-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Clean_Intro - Polaris
+SCENE|MainOverworld
+POSITION|37.022,0.000,28.288
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_ChubbyBoss_Clean_Polaris_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|591686445-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Squeaky
+SCENE|MainOverworld
+POSITION|37.292,0.000,30.468
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_Squeaky_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|189275097-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Squeaky_Start - Ruffer only?
+SCENE|MainOverworld
+POSITION|42.912,0.000,29.178
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_Squeaky_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|818407384-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Chubby_Respawn_04
+SCENE|MainOverworld
+POSITION|32.250,0.000,25.120
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1850297664-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst01_Starfish_04 - Purrgatory
+SCENE|MainOverworld
+POSITION|39.930,0.000,43.540
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_AggroLargeAmbush_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1265628287-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst01_Starfish_01 - purg
+SCENE|MainOverworld
+POSITION|37.800,0.000,47.730
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_AggroLargeAmbush_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|593512401-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst01_Starfish_02 - purg
+SCENE|MainOverworld
+POSITION|41.940,0.000,49.540
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_AggroLargeAmbush_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2091637100-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst01_Starfish_03 - purg
+SCENE|MainOverworld
+POSITION|45.250,0.000,47.260
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_AggroLargeAmbush_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1259146207-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Parrot
+SCENE|MainOverworld
+POSITION|48.310,0.000,43.270
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1396887390-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Parrot (5)
+SCENE|MainOverworld
+POSITION|54.340,0.000,49.240
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2041988629-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_FortWreck
+SCENE|MainOverworld
+POSITION|48.016,0.000,53.320
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2071401871-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Boss_02
+SCENE|MainOverworld
+POSITION|46.050,0.000,54.360
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Boss_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1470041458-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Boss_01
+SCENE|MainOverworld
+POSITION|45.460,0.000,54.900
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Boss_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1212397881-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_FortWreck (1)
+SCENE|MainOverworld
+POSITION|44.552,0.000,55.930
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1325000308-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_FortWreck_01
+SCENE|MainOverworld
+POSITION|49.017,0.000,59.130
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|783909081-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_FortWreck_02
+SCENE|MainOverworld
+POSITION|51.830,0.000,58.520
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|918426044-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_FortWreck_03
+SCENE|MainOverworld
+POSITION|53.070,0.000,56.790
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|393617470-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_MewtallicaGrunt
+SCENE|MainOverworld
+POSITION|56.283,0.000,62.336
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Mewtallica_AmbushMusic_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|573206548-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Ship_01
+SCENE|MainOverworld
+POSITION|60.203,0.000,63.056
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Mewtallica_AmbushMusic_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1965116533-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Parrots_02
+SCENE|MainOverworld
+POSITION|36.039,0.000,63.724
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1834795990-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Parrots_01
+SCENE|MainOverworld
+POSITION|33.999,0.000,62.664
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|41573305-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Parrot (4) - Leave this one for Chimeowra quest
+SCENE|MainOverworld
+POSITION|31.890,0.000,64.900
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|No
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|80161550-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Parrot (3)
+SCENE|MainOverworld
+POSITION|36.220,0.000,66.410
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1759265204-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Rats
+SCENE|MainOverworld
+POSITION|30.450,0.000,53.520
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1486293106-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Parrot (1)
+SCENE|MainOverworld
+POSITION|28.780,0.000,50.630
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2107101731-8ba0fbd11d84e144c87311f29eadee97
+NAME|Purvanna_EnemySpawner_Parrot (2)
+SCENE|MainOverworld
+POSITION|26.390,0.000,49.250
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1342371451-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_IceMage
+SCENE|MainOverworld
+POSITION|9.352,0.000,41.477
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Mage_Ice_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1125853380-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Ship_02
+SCENE|MainOverworld
+POSITION|-14.310,0.000,45.280
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1908398551-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Ship_01
+SCENE|MainOverworld
+POSITION|-15.700,0.000,49.420
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1722502893-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lonely_EnemySpawner
+SCENE|MainOverworld
+POSITION|-26.304,0.000,76.891
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|715880543-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lonely_EnemySpawner (1)
+SCENE|MainOverworld
+POSITION|-23.614,0.000,77.971
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_RatBomber_Tower_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1837588067-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lonely_ShipSpawner
+SCENE|MainOverworld
+POSITION|-15.830,0.000,79.390
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_Double_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2072868415-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_RubberDucky
+SCENE|MainOverworld
+POSITION|-48.450,0.000,95.100
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_RubberDuckyBoss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|736473217-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_SpicyShip_02 - Macho arena
+SCENE|MainOverworld
+POSITION|-63.950,0.000,102.200
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_AlwaysAggro_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|965876441-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_SpicyShip_01
+SCENE|MainOverworld
+POSITION|-66.330,0.000,108.710
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_AlwaysAggro_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2136708745-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_SunsetMaze_01
+SCENE|MainOverworld
+POSITION|-77.430,0.000,126.920
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|227130611-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_SunsetMaze_02
+SCENE|MainOverworld
+POSITION|-108.090,0.000,109.090
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1544700887-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_07
+SCENE|MainOverworld
+POSITION|-83.020,0.000,79.390
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|171789113-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_08
+SCENE|MainOverworld
+POSITION|-79.279,0.000,80.284
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1170605159-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_02
+SCENE|MainOverworld
+POSITION|-94.580,0.000,67.980
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2094031814-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_06
+SCENE|MainOverworld
+POSITION|-91.880,0.000,62.700
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1412612063-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_03
+SCENE|MainOverworld
+POSITION|-89.610,0.000,62.330
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1855517305-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_04
+SCENE|MainOverworld
+POSITION|-96.010,0.000,60.810
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|935836696-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_01
+SCENE|MainOverworld
+POSITION|-102.260,0.000,66.180
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1738066224-8ba0fbd11d84e144c87311f29eadee97
+NAME|Twilight_EnemySpawner_Pig_05
+SCENE|MainOverworld
+POSITION|-104.980,0.000,61.040
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|2066532521-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Big_Purribean_01
+SCENE|MainOverworld
+POSITION|-106.800,0.000,51.710
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_Double_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|676848224-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_GruntRun_2
+SCENE|MainOverworld
+POSITION|-104.020,0.000,44.020
+TYPE|Grunt,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1400498770-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_GruntRun_1
+SCENE|MainOverworld
+POSITION|-102.830,0.000,44.300
+TYPE|Grunt,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|118293588-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pig_01
+SCENE|MainOverworld
+POSITION|-101.610,0.000,45.280
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1530857002-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pig_02
+SCENE|MainOverworld
+POSITION|-105.590,0.000,43.510
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Pig_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1630370577-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Ship
+SCENE|MainOverworld
+POSITION|-94.380,0.000,33.850
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1348883897-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Big_Purribean_04
+SCENE|MainOverworld
+POSITION|-92.500,0.000,26.560
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_Double_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1436660158-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Big_Purribean_02
+SCENE|MainOverworld
+POSITION|-82.000,0.000,38.100
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_Double_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1079307376-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Big_Purribean_03
+SCENE|MainOverworld
+POSITION|-73.000,0.000,51.700
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_Double_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1149209915-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Trident - Actual Boss Fight
+SCENE|MainOverworld
+POSITION|-61.476,0.000,66.087
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_Trident_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2074326310-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Big_Purribean_05
+SCENE|MainOverworld
+POSITION|-107.700,0.000,21.800
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_Double_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|37750049-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_PirateKingShip
+SCENE|MainOverworld
+POSITION|-132.240,0.000,-39.520
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_PirateKingBoss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1585691615-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Squeaky
+SCENE|MainOverworld
+POSITION|-134.990,0.000,-48.810
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|No
+NOTES|Original:Grunt_Squeaky_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|515066822-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Enemy_01
+SCENE|MainOverworld
+POSITION|-134.280,0.000,-50.660
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Chubby_Boss_Rat_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|689807532-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Enemy_02
+SCENE|MainOverworld
+POSITION|-134.770,0.000,-51.530
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_RatSwordsmen_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1236065218-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Enemy_03
+SCENE|MainOverworld
+POSITION|-133.260,0.000,-50.810
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_RatSwordsmen_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1782474871-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (13)
+SCENE|MainOverworld
+POSITION|-133.810,0.000,-62.400
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|424946500-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (4)
+SCENE|MainOverworld
+POSITION|-127.980,0.000,-65.410
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|1695249049-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (5)
+SCENE|MainOverworld
+POSITION|-125.920,0.000,-69.350
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|780905965-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (2)
+SCENE|MainOverworld
+POSITION|-119.850,0.000,-64.230
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|2124848960-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (3)
+SCENE|MainOverworld
+POSITION|-118.400,0.000,-65.020
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|1841224828-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (11)
+SCENE|MainOverworld
+POSITION|-107.570,0.000,-55.160
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|1883334176-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (12)
+SCENE|MainOverworld
+POSITION|-102.060,0.000,-59.070
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|1433611918-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (7)
+SCENE|MainOverworld
+POSITION|-97.460,0.000,-63.220
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|1370937330-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (9)
+SCENE|MainOverworld
+POSITION|-103.170,0.000,-48.460
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|1736459378-8ba0fbd11d84e144c87311f29eadee97
+NAME|FurggyIsland_EnemySpawner (6)
+SCENE|MainOverworld
+POSITION|-132.580,0.000,-73.930
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:TRIGGER_SPAWN
+
+SPAWNER|714449374-8ba0fbd11d84e144c87311f29eadee97
+NAME|Pawman_EnemySpawner_Starfish_04
+SCENE|MainOverworld
+POSITION|19.060,0.000,-43.590
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|70170716-8ba0fbd11d84e144c87311f29eadee97
+NAME|Pawman_EnemySpawner_Starfish_01
+SCENE|MainOverworld
+POSITION|35.440,0.000,-43.350
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1026663623-8ba0fbd11d84e144c87311f29eadee97
+NAME|Pawman_EnemySpawner_Starfish_02
+SCENE|MainOverworld
+POSITION|35.740,0.000,-38.310
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1273074321-8ba0fbd11d84e144c87311f29eadee97
+NAME|Pawman_EnemySpawner_Starfish_03
+SCENE|MainOverworld
+POSITION|41.580,0.000,-39.470
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flat_Starfish_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|860362388-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_EnemySpawner_01
+SCENE|MainOverworld
+POSITION|115.690,0.000,-60.720
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|179952767-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_EnemySpawner_02
+SCENE|MainOverworld
+POSITION|116.190,0.000,-61.270
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1344724872-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_EnemySpawner_03
+SCENE|MainOverworld
+POSITION|118.976,0.000,-58.820
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_SkeletonRat_Arcane_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|567698163-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lovepur_EnemySpawner (1)
+SCENE|MainOverworld
+POSITION|112.820,0.000,26.560
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1982573761-8ba0fbd11d84e144c87311f29eadee97
+NAME|Lovepur_EnemySpawner
+SCENE|MainOverworld
+POSITION|111.480,0.000,28.280
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Flying_Parrot_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|50186644-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Ship_01 - Antares Guards
+SCENE|MainOverworld
+POSITION|91.910,0.000,59.540
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1970076955-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_MewtallicaPirate - Antares Cutscene
+SCENE|MainOverworld
+POSITION|89.830,0.000,61.950
+TYPE|Grunt,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Humanoid_Mewtallica_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2068166134-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Squeaky - Antares Cutscene
+SCENE|MainOverworld
+POSITION|91.980,0.000,62.870
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Squeaky_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|609849801-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Ship_03
+SCENE|MainOverworld
+POSITION|94.550,0.000,61.820
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1903529882-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Ship_02
+SCENE|MainOverworld
+POSITION|88.550,0.000,59.190
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_Standard_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1423984120-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave4_04
+SCENE|MainOverworld
+POSITION|46.750,0.000,121.350
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|556215727-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave2_03
+SCENE|MainOverworld
+POSITION|45.750,0.000,120.960
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|160837275-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave1_02
+SCENE|MainOverworld
+POSITION|45.690,0.000,123.370
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|12877055-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave2_02
+SCENE|MainOverworld
+POSITION|46.800,0.000,123.350
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|292205061-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave4_05
+SCENE|MainOverworld
+POSITION|47.060,0.000,123.940
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|429441822-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave2_01
+SCENE|MainOverworld
+POSITION|44.020,0.000,124.810
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1059083002-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave4_01
+SCENE|MainOverworld
+POSITION|45.360,0.000,126.680
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1765347171-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave2_06
+SCENE|MainOverworld
+POSITION|41.420,0.000,124.280
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|2065579270-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave4_02
+SCENE|MainOverworld
+POSITION|40.950,0.000,124.910
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|22979201-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave1_01
+SCENE|MainOverworld
+POSITION|41.600,0.000,122.980
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|374469267-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave2_05
+SCENE|MainOverworld
+POSITION|41.200,0.000,121.680
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1037979457-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave1_03
+SCENE|MainOverworld
+POSITION|43.130,0.000,120.110
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|472714066-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave2_04
+SCENE|MainOverworld
+POSITION|43.170,0.000,119.830
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|204367664-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Pawst03_Mole_Wave4_03
+SCENE|MainOverworld
+POSITION|41.870,0.000,119.030
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MoleHoming_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|438420709-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_FireMages_01
+SCENE|MainOverworld
+POSITION|25.827,0.000,118.522
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Mage_Fire_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|223402750-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_FireMages_02
+SCENE|MainOverworld
+POSITION|25.307,0.000,115.772
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Mage_Fire_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1314315277-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Squid (5)
+SCENE|MainOverworld
+POSITION|25.270,0.000,141.330
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|843553373-8ba0fbd11d84e144c87311f29eadee97
+NAME|ShipSpawner_SquidBossShip
+SCENE|MainOverworld
+POSITION|26.220,0.000,144.360
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquidBoss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1762247842-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Squid (4)
+SCENE|MainOverworld
+POSITION|22.570,0.000,144.170
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1356663654-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Wisp_02
+SCENE|MainOverworld
+POSITION|11.690,0.000,142.070
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_WispFire_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1728664159-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Wisp_01
+SCENE|MainOverworld
+POSITION|9.610,0.000,141.250
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_WispFire_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|173224507-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Squid - Tentakey guard in front of volcano
+SCENE|MainOverworld
+POSITION|0.280,0.000,150.560
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1014711792-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Wisp_03
+SCENE|MainOverworld
+POSITION|-11.810,0.000,150.140
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_WispFire_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1305989212-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Wisp_04
+SCENE|MainOverworld
+POSITION|-14.140,0.000,144.090
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_WispFire_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1320034087-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Wisp_05
+SCENE|MainOverworld
+POSITION|-17.290,0.000,142.600
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Grunt_WispFire_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|860451044-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_Squeaky - Mermaid n Chill
+SCENE|MainOverworld
+POSITION|-20.840,0.000,148.390
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|None
+RANDOMIZE|Yes
+NOTES|Original:Grunt_Squeaky_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1437442405-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Squid (3)
+SCENE|MainOverworld
+POSITION|-25.240,0.000,154.780
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|425697397-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Squid (2)
+SCENE|MainOverworld
+POSITION|-25.140,0.000,157.570
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1714917145-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Sunset_02
+SCENE|MainOverworld
+POSITION|-26.230,0.000,161.800
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|738947026-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Sunset_03
+SCENE|MainOverworld
+POSITION|-36.080,0.000,164.020
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|590343773-8ba0fbd11d84e144c87311f29eadee97
+NAME|UnitSpawner_SpiciestSquid_Boss - Tentakey big guard
+SCENE|MainOverworld
+POSITION|-30.250,0.000,129.280
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible,KillRequired
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_Boss_MonsterConfig; SpawnType:QUEST_SPAWN
+
+SPAWNER|1228304533-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Squid (1)
+SCENE|MainOverworld
+POSITION|-28.270,0.000,126.860
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1247167065-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sunset_EnemySpawner_Squid
+SCENE|MainOverworld
+POSITION|-21.110,0.000,124.380
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Aquatic_SpicySquid_Overworld_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|918201796-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_Sunset_01
+SCENE|MainOverworld
+POSITION|-4.020,0.000,126.920
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|1341273362-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_SunsetMaze_04
+SCENE|MainOverworld
+POSITION|-91.650,0.000,171.720
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_MonsterConfig; SpawnType:WORLD_SPAWN
+
+SPAWNER|420967174-8ba0fbd11d84e144c87311f29eadee97
+NAME|Sea_ShipSpawner_SunsetMaze_03
+SCENE|MainOverworld
+POSITION|-143.460,0.000,139.220
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|SpikesAccessible
+RANDOMIZE|Yes
+NOTES|Original:Enemy_Ship_SpicySquids_MonsterConfig; SpawnType:WORLD_SPAWN

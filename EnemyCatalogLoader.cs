@@ -1,9 +1,7 @@
 ﻿// Cat Quest III Randomizer | EnemyCatalogLoader.cs
-// Generated: 20261028_090955_UTC | Revision: 07
-// Compatible patch: EnemyWorldRandomizerPatch_20261028_083757_UTC_v05.cs (unchanged)
-// Changes: NeedsSpikes is no longer a special-case restriction; BossShip slots require BossShip-tagged candidates.
-// Retains RANDOMIZE|No, Boss categories, Unkillable restrictions, and variation grouping.
-// Copy contents into existing EnemyCatalogLoader.cs class in Visual Studio.
+// Version: EnemyCatalogLoader_20261105_2301_EST_v09
+// Supports comma-separated TERRAIN values (Ground,Aquatic).
+// Compatible with EnemyWorldRandomizerPatch v12 and SpawnerCatalogLoader v04.
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,86 +15,119 @@ namespace Randomizer.CatQuest3
         public string UnitConfigName;
         public string Name;
         public string Variation;
-        public string Environment;
-        public string Category;
-        public bool CanRandomize;
+        public string Type;
+        public string Terrain;
         public string Restrictions;
+        public bool CanRandomize;
         public UnitConfig Asset;
+
+        // Transitional legacy accessors retained for other patches.
+        public string Category
+        {
+            get
+            {
+                if (string.Equals(Type, "Boss", StringComparison.OrdinalIgnoreCase))
+                    return EnemyCatalogLoader.HasTerrain(this, "Aquatic") &&
+                           !EnemyCatalogLoader.HasTerrain(this, "Ground")
+                        ? "Ordinary" : "Boss";
+                return "Ordinary";
+            }
+        }
+
+        public string Environment
+        {
+            get
+            {
+                if (EnemyCatalogLoader.HasRestriction(this, "Special")) return "Special";
+                return Terrain;
+            }
+        }
     }
 
     public static class EnemyCatalogLoader
     {
         private static Dictionary<string, EnemyCatalogEntry> entries;
-        private static List<EnemyCatalogEntry> ordinary;
-        private static List<EnemyCatalogEntry> miniBosses;
-        private static List<EnemyCatalogEntry> bosses;
+        private static List<EnemyCatalogEntry> grunts;
+        private static List<EnemyCatalogEntry> groundBosses;
+        private static List<EnemyCatalogEntry> aquaticBosses;
 
         public static EnemyCatalogEntry Find(string configName)
         {
             EnsureLoaded();
-            EnemyCatalogEntry result;
-            return entries.TryGetValue(configName, out result) ? result : null;
+            EnemyCatalogEntry found;
+            return configName != null && entries.TryGetValue(configName, out found) ? found : null;
         }
 
-        public static List<EnemyCatalogEntry> EligibleFor(string environment, string category = "Ordinary",
-            bool originalBossShipSlot = false, bool aquaticWorldSpawn = false)
+        // This is a terrain-membership test, not a string equality test.
+        // TERRAIN|Ground,Aquatic participates in both pools.
+        public static bool HasTerrain(EnemyCatalogEntry entry, string terrain)
         {
-            EnsureLoaded();
-            List<EnemyCatalogEntry> results = new List<EnemyCatalogEntry>();
-            List<EnemyCatalogEntry> source;
-            if (string.Equals(category, "MiniBoss", StringComparison.OrdinalIgnoreCase))
-                source = miniBosses;
-            else if (string.Equals(category, "Boss", StringComparison.OrdinalIgnoreCase))
-                source = bosses;
-            else if (string.Equals(category, "Ordinary", StringComparison.OrdinalIgnoreCase))
-                source = ordinary;
-            else
-                return results;
-            foreach (EnemyCatalogEntry entry in source)
-            {
-                if (entry.Asset == null || !entry.CanRandomize)
-                    continue;
-                // Original BossShip slots only accept BossShip-tagged candidates.
-                // NeedsSpikes has no special behavior: the catalog's Aquatic and
-                // BossShip tags now determine eligibility normally.
-                if (originalBossShipSlot && !HasRestriction(entry, "BossShip"))
-                    continue;
-                // Unkillable candidates are safe only in aquatic WORLD_SPAWN slots.
-                if (HasRestriction(entry, "Unkillable") &&
-                    !(aquaticWorldSpawn && string.Equals(environment, "Aquatic", StringComparison.OrdinalIgnoreCase)))
-                    continue;
-                // BossShip is permitted, but only in aquatic Ordinary encounters.
-                if (HasRestriction(entry, "BossShip") &&
-                    (!string.Equals(category, "Ordinary", StringComparison.OrdinalIgnoreCase) ||
-                     !string.Equals(environment, "Aquatic", StringComparison.OrdinalIgnoreCase)))
-                    continue;
-                if (IsCompatible(entry.Environment, environment))
-                    results.Add(entry);
-            }
-            return results;
+            return entry != null && ContainsToken(entry.Terrain, terrain);
         }
 
-        public static bool HasRestriction(EnemyCatalogEntry entry, string restriction)
+        private static bool ContainsToken(string csv, string token)
         {
-            string[] parts = (entry.Restrictions ?? "").Split(',');
-            foreach (string part in parts)
-                if (string.Equals(part.Trim(), restriction, StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrEmpty(csv)) return false;
+            foreach (string value in csv.Split(','))
+                if (string.Equals(value.Trim(), token, StringComparison.OrdinalIgnoreCase))
                     return true;
             return false;
         }
 
-        // A ground enemy may run in a 2D or a 3D land encounter.
-        public static bool IsCompatible(string candidateEnvironment, string encounterEnvironment)
+        public static bool HasRestriction(EnemyCatalogEntry entry, string restriction)
         {
-            if (string.Equals(candidateEnvironment, "All", StringComparison.OrdinalIgnoreCase))
-                return true;
-            if (string.Equals(encounterEnvironment, "Aquatic", StringComparison.OrdinalIgnoreCase))
-                return string.Equals(candidateEnvironment, "Aquatic", StringComparison.OrdinalIgnoreCase);
-            if (string.Equals(encounterEnvironment, "X_Only", StringComparison.OrdinalIgnoreCase))
-                return string.Equals(candidateEnvironment, "Ground", StringComparison.OrdinalIgnoreCase) ||
-                       string.Equals(candidateEnvironment, "X_Only", StringComparison.OrdinalIgnoreCase);
-            if (string.Equals(encounterEnvironment, "Ground", StringComparison.OrdinalIgnoreCase))
-                return string.Equals(candidateEnvironment, "Ground", StringComparison.OrdinalIgnoreCase);
+            if (entry == null) return false;
+
+            // Compatibility with older code; BossShip is no longer a catalog flag.
+            if (string.Equals(restriction, "BossShip", StringComparison.OrdinalIgnoreCase))
+                return string.Equals(entry.Type, "Boss", StringComparison.OrdinalIgnoreCase) &&
+                       HasTerrain(entry, "Aquatic");
+
+            return ContainsToken(entry.Restrictions, restriction);
+        }
+
+        // Kept for compatibility with the current enemy randomizer patch.
+        public static List<EnemyCatalogEntry> EligibleFor(
+            string environment, string category = "Ordinary",
+            bool originalBossShipSlot = false, bool aquaticWorldSpawn = false)
+        {
+            EnsureLoaded();
+            List<EnemyCatalogEntry> result = new List<EnemyCatalogEntry>();
+            List<EnemyCatalogEntry> source;
+
+            if (originalBossShipSlot)
+                source = aquaticBosses;
+            else if (string.Equals(category, "Boss", StringComparison.OrdinalIgnoreCase))
+                source = groundBosses;
+            else if (string.Equals(category, "MiniBoss", StringComparison.OrdinalIgnoreCase))
+                source = new List<EnemyCatalogEntry>();
+            else if (string.Equals(category, "Ordinary", StringComparison.OrdinalIgnoreCase))
+                source = grunts;
+            else
+                return result;
+
+            foreach (EnemyCatalogEntry entry in source)
+            {
+                if (entry.Asset == null || !entry.CanRandomize) continue;
+                if (!IsCompatible(entry.Terrain, environment)) continue;
+                // Preserve the v08 guard for unkillable enemies.
+                if (HasRestriction(entry, "Unkillable") &&
+                    !(aquaticWorldSpawn &&
+                      string.Equals(environment, "Aquatic", StringComparison.OrdinalIgnoreCase)))
+                    continue;
+                result.Add(entry);
+            }
+            return result;
+        }
+
+        // Compatible with the legacy X_Only lookup for Ground spawner pools.
+        public static bool IsCompatible(string candidateTerrain, string encounterTerrain)
+        {
+            if (string.Equals(encounterTerrain, "Aquatic", StringComparison.OrdinalIgnoreCase))
+                return ContainsToken(candidateTerrain, "Aquatic");
+            if (string.Equals(encounterTerrain, "Ground", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(encounterTerrain, "X_Only", StringComparison.OrdinalIgnoreCase))
+                return ContainsToken(candidateTerrain, "Ground");
             return false;
         }
 
@@ -104,9 +135,10 @@ namespace Randomizer.CatQuest3
         {
             if (entries != null) return;
             entries = new Dictionary<string, EnemyCatalogEntry>(StringComparer.Ordinal);
-            ordinary = new List<EnemyCatalogEntry>();
-            miniBosses = new List<EnemyCatalogEntry>();
-            bosses = new List<EnemyCatalogEntry>();
+            grunts = new List<EnemyCatalogEntry>();
+            groundBosses = new List<EnemyCatalogEntry>();
+            aquaticBosses = new List<EnemyCatalogEntry>();
+
             string folder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string path = Path.Combine(folder, "Data", "EnemyCatalog.txt");
             if (!File.Exists(path))
@@ -136,19 +168,25 @@ namespace Randomizer.CatQuest3
                 {
                     case "NAME": current.Name = value; break;
                     case "VARIATION": current.Variation = value; break;
-                    case "ENVIRONMENT": current.Environment = value; break;
-                    case "CATEGORY": current.Category = value; break;
-                    case "RANDOMIZE": current.CanRandomize = string.Equals(value, "Yes", StringComparison.OrdinalIgnoreCase); break;
+                    case "TYPE": current.Type = value; break;
+                    case "TERRAIN": current.Terrain = value; break;
                     case "RESTRICTIONS": current.Restrictions = value; break;
+                    case "RANDOMIZE":
+                        current.CanRandomize =
+                        string.Equals(value, "Yes", StringComparison.OrdinalIgnoreCase); break;
                     case "NOTES": break;
-                    default: Plugin.Log.LogWarning("ENEMY CATALOG | Unknown field: " + key); break;
+                    default:
+                        Plugin.Log.LogWarning("ENEMY CATALOG | Unknown field: " + key);
+                        break;
                 }
             }
             if (current != null) AddEntry(current, ref rejected);
 
-            Dictionary<string, UnitConfig> assets = new Dictionary<string, UnitConfig>(StringComparer.Ordinal);
+            Dictionary<string, UnitConfig> assets =
+                new Dictionary<string, UnitConfig>(StringComparer.Ordinal);
             foreach (UnitConfig asset in Resources.FindObjectsOfTypeAll<UnitConfig>())
-                if (asset != null && !assets.ContainsKey(asset.name)) assets.Add(asset.name, asset);
+                if (asset != null && !assets.ContainsKey(asset.name))
+                    assets.Add(asset.name, asset);
 
             int resolved = 0;
             foreach (EnemyCatalogEntry entry in entries.Values)
@@ -159,38 +197,67 @@ namespace Randomizer.CatQuest3
                     entry.Asset = asset;
                     resolved++;
                 }
-                else Plugin.Log.LogWarning("ENEMY CATALOG | Missing UnitConfig: " + entry.UnitConfigName);
-                if (string.Equals(entry.Category, "Ordinary", StringComparison.OrdinalIgnoreCase))
-                    ordinary.Add(entry);
-                else if (string.Equals(entry.Category, "MiniBoss", StringComparison.OrdinalIgnoreCase))
-                    miniBosses.Add(entry);
-                else if (string.Equals(entry.Category, "Boss", StringComparison.OrdinalIgnoreCase))
-                    bosses.Add(entry);
-            }
-            Plugin.Log.LogInfo("ENEMY CATALOG | Entries:" + entries.Count +
-                " | Resolved:" + resolved + " | Ordinary:" + ordinary.Count +
-                " | MiniBoss:" + miniBosses.Count + " | Boss:" + bosses.Count +
-                " | Rejected:" + rejected);
-            foreach (string environment in new[] { "Ground", "X_Only", "Aquatic" })
-            {
-                foreach (string category in new[] { "Ordinary", "MiniBoss", "Boss" })
+                else
+                    Plugin.Log.LogWarning("ENEMY CATALOG | Missing UnitConfig: " + entry.UnitConfigName);
+
+                if (!entry.CanRandomize || HasRestriction(entry, "Special")) continue;
+                if (string.Equals(entry.Type, "Grunt", StringComparison.OrdinalIgnoreCase))
                 {
-                    List<EnemyCatalogEntry> pool = EligibleFor(environment, category);
-                    HashSet<string> groups = new HashSet<string>(StringComparer.Ordinal);
-                    foreach (EnemyCatalogEntry entry in pool) groups.Add(entry.Variation);
-                    Plugin.Log.LogInfo("ENEMY POOL | Category:" + category +
-                        " | Environment:" + environment +
-                        " | Variations:" + pool.Count + " | Groups:" + groups.Count);
+                    grunts.Add(entry); // Eligibility's terrain filter handles both Ground/Aquatic.
+                }
+                else
+                {
+                    if (HasTerrain(entry, "Ground")) groundBosses.Add(entry);
+                    if (HasTerrain(entry, "Aquatic")) aquaticBosses.Add(entry);
                 }
             }
+            Plugin.Log.LogInfo("ENEMY CATALOG v09 | Entries:" + entries.Count +
+                " | Resolved:" + resolved + " | Grunts:" + grunts.Count +
+                " | GroundBosses:" + groundBosses.Count +
+                " | AquaticBosses:" + aquaticBosses.Count +
+                " | Rejected:" + rejected);
+
+            foreach (string terrain in new[] { "Ground", "Aquatic" })
+                foreach (string type in new[] { "Grunt", "Boss" })
+                {
+                    int count = 0;
+                    HashSet<string> groups = new HashSet<string>(StringComparer.Ordinal);
+                    foreach (EnemyCatalogEntry entry in entries.Values)
+                    {
+                        if (!entry.CanRandomize || entry.Asset == null ||
+                            HasRestriction(entry, "Special") ||
+                            !string.Equals(entry.Type, type, StringComparison.OrdinalIgnoreCase) ||
+                            !HasTerrain(entry, terrain)) continue;
+                        count++;
+                        groups.Add(entry.Variation);
+                    }
+                    Plugin.Log.LogInfo("ENEMY POOL v09 | Type:" + type +
+                        " | Terrain:" + terrain + " | Entries:" + count +
+                        " | ResolvedGroups:" + groups.Count);
+                }
+        }
+
+        private static bool ValidTerrainList(string csv)
+        {
+            if (string.IsNullOrWhiteSpace(csv)) return false;
+            HashSet<string> seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (string raw in csv.Split(','))
+            {
+                string token = raw.Trim();
+                if ((!string.Equals(token, "Ground", StringComparison.OrdinalIgnoreCase) &&
+                     !string.Equals(token, "Aquatic", StringComparison.OrdinalIgnoreCase)) ||
+                    !seen.Add(token)) return false;
+            }
+            return seen.Count > 0;
         }
 
         private static void AddEntry(EnemyCatalogEntry entry, ref int rejected)
         {
             if (string.IsNullOrWhiteSpace(entry.UnitConfigName) ||
                 string.IsNullOrWhiteSpace(entry.Variation) ||
-                string.IsNullOrWhiteSpace(entry.Environment) ||
-                string.IsNullOrWhiteSpace(entry.Category) ||
+                !(string.Equals(entry.Type, "Grunt", StringComparison.OrdinalIgnoreCase) ||
+                  string.Equals(entry.Type, "Boss", StringComparison.OrdinalIgnoreCase)) ||
+                !ValidTerrainList(entry.Terrain) ||
                 entries.ContainsKey(entry.UnitConfigName))
             {
                 rejected++;
