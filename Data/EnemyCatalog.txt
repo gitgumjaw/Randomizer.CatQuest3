@@ -478,7 +478,7 @@ VARIATION|Jellyfish
 TYPE|Grunt
 TERRAIN|Aquatic
 RESTRICTIONS|Unkillable
-RANDOMIZE|Yes
+RANDOMIZE|No
 NOTES|Cannot spawn in placed where it needs to die.
 
 UNITCONFIG|Flat_Starfish_AggroLargeAmbush_MonsterConfig

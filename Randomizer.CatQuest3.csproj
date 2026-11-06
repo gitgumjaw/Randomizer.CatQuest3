@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EnemyCatalogDiagnosticPatch.cs" />
+    <Compile Remove="SpawnerLocationDiagnostic.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Data\EnemyCatalog.txt" />
     <None Remove="Data\HintSystemCatalog.txt" />
     <None Remove="Data\RewardCatalog.txt" />
