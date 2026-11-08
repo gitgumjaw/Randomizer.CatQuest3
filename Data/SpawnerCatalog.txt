@@ -10831,7 +10831,7 @@ PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/De
 POSITION|0.000,0.000,6.210
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquaticBosses
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_CloseRange_MonsterConfig; Shared-ID phase group: Default; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
 
@@ -10842,7 +10842,7 @@ PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Tr
 POSITION|-4.820,0.000,8.100
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquaticBosses
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_Ranged_MonsterConfig; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
 
@@ -10853,7 +10853,7 @@ PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Tw
 POSITION|4.880,0.000,8.100
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquaticBosses
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_Flee_MonsterConfig; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
 

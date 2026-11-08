@@ -51,8 +51,8 @@ namespace Randomizer.CatQuest3
             PlayerTestStats.Initialize();
             PlayerControlEntitasDiagnostic.Initialize();
             PlayerCoordinateTracker.Initialize();
-            SpawnerSceneScanner.Initialize();
-            GentlebrosSpawnerDiagnostic.Initialize();
+            //SpawnerSceneScanner.Initialize();
+            //GentlebrosSpawnerDiagnostic.Initialize();
 
             // Readd - EnemyCatalogDiagnosticPatch and SpawnerLocationDiagnosticPatch
 

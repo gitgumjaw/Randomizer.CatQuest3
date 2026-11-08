@@ -1,8 +1,9 @@
 ﻿// Cat Quest III Randomizer
 // File: EnemyWorldRandomizerPatch.cs
-// Version: EnemyWorldRandomizerPatch_20261108_v14
-// Cutscene TYPE modifier: independent deterministic selection without reading
-// or updating boss distribution counters; normal spawners retain v11 behavior.
+// Version: EnemyWorldRandomizerPatch_20261108_v17
+// v17: Arena-specific isolated 30/30/0/1 aggro clones for all five Tavern Tales arenas;
+// Gentlebros aquatic bosses additionally receive agentNavtype = 2.
+// All other v14 selections and deterministic boss-distribution planning retained.
 // Installation: replace the complete existing EnemyWorldRandomizerPatch.cs.
 using System;
 using System.Collections.Generic;
@@ -44,8 +45,32 @@ namespace Randomizer.CatQuest3
 
             bool isBoss = string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase);
             bool aquatic = string.Equals(spawner.Terrain, "Aquatic", StringComparison.OrdinalIgnoreCase);
+            bool gentlebrosExperiment = IsGentlebrosAquaticExperiment(spawner);
+            bool selectedFromAquaticPool = false;
             List<EnemyCatalogEntry> compatible = GetCompatible(
                 spawner, __instance.spawnType, false);
+
+            // Keep all ordinary boss assignments exactly as in v14. The
+            // Gentlebros experiment alone can choose the aquatic boss pool.
+            if (gentlebrosExperiment)
+            {
+                List<EnemyCatalogEntry> aquaticCandidates =
+                    GetGentlebrosAquaticBosses(spawner, __instance.spawnType);
+
+                if (aquaticCandidates.Count > 0 && compatible.Count > 0)
+                {
+                    uint poolDraw = Hash(SeedKey(run.SeedValue) +
+                        "|GENTLEBROS_POOL|" + SlotKey(spawner, 0));
+                    selectedFromAquaticPool = (poolDraw % 2u) == 0u;
+                }
+                else
+                {
+                    selectedFromAquaticPool = aquaticCandidates.Count > 0;
+                }
+
+                if (selectedFromAquaticPool)
+                    compatible = aquaticCandidates;
+            }
 
             if (compatible.Count == 0)
             {
@@ -65,12 +90,16 @@ namespace Randomizer.CatQuest3
             // appearing after death even when the game's table draw changes.
             string key = SlotKey(spawner, 0);
             string group = null;
-            if (isBoss && !spawner.IsCutscene)
+            // Experimental Gentlebros draws do not consume or depend on the
+            // normal ground/aquatic boss distribution plan.
+            if (isBoss && !spawner.IsCutscene && !gentlebrosExperiment)
                 bossPlan.TryGetValue(key, out group);
             if (group == null || !grouped.ContainsKey(group))
             {
-                string salt = spawner.IsCutscene ? "CUTSCENE" :
-                    isBoss ? "BOSS_FALLBACK" : "GRUNT";
+                string salt = gentlebrosExperiment
+                    ? (selectedFromAquaticPool ? "GENTLEBROS_AQUATIC" : "GENTLEBROS_GROUND")
+                    : spawner.IsCutscene ? "CUTSCENE" :
+                      isBoss ? "BOSS_FALLBACK" : "GRUNT";
                 uint draw = Hash(SeedKey(run.SeedValue) + "|" + salt + "|" +
                     spawner.PrimaryType + "|" + spawner.Terrain + "|" + key);
                 group = groups[(int)(draw % (uint)groups.Count)];
@@ -83,16 +112,30 @@ namespace Randomizer.CatQuest3
             if (selected.Asset == null) return;
             NormalizeAggroForTest(selected.Asset);
 
+            // All five Tavern Tales arenas receive isolated 30/30/0/1 aggro
+            // clones. Only experimental Gentlebros aquatic bosses get nav 2.
+            UnitConfig assignedAsset = selected.Asset;
+            if (IsTavernTalesArena(scene))
+            {
+                assignedAsset = GetTavernTalesArenaClone(
+                    selected.Asset, gentlebrosExperiment && selectedFromAquaticPool);
+                if (assignedAsset == null)
+                {
+                    Plugin.Log.LogWarning("TAVERN TALES AGGRO | Clone failed; original spawn table retained | " + key);
+                    return;
+                }
+            }
+
             List<SpawnTableItem> updated = new List<SpawnTableItem>(__instance.spawnList);
             int changes = 0;
             for (int i = 0; i < updated.Count; i++)
             {
                 SpawnTableItem original = updated[i];
                 if (original == null || original.spawnConfig == null) continue;
-                if (ReferenceEquals(original.spawnConfig, selected.Asset))
+                if (ReferenceEquals(original.spawnConfig, assignedAsset))
                     continue; // Already assigned; safe on repeated Populate calls.
 
-                SpawnTableItem replacement = new SpawnTableItem(selected.Asset, original.probability);
+                SpawnTableItem replacement = new SpawnTableItem(assignedAsset, original.probability);
                 replacement.spawnCount = original.spawnCount;
                 updated[i] = replacement;
                 changes++;
@@ -104,6 +147,95 @@ namespace Randomizer.CatQuest3
                     " | Count:" + original.spawnCount);
             }
             if (changes > 0) __instance.spawnList = updated;
+        }
+
+        private static bool IsGentlebrosAquaticExperiment(SpawnerCatalogEntry spawner)
+        {
+            return spawner != null &&
+                string.Equals(spawner.Scene, "Interior_GentlebrosArena", StringComparison.Ordinal) &&
+                string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase) &&
+                string.Equals(spawner.Terrain, "Ground", StringComparison.OrdinalIgnoreCase) &&
+                SpawnerCatalogLoader.HasRestriction(spawner, "AllowAquaticBosses");
+        }
+
+        private static List<EnemyCatalogEntry> GetGentlebrosAquaticBosses(
+            SpawnerCatalogEntry spawner, SpawnType spawnType)
+        {
+            List<EnemyCatalogEntry> result = EnemyCatalogLoader.EligibleFor(
+                "Aquatic", "Ordinary", true, false);
+            result.RemoveAll(candidate => !SpawnerCatalogLoader.IsCompatible(spawner, candidate));
+
+            // Same non-WORLD encounter safeguards as the normal randomizer.
+            if (spawnType != SpawnType.WORLD_SPAWN)
+            {
+                result.RemoveAll(candidate => candidate.UnitConfigName != null &&
+                    (candidate.UnitConfigName.IndexOf("MoleHoming", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     string.Equals(candidate.UnitConfigName, "Spherical_Spikeball_MonsterConfig", StringComparison.Ordinal) ||
+                     string.Equals(candidate.UnitConfigName, "Spherical_SpikeballBoss_MonsterConfig", StringComparison.Ordinal)));
+            }
+            return result;
+        }
+
+        private static bool IsTavernTalesArena(string scene)
+        {
+            return string.Equals(scene, "Interior_GentlebrosArena", StringComparison.Ordinal) ||
+                string.Equals(scene, "TavernTalesArena_BoarBoss", StringComparison.Ordinal) ||
+                string.Equals(scene, "TavernTalesArena_MewtallicaBoss", StringComparison.Ordinal) ||
+                string.Equals(scene, "TavernTalesArena_PirateKing", StringComparison.Ordinal) ||
+                string.Equals(scene, "TavernTalesArena_SpicySquidTakomeowkiBoss", StringComparison.Ordinal);
+        }
+
+        // One isolated configuration per source asset AND navigation mode.
+        // The 30/30/0/1 clones can be reused across Tavern Tales arenas,
+        // while Gentlebros aquatic navigation remains an independent variant.
+        private static readonly Dictionary<string, UnitConfig> tavernTalesArenaClones =
+            new Dictionary<string, UnitConfig>(StringComparer.Ordinal);
+
+        private static UnitConfig GetTavernTalesArenaClone(UnitConfig original, bool aquaticNav)
+        {
+            if (original == null) return null;
+            string cacheKey = original.GetInstanceID().ToString() + "|" + (aquaticNav ? "NAV2" : "DEFAULT");
+            UnitConfig clone;
+            if (tavernTalesArenaClones.TryGetValue(cacheKey, out clone) && clone != null)
+                return clone;
+
+            try
+            {
+                clone = UnityEngine.Object.Instantiate(original);
+                if (clone == null) return null;
+                clone.name = original.name;
+
+                // All four values must be written successfully or this
+                // experimental spawner remains vanilla (fail closed).
+                bool sensor = TrySetAggroField(clone, "sensorRadius", 30f);
+                bool aggro = TrySetAggroField(clone, "aggroRadius", 30f);
+                bool dontCheckLos = TrySetAggroField(clone, "dontCheckForLineOfSightAggro", 0);
+                bool overrideLos = TrySetAggroField(clone, "overrideAggroLineOfSight", 1);
+                bool nav = !aquaticNav || TrySetAggroField(clone, "agentNavtype", 2);
+
+                if (!sensor || !aggro || !dontCheckLos || !overrideLos || !nav)
+                {
+                    UnityEngine.Object.Destroy(clone);
+                    Plugin.Log.LogWarning("TAVERN TALES AGGRO | Clone setup failed | Config:" +
+                        original.name + " | Sensor:" + sensor + " | Aggro:" + aggro +
+                        " | DontCheckLOS:" + dontCheckLos + " | OverrideLOS:" + overrideLos +
+                        " | Nav:" + nav);
+                    return null;
+                }
+
+                tavernTalesArenaClones[cacheKey] = clone;
+                Plugin.Log.LogInfo("TAVERN TALES AGGRO | Cloned " + original.name +
+                    " | sensorRadius:30 | aggroRadius:30" +
+                    " | dontCheckForLineOfSightAggro:0 | overrideAggroLineOfSight:1" +
+                    (aquaticNav ? " | agentNavtype:2" : " | agentNavtype:unchanged") +
+                    " | Original unchanged");
+                return clone;
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log.LogWarning("TAVERN TALES AGGRO | Clone error: " + ex);
+                return null;
+            }
         }
 
         private static void BuildBossPlan(int seed)
