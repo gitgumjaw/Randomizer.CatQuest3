@@ -1275,8 +1275,6 @@ AREA|Fire Pirate Hideout; Sunset Islands
 CATEGORY|Equipment & Blueprints
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
-SLOT|1|AllowCollectibles:True|Options:1
-OPTION|Equipment|1d1e375b82aa5e54c9d95580c261104d|Weight:1
 
 LOCATION|Castle_GoldenTower|DungeonQuest_GoldenTower|FSM|Get Key
 LABEL|Golden Tower - LV40 Rat Reward

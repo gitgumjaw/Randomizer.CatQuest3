@@ -1,6 +1,6 @@
 ﻿// Cat Quest III Randomizer
 // File: EnemyWorldRandomizerPatch.cs
-// Version: EnemyWorldRandomizerPatch_20261105_2253_EST_v12
+// Version: EnemyWorldRandomizerPatch_20261108_v13
 // Cutscene TYPE modifier: independent deterministic selection without reading
 // or updating boss distribution counters; normal spawners retain v11 behavior.
 // Installation: replace the complete existing EnemyWorldRandomizerPatch.cs.
@@ -14,13 +14,11 @@ namespace Randomizer.CatQuest3
     [HarmonyPatch(typeof(UnitSpawner), nameof(UnitSpawner.PopulateSpawnerEntity))]
     public static class EnemyWorldRandomizerPatch
     {
-        private static readonly HashSet<int> processed = new HashSet<int>();
-        private static readonly Dictionary<string, int> groundBossUses =
-            new Dictionary<string, int>(StringComparer.Ordinal);
-        private static readonly Dictionary<string, int> aquaticBossUses =
-            new Dictionary<string, int>(StringComparer.Ordinal);
-        private static RandomizerRunConfiguration currentRun;
-        private static int currentSeed;
+        // The boss assignment plan is constructed in canonical catalog order.
+        // It is not influenced by which spawners Unity happens to load first.
+        private static Dictionary<string, string> bossPlan;
+        private static int bossPlanSeed;
+        private static bool bossPlanReady;
 
         [HarmonyPrefix]
         public static void Prefix(UnitSpawner __instance)
@@ -32,57 +30,170 @@ namespace Randomizer.CatQuest3
                 __instance.spawnList.Count == 0)
                 return;
 
-            if (!ReferenceEquals(currentRun, run) || currentSeed != run.SeedValue)
-            {
-                processed.Clear();
-                groundBossUses.Clear();
-                aquaticBossUses.Clear();
-                currentRun = run;
-                currentSeed = run.SeedValue;
-                Plugin.Log.LogInfo("ENEMY DISTRIBUTION | Reset for seed:" + run.SeedValue.ToString("X8"));
-            }
-
-            int instanceId = __instance.GetInstanceID();
-            if (processed.Contains(instanceId)) return;
-
             string scene = __instance.gameObject.scene.name;
             SpawnerCatalogEntry spawner = SpawnerCatalogLoader.Find(scene, __instance.spawnerId);
-            // Unknown or explicitly disabled spawners are left completely vanilla.
             if (spawner == null || !spawner.Randomize) return;
 
-            // The v08 Enemy Catalog loader still accepts these legacy lookup
-            // arguments. Convert our new two-axis classification only here.
+            // Plan depends ONLY on seed + immutable catalog data and enemy pool.
+            // This must run before any per-instance selection, including boss spawns.
+            if (!bossPlanReady || bossPlanSeed != run.SeedValue)
+                BuildBossPlan(run.SeedValue);
+
             bool isBoss = string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase);
             bool aquatic = string.Equals(spawner.Terrain, "Aquatic", StringComparison.OrdinalIgnoreCase);
-            string lookupTerrain = aquatic ? "Aquatic" : "X_Only";
-            string lookupCategory = isBoss && !aquatic ? "Boss" : "Ordinary";
-            bool aquaticBoss = isBoss && aquatic;
-            bool aquaticWorld = aquatic && __instance.spawnType == SpawnType.WORLD_SPAWN;
-
-            List<EnemyCatalogEntry> compatible = EnemyCatalogLoader.EligibleFor(
-                lookupTerrain, lookupCategory, aquaticBoss, aquaticWorld);
-            compatible.RemoveAll(candidate =>
-                !SpawnerCatalogLoader.IsCompatible(spawner, candidate));
-
-            // Preserve the previous WORLD_SPAWN-only safeguard until these
-            // enemies' scripted encounter behavior has been reviewed.
-            if (__instance.spawnType != SpawnType.WORLD_SPAWN)
-            {
-                compatible.RemoveAll(candidate => candidate.UnitConfigName != null &&
-                    (candidate.UnitConfigName.IndexOf("MoleHoming", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                     string.Equals(candidate.UnitConfigName, "Spherical_Spikeball_MonsterConfig", StringComparison.Ordinal) ||
-                     string.Equals(candidate.UnitConfigName, "Spherical_SpikeballBoss_MonsterConfig", StringComparison.Ordinal)));
-            }
+            List<EnemyCatalogEntry> compatible = GetCompatible(
+                spawner, __instance.spawnType, false);
 
             if (compatible.Count == 0)
             {
                 Plugin.Log.LogWarning("ENEMY RANDOM | No compatible candidates; vanilla | Scene:" + scene +
                     " | Spawner:" + __instance.spawnerId + " | Type:" + spawner.Type +
                     " | Terrain:" + spawner.Terrain);
-                processed.Add(instanceId);
                 return;
             }
 
+            Dictionary<string, List<EnemyCatalogEntry>> grouped = Group(compatible);
+            List<string> groups = new List<string>(grouped.Keys);
+            groups.Sort(StringComparer.Ordinal);
+
+            // Choose ONE identity per spawner, not one per table row.
+            // The game can roll among spawnList rows on respawn. Assigning
+            // every row the same UnitConfig prevents a different enemy from
+            // appearing after death even when the game's table draw changes.
+            string key = SlotKey(scene, __instance.spawnerId, 0);
+            string group = null;
+            if (isBoss && !spawner.IsCutscene)
+                bossPlan.TryGetValue(key, out group);
+            if (group == null || !grouped.ContainsKey(group))
+            {
+                string salt = spawner.IsCutscene ? "CUTSCENE" :
+                    isBoss ? "BOSS_FALLBACK" : "GRUNT";
+                uint draw = Hash(SeedKey(run.SeedValue) + "|" + salt + "|" +
+                    spawner.PrimaryType + "|" + spawner.Terrain + "|" + key);
+                group = groups[(int)(draw % (uint)groups.Count)];
+            }
+            List<EnemyCatalogEntry> variants = grouped[group];
+            variants.Sort((a, b) => StringComparer.Ordinal.Compare(
+                a.UnitConfigName, b.UnitConfigName));
+            uint variantDraw = Hash(SeedKey(run.SeedValue) + "|VARIANT|" + key);
+            EnemyCatalogEntry selected = variants[(int)(variantDraw % (uint)variants.Count)];
+            if (selected.Asset == null) return;
+            NormalizeAggroForTest(selected.Asset);
+
+            List<SpawnTableItem> updated = new List<SpawnTableItem>(__instance.spawnList);
+            int changes = 0;
+            for (int i = 0; i < updated.Count; i++)
+            {
+                SpawnTableItem original = updated[i];
+                if (original == null || original.spawnConfig == null) continue;
+                if (ReferenceEquals(original.spawnConfig, selected.Asset))
+                    continue; // Already assigned; safe on repeated Populate calls.
+
+                SpawnTableItem replacement = new SpawnTableItem(selected.Asset, original.probability);
+                replacement.spawnCount = original.spawnCount;
+                updated[i] = replacement;
+                changes++;
+                Plugin.Log.LogInfo("ENEMY RANDOM | " + scene + " | " + __instance.spawnerId +
+                    " | SpawnType:" + __instance.spawnType + " | Type:" + spawner.Type +
+                    " | Terrain:" + spawner.Terrain +
+                    " | Cutscene:" + spawner.IsCutscene + " | Entry:" + i + " | " +
+                    original.spawnConfig.name + " -> " + selected.UnitConfigName +
+                    " | Count:" + original.spawnCount);
+            }
+            if (changes > 0) __instance.spawnList = updated;
+        }
+
+        private static void BuildBossPlan(int seed)
+        {
+            Dictionary<string, string> next = new Dictionary<string, string>(StringComparer.Ordinal);
+            Dictionary<string, int> groundUses = new Dictionary<string, int>(StringComparer.Ordinal);
+            Dictionary<string, int> aquaticUses = new Dictionary<string, int>(StringComparer.Ordinal);
+
+            List<SpawnerCatalogEntry> all = SpawnerCatalogLoader.AllEntries();
+            all.Sort((a, b) => StringComparer.Ordinal.Compare(
+                SlotKey(a.Scene, a.SpawnerId, 0), SlotKey(b.Scene, b.SpawnerId, 0)));
+
+            int eligibleBossSpawners = 0;
+            foreach (SpawnerCatalogEntry spawner in all)
+            {
+                if (!spawner.Randomize || spawner.IsCutscene ||
+                    !string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                // Conservative pool: don't plan with WORLD_SPAWN-only configs,
+                // because the actual spawner's SpawnType isn't in the catalog.
+                // Every planned identity will therefore remain eligible when
+                // the actual spawner is populated.
+                List<EnemyCatalogEntry> candidates = GetCompatible(
+                    spawner, SpawnType.QUEST_SPAWN, true);
+                if (candidates.Count == 0) continue;
+
+                List<string> groups = new List<string>(Group(candidates).Keys);
+                groups.Sort(StringComparer.Ordinal);
+                Dictionary<string, int> uses =
+                    string.Equals(spawner.Terrain, "Aquatic", StringComparison.OrdinalIgnoreCase)
+                    ? aquaticUses : groundUses;
+
+                int min = int.MaxValue;
+                List<string> ties = new List<string>();
+                foreach (string candidate in groups)
+                {
+                    int count;
+                    if (!uses.TryGetValue(candidate, out count)) count = 0;
+                    if (count < min)
+                    {
+                        ties.Clear();
+                        min = count;
+                        ties.Add(candidate);
+                    }
+                    else if (count == min) ties.Add(candidate);
+                }
+
+                string key = SlotKey(spawner.Scene, spawner.SpawnerId, 0);
+                uint draw = Hash(SeedKey(seed) + "|BALANCE|" + spawner.Terrain + "|" + key);
+                string chosen = ties[(int)(draw % (uint)ties.Count)];
+                next.Add(key, chosen);
+                int previous;
+                if (!uses.TryGetValue(chosen, out previous)) previous = 0;
+                uses[chosen] = previous + 1;
+                eligibleBossSpawners++;
+            }
+
+            bossPlan = next;
+            bossPlanSeed = seed;
+            bossPlanReady = true;
+            Plugin.Log.LogInfo("ENEMY DISTRIBUTION | Deterministic plan ready | Seed:" +
+                SeedKey(seed) + " | BossSpawners:" + eligibleBossSpawners +
+                " | Method:CanonicalCatalogOrder");
+        }
+
+        private static List<EnemyCatalogEntry> GetCompatible(
+            SpawnerCatalogEntry spawner, SpawnType spawnType, bool conservative)
+        {
+            bool boss = string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase);
+            bool aquatic = string.Equals(spawner.Terrain, "Aquatic", StringComparison.OrdinalIgnoreCase);
+            string lookupTerrain = aquatic ? "Aquatic" : "X_Only";
+            string category = boss && !aquatic ? "Boss" : "Ordinary";
+            bool aquaticBoss = boss && aquatic;
+            // Treat unknown catalog planning spawn types conservatively.
+            bool aquaticWorld = aquatic && !conservative && spawnType == SpawnType.WORLD_SPAWN;
+
+            List<EnemyCatalogEntry> result = EnemyCatalogLoader.EligibleFor(
+                lookupTerrain, category, aquaticBoss, aquaticWorld);
+            result.RemoveAll(candidate => !SpawnerCatalogLoader.IsCompatible(spawner, candidate));
+
+            if (conservative || spawnType != SpawnType.WORLD_SPAWN)
+            {
+                result.RemoveAll(candidate => candidate.UnitConfigName != null &&
+                    (candidate.UnitConfigName.IndexOf("MoleHoming", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     string.Equals(candidate.UnitConfigName, "Spherical_Spikeball_MonsterConfig", StringComparison.Ordinal) ||
+                     string.Equals(candidate.UnitConfigName, "Spherical_SpikeballBoss_MonsterConfig", StringComparison.Ordinal)));
+            }
+            return result;
+        }
+
+        private static Dictionary<string, List<EnemyCatalogEntry>> Group(List<EnemyCatalogEntry> compatible)
+        {
             Dictionary<string, List<EnemyCatalogEntry>> grouped =
                 new Dictionary<string, List<EnemyCatalogEntry>>(StringComparer.Ordinal);
             foreach (EnemyCatalogEntry candidate in compatible)
@@ -95,95 +206,17 @@ namespace Randomizer.CatQuest3
                 }
                 variants.Add(candidate);
             }
-            List<string> groups = new List<string>(grouped.Keys);
-            groups.Sort(StringComparer.Ordinal);
+            return grouped;
+        }
 
-            List<SpawnTableItem> updated = new List<SpawnTableItem>(__instance.spawnList);
-            int changes = 0;
-            for (int i = 0; i < updated.Count; i++)
-            {
-                SpawnTableItem original = updated[i];
-                if (original == null || original.spawnConfig == null) continue;
+        private static string SeedKey(int seed)
+        {
+            return seed.ToString("X8");
+        }
 
-                uint seed = Hash(run.SeedValue.ToString("X8") + "|" + spawner.PrimaryType + "|" +
-                    spawner.Terrain + "|" + scene + "|" + __instance.spawnerId + "|" + i);
-
-                Dictionary<string, int> usage = (!isBoss || spawner.IsCutscene) ? null :
-                    (aquatic ? aquaticBossUses : groundBossUses);
-                string group;
-                if (usage == null)
-                {
-                    // Cutscene draws are independent from combat distribution.
-                    // Include a stable salt so their results remain distinct from
-                    // ordinary Grunt draws without using distribution counters.
-                    uint independentSeed = spawner.IsCutscene
-                        ? Hash(run.SeedValue.ToString("X8") + "|CUTSCENE|" +
-                               spawner.PrimaryType + "|" + spawner.Terrain + "|" +
-                               scene + "|" + __instance.spawnerId + "|" + i)
-                        : seed;
-                    group = groups[(int)(independentSeed % (uint)groups.Count)];
-                }
-                else
-                {
-                    int minimum = int.MaxValue;
-                    List<string> leastUsed = new List<string>();
-                    foreach (string name in groups)
-                    {
-                        int count;
-                        if (!usage.TryGetValue(name, out count)) count = 0;
-                        if (count < minimum)
-                        {
-                            minimum = count;
-                            leastUsed.Clear();
-                            leastUsed.Add(name);
-                        }
-                        else if (count == minimum)
-                        {
-                            leastUsed.Add(name);
-                        }
-                    }
-                    uint draw = Hash(run.SeedValue.ToString("X8") + "|DISTRIBUTE|" +
-                        spawner.Terrain + "|" + scene + "|" + __instance.spawnerId +
-                        "|" + i + "|" + minimum);
-                    group = leastUsed[(int)(draw % (uint)leastUsed.Count)];
-                }
-
-                List<EnemyCatalogEntry> variantsForGroup = grouped[group];
-                variantsForGroup.Sort((a, b) =>
-                    StringComparer.Ordinal.Compare(a.UnitConfigName, b.UnitConfigName));
-                uint variantSeed = Hash(run.SeedValue.ToString("X8") + "|VARIANT|" +
-                    scene + "|" + __instance.spawnerId + "|" + i);
-                EnemyCatalogEntry selected = variantsForGroup[
-                    (int)(variantSeed % (uint)variantsForGroup.Count)];
-                if (selected.Asset == null) continue;
-
-                NormalizeAggroForTest(selected.Asset);
-
-                SpawnTableItem replacement = new SpawnTableItem(selected.Asset, original.probability);
-                replacement.spawnCount = original.spawnCount;
-                updated[i] = replacement;
-                changes++;
-
-                if (usage != null)
-                {
-                    int count;
-                    if (!usage.TryGetValue(group, out count)) count = 0;
-                    usage[group] = count + 1;
-                    Plugin.Log.LogInfo("ENEMY DISTRIBUTION | Pool:" + spawner.Terrain + "Boss" +
-                        " | Identity:" + group + " | Uses:" + usage[group] +
-                        " | EligibleIdentities:" + groups.Count +
-                        " | Scene:" + scene + " | Spawner:" + __instance.spawnerId + " | Entry:" + i);
-                }
-                Plugin.Log.LogInfo("ENEMY RANDOM | " + scene + " | " + __instance.spawnerId +
-                    " | SpawnType:" + __instance.spawnType + " | Type:" + spawner.Type +
-                    " | Terrain:" + spawner.Terrain +
-                    " | Cutscene:" + spawner.IsCutscene + " | Entry:" + i + " | " +
-                    original.spawnConfig.name + " -> " + selected.UnitConfigName +
-                    " | Count:" + original.spawnCount);
-            }
-
-            if (changes > 0) __instance.spawnList = updated;
-            processed.Add(instanceId);
+        private static string SlotKey(string scene, string spawnerId, int slot)
+        {
+            return scene + "|" + spawnerId + "|" + slot;
         }
 
         private static uint Hash(string input)

@@ -1,6 +1,6 @@
 ﻿// Cat Quest III Randomizer
 // File: SpawnerCatalogLoader.cs
-// Version: SpawnerCatalogLoader_20261106_v05
+// Version: SpawnerCatalogLoader_20261108_v06
 // Read-only catalog with fail-closed eligibility and encounter restrictions.
 // v05: 2DLocation permits XOnly enemies even when MovementRequired is present;
 // CannotMove remains excluded from MovementRequired spawners.
@@ -35,6 +35,13 @@ namespace Randomizer.CatQuest3
         private static string Key(string scene, string id)
         {
             return scene + "|" + id;
+        }
+
+        // Read-only snapshot for deterministic planning across ALL enabled spawners.
+        public static List<SpawnerCatalogEntry> AllEntries()
+        {
+            EnsureLoaded();
+            return new List<SpawnerCatalogEntry>(entries.Values);
         }
 
         public static SpawnerCatalogEntry Find(string scene, string id)
