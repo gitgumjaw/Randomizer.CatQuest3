@@ -1,6 +1,6 @@
 ﻿// Cat Quest III Randomizer
 // File: EnemyWorldRandomizerPatch.cs
-// Version: EnemyWorldRandomizerPatch_20261108_v13
+// Version: EnemyWorldRandomizerPatch_20261108_v14
 // Cutscene TYPE modifier: independent deterministic selection without reading
 // or updating boss distribution counters; normal spawners retain v11 behavior.
 // Installation: replace the complete existing EnemyWorldRandomizerPatch.cs.
@@ -31,7 +31,10 @@ namespace Randomizer.CatQuest3
                 return;
 
             string scene = __instance.gameObject.scene.name;
-            SpawnerCatalogEntry spawner = SpawnerCatalogLoader.Find(scene, __instance.spawnerId);
+            // Match individual phase spawners that share scene + spawnerId.
+            string hierarchyPath = SpawnerCatalogLoader.GetHierarchyPath(__instance.transform);
+            SpawnerCatalogEntry spawner = SpawnerCatalogLoader.Find(
+                scene, __instance.spawnerId, hierarchyPath);
             if (spawner == null || !spawner.Randomize) return;
 
             // Plan depends ONLY on seed + immutable catalog data and enemy pool.
@@ -60,7 +63,7 @@ namespace Randomizer.CatQuest3
             // The game can roll among spawnList rows on respawn. Assigning
             // every row the same UnitConfig prevents a different enemy from
             // appearing after death even when the game's table draw changes.
-            string key = SlotKey(scene, __instance.spawnerId, 0);
+            string key = SlotKey(spawner, 0);
             string group = null;
             if (isBoss && !spawner.IsCutscene)
                 bossPlan.TryGetValue(key, out group);
@@ -111,7 +114,7 @@ namespace Randomizer.CatQuest3
 
             List<SpawnerCatalogEntry> all = SpawnerCatalogLoader.AllEntries();
             all.Sort((a, b) => StringComparer.Ordinal.Compare(
-                SlotKey(a.Scene, a.SpawnerId, 0), SlotKey(b.Scene, b.SpawnerId, 0)));
+                SlotKey(a, 0), SlotKey(b, 0)));
 
             int eligibleBossSpawners = 0;
             foreach (SpawnerCatalogEntry spawner in all)
@@ -149,7 +152,7 @@ namespace Randomizer.CatQuest3
                     else if (count == min) ties.Add(candidate);
                 }
 
-                string key = SlotKey(spawner.Scene, spawner.SpawnerId, 0);
+                string key = SlotKey(spawner, 0);
                 uint draw = Hash(SeedKey(seed) + "|BALANCE|" + spawner.Terrain + "|" + key);
                 string chosen = ties[(int)(draw % (uint)ties.Count)];
                 next.Add(key, chosen);
@@ -214,9 +217,11 @@ namespace Randomizer.CatQuest3
             return seed.ToString("X8");
         }
 
-        private static string SlotKey(string scene, string spawnerId, int slot)
+        private static string SlotKey(SpawnerCatalogEntry spawner, int slot)
         {
-            return scene + "|" + spawnerId + "|" + slot;
+            // Preserve the exact original key for every legacy entry.
+            // Only PATH-based spawners get a distinct seeded identity.
+            return SpawnerCatalogLoader.KeyFor(spawner) + "|" + slot;
         }
 
         private static uint Hash(string input)

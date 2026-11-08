@@ -1,8 +1,9 @@
 ﻿// Cat Quest III Randomizer
 // File: SpawnerCatalogLoader.cs
-// Version: SpawnerCatalogLoader_20261108_v06
+// Version: SpawnerCatalogLoader_20261108_v08
 // Read-only catalog with fail-closed eligibility and encounter restrictions.
-// v05: 2DLocation permits XOnly enemies even when MovementRequired is present;
+// v08: Optional PATH distinguishes shared spawner IDs without altering legacy entries.
+// 2DOnly requires 2DLocation regardless of MovementRequired.
 // CannotMove remains excluded from MovementRequired spawners.
 // Place SpawnerCatalog.txt in Data beside EnemyCatalog.txt.
 using System;
@@ -16,6 +17,7 @@ namespace Randomizer.CatQuest3
     {
         public string Scene;
         public string SpawnerId;
+        public string Path; // optional; exact hierarchy path for shared-ID encounters
         public string Name;
         public string Position; // informational, not part of the lookup key
         public string Type; // Raw catalog value: Grunt, Boss, Grunt,Cutscene, Boss,Cutscene
@@ -32,9 +34,44 @@ namespace Randomizer.CatQuest3
     {
         private static Dictionary<string, SpawnerCatalogEntry> entries;
 
-        private static string Key(string scene, string id)
+        // Legacy keys are preserved exactly. PATH entries add a suffix only
+        // when one is configured, so existing seeds do not change identity.
+        public static string KeyFor(SpawnerCatalogEntry entry)
         {
-            return scene + "|" + id;
+            return Key(entry.Scene, entry.SpawnerId, entry.Path);
+        }
+
+        private static string Key(string scene, string id, string path = null)
+        {
+            string baseKey = scene + "|" + id;
+            return string.IsNullOrEmpty(path)
+                ? baseKey
+                : baseKey + "|PATH|" + path;
+        }
+
+        // Match a specific hierarchy first. Fall back ONLY to a legacy
+        // unpathed record. Other path-specific siblings cannot match.
+        public static SpawnerCatalogEntry Find(string scene, string id, string path)
+        {
+            EnsureLoaded();
+            SpawnerCatalogEntry result;
+            if (!string.IsNullOrEmpty(path) &&
+                entries.TryGetValue(Key(scene, id, path), out result))
+                return result;
+            return entries.TryGetValue(Key(scene, id), out result) ? result : null;
+        }
+
+        public static string GetHierarchyPath(UnityEngine.Transform transform)
+        {
+            var names = new List<string>();
+            int depth = 0;
+            while (transform != null && depth++ < 128)
+            {
+                names.Add(transform.name);
+                transform = transform.parent;
+            }
+            names.Reverse();
+            return string.Join("/", names.ToArray());
         }
 
         // Read-only snapshot for deterministic planning across ALL enabled spawners.
@@ -47,8 +84,7 @@ namespace Randomizer.CatQuest3
         public static SpawnerCatalogEntry Find(string scene, string id)
         {
             EnsureLoaded();
-            SpawnerCatalogEntry result;
-            return entries.TryGetValue(Key(scene, id), out result) ? result : null;
+            return Find(scene, id, null);
         }
 
         public static bool IsCompatible(SpawnerCatalogEntry spawner, EnemyCatalogEntry enemy)
@@ -69,14 +105,14 @@ namespace Randomizer.CatQuest3
                 HasRestriction(spawner, "KillRequired"))
                 return false;
 
-            if (HasRestriction(spawner, "MovementRequired"))
-            {
-                if (EnemyCatalogLoader.HasRestriction(enemy, "CannotMove"))
-                    return false;
-                if (EnemyCatalogLoader.HasRestriction(enemy, "XOnly") &&
-                    !HasRestriction(spawner, "2DLocation"))
-                    return false;
-            }
+            // Enemy restriction is location-specific, not a movement test.
+            if (EnemyCatalogLoader.HasRestriction(enemy, "2DOnly") &&
+                !HasRestriction(spawner, "2DLocation"))
+                return false;
+
+            if (EnemyCatalogLoader.HasRestriction(enemy, "CannotMove") &&
+                HasRestriction(spawner, "MovementRequired"))
+                return false;
 
             // Old special-case exclusions remain encoded in enemy eligibility.
             return true;
@@ -141,6 +177,7 @@ namespace Randomizer.CatQuest3
                     case "NAME": current.Name = value; break;
                     case "SCENE": current.Scene = value; break;
                     case "POSITION": current.Position = value; break;
+                    case "PATH": current.Path = value; break;
                     case "TYPE": current.Type = value; break;
                     case "TERRAIN": current.Terrain = value; break;
                     case "RESTRICTIONS": current.Restrictions = value; break;
@@ -188,14 +225,14 @@ namespace Randomizer.CatQuest3
                 (string.Equals(e.Terrain, "Ground", StringComparison.OrdinalIgnoreCase) ||
                  string.Equals(e.Terrain, "Aquatic", StringComparison.OrdinalIgnoreCase)) &&
                 e.HasRandomizeField &&
-                !entries.ContainsKey(Key(e.Scene, e.SpawnerId));
+                !entries.ContainsKey(KeyFor(e));
             if (!valid)
             {
                 rejected++;
                 Plugin.Log.LogWarning("SPAWNER CATALOG | Invalid/duplicate entry: " + e.Scene + "|" + e.SpawnerId);
                 return;
             }
-            entries.Add(Key(e.Scene, e.SpawnerId), e);
+            entries.Add(KeyFor(e), e);
             if (e.Randomize) enabled++; else disabled++;
         }
     }

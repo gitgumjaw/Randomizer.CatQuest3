@@ -10821,3 +10821,533 @@ TERRAIN|Ground
 RESTRICTIONS|KillRequired,MovementRequired
 RANDOMIZE|Yes
 NOTES|Original:Grunt_RatBomber_MonsterConfig x1; SpawnType:WORLD_SPAWN; AutoRule:CATALOG_YES
+
+========
+
+SPAWNER|236425652-81a8dc4d5d415524f80a3974a9a3c5a8
+NAME|GentleBro 1
+SCENE|Interior_GentlebrosArena
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Default/UnitSpawner
+POSITION|0.000,0.000,6.210
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_CloseRange_MonsterConfig; Shared-ID phase group: Default; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
+
+SPAWNER|236425652-81a8dc4d5d415524f80a3974a9a3c5a8
+NAME|Gentlebro 3
+SCENE|Interior_GentlebrosArena
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 3
+POSITION|-4.820,0.000,8.100
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_Ranged_MonsterConfig; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
+
+SPAWNER|236425652-81a8dc4d5d415524f80a3974a9a3c5a8
+NAME|Gentlebros 2
+SCENE|Interior_GentlebrosArena
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 2
+POSITION|4.880,0.000,8.100
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_Flee_MonsterConfig; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
+
+SPAWNER|1172671099-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|MiniBoarSpawner
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 1/MiniBoarSpawner
+POSITION|30.380,0.000,12.790
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Quadruped_Boar_TavernTales_Minion_MonsterConfig; Scan sample:F12
+
+SPAWNER|807623389-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|MiniBoarSpawner (1)
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 1/MiniBoarSpawner (1)
+POSITION|32.540,0.000,11.300
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Quadruped_Boar_TavernTales_Minion_MonsterConfig; Scan sample:F12
+
+SPAWNER|432945024-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|MiniBoarSpawner (2)
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 1/MiniBoarSpawner (2)
+POSITION|33.254,0.000,10.246
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Quadruped_Boar_TavernTales_Minion_MonsterConfig; Scan sample:F12
+
+SPAWNER|754627446-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|MiniBoarSpawner (3)
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 1/MiniBoarSpawner (3)
+POSITION|28.850,0.000,13.260
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Quadruped_Boar_TavernTales_Minion_MonsterConfig; Scan sample:F12
+
+SPAWNER|1025572983-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|OinkerSpawner
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 2 (Addon)/OinkerSpawner
+POSITION|30.380,0.000,12.790
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Grunt_Pig_TavernTales_MonsterConfig; Scan sample:F12
+
+SPAWNER|440548545-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|OinkerSpawner
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 2 (Addon)/OinkerSpawner
+POSITION|28.850,0.000,13.260
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Grunt_Pig_TavernTales_MonsterConfig; Scan sample:F12
+
+SPAWNER|274711633-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|OinkerSpawner
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 2 (Addon)/OinkerSpawner
+POSITION|32.540,0.000,11.300
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Grunt_Pig_TavernTales_MonsterConfig; Scan sample:F12
+
+SPAWNER|1572126805-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|OinkerSpawner
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Group 2 (Addon)/OinkerSpawner
+POSITION|33.254,0.000,10.246
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Grunt_Pig_TavernTales_MonsterConfig; Scan sample:F12
+
+SPAWNER|4669233393805979977-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|UnitSpawner
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Default/UnitSpawner
+POSITION|31.390,0.000,12.080
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Quadruped_BoarBoss_TavernTales_MonsterConfig; Shared-ID phase group: Default; Scan sample:F12
+
+SPAWNER|4669233393805979977-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 1
+POSITION|30.290,0.000,13.050
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:F12
+
+SPAWNER|4669233393805979977-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|UnitSpawner 2
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 2
+POSITION|32.530,0.000,11.030
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:F12
+
+SPAWNER|4669233393805979977-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|UnitSpawner 3
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 3
+POSITION|31.390,0.000,12.080
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:F12
+
+SPAWNER|4669233393805979977-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 1
+POSITION|30.290,0.000,13.050
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Twins; Scan sample:F12
+
+SPAWNER|4669233393805979977-3bdfbe75db3e64f3b9d7775b0f57c404
+NAME|UnitSpawner 2
+SCENE|TavernTalesArena_BoarBoss
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 2
+POSITION|32.530,0.000,11.030
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Twins; Scan sample:F12
+
+SPAWNER|1350421496-c8fd078ecd6f14c2c8ac8541121b5829
+NAME|UnitSpawner_Metalhead_Ticketer
+SCENE|TavernTalesArena_MewtallicaBoss
+PATH|SceneController/Quests/DungeonQuest_MewtallicaStage_BossFight/UnitSpawner_Metalhead_Ticketer
+POSITION|-14.220,0.000,0.000
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_Humanoid_Mewtallica_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_MewtallicaBoss
+
+SPAWNER|2125373735-c8fd078ecd6f14c2c8ac8541121b5829
+NAME|UnitSpawner_Mewtallica_Boss
+SCENE|TavernTalesArena_MewtallicaBoss
+PATH|SceneController/Quests/DungeonQuest_MewtallicaStage_BossFight/UnitSpawner_Mewtallica_Boss
+POSITION|4.640,0.000,0.000
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_HumanoidBoss_Mewtallica_BossFight_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_MewtallicaBoss
+
+SPAWNER|367487037-c8fd078ecd6f14c2c8ac8541121b5829
+NAME|UnitSpawner_Mewtallica_Defeated
+SCENE|TavernTalesArena_MewtallicaBoss
+PATH|SceneController/Quests/DungeonQuest_MewtallicaStage_BossFight/UnitSpawner_Mewtallica_Defeated
+POSITION|4.640,0.000,0.000
+TYPE|Boss,Cutscene
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_HumanoidBoss_Mewtallica_BossFight_MonsterConfig; Scripted defeated-state spawner; verify cutscene safety; Scan sample:SCENE_LOADED_5s:TavernTalesArena_MewtallicaBoss
+
+SPAWNER|435664541-c8fd078ecd6f14c2c8ac8541121b5829
+NAME|UnitSpawner
+SCENE|TavernTalesArena_MewtallicaBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Default/UnitSpawner
+POSITION|4.590,0.000,0.000
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: HumanoidBoss_Mewtallica_Boss_TavernTales_MonsterConfig; Shared-ID phase group: Default; Scan sample:SCENE_LOADED_5s:TavernTalesArena_MewtallicaBoss
+
+SPAWNER|435664541-c8fd078ecd6f14c2c8ac8541121b5829
+NAME|UnitSpawner 2
+SCENE|TavernTalesArena_MewtallicaBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 2
+POSITION|6.810,0.000,0.000
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:TavernTalesArena_MewtallicaBoss
+
+SPAWNER|46233731-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner_Pirate King_TEST
+SCENE|TavernTalesArena_PirateKing
+PATH|SceneController/MonsterSpawners/UnitSpawner_Pirate King_TEST
+POSITION|3.040,0.000,17.330
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_HumanoidBoss_PirateKing_TavernTales_MonsterConfig; TEST-labelled object; check whether used; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|2092849568-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level 1/UnitSpawner 1
+POSITION|0.960,0.000,18.350
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Grunt_Squeaky_Boss_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|2057644948-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level 2/UnitSpawner 1
+POSITION|0.960,0.000,18.350
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Grunt_Squeaky_Boss_Buffed_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|270393612-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|Arcane Mage Spawner 1
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level 3/Arcane Mage Spawner 1
+POSITION|5.640,0.000,18.550
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_Humanoid_SkeletonRat_Arcane_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|870883083-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|Arcane Mage Spawner 2
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level 3/Arcane Mage Spawner 2
+POSITION|6.980,0.000,17.710
+TYPE|Grunt
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_Humanoid_SkeletonRat_Arcane_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|576550233-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|Squeaky Spawner
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level 3/Squeaky Spawner
+POSITION|0.960,0.000,18.350
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Grunt_Squeaky_Boss_Buffed_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|273642796-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Default/UnitSpawner
+POSITION|3.180,0.000,17.740
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Enemy_HumanoidBoss_PirateKing_TavernTales_MonsterConfig; Shared-ID phase group: Default; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|273642796-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 1
+POSITION|3.220,0.000,18.630
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|273642796-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner 2
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 2
+POSITION|0.480,0.000,18.920
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|273642796-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner 3
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 3
+POSITION|5.810,0.000,18.860
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|273642796-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 1
+POSITION|1.460,0.000,18.430
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|273642796-55927d92a032f4ab781b1a1a9d9d86dd
+NAME|UnitSpawner 2
+SCENE|TavernTalesArena_PirateKing
+PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 2
+POSITION|5.130,0.000,18.420
+TYPE|Boss
+TERRAIN|Ground
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
+
+SPAWNER|532586021-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (1)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 1/UnitSpawner (1)
+POSITION|-1.700,0.000,17.370
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|462609352-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (2)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 1/UnitSpawner (2)
+POSITION|1.700,0.000,17.370
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|756767792-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (1)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 2/UnitSpawner (1)
+POSITION|-1.700,0.000,17.840
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1622611332-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (2)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 2/UnitSpawner (2)
+POSITION|1.700,0.000,17.840
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|565287087-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (3)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 2/UnitSpawner (3)
+POSITION|-1.400,0.000,17.100
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|2102834488-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (4)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 2/UnitSpawner (4)
+POSITION|1.400,0.000,17.100
+TYPE|Grunt
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|759982521-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (1)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 3/UnitSpawner (1)
+POSITION|-1.700,0.000,17.840
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_Boss_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1028381396-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner (3)
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Additional Spawners/Level 3/UnitSpawner (3)
+POSITION|1.700,0.000,17.840
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: Aquatic_SpicySquid_Dungeon_Boss_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1237959471-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Default/UnitSpawner
+POSITION|0.000,0.000,17.170
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|Observed original configs: AquaticBoss_SpicySquidTakomeowkiBoss_TavernTales_MonsterConfig; Shared-ID phase group: Default; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1237959471-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 1
+POSITION|0.000,0.000,13.050
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1237959471-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner 2
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 2
+POSITION|0.000,0.000,11.030
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1237959471-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner 3
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Triplets/UnitSpawner 3
+POSITION|0.000,0.000,12.080
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1237959471-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner 1
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 1
+POSITION|0.000,0.000,13.050
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
+
+SPAWNER|1237959471-3f2e75f94c2e5ee48bade99841761ae7
+NAME|UnitSpawner 2
+SCENE|TavernTalesArena_SpicySquidTakomeowkiBoss
+PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Twins/UnitSpawner 2
+POSITION|0.000,0.000,11.030
+TYPE|Boss
+TERRAIN|Aquatic
+RESTRICTIONS|KillRequired
+RANDOMIZE|Yes
+NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:TavernTalesArena_SpicySquidTakomeowkiBoss
