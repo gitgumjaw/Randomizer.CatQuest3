@@ -16,7 +16,7 @@ namespace Randomizer.CatQuest3
             "Cat Quest 3 Randomizer";
 
         public const string PluginVersion =
-            "0.2.261108";
+            "0.2.261110";
 
 
         internal static Plugin Instance;
@@ -51,7 +51,7 @@ namespace Randomizer.CatQuest3
             PlayerTestStats.Initialize();
             PlayerControlEntitasDiagnostic.Initialize();
             PlayerCoordinateTracker.Initialize();
-            LovebookCaveDiagnostic.Initialize();
+            //LovebookCaveDiagnostic.Initialize();
             //SpawnerSceneScanner.Initialize();
             //GentlebrosSpawnerDiagnostic.Initialize();
 
