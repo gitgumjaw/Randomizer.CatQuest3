@@ -3152,7 +3152,7 @@ RESTRICTIONS|KillRequired,MovementRequired
 RANDOMIZE|Yes
 NOTES|Original:Grunt_Squeaky_Boss_MonsterConfig x1; SpawnType:QUEST_SPAWN; AutoRule:CATALOG_YES
 
-SPAWNER|1865444726-57ca1f4f11cede84c8778ce9d710556a
+SPAWNER|1865444726-57ca1f4f11cede84c8778ce9d710556a 
 NAME|EnemySpawner_08
 SCENE|Cave_SqueakyCave
 POSITION|3.680,0.000,0.270
@@ -3293,14 +3293,14 @@ RANDOMIZE|Yes
 NOTES|Original:Flying_Parrot_MonsterConfig x1; SpawnType:WORLD_SPAWN; AutoRule:CATALOG_YES
 
 SPAWNER|1803977248-57ca1f4f11cede84c8778ce9d710556a
-NAME|EnemySpawner_01
+NAME|EnemySpawner_01 - Out of bounds?
 SCENE|Cave_SqueakyCave
 POSITION|6.300,0.000,-22.450
 TYPE|Grunt
 TERRAIN|Aquatic
 RESTRICTIONS|KillRequired,MovementRequired
-RANDOMIZE|Yes
-NOTES|Original:Flying_Parrot_MonsterConfig x1; SpawnType:WORLD_SPAWN; AutoRule:CATALOG_YES
+RANDOMIZE|No
+NOTES|Original:Flying_Parrot_MonsterConfig x1; SpawnType:WORLD_SPAWN; Seems to be spawn out of bounds.
 
 SPAWNER|400583903-57ca1f4f11cede84c8778ce9d710556a
 NAME|UnitSpawner_Squeaky
@@ -9018,7 +9018,7 @@ SCENE|Interior_PirateKingHideout
 POSITION|3.040,0.000,18.190
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired
+RESTRICTIONS|KillRequired,MovementRequired
 RANDOMIZE|Yes
 NOTES|Original:Enemy_HumanoidBoss_PirateKing_MonsterConfig x1; SpawnType:QUEST_SPAWN; AutoRule:CATALOG_YES
 
@@ -9026,10 +9026,10 @@ SPAWNER|1276726804-8395050238e221a439bfb2e43669bc33
 NAME|UnitSpawner_Pirate King_03
 SCENE|Interior_PirateKingHideout
 POSITION|3.040,0.000,18.190
-TYPE|Boss
+TYPE|Boss,Cutscene
 TERRAIN|Ground
 RESTRICTIONS|KillRequired
-RANDOMIZE|Yes
+RANDOMIZE|No
 NOTES|Original:Enemy_HumanoidBoss_PirateKing_Injured_MonsterConfig x1; SpawnType:QUEST_SPAWN; AutoRule:CATALOG_YES
 
 SPAWNER|46233731-8395050238e221a439bfb2e43669bc33
@@ -9046,10 +9046,10 @@ SPAWNER|1777525504-8395050238e221a439bfb2e43669bc33
 NAME|UnitSpawner_Pirate King
 SCENE|Interior_PirateKingHideout
 POSITION|2.110,0.000,7.040
-TYPE|Boss
+TYPE|Boss,Cutscene
 TERRAIN|Ground
-RESTRICTIONS|KillRequired
-RANDOMIZE|Yes
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|No
 NOTES|Original:Enemy_HumanoidBoss_PirateKing_MonsterConfig x1; SpawnType:QUEST_SPAWN; AutoRule:CATALOG_YES
 
 SPAWNER|1912560911-8395050238e221a439bfb2e43669bc33
@@ -9098,7 +9098,7 @@ SCENE|Interior_ZeroDimension_FinalBoss
 POSITION|-2.320,0.000,4.590
 TYPE|Boss,Cutscene
 TERRAIN|Ground
-RESTRICTIONS|None
+RESTRICTIONS|KillRequired,MovementRequired
 RANDOMIZE|No
 NOTES|Original:Enemy_HumanoidBoss_PirateKing_Injured_MonsterConfig x1; SpawnType:QUEST_SPAWN; AutoRule:FINAL_BOSS_PIRATE_KING_ONLY
 
@@ -9108,7 +9108,7 @@ SCENE|Interior_ZeroDimension_FinalBoss
 POSITION|-0.988,0.000,3.995
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|None
+RESTRICTIONS|KillRequired,MovementRequired
 RANDOMIZE|Yes
 NOTES|Original:Enemy_HumanoidBoss_PirateKing_MonsterConfig x1; SpawnType:QUEST_SPAWN; AutoRule:CATALOG_YES
 
@@ -9118,8 +9118,8 @@ SCENE|Interior_ZeroDimension_FinalBoss
 POSITION|-0.988,0.000,3.995
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|None
-RANDOMIZE|No
+RESTRICTIONS|KillRequired,MovementRequired
+RANDOMIZE|Yes
 NOTES|Original:Enemy_HumanoidBoss_PirateKing_Injured_MonsterConfig x1; SpawnType:QUEST_SPAWN; AutoRule:FINAL_BOSS_PIRATE_KING_ONLY
 
 SPAWNER|307112760-6b2ddb99bb3ca824e9256c14ae4b3e55
@@ -9828,7 +9828,7 @@ SCENE|MainOverworld
 POSITION|-63.000,0.000,105.970
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Original:MachoDog_Boss_MonsterConfig x1; SpawnType:QUEST_SPAWN
 
@@ -10831,7 +10831,7 @@ PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/De
 POSITION|0.000,0.000,6.210
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired,AllowAquaticBosses
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_CloseRange_MonsterConfig; Shared-ID phase group: Default; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
 
@@ -10842,7 +10842,7 @@ PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Tr
 POSITION|-4.820,0.000,8.100
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired,AllowAquaticBosses
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_Ranged_MonsterConfig; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
 
@@ -10853,7 +10853,7 @@ PATH|TavernTalesEncounterContainer/TavernTalesEncounterManager/Spawner Groups/Tw
 POSITION|4.880,0.000,8.100
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired,AllowAquaticBosses
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_GentlebroBoss_Flee_MonsterConfig; Shared-ID phase group: Twins; Scan sample:SCENE_LOADED_5s:Interior_GentlebrosArena
 
@@ -11073,7 +11073,7 @@ PATH|SceneController/MonsterSpawners/UnitSpawner_Pirate King_TEST
 POSITION|3.040,0.000,17.330
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_PirateKing_TavernTales_MonsterConfig; TEST-labelled object; check whether used; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11084,7 +11084,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level
 POSITION|0.960,0.000,18.350
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Grunt_Squeaky_Boss_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11095,7 +11095,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level
 POSITION|0.960,0.000,18.350
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Grunt_Squeaky_Boss_Buffed_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11106,7 +11106,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level
 POSITION|5.640,0.000,18.550
 TYPE|Grunt
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_Humanoid_SkeletonRat_Arcane_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11117,7 +11117,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level
 POSITION|6.980,0.000,17.710
 TYPE|Grunt
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_Humanoid_SkeletonRat_Arcane_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11128,7 +11128,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Additional Spawners/Level
 POSITION|0.960,0.000,18.350
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Grunt_Squeaky_Boss_Buffed_TavernTales_MonsterConfig; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11139,7 +11139,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Default/Un
 POSITION|3.180,0.000,17.740
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|Observed original configs: Enemy_HumanoidBoss_PirateKing_TavernTales_MonsterConfig; Shared-ID phase group: Default; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11150,7 +11150,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/U
 POSITION|3.220,0.000,18.630
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 
@@ -11161,7 +11161,7 @@ PATH|TavernTales Container/TavernTalesEncounterManager/Spawner Groups/Triplets/U
 POSITION|0.480,0.000,18.920
 TYPE|Boss
 TERRAIN|Ground
-RESTRICTIONS|KillRequired,MovementRequired
+RESTRICTIONS|KillRequired,MovementRequired,AllowAquatic
 RANDOMIZE|Yes
 NOTES|EMPTY on all captured scans; phase may populate later; Shared-ID phase group: Triplets; Scan sample:SCENE_LOADED_5s:TavernTalesArena_PirateKing
 

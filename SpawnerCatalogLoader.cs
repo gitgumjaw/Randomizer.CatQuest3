@@ -1,9 +1,9 @@
 ﻿// Cat Quest III Randomizer
 // File: SpawnerCatalogLoader.cs
-// Version: SpawnerCatalogLoader_20261108_v09
+// Version: SpawnerCatalogLoader_20261110_v10
 // Read-only catalog with fail-closed eligibility and encounter restrictions.
 // v08: Optional PATH distinguishes shared spawner IDs without altering legacy entries.
-// v09: Opt-in Gentlebros boss slots accept aquatic boss configs.
+// v10: AllowAquatic opts any Grunt/Boss spawner into cross-terrain selection.
 // 2DOnly requires 2DLocation regardless of MovementRequired.
 // CannotMove remains excluded from MovementRequired spawners.
 // Place SpawnerCatalog.txt in Data beside EnemyCatalog.txt.
@@ -97,17 +97,15 @@ namespace Randomizer.CatQuest3
             if (!string.Equals(spawner.PrimaryType, enemy.Type, StringComparison.OrdinalIgnoreCase))
                 return false;
 
-            // Only the opt-in Gentlebros experiment may accept aquatic bosses
-            // in an otherwise Ground boss slot. All other terrain rules remain intact.
+            // AllowAquatic opts this Grunt/Boss slot into either terrain.
+            // TYPE still has to match (checked above), and the normal
+            // encounter restrictions below remain in force.
             bool terrainMatches = EnemyCatalogLoader.HasTerrain(enemy, spawner.Terrain);
-            bool gentlebrosAquatic =
-                string.Equals(spawner.Scene, "Interior_GentlebrosArena", StringComparison.Ordinal) &&
-                string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(spawner.Terrain, "Ground", StringComparison.OrdinalIgnoreCase) &&
-                HasRestriction(spawner, "AllowAquaticBosses") &&
-                EnemyCatalogLoader.HasTerrain(enemy, "Aquatic");
+            bool alternativeTerrain = HasRestriction(spawner, "AllowAquatic") &&
+                (EnemyCatalogLoader.HasTerrain(enemy, "Ground") ||
+                 EnemyCatalogLoader.HasTerrain(enemy, "Aquatic"));
 
-            if (!terrainMatches && !gentlebrosAquatic)
+            if (!terrainMatches && !alternativeTerrain)
                 return false;
 
             if (EnemyCatalogLoader.HasRestriction(enemy, "NeedsSpikes") &&

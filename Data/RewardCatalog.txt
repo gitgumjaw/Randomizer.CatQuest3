@@ -1549,7 +1549,7 @@ TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 1
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 1 v2
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 1 v2
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 1 v2
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:No|Options:1
 OPTION|QuestItem|9da86e0edf3a6f1449e64400a6a9096b|Weight:1
 
 LOCATION|LOGICAL|LoveBook|Chapter2
@@ -1562,7 +1562,7 @@ TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 2
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 2 v2
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 2 v2
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 2 v2
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:No|Options:1
 OPTION|QuestItem|a4f4a4f4891108b46b6fd1ef79ce9e0a|Weight:1
 
 LOCATION|LOGICAL|LoveBook|Chapter3
@@ -1575,7 +1575,7 @@ TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 3
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 3 v2
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 3 v2
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 3 v2
-SLOT|0|AllowCollectibles:True|Options:1
+SLOT|0|AllowCollectibles:No|Options:1
 OPTION|QuestItem|092d5c5aeb3b19743a6f438818eb14ac|Weight:1
 
 LOCATION|MainOverworld|MainQuest_01|FSM|Defeated Mr Clean

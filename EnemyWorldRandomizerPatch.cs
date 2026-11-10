@@ -1,8 +1,9 @@
 ﻿// Cat Quest III Randomizer
 // File: EnemyWorldRandomizerPatch.cs
-// Version: EnemyWorldRandomizerPatch_20261108_v17
-// v17: Arena-specific isolated 30/30/0/1 aggro clones for all five Tavern Tales arenas;
-// Gentlebros aquatic bosses additionally receive agentNavtype = 2.
+// Version: EnemyWorldRandomizerPatch_20261110_v18
+// v18: AllowAquatic enables deterministic 50/50 Ground/Aquatic selection
+// for opted-in Grunt or Boss spawners. Only aquatic-pool picks use nav type 2.
+// Retains Tavern Tales arena-specific isolated 30/30/0/1 aggro clones.
 // All other v14 selections and deterministic boss-distribution planning retained.
 // Installation: replace the complete existing EnemyWorldRandomizerPatch.cs.
 using System;
@@ -44,32 +45,42 @@ namespace Randomizer.CatQuest3
                 BuildBossPlan(run.SeedValue);
 
             bool isBoss = string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase);
-            bool aquatic = string.Equals(spawner.Terrain, "Aquatic", StringComparison.OrdinalIgnoreCase);
-            bool gentlebrosExperiment = IsGentlebrosAquaticExperiment(spawner);
+            bool allowAquatic = SpawnerCatalogLoader.HasRestriction(spawner, "AllowAquatic");
             bool selectedFromAquaticPool = false;
-            List<EnemyCatalogEntry> compatible = GetCompatible(
-                spawner, __instance.spawnType, false);
+            List<EnemyCatalogEntry> compatible;
 
-            // Keep all ordinary boss assignments exactly as in v14. The
-            // Gentlebros experiment alone can choose the aquatic boss pool.
-            if (gentlebrosExperiment)
+            if (allowAquatic)
             {
+                // Preserve the slot's Grunt/Boss category in BOTH terrain pools.
+                // A stable per-spawner hash chooses terrain, independent of load order.
+                List<EnemyCatalogEntry> groundCandidates =
+                    GetOptInTerrainCandidates(spawner, __instance.spawnType, "Ground");
                 List<EnemyCatalogEntry> aquaticCandidates =
-                    GetGentlebrosAquaticBosses(spawner, __instance.spawnType);
+                    GetOptInTerrainCandidates(spawner, __instance.spawnType, "Aquatic");
 
-                if (aquaticCandidates.Count > 0 && compatible.Count > 0)
+                if (groundCandidates.Count > 0 && aquaticCandidates.Count > 0)
                 {
-                    uint poolDraw = Hash(SeedKey(run.SeedValue) +
-                        "|GENTLEBROS_POOL|" + SlotKey(spawner, 0));
-                    selectedFromAquaticPool = (poolDraw % 2u) == 0u;
+                    uint roll = Hash(SeedKey(run.SeedValue) +
+                        "|ALLOW_AQUATIC_POOL|" + SlotKey(spawner, 0));
+                    selectedFromAquaticPool = (roll % 2u) == 0u;
                 }
                 else
                 {
+                    // A one-sided pool cannot satisfy 50/50; use whichever
+                    // has candidates. Neither available means vanilla fallback.
                     selectedFromAquaticPool = aquaticCandidates.Count > 0;
                 }
 
-                if (selectedFromAquaticPool)
-                    compatible = aquaticCandidates;
+                compatible = selectedFromAquaticPool ? aquaticCandidates : groundCandidates;
+                Plugin.Log.LogInfo("ALLOW AQUATIC | " + SlotKey(spawner, 0) +
+                    " | Type:" + spawner.PrimaryType +
+                    " | Pool:" + (selectedFromAquaticPool ? "Aquatic" : "Ground") +
+                    " | GroundCandidates:" + groundCandidates.Count +
+                    " | AquaticCandidates:" + aquaticCandidates.Count);
+            }
+            else
+            {
+                compatible = GetCompatible(spawner, __instance.spawnType, false);
             }
 
             if (compatible.Count == 0)
@@ -92,12 +103,12 @@ namespace Randomizer.CatQuest3
             string group = null;
             // Experimental Gentlebros draws do not consume or depend on the
             // normal ground/aquatic boss distribution plan.
-            if (isBoss && !spawner.IsCutscene && !gentlebrosExperiment)
+            if (isBoss && !spawner.IsCutscene && !allowAquatic)
                 bossPlan.TryGetValue(key, out group);
             if (group == null || !grouped.ContainsKey(group))
             {
-                string salt = gentlebrosExperiment
-                    ? (selectedFromAquaticPool ? "GENTLEBROS_AQUATIC" : "GENTLEBROS_GROUND")
+                string salt = allowAquatic
+                    ? (selectedFromAquaticPool ? "ALLOW_AQUATIC_AQUATIC" : "ALLOW_AQUATIC_GROUND")
                     : spawner.IsCutscene ? "CUTSCENE" :
                       isBoss ? "BOSS_FALLBACK" : "GRUNT";
                 uint draw = Hash(SeedKey(run.SeedValue) + "|" + salt + "|" +
@@ -112,16 +123,26 @@ namespace Randomizer.CatQuest3
             if (selected.Asset == null) return;
             NormalizeAggroForTest(selected.Asset);
 
-            // All five Tavern Tales arenas receive isolated 30/30/0/1 aggro
-            // clones. Only experimental Gentlebros aquatic bosses get nav 2.
+            // Tavern Tales retains its isolated 30/30/0/1 aggro clones.
+            // Any opted-in aquatic-pool selection (in any scene) gets a
+            // separate nav-2 clone. Ground-pool picks retain original nav.
             UnitConfig assignedAsset = selected.Asset;
             if (IsTavernTalesArena(scene))
             {
                 assignedAsset = GetTavernTalesArenaClone(
-                    selected.Asset, gentlebrosExperiment && selectedFromAquaticPool);
+                    selected.Asset, allowAquatic && selectedFromAquaticPool);
                 if (assignedAsset == null)
                 {
                     Plugin.Log.LogWarning("TAVERN TALES AGGRO | Clone failed; original spawn table retained | " + key);
+                    return;
+                }
+            }
+            else if (allowAquatic && selectedFromAquaticPool)
+            {
+                assignedAsset = GetAquaticNavigationClone(selected.Asset);
+                if (assignedAsset == null)
+                {
+                    Plugin.Log.LogWarning("ALLOW AQUATIC | Navigation clone failed; original spawn table retained | " + key);
                     return;
                 }
             }
@@ -149,31 +170,63 @@ namespace Randomizer.CatQuest3
             if (changes > 0) __instance.spawnList = updated;
         }
 
-        private static bool IsGentlebrosAquaticExperiment(SpawnerCatalogEntry spawner)
+        private static List<EnemyCatalogEntry> GetOptInTerrainCandidates(
+            SpawnerCatalogEntry spawner, SpawnType spawnType, string terrain)
         {
-            return spawner != null &&
-                string.Equals(spawner.Scene, "Interior_GentlebrosArena", StringComparison.Ordinal) &&
-                string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase) &&
-                string.Equals(spawner.Terrain, "Ground", StringComparison.OrdinalIgnoreCase) &&
-                SpawnerCatalogLoader.HasRestriction(spawner, "AllowAquaticBosses");
-        }
+            bool boss = string.Equals(spawner.PrimaryType, "Boss", StringComparison.OrdinalIgnoreCase);
+            bool aquaticTerrain = string.Equals(terrain, "Aquatic", StringComparison.Ordinal);
+            List<EnemyCatalogEntry> candidates = EnemyCatalogLoader.EligibleFor(
+                terrain, boss && !aquaticTerrain ? "Boss" : "Ordinary",
+                boss && aquaticTerrain, false);
 
-        private static List<EnemyCatalogEntry> GetGentlebrosAquaticBosses(
-            SpawnerCatalogEntry spawner, SpawnType spawnType)
-        {
-            List<EnemyCatalogEntry> result = EnemyCatalogLoader.EligibleFor(
-                "Aquatic", "Ordinary", true, false);
-            result.RemoveAll(candidate => !SpawnerCatalogLoader.IsCompatible(spawner, candidate));
+            // Same restrictions and non-world safeguards as the normal pools.
+            candidates.RemoveAll(candidate =>
+                !SpawnerCatalogLoader.IsCompatible(spawner, candidate) ||
+                !EnemyCatalogLoader.HasTerrain(candidate, terrain));
 
-            // Same non-WORLD encounter safeguards as the normal randomizer.
             if (spawnType != SpawnType.WORLD_SPAWN)
             {
-                result.RemoveAll(candidate => candidate.UnitConfigName != null &&
+                candidates.RemoveAll(candidate => candidate.UnitConfigName != null &&
                     (candidate.UnitConfigName.IndexOf("MoleHoming", StringComparison.OrdinalIgnoreCase) >= 0 ||
                      string.Equals(candidate.UnitConfigName, "Spherical_Spikeball_MonsterConfig", StringComparison.Ordinal) ||
                      string.Equals(candidate.UnitConfigName, "Spherical_SpikeballBoss_MonsterConfig", StringComparison.Ordinal)));
             }
-            return result;
+            return candidates;
+        }
+
+        // Outside Tavern Tales, clone only the aquatic-pool selection. This
+        // prevents agentNavtype = 2 leaking into the source UnitConfig asset.
+        private static readonly Dictionary<int, UnitConfig> aquaticNavigationClones =
+            new Dictionary<int, UnitConfig>();
+
+        private static UnitConfig GetAquaticNavigationClone(UnitConfig original)
+        {
+            if (original == null) return null;
+            int id = original.GetInstanceID();
+            UnitConfig clone;
+            if (aquaticNavigationClones.TryGetValue(id, out clone) && clone != null)
+                return clone;
+
+            try
+            {
+                clone = UnityEngine.Object.Instantiate(original);
+                if (clone == null) return null;
+                clone.name = original.name;
+                if (!TrySetAggroField(clone, "agentNavtype", 2))
+                {
+                    UnityEngine.Object.Destroy(clone);
+                    return null;
+                }
+                aquaticNavigationClones[id] = clone;
+                Plugin.Log.LogInfo("ALLOW AQUATIC NAV | Cloned " + original.name +
+                    " | agentNavtype:2 | Original unchanged");
+                return clone;
+            }
+            catch (Exception ex)
+            {
+                Plugin.Log.LogWarning("ALLOW AQUATIC NAV | Clone error: " + ex);
+                return null;
+            }
         }
 
         private static bool IsTavernTalesArena(string scene)
@@ -187,7 +240,7 @@ namespace Randomizer.CatQuest3
 
         // One isolated configuration per source asset AND navigation mode.
         // The 30/30/0/1 clones can be reused across Tavern Tales arenas,
-        // while Gentlebros aquatic navigation remains an independent variant.
+        // while aquatic-pool picks use a separate nav-2 variant.
         private static readonly Dictionary<string, UnitConfig> tavernTalesArenaClones =
             new Dictionary<string, UnitConfig>(StringComparer.Ordinal);
 
