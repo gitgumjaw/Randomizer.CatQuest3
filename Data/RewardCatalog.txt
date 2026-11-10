@@ -1549,7 +1549,7 @@ TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 1
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 1 v2
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 1 v2
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 1 v2
-SLOT|0|AllowCollectibles:No|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|QuestItem|9da86e0edf3a6f1449e64400a6a9096b|Weight:1
 
 LOCATION|LOGICAL|LoveBook|Chapter2
@@ -1562,7 +1562,7 @@ TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 2
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 2 v2
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 2 v2
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 2 v2
-SLOT|0|AllowCollectibles:No|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|QuestItem|a4f4a4f4891108b46b6fd1ef79ce9e0a|Weight:1
 
 LOCATION|LOGICAL|LoveBook|Chapter3
@@ -1575,7 +1575,7 @@ TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 3
 TRIGGER|Cave_FurrlornCave|DungeonQuest_FurrlornCave_LoveBook|FSM|Get Chapter 3 v2
 TRIGGER|Cave_HeartpurreakCave|DungeonQuest_HeartpurreakCave_LoveBook|FSM|Get Chapter 3 v2
 TRIGGER|Cave_LovepurrCave|DungeonQuest_Cave_LoveBook|FSM|Get Chapter 3 v2
-SLOT|0|AllowCollectibles:No|Options:1
+SLOT|0|AllowCollectibles:False|Options:1
 OPTION|QuestItem|092d5c5aeb3b19743a6f438818eb14ac|Weight:1
 
 LOCATION|MainOverworld|MainQuest_01|FSM|Defeated Mr Clean
@@ -2008,6 +2008,7 @@ OPTION|Blueprint|c0465a498514abd499737497506adccd|Weight:1
 LOCATION|MainOverworld|WorldQuest_RunningGold_Furggy|FSM|Get Golden Key 05
 LABEL|Running Coin Furrgy
 AREA|Furggy Island
+TRIGGER|MainOverworld|WorldQuest_RunningGold_Furggy|FSM|Get Golden Key
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|697db15b7663cb7448bf88736b902757|Weight:1
@@ -2015,6 +2016,7 @@ OPTION|QuestItem|697db15b7663cb7448bf88736b902757|Weight:1
 LOCATION|MainOverworld|WorldQuest_RunningGold_Furtigua|FSM|Get Golden Key 03
 LABEL|Running Coin Furtuga
 AREA|Furtigua
+TRIGGER|MainOverworld|WorldQuest_RunningGold_Furtigua|FSM|Get Golden Key
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|cd75bf1dfa29f234fa35755833503014|Weight:1
@@ -2022,6 +2024,7 @@ OPTION|QuestItem|cd75bf1dfa29f234fa35755833503014|Weight:1
 LOCATION|MainOverworld|WorldQuest_RunningGold_Purvanna|FSM|Get Golden Key 02
 LABEL|Running Coin Purvanna
 AREA|Purvanna
+TRIGGER|MainOverworld|WorldQuest_RunningGold_Purvanna|FSM|Get Golden Key
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|cfc47de2c1131de41a9490c6ddf46423|Weight:1
@@ -2029,6 +2032,7 @@ OPTION|QuestItem|cfc47de2c1131de41a9490c6ddf46423|Weight:1
 LOCATION|MainOverworld|WorldQuest_RunningGold_Sunset|FSM|Get Golden Key 04
 LABEL|Running Coin Sunset
 AREA|Sunset Islands
+TRIGGER|MainOverworld|WorldQuest_RunningGold_Sunset|FSM|Get Golden Key
 CATEGORY|Quest Items
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|QuestItem|95ac0d5c165568349b791abfe7d69d79|Weight:1

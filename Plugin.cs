@@ -51,6 +51,7 @@ namespace Randomizer.CatQuest3
             PlayerTestStats.Initialize();
             PlayerControlEntitasDiagnostic.Initialize();
             PlayerCoordinateTracker.Initialize();
+            LovebookCaveDiagnostic.Initialize();
             //SpawnerSceneScanner.Initialize();
             //GentlebrosSpawnerDiagnostic.Initialize();
 
