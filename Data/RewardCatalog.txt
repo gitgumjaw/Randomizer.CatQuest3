@@ -568,6 +568,7 @@ OPTION|Collectible|Collectible_Crystal|Weight:1|PrefabName:Collectible_Crystal|Q
 LOCATION|45b6bcffd0fe2a040866e875c5bc1091
 LABEL|Wanted Poster Pig Boss Chest
 AREA|The Milky Barrel; Pawt Purvanna; Purvanna
+LOGIC|ShipKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|a2b5671b1eda82d43835e71eb2db25e9|Weight:1
@@ -1106,6 +1107,7 @@ OPTION|Collectible|Collectible_Exp|Weight:1|PrefabName:Collectible_Exp|Quantity:
 LOCATION|7f60a487de20f3442ad04cfd731d525f
 LABEL|Wanted Poster Necromouser Chest
 AREA|The Milky Barrel; Pawt Purvanna; Purvanna
+LOGIC|TwinCastleKey
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|0eea9849b2f2c4acd8c88a54739f7edc|Weight:1
@@ -2128,6 +2130,7 @@ OPTION|QuestItem|66ebef354aeecdd4a81d7ca697309ac9|Weight:1
 LOCATION|a35cc2876b24ad644a56fb48e53b83dc
 LABEL|Wanted Poster Takomeowki Chest
 AREA|The Milky Barrel; Pawt Purvanna; Purvanna
+LOGIC|Tentakeys
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|087db2a1ab2cc46ddb65cf498b40850e|Weight:1
@@ -2465,6 +2468,7 @@ OPTION|Collectible|Collectible_Gold|Weight:1|PrefabName:Collectible_Gold|Quantit
 LOCATION|cec4cb43c43ff1947a098e33eafdbd1a
 LABEL|Wanted Poster Clawford Chest
 AREA|The Milky Barrel; Pawt Purvanna; Purvanna
+LOGIC|LovepurrBooks
 CATEGORY|Equipment & Blueprints;Resources/Collectibles
 SLOT|0|AllowCollectibles:True|Options:1
 OPTION|Equipment|087db2a1ab2cc46ddb65cf498b40850e|Weight:1

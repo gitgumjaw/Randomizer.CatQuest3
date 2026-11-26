@@ -1036,5 +1036,5 @@ VARIATION|Heartpurroken Boss
 TYPE|Boss
 TERRAIN|Ground,Aquatic
 RESTRICTIONS|NeedsSpikes
-RANDOMIZE|No
+RANDOMIZE|Yes
 NOTES|Randomizer mods it to move over water. AgentNav=2
